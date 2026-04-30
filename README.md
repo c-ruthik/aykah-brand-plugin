@@ -36,6 +36,7 @@ You should see the brand kernel respond.
 |---|---|
 | `/aykah:core` | Brand kernel. Loads brand facts, voice rules, design tokens, asset map — the source-of-truth references every other Aykah skill depends on. Always run first when starting Aykah work. |
 | `/aykah:buddy` | Brand-aware thinking partner. Auto-routes any brainstorm / pressure-test / decision question to the right structured method (Frame, Diverge, Lotus Blossom, TRIZ, Pressure-Test, Scenario Wind-Tunnel, Red Team, Converge). Output passes through the brand-voice gate before delivery. |
+| `/aykah:social` | Channel-aware social copywriting. Writes Instagram captions, Reels/TikTok scripts (with shot lists + ASMR cues), and Pinterest pin descriptions using the Voice Guide v2 formula. Every output runs through three reviewer personas (Sanya filter, reference-set customer, Channel Guide check) plus the voice gate before delivery. |
 
 More sub-skills (`/aykah:social`, `/aykah:copy`, `/aykah:image`, `/aykah:design`, `/aykah:creator`, `/aykah:organize`, `/aykah:analyze`, `/aykah:seo`) ship in subsequent versions.
 
