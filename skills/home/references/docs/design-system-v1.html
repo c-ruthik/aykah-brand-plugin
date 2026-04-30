@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aykah — Complete Design System</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pri:#363B57;--pri-d:#2A2E45;--pri-l:#4A5070;--pri-t:#EDEEF2;
+  --acc:#B8956A;--acc-t:#8B6E4A;--acc-btn:#7D6040;--acc-l:#D4BC9A;--acc-glow:rgba(184,149,106,0.08);
+  --white:#FFFFFF;--ivory:#FAF8F4;--warm:#F7F3EE;--border:#E8E3DB;
+  --text:#2C2C2C;--muted:#6B6560;--light:#76716B;--disabled:#B8B2A8;
+  --success:#3D7A55;--error:#C0392B;
+  --font-h:'Libre Baskerville',Georgia,serif;--font-b:'Manrope',-apple-system,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font-b);color:var(--text);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.7;font-weight:400;}
+
+/* COVER */
+.cover{background:var(--pri);padding:64px 56px;position:relative;overflow:hidden;}
+.cover::before{content:'';position:absolute;top:-80px;right:-40px;width:400px;height:400px;background:radial-gradient(circle,rgba(184,149,106,0.05),transparent 70%);}
+.cover-ey{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,0.25);font-weight:600;margin-bottom:14px;}
+.cover h1{font-family:var(--font-h);font-size:38px;color:#fff;font-weight:600;line-height:1.12;max-width:620px;margin-bottom:8px;}
+.cover p{font-size:13px;color:rgba(255,255,255,0.3);max-width:520px;font-weight:300;}
+.cover-meta{margin-top:20px;display:flex;gap:24px;font-size:10px;color:rgba(255,255,255,0.15);letter-spacing:1px;}
+
+/* SECTIONS */
+.s{padding:48px 56px;border-bottom:1px solid var(--border);}
+.s:last-child{border-bottom:none;}
+.s.ivory{background:var(--ivory);}
+.s.dark{background:var(--pri);}
+.s.warm{background:var(--warm);}
+.s.alert{background:#FFF8F0;border-bottom:1px solid #F0DCC0;}
+.ey{font-size:9.5px;letter-spacing:4px;text-transform:uppercase;color:var(--acc-t);font-weight:700;margin-bottom:8px;}
+.dark .ey{color:var(--acc);}
+.st{font-family:var(--font-h);font-size:24px;color:var(--pri);font-weight:600;line-height:1.2;margin-bottom:6px;}
+.dark .st{color:#fff;}
+.ss{font-size:13px;color:var(--light);max-width:600px;margin-bottom:24px;}
+.dark .ss{color:rgba(255,255,255,0.3);}
+p{font-size:13px;color:#555;line-height:1.75;margin-bottom:10px;max-width:720px;}
+strong{font-weight:600;color:var(--text);}
+.dark p{color:rgba(255,255,255,0.4);}
+.dark strong{color:#fff;}
+h3{font-family:var(--font-h);font-size:18px;font-weight:600;color:var(--pri);margin:24px 0 8px;}
+.dark h3{color:#fff;}
+
+/* COLOR SWATCHES */
+.swatch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin:16px 0;}
+.swatch{border-radius:10px;overflow:hidden;border:1px solid var(--border);}
+.swatch-color{height:52px;position:relative;}
+.swatch-info{padding:8px 10px;background:#fff;}
+.swatch-name{font-size:10px;font-weight:700;color:var(--pri);letter-spacing:0.5px;}
+.swatch-hex{font-size:10px;color:var(--light);font-family:monospace;}
+.swatch-ratio{font-size:9px;font-weight:600;margin-top:2px;}
+.swatch-warn{font-size:8px;color:#C0392B;font-weight:700;letter-spacing:0.5px;margin-top:2px;}
+.swatch-ok{color:var(--success);}
+.swatch-caution{color:#B8860B;}
+
+/* TABLE */
+.tbl{width:100%;border-collapse:collapse;margin:16px 0;font-size:12px;}
+.tbl th{text-align:left;padding:8px 10px;font-size:8.5px;letter-spacing:2px;text-transform:uppercase;color:#999;font-weight:700;border-bottom:2px solid var(--border);background:var(--ivory);}
+.tbl td{padding:8px 10px;border-bottom:1px solid #f0ede8;vertical-align:top;}
+.pass{color:var(--success);font-weight:700;}
+.fail{color:var(--error);font-weight:700;}
+
+/* TYPE SCALE */
+.scale{margin:16px 0;border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.scale-row{display:flex;align-items:baseline;gap:14px;padding:10px 16px;border-bottom:1px solid #f5f2ed;}
+.scale-row:last-child{border-bottom:none;}
+.scale-row:nth-child(odd){background:#fff;}
+.scale-row:nth-child(even){background:var(--ivory);}
+.scale-label{width:110px;flex-shrink:0;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--light);font-weight:700;}
+.scale-spec{width:140px;flex-shrink:0;font-size:9.5px;color:#bbb;font-family:monospace;}
+
+/* CODE */
+pre{background:#1e2030;border-radius:10px;padding:18px;margin:14px 0;font-size:11px;line-height:1.7;color:#d4d4d4;font-family:'SF Mono',monospace;overflow-x:auto;white-space:pre-wrap;}
+code{background:#f0ede8;padding:1px 5px;border-radius:3px;font-size:11px;font-family:monospace;color:var(--pri);}
+
+/* RULES */
+.rule{padding:14px 18px;border-radius:8px;margin:10px 0;font-size:12px;line-height:1.65;}
+.rule.do{background:#f0f7f2;border-left:4px solid var(--success);}
+.rule.dont{background:#fdf0ef;border-left:4px solid var(--error);}
+.rule.warn{background:#faf2ea;border-left:4px solid var(--acc-t);}
+.rule strong{font-size:10px;letter-spacing:1px;text-transform:uppercase;}
+.rule.do strong{color:var(--success);}
+.rule.dont strong{color:var(--error);}
+.rule.warn strong{color:var(--acc-t);}
+
+/* MOCK */
+.mock{border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:0 6px 28px rgba(0,0,0,0.05);background:#fff;margin:20px 0;}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-ey">Aykah · Complete Design System · v1.0</div>
+  <h1>Brand Design Rules</h1>
+  <p>Colors, typography, and accessibility rules. Follow this document exactly when making any design or code changes to the Aykah brand.</p>
+  <div class="cover-meta">
+    <span>Brand: Aykah (aykah.ca)</span>
+    <span>WCAG 2.2 Level AA Compliant</span>
+    <span>Feb 2026</span>
+  </div>
+</div>
+
+<!-- BRAND VALUES -->
+<div class="s">
+  <div class="ey">01 · Brand Foundation</div>
+  <div class="st">Four Brand Values</div>
+  <div class="ss">Every color and font decision must serve these four values. If a design choice doesn't map to at least one, it doesn't belong.</div>
+
+  <table class="tbl">
+    <thead><tr><th>Value</th><th>What It Means</th><th>How Colors Serve It</th><th>How Fonts Serve It</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Comfort</strong></td>
+        <td>Warmth, softness, home. Customers should feel like they're already in a cozy room.</td>
+        <td>Warm golds, creamy ivories, soft backgrounds. The palette avoids cold blues/greys.</td>
+        <td>Libre Baskerville's transitional serifs convey heritage and authority. Manrope's rounded terminals feel warm and modern.</td>
+      </tr>
+      <tr>
+        <td><strong>Integrity</strong></td>
+        <td>Honest craftsmanship. No gimmicks, no fake luxury.</td>
+        <td>Indigo navy (#363B57) — deep, confident, no-nonsense. Not flashy black, not trendy teal.</td>
+        <td>Serif headings carry centuries of typographic heritage. Honest, established, proven.</td>
+      </tr>
+      <tr>
+        <td><strong>Friendly & Approachable</strong></td>
+        <td>Not intimidating. Customers feel welcome, not judged by their budget.</td>
+        <td>60% warm whites dominate the page. Gold accents are inviting, not exclusive.</td>
+        <td>Manrope's geometric-humanist forms balance friendliness with premium clarity.</td>
+      </tr>
+      <tr>
+        <td><strong>Trustworthy & Reliable</strong></td>
+        <td>Customer trusts Aykah enough to spend $500-$900 online without touching the product.</td>
+        <td>Navy = reliability. Green for verification. Consistent color usage builds predictability.</td>
+        <td>Serif fonts increase perceived trustworthiness by ~40%. Clear body text = nothing hidden.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- COLOR PALETTE -->
+<div class="s ivory">
+  <div class="ey">02 · Color Palette</div>
+  <div class="st">Complete Color Tokens</div>
+  <div class="ss">Every color in the system. Use CSS variable names exactly as shown. Do not invent new colors.</div>
+
+  <h3>Primary — Integrity + Trust</h3>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#363B57;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">--primary</div>
+        <div class="swatch-hex">#363B57</div>
+        <div class="swatch-ratio swatch-ok">10.94:1 on white</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#2A2E45;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">--primary-dark</div>
+        <div class="swatch-hex">#2A2E45</div>
+        <div class="swatch-ratio swatch-ok">13.33:1 on white</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#4A5070;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">--primary-light</div>
+        <div class="swatch-hex">#4A5070</div>
+        <div class="swatch-ratio swatch-ok">7.22:1 on white</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#EDEEF2;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">--primary-tint</div>
+        <div class="swatch-hex">#EDEEF2</div>
+        <div class="swatch-ratio" style="color:#888;">Background only</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Accent — Comfort + Friendly <span style="font-family:var(--font-b);font-size:11px;font-weight:400;color:#C0392B;margin-left:8px;">3 tokens — read rules below</span></h3>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#B8956A;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">--accent</div>
+        <div class="swatch-hex">#B8956A</div>
+        <div class="swatch-warn">2.78:1 — DECORATIVE ONLY</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#8B6E4A;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">--accent-text</div>
+        <div class="swatch-hex">#8B6E4A</div>
+        <div class="swatch-ratio swatch-ok">4.74:1 on white</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#7D6040;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">--accent-btn</div>
+        <div class="swatch-hex">#7D6040</div>
+        <div class="swatch-ratio swatch-ok">5.80:1 on white</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#D4BC9A;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">--accent-light</div>
+        <div class="swatch-hex">#D4BC9A</div>
+        <div class="swatch-ratio" style="color:#888;">Decorative only</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Backgrounds</h3>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FFFFFF;border-bottom:1px solid #eee;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">--white</div>
+        <div class="swatch-hex">#FFFFFF</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FAF8F4;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">--ivory</div>
+        <div class="swatch-hex">#FAF8F4</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#F7F3EE;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">--warm</div>
+        <div class="swatch-hex">#F7F3EE</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#E8E3DB;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">--border</div>
+        <div class="swatch-hex">#E8E3DB</div>
+        <div class="swatch-warn">Pair with shadow</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Text</h3>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#2C2C2C;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">--text-body</div>
+        <div class="swatch-hex">#2C2C2C</div>
+        <div class="swatch-ratio swatch-ok">13.97:1 on white</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#6B6560;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">--text-muted</div>
+        <div class="swatch-hex">#6B6560</div>
+        <div class="swatch-ratio swatch-ok">5.74:1 on white</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#76716B;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">--text-light</div>
+        <div class="swatch-hex">#76716B</div>
+        <div class="swatch-ratio swatch-ok">4.83:1 on white</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#B8B2A8;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">--text-disabled</div>
+        <div class="swatch-hex">#B8B2A8</div>
+        <div class="swatch-warn">Disabled/inactive ONLY</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Signals</h3>
+  <div class="swatch-grid" style="max-width:340px;">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#3D7A55;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">--success</div>
+        <div class="swatch-hex">#3D7A55</div>
+        <div class="swatch-ratio swatch-ok">5.11:1 on white</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#C0392B;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">--error</div>
+        <div class="swatch-hex">#C0392B</div>
+        <div class="swatch-ratio swatch-ok">5.44:1 on white</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COLOR RULES -->
+<div class="s alert">
+  <div class="ey" style="color:#C0392B;">03 · Color Rules — Critical</div>
+  <div class="st" style="color:#C0392B;">Do's and Don'ts</div>
+
+  <h3>Accent Color — Three Tokens, Three Roles</h3>
+  <div class="rule do"><strong>Do:</strong> Use <code>--accent (#B8956A)</code> for decorative elements only: star fill icons, decorative lines, background gradients, icon fills, hover glows.</div>
+  <div class="rule do"><strong>Do:</strong> Use <code>--accent-text (#8B6E4A)</code> for any gold-colored text: links, labels, eyebrow categories, price highlights. This passes 4.5:1 on white.</div>
+  <div class="rule do"><strong>Do:</strong> Use <code>--accent-btn (#7D6040)</code> for buttons with white text. This passes 4.5:1 for both text and UI contrast.</div>
+  <div class="rule dont"><strong>Never:</strong> Use <code>--accent (#B8956A)</code> as text color. It fails WCAG at 2.78:1. Zero exceptions.</div>
+  <div class="rule dont"><strong>Never:</strong> Put white text on <code>--accent (#B8956A)</code> background. It fails at 2.78:1. Use <code>--accent-btn (#7D6040)</code> instead.</div>
+
+  <h3>Text Colors</h3>
+  <div class="rule do"><strong>Do:</strong> Use <code>--text-body (#2C2C2C)</code> for all body text, product descriptions, specs.</div>
+  <div class="rule do"><strong>Do:</strong> Use <code>--text-muted (#6B6560)</code> for secondary info: delivery times, timestamps, breadcrumbs.</div>
+  <div class="rule do"><strong>Do:</strong> Use <code>--text-light (#76716B)</code> for helper text, captions, minor labels.</div>
+  <div class="rule dont"><strong>Never:</strong> Use <code>--text-disabled (#B8B2A8)</code> for any readable content. It is exclusively for disabled/inactive UI states.</div>
+
+  <h3>Borders</h3>
+  <div class="rule warn"><strong>Rule:</strong> <code>--border (#E8E3DB)</code> at 1.28:1 fails as a standalone UI boundary. Always pair it with <code>box-shadow</code> or a background color difference.</div>
+
+  <h3>Background Ratio — 60 / 30 / 10</h3>
+  <div class="rule do"><strong>Do:</strong> 60% warm whites (--white, --ivory, --warm) · 30% indigo (--primary, --primary-dark) · 10% gold + green accents.</div>
+</div>
+
+<!-- TYPOGRAPHY -->
+<div class="s">
+  <div class="ey">04 · Typography</div>
+  <div class="st">Two Fonts. No Exceptions.</div>
+  <div class="ss">Heading font: Libre Baskerville. Body font: Manrope. Never add a third font.</div>
+
+  <h3>Font Import</h3>
+  <pre>&lt;link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"&gt;</pre>
+
+  <h3>Font Assignment</h3>
+  <table class="tbl">
+    <thead><tr><th>Font</th><th>Family</th><th>Weight Range</th><th>Used For</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong style="font-family:var(--font-h);font-size:16px;">Libre Baskerville</strong></td>
+        <td><code>'Libre Baskerville', Georgia, serif</code></td>
+        <td>400, 700 (+ italic 400)</td>
+        <td>Hero titles, section headings, product names, prices, testimonials (italic), subsections</td>
+      </tr>
+      <tr>
+        <td><strong>Manrope</strong></td>
+        <td><code>'Manrope', -apple-system, sans-serif</code></td>
+        <td>200-800 (use 300-600 primarily)</td>
+        <td>Body text, descriptions, buttons, eyebrow labels, navigation, helper text, captions, forms, UI elements</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- TYPE SCALE -->
+<div class="s ivory">
+  <div class="ey">05 · Type Scale</div>
+  <div class="st">Every Text Size Defined</div>
+  <div class="ss">Use these exact sizes. Do not invent intermediate sizes.</div>
+
+  <div class="scale">
+    <div class="scale-row">
+      <div class="scale-label">Hero Title</div>
+      <div class="scale-spec">Baskerville 700 / 34px / 1.1</div>
+      <div style="font-family:var(--font-h);font-size:34px;font-weight:700;color:#363B57;line-height:1.1;">More Space, Same Room</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-label">Section Title</div>
+      <div class="scale-spec">Baskerville 700 / 26px / 1.2</div>
+      <div style="font-family:var(--font-h);font-size:26px;font-weight:700;color:#363B57;line-height:1.2;">Designed with Purpose</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-label">Product Name</div>
+      <div class="scale-spec">Baskerville 400 / 22px / 1.25</div>
+      <div style="font-family:var(--font-h);font-size:22px;font-weight:500;color:#363B57;">Lunel Lift-Up Storage Bed</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-label">Price</div>
+      <div class="scale-spec">Baskerville 700 / 24px / 1</div>
+      <div style="font-family:var(--font-h);font-size:24px;font-weight:600;color:#363B57;">$900</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-label">Subsection</div>
+      <div class="scale-spec">Baskerville 400 / 18px / 1.3</div>
+      <div style="font-family:var(--font-h);font-size:18px;font-weight:400;color:#363B57;">Features & Dimensions</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-label">Testimonial</div>
+      <div class="scale-spec">Baskerville 400i / 17px / 1.55</div>
+      <div style="font-family:var(--font-h);font-size:17px;font-weight:400;font-style:italic;color:#363B57;">"Game changer for our small bedroom."</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-label">Eyebrow</div>
+      <div class="scale-spec">Manrope 600 / 10px / 1</div>
+      <div style="font-size:10px;font-weight:600;letter-spacing:3px;color:#8B6E4A;">BESTSELLER · STORAGE BEDS</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-label">Body</div>
+      <div class="scale-spec">Manrope 400 / 14px / 1.65</div>
+      <div style="font-size:14px;font-weight:400;color:#2C2C2C;line-height:1.65;">The Lunel storage bed combines clean design with smart functionality.</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-label">Body Small</div>
+      <div class="scale-spec">Manrope 400 / 13px / 1.6</div>
+      <div style="font-size:13px;font-weight:400;color:#2C2C2C;line-height:1.6;">Available in Queen, King, and Double. All sizes include hydraulic lift.</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-label">Button</div>
+      <div class="scale-spec">Manrope 600 / 11px / 1</div>
+      <div style="font-size:11px;font-weight:600;letter-spacing:1.5px;color:#363B57;">ADD TO CART</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-label">Helper</div>
+      <div class="scale-spec">Manrope 400 / 11px / 1.4</div>
+      <div style="font-size:11px;font-weight:400;color:#6B6560;">Complimentary delivery · Arrives in 5-7 business days</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-label">Caption</div>
+      <div class="scale-spec">Manrope 500 / 10px / 1.4</div>
+      <div style="font-size:10px;font-weight:500;color:#76716B;">Last updated 2 days ago · Verified purchase</div>
+    </div>
+  </div>
+
+  <h3>Typography Rules</h3>
+  <div class="rule do"><strong>Do:</strong> Eyebrows always: UPPERCASE + letter-spacing: 3px + font-weight: 600 + color: --accent-text.</div>
+  <div class="rule do"><strong>Do:</strong> Buttons always: UPPERCASE + letter-spacing: 1.5px + font-weight: 600.</div>
+  <div class="rule do"><strong>Do:</strong> Prices always in Libre Baskerville (serif numerals feel more premium).</div>
+  <div class="rule do"><strong>Do:</strong> Testimonials always in Libre Baskerville italic 400.</div>
+  <div class="rule dont"><strong>Never:</strong> Use Libre Baskerville for body text. It is headings and display only.</div>
+  <div class="rule dont"><strong>Never:</strong> Use Manrope for product names or prices.</div>
+  <div class="rule dont"><strong>Never:</strong> Use a third font anywhere.</div>
+  <div class="rule dont"><strong>Never:</strong> Go below 10px for any text.</div>
+</div>
+
+<!-- WCAG -->
+<div class="s">
+  <div class="ey">06 · WCAG 2.2 Level AA — All Rules</div>
+  <div class="st">Accessibility Compliance</div>
+  <div class="ss">Every rule this system must follow. Non-negotiable.</div>
+
+  <table class="tbl">
+    <thead><tr><th>WCAG Rule</th><th>Requirement</th><th>How This System Complies</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1.4.1 Use of Color</strong></td><td>Color is not the only visual means of conveying info</td><td>Links use underline + color. Status uses color + text/icon. Errors use color + message.</td></tr>
+      <tr><td><strong>1.4.3 Contrast (Min)</strong></td><td>Normal text >= 4.5:1. Large text >= 3:1</td><td>All text tokens pass 4.5:1 minimum on their intended backgrounds.</td></tr>
+      <tr><td><strong>1.4.4 Resize Text</strong></td><td>Text resizable to 200% without loss of content</td><td>Both fonts remain legible at 2x zoom. No overflow or clipping.</td></tr>
+      <tr><td><strong>1.4.11 Non-text Contrast</strong></td><td>UI components and graphics >= 3:1</td><td>Primary buttons: 10.94:1. Gold buttons: 5.80:1. Focus rings use --primary-light.</td></tr>
+      <tr><td><strong>1.4.12 Text Spacing</strong></td><td>No loss when: line-height >= 1.5x, paragraph spacing >= 2x</td><td>Body line-height: 1.65 (exceeds 1.5x). Both fonts handle override spacing.</td></tr>
+      <tr><td><strong>2.4.7 Focus Visible</strong></td><td>Keyboard focus indicator is visible</td><td>Focus rings use --primary-light (#4A5070) with 2px solid outline + 2px offset.</td></tr>
+      <tr><td><strong>2.4.11 Focus Appearance</strong></td><td>Focus indicator >= 3:1 between focused/unfocused</td><td>--primary-light provides >=3:1 contrast against all backgrounds.</td></tr>
+      <tr><td><strong>Font Loading</strong></td><td>No content hidden during font load</td><td>Google Fonts uses display=swap. System fallbacks render immediately.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Contrast Quick Reference</h3>
+  <table class="tbl">
+    <thead><tr><th>Combination</th><th>Ratio</th><th>Normal Text</th><th>Large Text</th><th>UI Element</th></tr></thead>
+    <tbody>
+      <tr><td>--text-body on --white</td><td>13.97:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td></tr>
+      <tr><td>--primary on --white</td><td>10.94:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td></tr>
+      <tr><td>White on --primary</td><td>10.94:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td></tr>
+      <tr><td>White on --primary-dark</td><td>13.33:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td></tr>
+      <tr><td>--text-muted on --white</td><td>5.74:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td></tr>
+      <tr><td>--text-light on --white</td><td>4.83:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td></tr>
+      <tr><td>--accent-text on --white</td><td>4.74:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td></tr>
+      <tr><td>White on --accent-btn</td><td>5.80:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td></tr>
+      <tr><td>--success on --white</td><td>5.11:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td></tr>
+      <tr><td>--error on --white</td><td>5.44:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td></tr>
+      <tr><td style="color:#C0392B;">--accent on --white</td><td style="color:#C0392B;">2.78:1</td><td class="fail">FAIL</td><td class="fail">FAIL</td><td class="fail">FAIL</td></tr>
+      <tr><td style="color:#C0392B;">--text-disabled on --white</td><td style="color:#C0392B;">2.11:1</td><td class="fail">FAIL</td><td class="fail">FAIL</td><td class="fail">FAIL</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:11px;color:#C0392B;font-weight:600;">The last two rows FAIL intentionally — they must never be used for readable text.</p>
+</div>
+
+<!-- CSS TOKENS -->
+<div class="s ivory">
+  <div class="ey">07 · CSS Tokens — Copy-Paste Ready</div>
+  <div class="st">Complete Implementation Code</div>
+
+  <pre>/* AYKAH DESIGN SYSTEM v1.0 — WCAG 2.2 Level AA */
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+:root {
+  --font-heading:  'Libre Baskerville', Georgia, serif;
+  --font-body:     'Manrope', -apple-system, sans-serif;
+
+  --primary:       #363B57;
+  --primary-dark:  #2A2E45;
+  --primary-light: #4A5070;
+  --primary-tint:  #EDEEF2;
+
+  --accent:        #B8956A;   /* DECORATIVE ONLY */
+  --accent-text:   #8B6E4A;   /* gold text, links, labels */
+  --accent-btn:    #7D6040;   /* buttons with white text */
+  --accent-light:  #D4BC9A;
+  --accent-glow:   rgba(184, 149, 106, 0.08);
+
+  --white:         #FFFFFF;
+  --ivory:         #FAF8F4;
+  --warm:          #F7F3EE;
+  --border:        #E8E3DB;
+
+  --text-body:     #2C2C2C;
+  --text-muted:    #6B6560;
+  --text-light:    #76716B;
+  --text-disabled: #B8B2A8;   /* DISABLED STATES ONLY */
+
+  --success:       #3D7A55;
+  --error:         #C0392B;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary-light);
+  outline-offset: 2px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}</pre>
+</div>
+
+<!-- PAGE MOCK -->
+<div class="s warm">
+  <div class="ey">08 · Full Page Preview</div>
+  <div class="st">Everything Together</div>
+
+  <div class="mock">
+    <div style="background:var(--pri-d);padding:8px 20px;text-align:center;font-size:10px;letter-spacing:2px;font-weight:500;color:rgba(255,255,255,0.5);">COMPLIMENTARY DELIVERY ACROSS CANADA · <span style="color:#D4BC9A;text-decoration:underline;">SHOP STORAGE BEDS</span></div>
+    <div style="background:var(--pri);padding:14px 28px;display:flex;justify-content:space-between;align-items:center;">
+      <div style="font-family:var(--font-h);font-size:22px;font-weight:600;color:#fff;letter-spacing:0.5px;">aykah</div>
+      <div style="font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.35);font-weight:500;">SHOP &nbsp; ABOUT &nbsp; CONTACT</div>
+    </div>
+    <div style="background:var(--warm);padding:52px 36px;text-align:center;">
+      <div style="font-size:10px;letter-spacing:3px;color:#8B6E4A;font-weight:600;margin-bottom:10px;">BESTSELLER · STORAGE BEDS</div>
+      <div style="font-family:var(--font-h);font-size:36px;font-weight:600;color:#363B57;line-height:1.12;margin-bottom:8px;">More Space, Same Room</div>
+      <div style="font-size:14px;color:#6B6560;font-weight:300;margin-bottom:20px;">Shop our most loved lift-up storage beds, starting from $699</div>
+      <div style="display:inline-block;background:#363B57;color:#fff;padding:13px 36px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;">Shop Storage Beds</div>
+    </div>
+    <div style="display:flex;justify-content:center;gap:32px;padding:14px 20px;border-bottom:1px solid #e8e3db;font-size:11px;color:#6B6560;">
+      <span>Free Shipping</span><span>Showrooms</span><span style="color:#3D7A55;">1-Year Warranty</span>
+    </div>
+    <div style="padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+      <div style="background:var(--warm);border-radius:10px;height:300px;display:flex;align-items:center;justify-content:center;color:#D4BC9A;font-size:14px;font-style:italic;">[ Product Image ]</div>
+      <div>
+        <div style="font-size:9px;letter-spacing:2.5px;color:#8B6E4A;font-weight:600;margin-bottom:6px;">STORAGE BED · QUEEN / KING</div>
+        <div style="font-family:var(--font-h);font-size:26px;font-weight:500;color:#363B57;line-height:1.15;margin-bottom:8px;">Lunel Lift-Up Storage Bed</div>
+        <div style="color:#B8956A;font-size:13px;margin-bottom:8px;">stars <span style="color:#76716B;font-size:11px;">4.8 (2,341 reviews)</span></div>
+        <div style="font-size:14px;color:#2C2C2C;line-height:1.65;margin-bottom:16px;font-weight:300;">Maximize your bedroom with hidden storage. Lift the mattress to reveal a spacious compartment for bedding, seasonal clothes, and more.</div>
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:6px;">
+          <span style="font-family:var(--font-h);font-size:26px;font-weight:600;color:#363B57;">$900</span>
+          <span style="font-size:11px;color:#3D7A55;font-weight:600;">Save $120 with bundle</span>
+        </div>
+        <div style="font-size:11px;color:#76716B;margin-bottom:18px;">or 4 payments of $225.00 with Afterpay</div>
+        <div style="background:#363B57;color:#fff;padding:14px;text-align:center;font-size:11px;font-weight:600;letter-spacing:2px;margin-bottom:8px;">ADD TO CART</div>
+        <div style="background:#7D6040;color:#fff;padding:14px;text-align:center;font-size:11px;font-weight:600;letter-spacing:2px;">BUY NOW</div>
+      </div>
+    </div>
+    <div style="padding:32px 44px;text-align:center;background:var(--ivory);">
+      <div style="font-family:var(--font-h);font-size:18px;font-weight:400;font-style:italic;color:#363B57;line-height:1.55;max-width:520px;margin:0 auto 10px;">"Finally a bed that looks beautiful AND gives me room for all my extra bedding. Game changer for our small condo."</div>
+      <div style="font-size:11px;color:#76716B;">— Sarah M., Toronto · <span style="color:#3D7A55;">Verified Buyer</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- CHECKLIST -->
+<div class="s dark">
+  <div class="ey">09 · Quick Checklist</div>
+  <div class="st">Before You Ship Anything</div>
+  <div class="ss">Run through this list before deploying any design change.</div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;">
+    <div style="padding:16px;background:rgba(255,255,255,0.04);border-radius:10px;border:1px solid rgba(255,255,255,0.06);">
+      <p style="font-size:11px;margin-bottom:4px;"><strong style="color:#D4BC9A;">Colors</strong></p>
+      <p style="font-size:11px;">Only using hex codes from this system<br>No #B8956A used as text color<br>No white text on #B8956A background<br>#B8B2A8 only on disabled elements<br>Borders paired with box-shadow<br>60/30/10 ratio maintained</p>
+    </div>
+    <div style="padding:16px;background:rgba(255,255,255,0.04);border-radius:10px;border:1px solid rgba(255,255,255,0.06);">
+      <p style="font-size:11px;margin-bottom:4px;"><strong style="color:#D4BC9A;">Typography</strong></p>
+      <p style="font-size:11px;">Only Libre Baskerville + Manrope used<br>Headings/prices in Libre Baskerville<br>Body/UI in Manrope<br>No text below 10px<br>Eyebrows are uppercase + 3px spacing<br>Buttons are uppercase + 1.5px spacing</p>
+    </div>
+    <div style="padding:16px;background:rgba(255,255,255,0.04);border-radius:10px;border:1px solid rgba(255,255,255,0.06);">
+      <p style="font-size:11px;margin-bottom:4px;"><strong style="color:#D4BC9A;">WCAG</strong></p>
+      <p style="font-size:11px;">All text >= 4.5:1 contrast on background<br>All UI elements >= 3:1 contrast<br>Focus rings visible on all interactive elements<br>Color never the only indicator<br>Page works at 200% zoom<br>display=swap on font import</p>
+    </div>
+    <div style="padding:16px;background:rgba(255,255,255,0.04);border-radius:10px;border:1px solid rgba(255,255,255,0.06);">
+      <p style="font-size:11px;margin-bottom:4px;"><strong style="color:#D4BC9A;">Brand</strong></p>
+      <p style="font-size:11px;">Design feels warm, not cold<br>Design feels trustworthy, not flashy<br>Design feels approachable, not intimidating<br>Design feels honest, not gimmicky<br>Serif headings carry quality perception<br>Body text is easy to read on mobile</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

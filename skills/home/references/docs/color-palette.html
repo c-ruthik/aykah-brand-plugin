@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aykah — Color Palette</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  color: #2C2C2C;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  width: 210mm;
+}
+
+/* COVER HEADER */
+.cover {
+  background: #363B57;
+  padding: 48px 52px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -30px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(184,149,106,0.06), transparent 70%);
+}
+.cover-tag {
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.cover h1 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 34px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+.cover p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  font-weight: 300;
+  max-width: 420px;
+}
+.cover-meta {
+  margin-top: 16px;
+  display: flex;
+  gap: 20px;
+  font-size: 9px;
+  color: rgba(255,255,255,0.15);
+  letter-spacing: 1px;
+}
+
+/* SECTIONS */
+.section {
+  padding: 36px 52px;
+  border-bottom: 1px solid #E8E3DB;
+}
+.section:last-child { border-bottom: none; }
+.section.ivory { background: #FAF8F4; }
+
+.eyebrow {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #8B6E4A;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.section-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 22px;
+  color: #363B57;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+.section-sub {
+  font-size: 12px;
+  color: #76716B;
+  margin-bottom: 20px;
+}
+
+/* SWATCH GRID */
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 14px 0 24px;
+}
+.swatch {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #E8E3DB;
+  break-inside: avoid;
+}
+.swatch-color {
+  height: 56px;
+}
+.swatch-info {
+  padding: 8px 10px;
+  background: #fff;
+}
+.swatch-name {
+  font-size: 10px;
+  font-weight: 700;
+  color: #363B57;
+  letter-spacing: 0.3px;
+}
+.swatch-hex {
+  font-size: 10px;
+  color: #76716B;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  margin-top: 1px;
+}
+.swatch-ratio {
+  font-size: 9px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+.swatch-ok { color: #3D7A55; }
+.swatch-caution { color: #B8860B; }
+.swatch-warn {
+  font-size: 8px;
+  color: #C0392B;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+/* GROUP LABEL */
+h3 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #363B57;
+  margin: 20px 0 4px;
+}
+h3:first-of-type { margin-top: 0; }
+h3 .note {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: #C0392B;
+  margin-left: 8px;
+}
+
+/* RULES */
+.rules-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+.rule {
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.rule.do {
+  background: #f0f7f2;
+  border-left: 3px solid #3D7A55;
+}
+.rule.dont {
+  background: #fdf0ef;
+  border-left: 3px solid #C0392B;
+}
+.rule strong {
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 2px;
+}
+.rule.do strong { color: #3D7A55; }
+.rule.dont strong { color: #C0392B; }
+code {
+  background: #f0ede8;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-family: monospace;
+  color: #363B57;
+}
+
+/* RATIO TABLE */
+.ratio-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 0;
+  font-size: 10px;
+  border-bottom: 1px solid #f0ede8;
+}
+.ratio-bar:last-child { border-bottom: none; }
+.ratio-swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.ratio-label {
+  flex: 1;
+  color: #6B6560;
+}
+.ratio-value {
+  font-weight: 600;
+  font-family: monospace;
+  width: 55px;
+  text-align: right;
+}
+.ratio-pass { color: #3D7A55; }
+.ratio-fail { color: #C0392B; }
+.ratio-badge {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  width: 34px;
+  text-align: center;
+}
+.badge-pass { background: #e8f5ed; color: #3D7A55; }
+.badge-fail { background: #fde8e6; color: #C0392B; }
+
+/* BACKGROUND RATIO */
+.bg-ratio {
+  display: flex;
+  gap: 4px;
+  margin-top: 12px;
+  height: 28px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.bg-ratio div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* CSS TOKENS */
+.tokens-box {
+  background: #1e2030;
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-top: 14px;
+  font-size: 10.5px;
+  line-height: 1.7;
+  color: #d4d4d4;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  white-space: pre-wrap;
+}
+.tokens-box .comment { color: #6a6e80; }
+.tokens-box .prop { color: #89b4fa; }
+.tokens-box .val { color: #a6e3a1; }
+.tokens-box .warn { color: #f38ba8; }
+
+/* FOOTER */
+.footer {
+  background: #363B57;
+  padding: 24px 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-left {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+.footer-right {
+  font-size: 9px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 1px;
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-tag">Aykah &middot; Brand Color Palette</div>
+  <h1>Color Palette Guide</h1>
+  <p>Official brand colors with WCAG 2.2 AA contrast ratios, usage rules, and CSS tokens. Share this with designers, developers, and vendors.</p>
+  <div class="cover-meta">
+    <span>Brand: Aykah (aykah.ca)</span>
+    <span>WCAG 2.2 Level AA</span>
+    <span>April 2026</span>
+  </div>
+</div>
+
+<!-- PRIMARY COLORS -->
+<div class="section">
+  <div class="eyebrow">01 &middot; Primary Colors</div>
+  <div class="section-title">Indigo Navy &mdash; Integrity + Trust</div>
+  <div class="section-sub">The foundation of the brand. Used for navigation, headings, buttons, and dark sections.</div>
+
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#363B57;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Primary</div>
+        <div class="swatch-hex">#363B57</div>
+        <div class="swatch-ratio swatch-ok">10.94:1 on white</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#2A2E45;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Primary Dark</div>
+        <div class="swatch-hex">#2A2E45</div>
+        <div class="swatch-ratio swatch-ok">13.33:1 on white</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#4A5070;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Primary Light</div>
+        <div class="swatch-hex">#4A5070</div>
+        <div class="swatch-ratio swatch-ok">7.22:1 on white</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#EDEEF2;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Primary Tint</div>
+        <div class="swatch-hex">#EDEEF2</div>
+        <div class="swatch-ratio" style="color:#888;">Background only</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="eyebrow" style="margin-top:28px;">02 &middot; Accent Colors</div>
+  <div class="section-title">Warm Gold &mdash; Comfort + Friendly</div>
+  <div class="section-sub">Gold has 3 distinct tokens &mdash; each for a specific use. Never interchange them.</div>
+
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#B8956A;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Accent</div>
+        <div class="swatch-hex">#B8956A</div>
+        <div class="swatch-warn">2.78:1 &mdash; DECORATIVE ONLY</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#8B6E4A;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Accent Text</div>
+        <div class="swatch-hex">#8B6E4A</div>
+        <div class="swatch-ratio swatch-ok">4.74:1 on white</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#7D6040;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Accent Button</div>
+        <div class="swatch-hex">#7D6040</div>
+        <div class="swatch-ratio swatch-ok">5.80:1 on white</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#D4BC9A;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Accent Light</div>
+        <div class="swatch-hex">#D4BC9A</div>
+        <div class="swatch-ratio" style="color:#888;">Decorative only</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BACKGROUNDS & TEXT -->
+<div class="section ivory">
+  <div class="eyebrow">03 &middot; Backgrounds</div>
+  <div class="section-title">Warm Neutral Surfaces</div>
+  <div class="section-sub">Page backgrounds use a 60/30/10 ratio: 60% warm whites, 30% navy, 10% gold accents.</div>
+
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FFFFFF; border-bottom: 1px solid #eee;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">White</div>
+        <div class="swatch-hex">#FFFFFF</div>
+        <div class="swatch-ratio" style="color:#888;">Primary background</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FAF8F4;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Ivory</div>
+        <div class="swatch-hex">#FAF8F4</div>
+        <div class="swatch-ratio" style="color:#888;">Alternating sections</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#F7F3EE;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Warm</div>
+        <div class="swatch-hex">#F7F3EE</div>
+        <div class="swatch-ratio" style="color:#888;">Hero & cards</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#E8E3DB;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Border</div>
+        <div class="swatch-hex">#E8E3DB</div>
+        <div class="swatch-ratio" style="color:#888;">Always pair w/ shadow</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background ratio visual -->
+  <div class="bg-ratio">
+    <div style="flex:6; background:#FAF8F4; color:#76716B;">60% WARM WHITES</div>
+    <div style="flex:3; background:#363B57; color:rgba(255,255,255,0.5);">30% NAVY</div>
+    <div style="flex:1; background:#B8956A; color:rgba(255,255,255,0.7);">10%</div>
+  </div>
+
+  <div class="eyebrow" style="margin-top:28px;">04 &middot; Text Colors</div>
+  <div class="section-title">Readable at Every Level</div>
+  <div class="section-sub">All text colors pass WCAG 4.5:1 minimum on white backgrounds, except disabled (intentional).</div>
+
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#2C2C2C;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Body Text</div>
+        <div class="swatch-hex">#2C2C2C</div>
+        <div class="swatch-ratio swatch-ok">13.97:1 on white</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#6B6560;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Muted</div>
+        <div class="swatch-hex">#6B6560</div>
+        <div class="swatch-ratio swatch-ok">5.74:1 on white</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#76716B;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Light</div>
+        <div class="swatch-hex">#76716B</div>
+        <div class="swatch-ratio swatch-ok">4.83:1 on white</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#B8B2A8;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Disabled</div>
+        <div class="swatch-hex">#B8B2A8</div>
+        <div class="swatch-warn">Disabled states ONLY</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SIGNAL COLORS + CONTRAST TABLE -->
+<div class="section">
+  <div class="eyebrow">05 &middot; Signal Colors</div>
+  <div class="section-title">Success & Error</div>
+  <div class="section-sub">Used for status messages, validation, and alerts. Never for decoration.</div>
+
+  <div class="swatch-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 340px;">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#3D7A55;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Success</div>
+        <div class="swatch-hex">#3D7A55</div>
+        <div class="swatch-ratio swatch-ok">5.11:1 on white</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#C0392B;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Error</div>
+        <div class="swatch-hex">#C0392B</div>
+        <div class="swatch-ratio swatch-ok">5.44:1 on white</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="eyebrow" style="margin-top:28px;">06 &middot; Contrast Ratios</div>
+  <div class="section-title">WCAG 2.2 AA Compliance</div>
+  <div class="section-sub">Every combination verified. Green = passes 4.5:1 minimum for normal text.</div>
+
+  <div style="margin-top: 10px;">
+    <div class="ratio-bar">
+      <div class="ratio-swatch" style="background:#2C2C2C;"></div>
+      <div class="ratio-label">Body text on white</div>
+      <div class="ratio-value ratio-pass">13.97:1</div>
+      <div class="ratio-badge badge-pass">PASS</div>
+    </div>
+    <div class="ratio-bar">
+      <div class="ratio-swatch" style="background:#363B57;"></div>
+      <div class="ratio-label">Primary on white</div>
+      <div class="ratio-value ratio-pass">10.94:1</div>
+      <div class="ratio-badge badge-pass">PASS</div>
+    </div>
+    <div class="ratio-bar">
+      <div class="ratio-swatch" style="background:#2A2E45;"></div>
+      <div class="ratio-label">White on primary-dark</div>
+      <div class="ratio-value ratio-pass">13.33:1</div>
+      <div class="ratio-badge badge-pass">PASS</div>
+    </div>
+    <div class="ratio-bar">
+      <div class="ratio-swatch" style="background:#4A5070;"></div>
+      <div class="ratio-label">Primary-light on white</div>
+      <div class="ratio-value ratio-pass">7.22:1</div>
+      <div class="ratio-badge badge-pass">PASS</div>
+    </div>
+    <div class="ratio-bar">
+      <div class="ratio-swatch" style="background:#6B6560;"></div>
+      <div class="ratio-label">Muted text on white</div>
+      <div class="ratio-value ratio-pass">5.74:1</div>
+      <div class="ratio-badge badge-pass">PASS</div>
+    </div>
+    <div class="ratio-bar">
+      <div class="ratio-swatch" style="background:#76716B;"></div>
+      <div class="ratio-label">Light text on white</div>
+      <div class="ratio-value ratio-pass">4.83:1</div>
+      <div class="ratio-badge badge-pass">PASS</div>
+    </div>
+    <div class="ratio-bar">
+      <div class="ratio-swatch" style="background:#8B6E4A;"></div>
+      <div class="ratio-label">Accent text on white</div>
+      <div class="ratio-value ratio-pass">4.74:1</div>
+      <div class="ratio-badge badge-pass">PASS</div>
+    </div>
+    <div class="ratio-bar">
+      <div class="ratio-swatch" style="background:#7D6040;"></div>
+      <div class="ratio-label">White on accent-btn</div>
+      <div class="ratio-value ratio-pass">5.80:1</div>
+      <div class="ratio-badge badge-pass">PASS</div>
+    </div>
+    <div class="ratio-bar">
+      <div class="ratio-swatch" style="background:#3D7A55;"></div>
+      <div class="ratio-label">Success on white</div>
+      <div class="ratio-value ratio-pass">5.11:1</div>
+      <div class="ratio-badge badge-pass">PASS</div>
+    </div>
+    <div class="ratio-bar">
+      <div class="ratio-swatch" style="background:#C0392B;"></div>
+      <div class="ratio-label">Error on white</div>
+      <div class="ratio-value ratio-pass">5.44:1</div>
+      <div class="ratio-badge badge-pass">PASS</div>
+    </div>
+    <div class="ratio-bar" style="background:#fde8e6; border-radius:6px; padding:5px 8px;">
+      <div class="ratio-swatch" style="background:#B8956A;"></div>
+      <div class="ratio-label" style="color:#C0392B; font-weight:600;">Accent on white &mdash; NEVER as text</div>
+      <div class="ratio-value ratio-fail">2.78:1</div>
+      <div class="ratio-badge badge-fail">FAIL</div>
+    </div>
+    <div class="ratio-bar" style="background:#fde8e6; border-radius:6px; padding:5px 8px;">
+      <div class="ratio-swatch" style="background:#B8B2A8;"></div>
+      <div class="ratio-label" style="color:#C0392B; font-weight:600;">Disabled on white &mdash; disabled states only</div>
+      <div class="ratio-value ratio-fail">2.11:1</div>
+      <div class="ratio-badge badge-fail">FAIL</div>
+    </div>
+  </div>
+</div>
+
+<!-- USAGE RULES -->
+<div class="section ivory">
+  <div class="eyebrow">07 &middot; Usage Rules</div>
+  <div class="section-title">Do's and Don'ts</div>
+  <div class="section-sub">Critical rules for anyone working with Aykah colors.</div>
+
+  <div class="rules-grid">
+    <div class="rule do">
+      <strong>Do</strong>
+      Use <code>#B8956A</code> for decorative elements only: star icons, decorative lines, background gradients, icon fills, hover glows.
+    </div>
+    <div class="rule dont">
+      <strong>Never</strong>
+      Use <code>#B8956A</code> as text color. It fails WCAG at 2.78:1. Zero exceptions.
+    </div>
+    <div class="rule do">
+      <strong>Do</strong>
+      Use <code>#8B6E4A</code> for any gold-colored text: links, labels, eyebrow categories, price highlights. Passes 4.5:1.
+    </div>
+    <div class="rule dont">
+      <strong>Never</strong>
+      Put white text on <code>#B8956A</code> background. Use <code>#7D6040</code> for buttons instead.
+    </div>
+    <div class="rule do">
+      <strong>Do</strong>
+      Use <code>#7D6040</code> for buttons with white text. Passes both text and UI contrast requirements.
+    </div>
+    <div class="rule dont">
+      <strong>Never</strong>
+      Use <code>#B8B2A8</code> for readable content. It is exclusively for disabled/inactive UI states.
+    </div>
+    <div class="rule do">
+      <strong>Do</strong>
+      Always pair <code>#E8E3DB</code> borders with a box-shadow or background color change for visibility.
+    </div>
+    <div class="rule dont">
+      <strong>Never</strong>
+      Invent new colors outside this system. All hex values must come from this palette.
+    </div>
+  </div>
+</div>
+
+<!-- CSS TOKENS -->
+<div class="section">
+  <div class="eyebrow">08 &middot; CSS Tokens</div>
+  <div class="section-title">Copy-Paste Ready</div>
+  <div class="section-sub">Drop this into any project stylesheet to use the full Aykah color system.</div>
+
+  <div class="tokens-box"><span class="comment">/* AYKAH COLOR PALETTE &mdash; WCAG 2.2 Level AA */</span>
+
+:root {
+  <span class="comment">/* Primary &mdash; Navy */</span>
+  <span class="prop">--primary:</span>       <span class="val">#363B57</span>;
+  <span class="prop">--primary-dark:</span>  <span class="val">#2A2E45</span>;
+  <span class="prop">--primary-light:</span> <span class="val">#4A5070</span>;
+  <span class="prop">--primary-tint:</span>  <span class="val">#EDEEF2</span>;
+
+  <span class="comment">/* Accent &mdash; Gold */</span>
+  <span class="prop">--accent:</span>        <span class="val">#B8956A</span>;   <span class="warn">/* DECORATIVE ONLY */</span>
+  <span class="prop">--accent-text:</span>   <span class="val">#8B6E4A</span>;   <span class="comment">/* gold text, links, labels */</span>
+  <span class="prop">--accent-btn:</span>    <span class="val">#7D6040</span>;   <span class="comment">/* buttons with white text */</span>
+  <span class="prop">--accent-light:</span>  <span class="val">#D4BC9A</span>;
+  <span class="prop">--accent-glow:</span>   <span class="val">rgba(184, 149, 106, 0.08)</span>;
+
+  <span class="comment">/* Backgrounds */</span>
+  <span class="prop">--white:</span>         <span class="val">#FFFFFF</span>;
+  <span class="prop">--ivory:</span>         <span class="val">#FAF8F4</span>;
+  <span class="prop">--warm:</span>          <span class="val">#F7F3EE</span>;
+  <span class="prop">--border:</span>        <span class="val">#E8E3DB</span>;
+
+  <span class="comment">/* Text */</span>
+  <span class="prop">--text-body:</span>     <span class="val">#2C2C2C</span>;
+  <span class="prop">--text-muted:</span>    <span class="val">#6B6560</span>;
+  <span class="prop">--text-light:</span>    <span class="val">#76716B</span>;
+  <span class="prop">--text-disabled:</span> <span class="val">#B8B2A8</span>;   <span class="warn">/* DISABLED STATES ONLY */</span>
+
+  <span class="comment">/* Signals */</span>
+  <span class="prop">--success:</span>       <span class="val">#3D7A55</span>;
+  <span class="prop">--error:</span>         <span class="val">#C0392B</span>;
+}</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-left">aykah</div>
+  <div class="footer-right">CONFIDENTIAL &middot; AYKAH BRAND COLOR PALETTE &middot; APRIL 2026</div>
+</div>
+
+</body>
+</html>

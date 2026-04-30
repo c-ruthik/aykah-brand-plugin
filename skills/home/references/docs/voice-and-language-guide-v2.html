@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aykah — Voice &amp; Premium Language Guide v2</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+@page{size:A4;margin:0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Manrope',-apple-system,sans-serif;color:#2C2C2C;background:#fff;-webkit-font-smoothing:antialiased;line-height:1.55;font-size:10.5px;width:210mm}
+:root{--n:#363B57;--nd:#2A2E45;--g:#B8956A;--gd:#8B6E4A;--gl:#D4BC9A;--iv:#FAF8F4;--w:#F7F3EE;--bd:#E8E3DB;--tx:#2C2C2C;--lt:#76716B;--mt:#6B6560;--ok:#3D7A55;--er:#C0392B;--fh:'Libre Baskerville',Georgia,serif;--fb:'Manrope',-apple-system,sans-serif}
+.pb{page-break-before:always}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+/* COVER */
+.cover{background:var(--n);min-height:297mm;padding:70px 56px 50px;position:relative;overflow:hidden}
+.cover::after{content:'';position:absolute;bottom:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--g),var(--gl))}
+.cover-top{overflow:hidden;margin-bottom:120px}
+.cover-wm{font-family:var(--fh);font-size:26px;font-weight:700;color:#fff;letter-spacing:6px;float:left}
+.cover-ver{font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:2px;text-transform:uppercase;float:right;padding-top:8px}
+.cover-badge{display:inline-block;background:rgba(184,149,106,0.15);border:1px solid rgba(184,149,106,0.25);border-radius:4px;padding:4px 12px;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--g);font-weight:600;margin-bottom:16px}
+.cover h1{font-family:var(--fh);font-size:38px;color:#fff;font-weight:700;line-height:1.12;max-width:500px;margin-bottom:12px}
+.cover .sub{font-size:13px;color:rgba(255,255,255,0.35);max-width:420px;line-height:1.7;font-weight:300}
+.cover-foot{position:absolute;bottom:20px;left:56px;right:56px}
+.cover-foot span{font-size:8px;color:rgba(255,255,255,0.12);letter-spacing:1.5px;text-transform:uppercase;margin-right:36px}
+
+/* SECTIONS */
+.s{padding:32px 50px 24px;border-bottom:1px solid var(--bd)}
+.s.iv{background:var(--iv)}
+.s.nv{background:var(--n)}
+.s.wm{background:var(--w)}
+.s.al{background:#FFF8F0;border-bottom-color:#F0DCC0}
+.ey{font-size:8.5px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gd);font-weight:700;margin-bottom:3px}
+.nv .ey{color:var(--g)}
+.st{font-family:var(--fh);font-size:20px;color:var(--n);font-weight:700;line-height:1.2;margin-bottom:3px}
+.nv .st{color:#fff}
+.ss{font-size:11px;color:var(--lt);margin-bottom:14px}
+.nv .ss{color:rgba(255,255,255,0.3)}
+p{font-size:10.5px;color:#555;line-height:1.7;margin-bottom:6px;max-width:680px}
+strong{font-weight:600;color:var(--tx)}
+.nv p{color:rgba(255,255,255,0.45)}
+.nv strong{color:#fff}
+h3{font-family:var(--fh);font-size:14px;font-weight:700;color:var(--n);margin:16px 0 5px}
+.nv h3{color:#fff}
+h4{font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gd);font-weight:700;margin:12px 0 4px}
+
+/* TABLES */
+.tw{border:1px solid var(--bd);border-radius:6px;overflow:hidden;margin:8px 0 12px}
+table.dt{width:100%;border-collapse:collapse;font-size:10px}
+table.dt th{text-align:left;font-weight:700;font-size:7.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gd);padding:7px 12px;border-bottom:2px solid var(--bd);background:var(--iv)}
+table.dt td{padding:6px 12px;border-bottom:1px solid #f0ece6;color:#444;vertical-align:top;line-height:1.45}
+table.dt tr:last-child td{border-bottom:none}
+.pass{color:var(--ok);font-weight:700}.fail{color:var(--er);font-weight:700}
+
+/* DO/DONT */
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.do-b{background:#F0F7F2;border:1px solid #C8E0CE;border-radius:6px;padding:10px 14px}
+.dn-b{background:#FFF5F3;border:1px solid #F0D0C8;border-radius:6px;padding:10px 14px}
+.dl{font-size:7.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:800;margin-bottom:4px}
+.dl.do{color:var(--ok)}.dl.dn{color:var(--er)}
+
+/* CARDS */
+.cg{display:grid;gap:8px;margin:8px 0}
+.cg2{grid-template-columns:1fr 1fr}
+.cg3{grid-template-columns:1fr 1fr 1fr}
+.cd{background:#fff;border:1px solid var(--bd);border-radius:6px;padding:10px 14px}
+.cl{font-size:7.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gd);font-weight:700;margin-bottom:2px}
+.cv{font-size:10.5px;color:var(--n);font-weight:500;line-height:1.45}
+.nv .cd{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08)}
+.nv .cl{color:var(--g)}.nv .cv{color:#fff}
+
+/* TAGS */
+.tg{overflow:hidden;margin:4px 0}
+.bt{display:inline-block;background:#fff;border:1px solid #EBC7BF;border-radius:3px;padding:2px 8px;font-size:9px;color:#a03020;text-decoration:line-through;margin:2px 3px 2px 0}
+.at{display:inline-block;background:#fff;border:1px solid #B8D8C0;border-radius:3px;padding:2px 8px;font-size:9px;color:#2D6040;margin:2px 3px 2px 0}
+
+/* RULES */
+.rl{padding:10px 14px;border-radius:6px;margin:6px 0;font-size:11px;line-height:1.6}
+.rl.do{background:#f0f7f2;border-left:3px solid var(--ok)}
+.rl.dn{background:#fdf0ef;border-left:3px solid var(--er)}
+.rl.wn{background:#faf2ea;border-left:3px solid var(--gd)}
+.rl strong{font-size:9px;letter-spacing:1px;text-transform:uppercase}
+.rl.do strong{color:var(--ok)}.rl.dn strong{color:var(--er)}.rl.wn strong{color:var(--gd)}
+
+/* TEMPLATE */
+.tm{background:var(--iv);border:1px solid var(--bd);border-radius:6px;padding:12px 16px;margin:8px 0}
+.tl{font-size:7.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gd);font-weight:700;margin-bottom:4px}
+.tc{font-family:'SF Mono','Fira Code',monospace;font-size:10px;color:var(--n);background:#fff;border:1px solid var(--bd);border-radius:3px;padding:7px 12px;margin:4px 0;line-height:1.5}
+.te{font-size:10px;color:#666;font-style:italic;margin-top:4px;padding-left:10px;border-left:2px solid var(--gl);line-height:1.55}
+
+/* HIGHLIGHT */
+.hl{background:rgba(184,149,106,0.08);border:1px solid rgba(184,149,106,0.2);border-radius:8px;padding:12px 16px;margin:10px 0}
+.ht{font-family:var(--fh);font-size:12px;font-weight:700;color:var(--n);margin-bottom:4px}
+
+/* FOOTER */
+.foot{padding:14px 50px;background:var(--n);overflow:hidden}
+.foot span{font-size:8px;color:rgba(255,255,255,0.2);letter-spacing:1px}
+.foot .fl{float:left}.foot .fr{float:right}
+
+/* CODE */
+pre{background:#1e2030;border-radius:8px;padding:14px;margin:10px 0;font-size:10px;line-height:1.7;color:#d4d4d4;font-family:'SF Mono',monospace;white-space:pre-wrap}
+code{background:#f0ede8;padding:1px 5px;border-radius:3px;font-size:10px;font-family:monospace;color:var(--n)}
+</style>
+</head>
+<body>
+
+<!-- ══════════ COVER ══════════ -->
+<div class="cover">
+  <div class="cover-top">
+    <div class="cover-wm">AYKAH</div>
+    <div class="cover-ver">v2.0 &middot; April 2026</div>
+  </div>
+  <div class="cover-badge">Single Source of Truth</div>
+  <h1>Voice &amp; Premium Language Guide</h1>
+  <div class="sub">Everything your team needs to write, describe, and communicate as Aykah — across every channel, every time. Consolidates Voice Playbook v1, Brand Strategy v2, Premium Language Guide, and Campaign Copy Rules into one document.</div>
+  <div class="cover-foot">
+    <span>Confidential</span>
+    <span>For internal use only</span>
+    <span>aykah.ca</span>
+  </div>
+</div>
+
+<!-- ══════════ BRAND DNA ══════════ -->
+<div class="pb"></div>
+<div class="s">
+  <div class="ey">Section 01</div>
+  <div class="st">Brand DNA</div>
+  <div class="ss">Read this once. Internalize it. Everything flows from here.</div>
+
+  <div class="cg cg2">
+    <div class="cd"><div class="cl">Mission</div><div class="cv" style="font-family:var(--fh);font-style:italic;">"Aykah exists to help you write the story of your home, and help organize your life so you can focus on the things that actually matter."</div></div>
+    <div class="cd"><div class="cl">Brand Stake</div><div class="cv" style="font-family:var(--fh);font-size:16px;font-weight:700;">Quietly better.</div><div style="font-size:9px;color:var(--lt);margin-top:2px;">Sub-line: "Made of what matters."</div></div>
+  </div>
+
+  <div class="cg cg2">
+    <div class="cd"><div class="cl">Origin Story</div><div class="cv">Sanya &amp; Salman started as home stagers. When shopping for their own tiny condo, they hit the Canadian wall: beautiful pieces at outrageous prices, or affordable ones with zero service. Aykah was built to fix that gap.</div></div>
+    <div class="cd"><div class="cl">Positioning</div><div class="cv">Article-grade quality + Structube-grade prices + cohesive collection + superior customer service. Reference set: Quince, Cuyana, Maiden Home, Brooklinen, Parachute, Sundays Furniture.</div></div>
+  </div>
+
+  <div class="cg cg3">
+    <div class="cd"><div class="cl">Co-Founders</div><div class="cv">Sanya Salehani &amp; Salman Saleem</div></div>
+    <div class="cd"><div class="cl">Model</div><div class="cv">Canadian-owned. Products sourced internationally, sold exclusively in Canada.</div></div>
+    <div class="cd"><div class="cl">Brand Values</div><div class="cv">Comfort &middot; Integrity &middot; Approachability &middot; Trust</div></div>
+  </div>
+
+  <div class="cg cg3">
+    <div class="cd"><div class="cl">Personality</div><div class="cv">Inspiring &middot; Empathetic &middot; Creative</div></div>
+    <div class="cd"><div class="cl">#1 Differentiator</div><div class="cv">Customer service &amp; material honesty</div></div>
+    <div class="cd"><div class="cl">We Are NOT</div><div class="cv">Structube. Not disposable, not transactional, not cheap.</div></div>
+  </div>
+</div>
+
+<!-- ══════════ TYPOGRAPHY ══════════ -->
+<div class="s iv">
+  <div class="ey">Section 02</div>
+  <div class="st">Typography — Locked</div>
+  <div class="ss">Two fonts. No exceptions. Decided by team vote, April 21, 2026.</div>
+
+  <div class="tw">
+    <table class="dt">
+      <thead><tr><th>Font</th><th>Family</th><th>Weights</th><th>Used For</th></tr></thead>
+      <tbody>
+        <tr><td><strong style="font-family:var(--fh);font-size:14px;">Libre Baskerville</strong></td><td><code>'Libre Baskerville', Georgia, serif</code></td><td>400, 700, italic 400</td><td>Headings, product names, prices, testimonials (italic), subsections</td></tr>
+        <tr><td><strong>Manrope</strong></td><td><code>'Manrope', -apple-system, sans-serif</code></td><td>200-800 (use 300-600)</td><td>Body text, descriptions, buttons, eyebrows, navigation, forms, UI</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Font Import</h3>
+  <pre>&lt;link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"&gt;</pre>
+
+  <div class="rl do"><strong>Do:</strong> Prices always in Libre Baskerville — serif numerals feel more premium. Eyebrows: Manrope 600, UPPERCASE, letter-spacing 3px. Buttons: Manrope 600, UPPERCASE, letter-spacing 1.5px.</div>
+  <div class="rl dn"><strong>Never:</strong> Use Libre Baskerville for body text. Use Manrope for product names or prices. Add a third font. Go below 10px.</div>
+</div>
+
+<!-- ══════════ VOICE RULES ══════════ -->
+<div class="pb"></div>
+<div class="s">
+  <div class="ey">Section 03</div>
+  <div class="st">Voice Rules</div>
+  <div class="ss">How Aykah sounds — everywhere, every time.</div>
+
+  <h3>Four Core Attributes</h3>
+  <div class="cg cg2">
+    <div class="cd"><div class="cl">1. Natural &amp; Conversational</div><div class="cv">Like a founder explaining something clearly. Not a marketing department.</div></div>
+    <div class="cd"><div class="cl">2. Confident but Understated</div><div class="cv">Quality is implied. Confidence comes from specifics, not adjectives.</div></div>
+    <div class="cd"><div class="cl">3. Warm but Not Emotional</div><div class="cv">Human, not theatrical. Reads well at a kitchen table, not a runway.</div></div>
+    <div class="cd"><div class="cl">4. Design-Aware but Not Pretentious</div><div class="cv">We know our materials. We don't talk down.</div></div>
+  </div>
+
+  <h3>The Voice Spectrum</h3>
+  <div class="tw">
+    <table class="dt">
+      <thead><tr><th>We Are</th><th>We Are NOT</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Warm &amp; welcoming</strong></td><td>Stiff or corporate</td></tr>
+        <tr><td><strong>Confident &amp; knowledgeable</strong></td><td>Pushy or salesy</td></tr>
+        <tr><td><strong>Premium-feeling</strong></td><td>Pretentious or exclusive</td></tr>
+        <tr><td><strong>Helpful &amp; educational</strong></td><td>Condescending or dumbed-down</td></tr>
+        <tr><td><strong>Honest &amp; transparent</strong></td><td>Vague or full of marketing fluff</td></tr>
+        <tr><td><strong>Inspiring &amp; creative</strong></td><td>Bland or generic</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Emphasize vs. Avoid</h3>
+  <div class="dd">
+    <div class="do-b">
+      <div class="dl do">Emphasize</div>
+      <p>How furniture fits into everyday life</p>
+      <p>Function and design working together</p>
+      <p>Calm, organized, intentional spaces</p>
+      <p>Subtle details that make a difference</p>
+      <p>Practical benefits without sounding technical</p>
+    </div>
+    <div class="dn-b">
+      <div class="dl dn">Avoid</div>
+      <p>Cliches: "timeless elegance," "elevated living"</p>
+      <p>Overly emotional or poetic language</p>
+      <p>Aggressive sales tone</p>
+      <p>Overly technical or clinical explanations</p>
+      <p>Comparisons to competitors by name</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ TAGLINE & HOOK SYSTEM ══════════ -->
+<div class="s iv">
+  <div class="ey">Section 04</div>
+  <div class="st">Tagline &amp; Hook System</div>
+  <div class="ss">The language architecture. Every hook has a place. Use the right one for each context.</div>
+
+  <div class="hl">
+    <div class="ht">Brand Stake (Tagline)</div>
+    <p style="font-family:var(--fh);font-size:16px;font-weight:700;color:var(--n);margin-bottom:4px;">Quietly better.</p>
+    <p>Two words. Total understatement. Works at $299 and $2,800. Lives on wordmark, campaigns, packaging.</p>
+  </div>
+
+  <div class="hl">
+    <div class="ht">Sub-line</div>
+    <p style="font-family:var(--fh);font-size:14px;color:var(--n);font-style:italic;margin-bottom:4px;">Made of what matters.</p>
+    <p>Proves the "better" by leading with materials. Lives on PDPs, hangtags, About page.</p>
+  </div>
+
+  <h3>Supporting Hook System</h3>
+  <div class="tw">
+    <table class="dt">
+      <thead><tr><th>Pillar</th><th>Hooks</th><th>Where It Lives</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Materials</strong></td><td>"Real linen. Solid wood. Full-grain leather." / "Materials over marketing."</td><td>PDP spec strips, hangtags, Reels</td></tr>
+        <tr><td><strong>Craft</strong></td><td>"Built to last decades, not seasons." / "Considered, where you don't look."</td><td>Brand films, About, durability content</td></tr>
+        <tr><td><strong>Pricing</strong></td><td>"Beautifully made — within reach." / "We charge for the wood, not the words."</td><td>Homepage, paid social, founder letter</td></tr>
+        <tr><td><strong>Living</strong></td><td>"Made to settle in." / "For the home you actually live in."</td><td>Lifestyle imagery, holiday, Reels</td></tr>
+        <tr><td><strong>Service</strong></td><td>"Real people, when it matters." / "Built to last. Backed by people."</td><td>Customer service pages, post-purchase email</td></tr>
+        <tr><td><strong>Voice</strong></td><td>"Quietly considered."</td><td>About, brand films, founder bios</td></tr>
+        <tr><td><strong>Campaign</strong></td><td>"Touch Wood." / "Substance over surface."</td><td>Spring Event, showroom signage, social</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════ BANNED WORDS ══════════ -->
+<div class="pb"></div>
+<div class="s al">
+  <div class="ey" style="color:var(--er);">Section 05</div>
+  <div class="st" style="color:var(--er);">Banned Words &amp; Phrases</div>
+  <div class="ss">These words are permanently retired from ALL Aykah communications. No exceptions.</div>
+
+  <h3>Hard Bans — Never Use</h3>
+  <div class="tg">
+    <span class="bt">Free shipping</span>
+    <span class="bt">Free returns</span>
+    <span class="bt">100-night trial</span>
+    <span class="bt">Designed in Canada</span>
+    <span class="bt">Made in Canada</span>
+    <span class="bt">Risk-free</span>
+    <span class="bt">Affordable</span>
+    <span class="bt">Cheap</span>
+    <span class="bt">Budget</span>
+    <span class="bt">Discount</span>
+    <span class="bt">Deal</span>
+    <span class="bt">Bargain</span>
+    <span class="bt">Value (as selling point)</span>
+    <span class="bt">Starting from $X</span>
+    <span class="bt">Save $X / X% off</span>
+    <span class="bt">As low as</span>
+    <span class="bt">Buy now!</span>
+    <span class="bt">Don't miss out!</span>
+    <span class="bt">Hurry!</span>
+    <span class="bt">Act fast!</span>
+    <span class="bt">Grab yours!</span>
+    <span class="bt">Best price guaranteed</span>
+    <span class="bt">High-quality materials</span>
+    <span class="bt">Luxury experience</span>
+    <span class="bt">Elevated living</span>
+    <span class="bt">Timeless elegance</span>
+    <span class="bt">Premium (until Fall 2026 tier)</span>
+    <span class="bt">Designer-quality</span>
+    <span class="bt">Dupe / dupe of</span>
+    <span class="bt">Game-changer</span>
+    <span class="bt">Unbeatable</span>
+    <span class="bt">Why pay more?</span>
+    <span class="bt">Treat yourself</span>
+    <span class="bt">You deserve this</span>
+  </div>
+
+  <h3>Approved Vocabulary</h3>
+  <div class="tg">
+    <span class="at">Complimentary delivery</span>
+    <span class="at">Quietly better</span>
+    <span class="at">Made of what matters</span>
+    <span class="at">Investment piece</span>
+    <span class="at">Signature piece</span>
+    <span class="at">Considered design</span>
+    <span class="at">Crafted / Constructed</span>
+    <span class="at">Kiln-dried hardwood</span>
+    <span class="at">Performance textile</span>
+    <span class="at">Engineered for longevity</span>
+    <span class="at">Client care</span>
+    <span class="at">Design advisory</span>
+    <span class="at">Explore the collection</span>
+    <span class="at">Canadian-owned</span>
+    <span class="at">Beautifully made</span>
+    <span class="at">Well-designed</span>
+    <span class="at">Finely made</span>
+    <span class="at">Within reach</span>
+  </div>
+
+  <h3>Language Swaps</h3>
+  <div class="tw">
+    <table class="dt">
+      <thead><tr><th>Instead of...</th><th>Write...</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>"Free shipping"</td><td><strong>Complimentary delivery across Canada</strong></td><td>"Complimentary" = gift from brand. Burberry uses this.</td></tr>
+        <tr><td>"Luxury furniture"</td><td><strong>Finely made / Well-designed</strong></td><td>We don't claim luxury — we prove quality with materials.</td></tr>
+        <tr><td>"High-quality materials"</td><td><strong>Name the actual material</strong></td><td>Every brand says "high-quality." Specificity builds trust.</td></tr>
+        <tr><td>"Cheap" / "Budget"</td><td><strong>Remove entirely</strong></td><td>Incompatible with premium positioning.</td></tr>
+        <tr><td>"Buy now!"</td><td><strong>Explore / Discover the collection</strong></td><td>We invite, we don't pressure.</td></tr>
+        <tr><td>"Comfortable"</td><td><strong>Describe the sensation</strong></td><td>"Sink-in support" beats "comfortable."</td></tr>
+        <tr><td>"Durable / Strong"</td><td><strong>Engineered for longevity</strong></td><td>Frames lifespan, not resistance.</td></tr>
+        <tr><td>"Best-seller"</td><td><strong>Signature piece / Most coveted</strong></td><td>Mass popularity ≠ exclusivity.</td></tr>
+        <tr><td>"Customer service"</td><td><strong>Client care</strong></td><td>Elevates the relationship.</td></tr>
+        <tr><td>"No assembly required!"</td><td><strong>Arrives fully assembled</strong></td><td>Statement of fact, not excited relief.</td></tr>
+        <tr><td>$899.99</td><td><strong>$900 (round numbers)</strong></td><td>Round numbers = premium (Zhang &amp; Wadhwa, 2015).</td></tr>
+        <tr><td>"Don't pay for the markup"</td><td><strong>We charge for the wood, not the words</strong></td><td>Original is dig-y. Replacement is belief-coded.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════ PREMIUM SPEC LANGUAGE ══════════ -->
+<div class="pb"></div>
+<div class="s">
+  <div class="ey">Section 06</div>
+  <div class="st">Premium Specification Language</div>
+  <div class="ss">How to describe product specs so they justify the price. Every product page should use these terms.</div>
+
+  <h3>Construction</h3>
+  <div class="tw">
+    <table class="dt">
+      <thead><tr><th>Don't Say</th><th>Say This</th><th>Certification</th></tr></thead>
+      <tbody>
+        <tr><td>Wood frame</td><td><strong>Kiln-dried hardwood frame</strong> — heat-treated to reduce moisture, prevent warping</td><td>FSC-certified</td></tr>
+        <tr><td>Strong joints</td><td><strong>Corner-blocked, dowelled joinery</strong></td><td>—</td></tr>
+        <tr><td>Good cushions</td><td><strong>Web suspension system</strong> — distributes weight evenly, reduces sagging</td><td>—</td></tr>
+        <tr><td>Springs</td><td><strong>Sinuous spring suspension</strong> — responsive support through 10,000+ compressions</td><td>—</td></tr>
+        <tr><td>Foam</td><td><strong>High-density foam, CertiPUR-US certified</strong></td><td>CertiPUR-US</td></tr>
+        <tr><td>Nice fabric</td><td><strong>280 GSM performance bouclé, 50K+ Martindale cycles</strong></td><td>OEKO-TEX Standard 100</td></tr>
+        <tr><td>Piping</td><td><strong>Self-welt construction</strong> — tailored finish in matching fabric</td><td>—</td></tr>
+        <tr><td>Adjustable feet</td><td><strong>Precision levelers</strong> for stability on any surface</td><td>—</td></tr>
+        <tr><td>Metal legs</td><td><strong>Brushed brass-finished steel</strong> with electroplated coating</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Wood Terms (from Product Team)</h3>
+  <div class="tg">
+    <span class="at">Open grain</span>
+    <span class="at">Straight grain</span>
+    <span class="at">Fine grained</span>
+    <span class="at">Natural knots</span>
+    <span class="at">Exposed peg detailing</span>
+    <span class="at">Wire brushed</span>
+    <span class="at">Kiln-dried</span>
+    <span class="at">Dovetail construction</span>
+  </div>
+
+  <h3>Certifications — How to Present</h3>
+  <div class="dd">
+    <div class="do-b">
+      <div class="dl do">Premium Way</div>
+      <p>"Frame: FSC-certified hardwood — sourced from responsibly managed forests"</p>
+      <p>"Foam: CertiPUR-US certified — tested for harmful chemicals, emissions, and durability"</p>
+      <p>"Textile: OEKO-TEX Standard 100 — screened against 1,000+ harmful substances"</p>
+      <p>"Finish: GREENGUARD Gold — meets strict chemical emission limits"</p>
+    </div>
+    <div class="dn-b">
+      <div class="dl dn">Never</div>
+      <p>"Eco-friendly materials"</p>
+      <p>"Safe and tested"</p>
+      <p>"Green certified"</p>
+      <p>"Environmentally conscious"</p>
+      <p>(All vague — name the specific certification)</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ PRODUCT DESCRIPTION TEMPLATE ══════════ -->
+<div class="s iv">
+  <div class="ey">Section 07</div>
+  <div class="st">Product Description Template</div>
+  <div class="ss">3-part framework. 200-400 words per product. Voice doesn't change between price points — materials and craft do.</div>
+
+  <h3>The Framework</h3>
+  <div class="cg cg3">
+    <div class="cd"><div class="cl">Part 1 — The Hook (80-120 words)</div><div class="cv">How does it feel in a room? Sell the lifestyle. Lead with emotion, follow with one material detail.</div></div>
+    <div class="cd"><div class="cl">Part 2 — The Specs (60-100 words)</div><div class="cv">Bullet points. Dimensions, materials, features, suspension, certifications. Be exact. Use premium terms.</div></div>
+    <div class="cd"><div class="cl">Part 3 — Care (60-80 words)</div><div class="cv">Cleaning tips, care frequency, what to avoid. Practical and brief.</div></div>
+  </div>
+
+  <h3>Example — $579 Storage Bed (Current Tier)</h3>
+  <div class="tm">
+    <div class="tl">Aura Lift-Up Storage Bed — Queen &middot; $579</div>
+    <div class="te">"Solid wood frame. Linen-upholstered headboard. Two underbed storage drawers on soft-close runners. Designed for everyday living, with durability that holds up over time. Quietly better."</div>
+  </div>
+
+  <h3>Example — $1,899 Storage Bed (Premium Tier, Fall 2026)</h3>
+  <div class="tm">
+    <div class="tl">Aura King Storage Bed — King &middot; $1,900</div>
+    <div class="te">"Kiln-dried solid hardwood frame. Belgian linen headboard with hand-tufted detailing. Four soft-close drawers. CertiPUR-US certified foam headboard padding. Precision levelers on each leg. Built to last decades, not seasons. Quietly better."</div>
+  </div>
+
+  <p style="font-size:9px;color:var(--gd);font-weight:600;">Note: Voice stays the same. Materials and craft details scale with price. Price reads as a function of what's in the piece.</p>
+
+  <h3>Title Tag &amp; Meta Description Formulas</h3>
+  <div class="tm">
+    <div class="tl">Product Title Tag</div>
+    <div class="tc">[Product Name] – [Material/Feature] | Aykah Furniture Canada</div>
+  </div>
+  <div class="tm">
+    <div class="tl">Meta Description (150-160 chars)</div>
+    <div class="tc">[Product Name] in [material/color]. [Key feature]. [Price] CAD. Complimentary delivery across Canada over $199. Explore at Aykah.</div>
+  </div>
+  <div class="tm">
+    <div class="tl">Image Alt Text</div>
+    <div class="tc">[Product Name] – [Material/Color] – [Angle/View] – [Context]</div>
+    <div class="te">"Aura Storage Bed – Belgian Linen – front view in modern bedroom"</div>
+  </div>
+</div>
+
+<!-- ══════════ CHANNEL GUIDE ══════════ -->
+<div class="pb"></div>
+<div class="s">
+  <div class="ey">Section 08</div>
+  <div class="st">Channel Guide</div>
+  <div class="ss">Same voice, adjusted warmth. Use the right hook for each channel.</div>
+
+  <div class="tw">
+    <table class="dt">
+      <thead><tr><th>Channel</th><th>Warmth</th><th>Formality</th><th>Primary Hook(s)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Product Pages</strong></td><td>Medium</td><td>Medium</td><td>Sub-line + materials hook</td></tr>
+        <tr><td><strong>Blog Posts</strong></td><td>High</td><td>Low-Medium</td><td>Living hook + craft hook</td></tr>
+        <tr><td><strong>Social Media</strong></td><td>High</td><td>Low</td><td>Materials hook + living hook</td></tr>
+        <tr><td><strong>Email Promos</strong></td><td>Medium-High</td><td>Low-Medium</td><td>Sub-line + product specifics</td></tr>
+        <tr><td><strong>Customer Service</strong></td><td>Very High</td><td>Medium</td><td>Service hook</td></tr>
+        <tr><td><strong>About / Brand</strong></td><td>High</td><td>Medium</td><td>Anti-markup hook + voice tag</td></tr>
+        <tr><td><strong>Paid Social</strong></td><td>Medium</td><td>Low</td><td>"Belgian linen. Solid oak. $1,299." format</td></tr>
+        <tr><td><strong>Reels / TikTok</strong></td><td>High</td><td>Low</td><td>Materials hook + craft hook. ASMR audio.</td></tr>
+        <tr><td><strong>Showroom Signage</strong></td><td>Medium</td><td>Medium</td><td>Materials hook + tagline</td></tr>
+        <tr><td><strong>Announcement Bar</strong></td><td>Low</td><td>Medium</td><td>Rotate 3 messages, 5-7 sec intervals</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Announcement Bar — 3 Rotating Messages</h3>
+  <div class="cg cg3">
+    <div class="cd"><div class="cl">Message 1</div><div class="cv">Complimentary delivery across Canada on orders over $199</div></div>
+    <div class="cd"><div class="cl">Message 2</div><div class="cv">Welcome to the new aykah.ca — explore our collections</div></div>
+    <div class="cd"><div class="cl">Message 3</div><div class="cv">1-year warranty on all furniture</div></div>
+  </div>
+
+  <h3>Social Media Caption Formula</h3>
+  <div class="tm">
+    <div class="tl">Caption Structure</div>
+    <div class="tc">[Hook — scene or emotion] → [Product + one material detail] → [Brand positioning] → [Soft CTA] → [3-5 hashtags]</div>
+    <div class="te">"Morning light, warm coffee, nowhere else you'd rather be. The Enigma Sofa in oat linen — 280 GSM performance fabric, built on a kiln-dried hardwood frame. Quietly better. Explore at aykah.ca. #AykahHome #ModernFurnitureCanada"</div>
+  </div>
+
+  <h3>Email Subject Lines</h3>
+  <div class="dd">
+    <div class="do-b">
+      <div class="dl do">Write</div>
+      <p>"Introducing the new collection"</p>
+      <p>"How we choose our oak"</p>
+      <p>"Your new sofa — a care guide"</p>
+      <p>"We've been working on something"</p>
+    </div>
+    <div class="dn-b">
+      <div class="dl dn">Never</div>
+      <p>ALL CAPS subjects</p>
+      <p>Exclamation marks</p>
+      <p>Emojis in subject lines</p>
+      <p>"Last chance!" or "Don't miss out!"</p>
+    </div>
+  </div>
+
+  <h3>Customer Service Response</h3>
+  <div class="rl do"><strong>Rule:</strong> Acknowledge first, solve second. Use customer's first name. Be transparent about policies. End with next steps, not dead ends.</div>
+  <div class="tm">
+    <div class="tl">Example Response</div>
+    <div class="te">"Hi Sarah, thank you for reaching out. I'm sorry the delivery took longer than expected — that's not the experience we want for you. I've looked into your order and here's what's happening..."</div>
+  </div>
+</div>
+
+<!-- ══════════ VERIFIED FACTS ══════════ -->
+<div class="pb"></div>
+<div class="s al">
+  <div class="ey">Section 09</div>
+  <div class="st">Verified Facts — Do Not Deviate</div>
+  <div class="ss">Get these wrong and we erode trust. Verified against live site and founder input.</div>
+
+  <div class="cg cg2">
+    <div class="cd"><div class="cl">Brand Name</div><div class="cv">Aykah (always capitalized — never "aykah" or "AYKAH")</div></div>
+    <div class="cd"><div class="cl">Co-Founders</div><div class="cv">Sanya Salehani &amp; Salman Saleem</div></div>
+    <div class="cd"><div class="cl">Shipping</div><div class="cv">Complimentary over $199 CAD. $19.99 under. Canada only.</div></div>
+    <div class="cd"><div class="cl">Carriers</div><div class="cv">FedEx, GLS, AppsCargo, Canada Post</div></div>
+    <div class="cd"><div class="cl">Small Items</div><div class="cv">2-8 business days</div></div>
+    <div class="cd"><div class="cl">Large Items</div><div class="cv">20-25 business days</div></div>
+    <div class="cd"><div class="cl">Returns</div><div class="cv">14-day window. Unused &amp; unassembled. Customer pays return shipping.</div></div>
+    <div class="cd"><div class="cl">Restocking Fee</div><div class="cv">20% if NOT in original packaging. No fee if in original packaging.</div></div>
+    <div class="cd"><div class="cl">Sale Items</div><div class="cv">Non-refundable.</div></div>
+    <div class="cd"><div class="cl">Warranty</div><div class="cv">1 year. Original purchaser only.</div></div>
+    <div class="cd"><div class="cl">Reviews</div><div class="cv">4.8/5 across 443+ reviews (Loox / Birdeye)</div></div>
+    <div class="cd"><div class="cl">Marketplace</div><div class="cv">Also on Best Buy Canada &amp; Walmart Canada</div></div>
+  </div>
+
+  <h3>Store Locations</h3>
+  <div class="tw">
+    <table class="dt">
+      <thead><tr><th>Location</th><th>Address</th><th>Phone</th><th>Hours</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Burnaby, BC (HQ)</strong></td><td>7465 Griffiths Dr, V5E 2Y3</td><td>(604) 991-2865</td><td>Mon-Sat 10:30-6:30, Sun 12-5</td></tr>
+        <tr><td><strong>Port Coquitlam, BC</strong></td><td>114-1655 Broadway St, V3C 2M7</td><td>(604) 474-4353</td><td>Mon-Sat 10:30-6:30, Sun 12-5</td></tr>
+        <tr><td><strong>Mississauga, ON</strong></td><td>3750b Laird Rd #15, L5L 5Y6</td><td>(613) 553-3000</td><td>Mon-Sat 10:30-6:30, Sun 12-5</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Approved Trust Signals — Use Freely</h3>
+  <div class="tg">
+    <span class="at">Complimentary delivery over $199 CAD</span>
+    <span class="at">1-year warranty</span>
+    <span class="at">4.8 stars / 443+ reviews</span>
+    <span class="at">3 showrooms across Canada</span>
+    <span class="at">Canadian-owned &amp; operated</span>
+  </div>
+</div>
+
+<!-- ══════════ PHOTOGRAPHY ══════════ -->
+<div class="s">
+  <div class="ey">Section 10</div>
+  <div class="st">Photography Direction</div>
+
+  <div class="dd">
+    <div class="do-b">
+      <div class="dl do">Do</div>
+      <p>Warm natural light, golden hour preferred</p>
+      <p>Styled rooms that feel real and lived-in</p>
+      <p>Wood + cream + texture palette</p>
+      <p>Detail shots (grain, stitching, hardware)</p>
+      <p>Canadian homes (condos, townhouses, real spaces)</p>
+      <p>8-12 images per product minimum</p>
+    </div>
+    <div class="dn-b">
+      <div class="dl dn">Don't</div>
+      <p>Cold clinical / fluorescent shots</p>
+      <p>Over-staged rooms that feel like a catalogue</p>
+      <p>Neon accents or trendy colour pops</p>
+      <p>Low-resolution images</p>
+      <p>Generic stock photos</p>
+      <p>Flash-lit product shots</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ COLORS (QUICK REF) ══════════ -->
+<div class="s nv">
+  <div class="ey">Section 11</div>
+  <div class="st">Colors — Quick Reference</div>
+  <div class="ss">Full design system at 03_Brand_Identity/Colors/aykah-design-system-v1.html</div>
+
+  <div class="cg cg3">
+    <div class="cd"><div class="cl">Primary</div><div class="cv">#363B57 (Navy)</div></div>
+    <div class="cd"><div class="cl">Accent</div><div class="cv">#B8956A (Gold — decorative only)</div></div>
+    <div class="cd"><div class="cl">Accent Text</div><div class="cv">#8B6E4A (gold text, links)</div></div>
+    <div class="cd"><div class="cl">Accent Button</div><div class="cv">#7D6040 (buttons w/ white text)</div></div>
+    <div class="cd"><div class="cl">Ivory</div><div class="cv">#FAF8F4 (background)</div></div>
+    <div class="cd"><div class="cl">Body Text</div><div class="cv">#2C2C2C</div></div>
+  </div>
+
+  <div class="rl wn" style="margin-top:12px;"><strong>Rule:</strong> 60% warm whites (--ivory, --warm, --white) · 30% navy (--primary) · 10% gold + green accents. Never use #B8956A as text — it fails WCAG at 2.78:1.</div>
+</div>
+
+<!-- ══════════ VERSION LOG ══════════ -->
+<div class="s iv">
+  <div class="ey">Document History</div>
+  <div class="st">Version Log</div>
+
+  <div class="tw">
+    <table class="dt">
+      <thead><tr><th>Version</th><th>Date</th><th>Changes</th></tr></thead>
+      <tbody>
+        <tr><td>v1.0</td><td>March 2026</td><td>Initial Voice Playbook — Lora + Plus Jakarta Sans. "Aesop meets IKEA" positioning.</td></tr>
+        <tr><td>v1.5</td><td>April 18, 2026</td><td>Premium Repositioning Strategy added. "Free" banned. Word swap dictionary. Premium spec language. 5 campaign concepts.</td></tr>
+        <tr><td>v2.0 (this)</td><td>April 29, 2026</td><td><strong>Full consolidation.</strong> Fonts locked: Libre Baskerville + Manrope. Tagline: "Quietly better." / "Made of what matters." "Aesop meets RH" retired → reference set updated. Bridge voice strategy for current tier + premium Fall 2026. All banned words, hooks, channel guide, spec language, templates in one document.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><strong>Supersedes:</strong> Aykah-Voice-Playbook-v1.html, Aykah-Brand-Strategy-v2.html, aykah-premium-language-guide.html. Those files remain in the project folder for reference but this document is the single source of truth.</p>
+</div>
+
+<!-- FOOTER -->
+<div class="foot">
+  <span class="fl">AYKAH &middot; VOICE &amp; PREMIUM LANGUAGE GUIDE &middot; V2.0</span>
+  <span class="fr">APRIL 2026 &middot; CONFIDENTIAL</span>
+</div>
+
+</body>
+</html>

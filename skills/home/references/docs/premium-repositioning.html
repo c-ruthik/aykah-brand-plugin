@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aykah — Premium Brand Repositioning Strategy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@page { size: A4; margin: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  color: #2C2C2C; background: #fff;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6; font-size: 11px;
+  width: 210mm;
+}
+:root {
+  --navy: #363B57; --navy-dark: #2A2E45; --navy-light: #4A5070;
+  --gold: #B8956A; --gold-dark: #8B6E4A; --gold-btn: #7D6040; --gold-light: #D4BC9A;
+  --ivory: #FAF8F4; --warm: #F7F3EE; --border: #E8E3DB;
+  --text: #2C2C2C; --muted: #6B6560; --light: #76716B;
+  --success: #3D7A55; --error: #C0392B;
+  --font-h: 'Lora', Georgia, serif;
+  --font-b: 'Plus Jakarta Sans', -apple-system, sans-serif;
+}
+.pb { page-break-before: always; }
+@media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+
+/* COVER */
+.cover { background: var(--navy); min-height: 297mm; padding: 70px 56px 50px; position: relative; overflow: hidden; }
+.cover::after { content:''; position:absolute; bottom:0; left:0; right:0; height:5px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+.cover::before { content:''; position:absolute; top:-100px; right:-60px; width:500px; height:500px; background:radial-gradient(circle, rgba(184,149,106,0.06), transparent 70%); }
+.cover-top { overflow:hidden; margin-bottom:140px; }
+.cover-wm { font-family:var(--font-h); font-size:26px; font-weight:700; color:#fff; letter-spacing:6px; float:left; }
+.cover-ver { font-size:9px; color:rgba(255,255,255,0.2); letter-spacing:2px; text-transform:uppercase; float:right; padding-top:8px; }
+.cover-badge { display:inline-block; background:rgba(184,149,106,0.15); border:1px solid rgba(184,149,106,0.25); border-radius:4px; padding:4px 12px; font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:18px; }
+.cover h1 { font-family:var(--font-h); font-size:40px; color:#fff; font-weight:600; line-height:1.1; max-width:520px; margin-bottom:14px; }
+.cover .sub { font-size:14px; color:rgba(255,255,255,0.35); max-width:440px; line-height:1.7; font-weight:300; }
+.cover-stats { position:absolute; bottom:80px; left:56px; right:56px; display:flex; gap:0; }
+.cover-stat { flex:1; padding:16px 20px; border-right:1px solid rgba(255,255,255,0.06); }
+.cover-stat:last-child { border-right:none; }
+.cover-stat-val { font-family:var(--font-h); font-size:22px; color:var(--gold); font-weight:600; }
+.cover-stat-lbl { font-size:8px; color:rgba(255,255,255,0.25); letter-spacing:2px; text-transform:uppercase; margin-top:2px; }
+.cover-foot { position:absolute; bottom:20px; left:56px; right:56px; }
+.cover-foot span { font-size:8px; color:rgba(255,255,255,0.12); letter-spacing:1.5px; text-transform:uppercase; margin-right:36px; }
+
+/* SECTIONS */
+.sec { padding: 36px 50px 28px; border-bottom: 1px solid var(--border); }
+.sec.ivory { background: var(--ivory); }
+.sec.navy { background: var(--navy); }
+.sec.warm { background: var(--warm); }
+.sec.alert { background: #FFF8F0; border-bottom-color: #F0DCC0; }
+.ey { font-size:8.5px; letter-spacing:3.5px; text-transform:uppercase; color:var(--gold-dark); font-weight:700; margin-bottom:4px; }
+.navy .ey { color:var(--gold); }
+.st { font-family:var(--font-h); font-size:20px; color:var(--navy); font-weight:600; line-height:1.2; margin-bottom:3px; }
+.navy .st { color:#fff; }
+.ss { font-size:11px; color:var(--light); margin-bottom:16px; max-width:600px; }
+.navy .ss { color:rgba(255,255,255,0.3); }
+p { font-size:10.5px; color:#555; line-height:1.7; margin-bottom:8px; max-width:680px; }
+strong { font-weight:600; color:var(--text); }
+.navy p { color:rgba(255,255,255,0.45); }
+.navy strong { color:#fff; }
+h3 { font-family:var(--font-h); font-size:14px; font-weight:600; color:var(--navy); margin:18px 0 6px; }
+.navy h3 { color:#fff; }
+
+/* TABLES */
+.tbl-wrap { border:1px solid var(--border); border-radius:6px; overflow:hidden; margin:10px 0 14px; }
+table.dt { width:100%; border-collapse:collapse; font-size:10px; }
+table.dt th { text-align:left; font-weight:700; font-size:7.5px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-dark); padding:7px 12px; border-bottom:2px solid var(--border); background:var(--ivory); }
+table.dt td { padding:6px 12px; border-bottom:1px solid #f0ece6; color:#444; vertical-align:top; line-height:1.5; }
+table.dt tr:last-child td { border-bottom:none; }
+
+/* DO / DON'T */
+.dd-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:10px 0; }
+.do-box { background:#F0F7F2; border:1px solid #C8E0CE; border-radius:6px; padding:12px 14px; }
+.dont-box { background:#FFF5F3; border:1px solid #F0D0C8; border-radius:6px; padding:12px 14px; }
+.dd-lbl { font-size:7.5px; letter-spacing:2.5px; text-transform:uppercase; font-weight:800; margin-bottom:5px; }
+.dd-lbl.do { color:var(--success); }
+.dd-lbl.dont { color:var(--error); }
+.do-box p, .dont-box p { font-size:10px; margin-bottom:3px; color:#444; }
+
+/* CARDS */
+.card-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:10px 0; }
+.card-grid.three { grid-template-columns:1fr 1fr 1fr; }
+.card { background:#fff; border:1px solid var(--border); border-radius:6px; padding:12px 14px; }
+.card-lbl { font-size:7.5px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-dark); font-weight:700; margin-bottom:3px; }
+.card-val { font-size:11px; color:var(--navy); font-weight:500; line-height:1.45; }
+.card-val.big { font-family:var(--font-h); font-size:20px; font-weight:600; }
+.card-note { font-size:9px; color:var(--light); margin-top:2px; }
+.navy .card { background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.08); }
+.navy .card-lbl { color:var(--gold); }
+.navy .card-val { color:#fff; }
+.navy .card-note { color:rgba(255,255,255,0.3); }
+
+/* TAGS */
+.tag-row { overflow:hidden; margin:4px 0; }
+.b-tag { display:inline-block; background:#fff; border:1px solid #EBC7BF; border-radius:3px; padding:2px 8px; font-size:9px; color:#a03020; text-decoration:line-through; margin:2px 3px 2px 0; }
+.a-tag { display:inline-block; background:#fff; border:1px solid #B8D8C0; border-radius:3px; padding:2px 8px; font-size:9px; color:#2D6040; margin:2px 3px 2px 0; }
+
+/* CAMPAIGN CARDS */
+.camp-card { background:#fff; border:1px solid var(--border); border-left:3px solid var(--gold); border-radius:6px; padding:14px 16px; margin:8px 0; }
+.camp-name { font-family:var(--font-h); font-size:15px; font-weight:600; color:var(--navy); margin-bottom:2px; }
+.camp-tag { display:inline-block; font-size:7px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-dark); font-weight:700; background:rgba(184,149,106,0.1); padding:2px 8px; border-radius:3px; margin-bottom:6px; }
+.camp-desc { font-size:10px; color:#555; line-height:1.6; margin-bottom:6px; }
+.camp-headline { font-family:var(--font-h); font-size:13px; font-style:italic; color:var(--navy); margin-bottom:4px; }
+.camp-channels { font-size:9px; color:var(--light); }
+
+/* HIGHLIGHT BOX */
+.highlight { background:rgba(184,149,106,0.08); border:1px solid rgba(184,149,106,0.2); border-radius:8px; padding:14px 18px; margin:12px 0; }
+.highlight-title { font-family:var(--font-h); font-size:13px; font-weight:600; color:var(--navy); margin-bottom:4px; }
+
+/* WORD SWAP TABLE */
+table.swap { width:100%; border-collapse:collapse; font-size:10px; }
+table.swap th { text-align:left; font-weight:700; font-size:7.5px; letter-spacing:2px; text-transform:uppercase; padding:7px 12px; border-bottom:2px solid var(--border); }
+table.swap th:first-child { color:var(--error); background:#FFF5F3; }
+table.swap th:nth-child(2) { color:var(--success); background:#F0F7F2; }
+table.swap th:nth-child(3) { color:var(--gold-dark); background:var(--ivory); }
+table.swap td { padding:5px 12px; border-bottom:1px solid #f0ece6; vertical-align:top; line-height:1.45; }
+table.swap td:first-child { color:#a03020; text-decoration:line-through; }
+table.swap td:nth-child(2) { color:#2D6040; font-weight:500; }
+table.swap td:nth-child(3) { color:var(--light); font-size:9px; }
+
+/* FOOTER */
+.foot { padding:14px 50px; background:var(--navy); overflow:hidden; }
+.foot span { font-size:8px; color:rgba(255,255,255,0.2); letter-spacing:1px; }
+.foot .fl { float:left; }
+.foot .fr { float:right; }
+
+/* SOURCE TAG */
+.src { font-size:8px; color:var(--light); font-style:italic; margin-top:6px; }
+</style>
+</head>
+<body>
+
+<!-- ══════════ COVER ══════════ -->
+<div class="cover">
+  <div class="cover-top">
+    <div class="cover-wm">AYKAH</div>
+    <div class="cover-ver">Confidential &middot; April 2026</div>
+  </div>
+  <div class="cover-badge">Strategic Proposal</div>
+  <h1>Premium Brand Repositioning Strategy</h1>
+  <div class="sub">Moving Aykah from mid-range to premium positioning. Research-backed strategy for brand voice, language, pricing, campaigns, and go-to-market — ready for executive review.</div>
+
+  <div class="cover-stats">
+    <div class="cover-stat">
+      <div class="cover-stat-val">$945</div>
+      <div class="cover-stat-lbl">Current AOV (CAD)</div>
+    </div>
+    <div class="cover-stat">
+      <div class="cover-stat-val">$1,600–$3,000+</div>
+      <div class="cover-stat-lbl">New Premium Line Target</div>
+    </div>
+    <div class="cover-stat">
+      <div class="cover-stat-val">4.8/5</div>
+      <div class="cover-stat-lbl">Customer Rating (443 Reviews)</div>
+    </div>
+    <div class="cover-stat">
+      <div class="cover-stat-val">7.69x</div>
+      <div class="cover-stat-lbl">Current ROAS</div>
+    </div>
+  </div>
+
+  <div class="cover-foot">
+    <span>Prepared by Ruthik &middot; Aykah Marketing</span>
+    <span>aykah.ca</span>
+  </div>
+</div>
+
+<!-- ══════════ EXECUTIVE SUMMARY ══════════ -->
+<div class="pb"></div>
+<div class="sec">
+  <div class="ey">Section 01</div>
+  <div class="st">Executive Summary</div>
+  <div class="ss">Why we're repositioning, what changes, and what stays the same.</div>
+
+  <div class="highlight">
+    <div class="highlight-title">The Opportunity</div>
+    <p>Aykah is launching a new premium product line at <strong>$1,600–$3,000+ CAD</strong>, moving upmarket from our current $500–$2,200 range. This requires a complete repositioning of our brand voice, visual language, and marketing strategy to match the expectations of affluent Canadian customers. Our current AOV of <strong>$945</strong> and strong <strong>4.8/5 rating</strong> across 443 reviews prove we already deliver premium quality — our language just needs to match.</p>
+  </div>
+
+  <h3>What Changes</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-lbl">Target Audience</div>
+      <div class="card-val">Middle-class budget-conscious buyers <strong>&rarr; Affluent, design-conscious Canadians</strong></div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Brand Positioning</div>
+      <div class="card-val">"Aesop meets IKEA" <strong>&rarr; "Aesop meets RH"</strong> — premium but human</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Price Presentation</div>
+      <div class="card-val">$899.99 endings <strong>&rarr; Round numbers: $900, $1,600, $2,400</strong></div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Language Tier</div>
+      <div class="card-val">"Affordable value" language <strong>&rarr; Craftsmanship + material-specific language</strong></div>
+    </div>
+  </div>
+
+  <h3>What Stays</h3>
+  <p><strong>Brand values:</strong> Comfort, Integrity, Approachability, Trust. <strong>Colors:</strong> Navy #363B57, Ivory #FAF8F4, Gold #B8956A. <strong>Canadian identity:</strong> Canadian-owned and operated. <strong>Customer service:</strong> Our #1 differentiator stays — we just elevate how we talk about it.</p>
+</div>
+
+<!-- ══════════ CURRENT STATE: DATA ══════════ -->
+<div class="pb"></div>
+<div class="sec ivory">
+  <div class="ey">Section 02</div>
+  <div class="st">Where We Are Today — The Data</div>
+  <div class="ss">Google Ads performance data (Jan 1 – Mar 12, 2026) that supports the repositioning.</div>
+
+  <h3>Customer Profile</h3>
+  <div class="card-grid three">
+    <div class="card">
+      <div class="card-lbl">Primary Audience</div>
+      <div class="card-val"><strong>Female, 25-34</strong></div>
+      <div class="card-note">31.07% of all impressions</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Gender Split</div>
+      <div class="card-val"><strong>73.5% Female</strong> / 26.5% Male</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Core Age Range</div>
+      <div class="card-val"><strong>25-44</strong> (63.9% of audience)</div>
+    </div>
+  </div>
+
+  <h3>Performance Metrics</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-lbl">Average Order Value</div>
+      <div class="card-val big">$945 CAD</div>
+      <div class="card-note">vs. industry avg $253 — already 3.7x higher</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Blended ROAS</div>
+      <div class="card-val big">7.69x</div>
+      <div class="card-note">Declining from 9.30x — action needed</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Conversion Rate</div>
+      <div class="card-val big">1.3%</div>
+      <div class="card-note">Industry avg: 2.81% — biggest gap to close</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Impression Share</div>
+      <div class="card-val big">79.6%</div>
+      <div class="card-note">Strong presence in targeted auctions</div>
+    </div>
+  </div>
+
+  <h3>Geographic Strength</h3>
+  <div class="tbl-wrap">
+    <table class="dt">
+      <thead><tr><th>Province</th><th>Impression Share</th><th>Opportunity</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Ontario</strong></td><td>44.4% (242K impressions)</td><td>GTA is primary sales anchor — premium buyers concentrated here</td></tr>
+        <tr><td><strong>Quebec</strong></td><td>18.9% (103K)</td><td>Untapped — no competitors target French-language premium furniture</td></tr>
+        <tr><td><strong>British Columbia</strong></td><td>17.8% (97K)</td><td>Fastest-growing market, 6.9% CAGR through 2030</td></tr>
+        <tr><td><strong>Alberta</strong></td><td>11.0% (60K)</td><td>Emerging market with high disposable income</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Competitive Position</h3>
+  <div class="tbl-wrap">
+    <table class="dt">
+      <thead><tr><th>Competitor</th><th>Overlap Rate</th><th>Aykah Outranks Them</th><th>Key Insight</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Wayfair Canada</strong></td><td>93.9%</td><td>22.0%</td><td>#1 threat — mass-market scale, but no showrooms</td></tr>
+        <tr><td><strong>Rove Concepts</strong></td><td>73.9%</td><td>34.6%</td><td>Premium DTC — $2K-$8K range, $159 flat shipping</td></tr>
+        <tr><td><strong>Article</strong></td><td>63.5%</td><td>45.1%</td><td>Premium DTC — $700-$4.8K, Canadian-founded</td></tr>
+        <tr><td><strong>Amazon CA</strong></td><td>61.9%</td><td>53.9%</td><td>Generic offerings — Aykah wins on specialization</td></tr>
+        <tr><td><strong>Structube</strong></td><td>32.0%</td><td>—</td><td>Budget trendy — quality concerns (MDF/peeling)</td></tr>
+        <tr><td><strong>IKEA Canada</strong></td><td>18.4%</td><td>—</td><td>Low overlap — different category entirely</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="src">Source: Aykah Google Ads data, Jan 1 – Mar 12, 2026. Verified via NotebookLM.</div>
+</div>
+
+<!-- ══════════ THE REPOSITIONING SHIFT ══════════ -->
+<div class="pb"></div>
+<div class="sec">
+  <div class="ey">Section 03</div>
+  <div class="st">The Repositioning — Before &amp; After</div>
+  <div class="ss">How every element of communication changes to match our new premium positioning.</div>
+
+  <h3>Positioning Shift</h3>
+  <div class="dd-grid">
+    <div class="dont-box">
+      <div class="dd-lbl dont">Current (Retiring)</div>
+      <p><strong>Positioning:</strong> "Aesop meets IKEA" — premium feel, approachable price</p>
+      <p><strong>Audience:</strong> Middle-class, budget-conscious, value-seekers</p>
+      <p><strong>Language:</strong> "Affordable," "value," "free shipping"</p>
+      <p><strong>Pricing:</strong> $899.99, "Starting from $699"</p>
+      <p><strong>Competitors:</strong> Structube, IKEA, Wayfair</p>
+      <p><strong>Tone:</strong> Friendly salesperson</p>
+    </div>
+    <div class="do-box">
+      <div class="dd-lbl do">New Premium</div>
+      <p><strong>Positioning:</strong> "Aesop meets RH" — refined quality, human warmth</p>
+      <p><strong>Audience:</strong> Affluent, design-conscious Canadians, 25-44</p>
+      <p><strong>Language:</strong> "Crafted," "investment," "complimentary delivery"</p>
+      <p><strong>Pricing:</strong> $900, $1,600, $2,400 — round numbers</p>
+      <p><strong>Competitors:</strong> Rove Concepts, Article, Castlery</p>
+      <p><strong>Tone:</strong> Knowledgeable design advisor</p>
+    </div>
+  </div>
+
+  <h3>Pricing Psychology — Why Round Numbers</h3>
+  <div class="highlight">
+    <div class="highlight-title">Research-Backed: Zhang &amp; Wadhwa (2015), Journal of Consumer Research</div>
+    <p>Rounded prices ($1,600) encourage reliance on <strong>feelings</strong> and are preferred for emotion-driven purchases like furniture. Non-rounded prices ($1,599.99) trigger rational/cognitive evaluation — the "discount store" signal. Louis Vuitton, Rolex, and Hermes all use round-number pricing exclusively. <strong>Aykah should move all pricing to round numbers immediately.</strong></p>
+  </div>
+
+  <h3>"Quiet Luxury" — Our Tailwind</h3>
+  <p><strong>Quiet luxury is THE defining interior design trend of 2025-2026</strong> (confirmed by Decorilla, Homes &amp; Gardens, Navilize, Castle Furniture). Core characteristics: matte finishes, natural materials (linen, boucle, wood), warm neutrals, no logos, craftsmanship focus. <strong>Aykah's color palette (navy, ivory, gold) and aesthetic already align perfectly.</strong> This is a massive market tailwind for our repositioning.</p>
+  <div class="src">Sources: Decorilla 2026 Furniture Trends, Navilize Quiet Luxury Interiors, Castle Furniture 2026 Trends</div>
+</div>
+
+<!-- ══════════ WORD SWAP DICTIONARY ══════════ -->
+<div class="pb"></div>
+<div class="sec ivory">
+  <div class="ey">Section 04</div>
+  <div class="st">Language Upgrade — Word Swap Dictionary</div>
+  <div class="ss">Every word change needed across all channels. Tape this to the wall.</div>
+
+  <h3>Price &amp; Value Language</h3>
+  <div class="tbl-wrap">
+    <table class="swap">
+      <thead><tr><th>Retire</th><th>Use Instead</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Free shipping</td><td>Complimentary delivery across Canada</td><td>"Complimentary" = gift from brand. Burberry, Nordstrom use this.</td></tr>
+        <tr><td>Affordable</td><td>Remove entirely — let price speak</td><td>Signals budget-consciousness, not quality</td></tr>
+        <tr><td>Value / Great value</td><td>Investment / Enduring quality</td><td>Invites price comparison</td></tr>
+        <tr><td>Starting from $X</td><td>State the specific price</td><td>Invites bargain-hunting</td></tr>
+        <tr><td>$899.99</td><td>$900</td><td>Round numbers = luxury (Zhang & Wadhwa, 2015)</td></tr>
+        <tr><td>Save $X / X% off</td><td>Preferred pricing / Private access</td><td>Trains customers to wait for discounts</td></tr>
+        <tr><td>Deal / Bargain</td><td>Remove entirely</td><td>Flea market vocabulary</td></tr>
+        <tr><td>Budget / Cheap / Discount</td><td>Remove entirely</td><td>Incompatible with premium positioning</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Quality &amp; Feature Language</h3>
+  <div class="tbl-wrap">
+    <table class="swap">
+      <thead><tr><th>Retire</th><th>Use Instead</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>High-quality materials</td><td>Name the actual material (e.g., "kiln-dried hardwood")</td><td>Every brand says "high-quality" — specificity builds trust</td></tr>
+        <tr><td>Comfortable</td><td>Enveloping / Supportive / Sink-in</td><td>Overused — use sensory-specific language</td></tr>
+        <tr><td>Durable / Strong</td><td>Engineered for longevity / Heirloom-grade</td><td>Premium frames the lifespan, not the resistance</td></tr>
+        <tr><td>Stain-resistant fabric</td><td>Performance-grade textile with repel-and-release technology</td><td>Technical specificity signals premium</td></tr>
+        <tr><td>Wood frame</td><td>Kiln-dried hardwood frame with reinforced corner blocks</td><td>Construction details justify price</td></tr>
+        <tr><td>Foam cushions</td><td>High-density foam core wrapped in duck feather and down</td><td>Material layering signals craftsmanship</td></tr>
+        <tr><td>Best-seller</td><td>Signature piece / Most coveted</td><td>Mass popularity ≠ exclusivity</td></tr>
+        <tr><td>Customer favorite</td><td>A client favourite</td><td>"Client" > "customer" for premium</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Action &amp; Urgency Language</h3>
+  <div class="tbl-wrap">
+    <table class="swap">
+      <thead><tr><th>Retire</th><th>Use Instead</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Buy now / Shop now</td><td>Discover / Explore the collection</td><td>We invite, we don't pressure</td></tr>
+        <tr><td>Don't miss out / Hurry</td><td>Available for a limited engagement</td><td>FOMO = mass-market tactic</td></tr>
+        <tr><td>Act fast / Limited time</td><td>Seasonal collection / Current collection</td><td>Removes artificial urgency</td></tr>
+        <tr><td>Add to cart</td><td>Keep "Add to Cart" + add "Book a Design Consultation"</td><td>Hybrid approach (like RH) — self-serve + service</td></tr>
+        <tr><td>No assembly required!</td><td>Arrives fully assembled</td><td>Statement of fact, not excited relief</td></tr>
+        <tr><td>Customer service</td><td>Client care / Design advisory</td><td>Elevates the relationship</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════ PREMIUM SPECIFICATION LANGUAGE ══════════ -->
+<div class="pb"></div>
+<div class="sec">
+  <div class="ey">Section 05</div>
+  <div class="st">Premium Specification Language</div>
+  <div class="ss">How to describe the same product features in a way that justifies $1,600–$3,000 pricing.</div>
+
+  <h3>Fabric Specifications</h3>
+  <div class="tbl-wrap">
+    <table class="dt">
+      <thead><tr><th>Mass-Market</th><th>Premium</th><th>Certifications to Mention</th></tr></thead>
+      <tbody>
+        <tr><td>"Nice fabric"</td><td>"280 GSM performance bouclé with high double-rub durability rating"</td><td>OEKO-TEX Standard 100 (tests 1,000+ substances)</td></tr>
+        <tr><td>"Stain-resistant"</td><td>"Crypton-finished textile engineered to resist stains, moisture, and odor"</td><td>Crypton certification</td></tr>
+        <tr><td>"Linen"</td><td>"Belgian Flax Linen — naturally temperature-regulating, only softer with age"</td><td>GOTS (organic), OEKO-TEX</td></tr>
+        <tr><td>"Velvet"</td><td>"Plush performance velvet, 50,000+ Martindale cycles"</td><td>Martindale abrasion testing</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Construction Specifications</h3>
+  <div class="tbl-wrap">
+    <table class="dt">
+      <thead><tr><th>Mass-Market</th><th>Premium</th><th>Certifications to Mention</th></tr></thead>
+      <tbody>
+        <tr><td>"Strong frame"</td><td>"Kiln-dried hardwood frame with mortise-and-tenon joinery and corner-blocked reinforcement"</td><td>FSC-certified wood</td></tr>
+        <tr><td>"Springs"</td><td>"Eight-way hand-tied spring suspension — widely considered the gold standard"</td><td>—</td></tr>
+        <tr><td>"Foam cushions"</td><td>"Multi-layer: high-resilience 2.5 lb/ft³ foam core, duck feather wrap, down-proof ticking"</td><td>CertiPUR-US certified</td></tr>
+        <tr><td>"Metal legs"</td><td>"Brushed brass-finished steel with electroplated coating"</td><td>Powder-coat finish</td></tr>
+        <tr><td>"Weight capacity: 700 lbs"</td><td>"Structurally rated to support 700 lbs (ASTM/BIFMA tested)"</td><td>ASTM, BIFMA standards</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Sample Premium Product Description</h3>
+  <div class="highlight">
+    <div class="highlight-title">Before (Current Voice)</div>
+    <p>"Anchor your living space with the Enigma 3-Seater Sofa. Crafted in premium oat linen with clean lines that complement contemporary condos and cozy family rooms alike."</p>
+  </div>
+  <div class="highlight" style="background:rgba(61,122,85,0.06); border-color:rgba(61,122,85,0.2);">
+    <div class="highlight-title" style="color:var(--success);">After (Premium Voice)</div>
+    <p>"The Enigma Sofa anchors a room with quiet confidence. Upholstered in a naturally textured oat linen — soft to the touch and only more beautiful with time — over a kiln-dried hardwood frame built for decades of daily life. Deep, fibre-wrapped cushions invite you to stay a while longer."</p>
+  </div>
+  <p style="font-size:9px; color:var(--light);"><strong>Key differences:</strong> Product has agency, materials are sensory, construction builds trust, comfort is experiential, no price/room narrowing.</p>
+</div>
+
+<!-- ══════════ BANNED WORDS ══════════ -->
+<div class="pb"></div>
+<div class="sec alert">
+  <div class="ey" style="color:var(--error);">Section 06</div>
+  <div class="st" style="color:var(--error);">Banned Words &amp; Phrases</div>
+  <div class="ss">These words are permanently retired from all Aykah communications.</div>
+
+  <h3>Permanently Banned</h3>
+  <div class="tag-row">
+    <span class="b-tag">Free</span>
+    <span class="b-tag">Affordable</span>
+    <span class="b-tag">Cheap</span>
+    <span class="b-tag">Discount</span>
+    <span class="b-tag">Budget</span>
+    <span class="b-tag">Value (as selling point)</span>
+    <span class="b-tag">Deal</span>
+    <span class="b-tag">Bargain</span>
+    <span class="b-tag">Save $X</span>
+    <span class="b-tag">Starting from</span>
+    <span class="b-tag">As low as</span>
+    <span class="b-tag">Buy now!</span>
+    <span class="b-tag">Don't miss out!</span>
+    <span class="b-tag">Hurry!</span>
+    <span class="b-tag">Limited time offer!</span>
+    <span class="b-tag">Act fast!</span>
+    <span class="b-tag">Grab yours!</span>
+    <span class="b-tag">Best price guaranteed</span>
+    <span class="b-tag">High-quality materials</span>
+    <span class="b-tag">Luxury for less</span>
+    <span class="b-tag">Looks expensive but isn't</span>
+    <span class="b-tag">Why pay more?</span>
+    <span class="b-tag">Treat yourself</span>
+    <span class="b-tag">You deserve this</span>
+    <span class="b-tag">100-night trial</span>
+    <span class="b-tag">Free returns</span>
+    <span class="b-tag">Risk-free</span>
+    <span class="b-tag">Designed in Canada</span>
+    <span class="b-tag">Made in Canada</span>
+  </div>
+
+  <h3>Approved Premium Vocabulary</h3>
+  <div class="tag-row">
+    <span class="a-tag">Complimentary delivery</span>
+    <span class="a-tag">Investment piece</span>
+    <span class="a-tag">Signature collection</span>
+    <span class="a-tag">Considered design</span>
+    <span class="a-tag">Kiln-dried hardwood</span>
+    <span class="a-tag">Performance textile</span>
+    <span class="a-tag">Benchmade</span>
+    <span class="a-tag">Engineered for longevity</span>
+    <span class="a-tag">Heirloom quality</span>
+    <span class="a-tag">Crafted / Constructed</span>
+    <span class="a-tag">Refined / Sculptural</span>
+    <span class="a-tag">Quiet luxury</span>
+    <span class="a-tag">Client care</span>
+    <span class="a-tag">Design advisory</span>
+    <span class="a-tag">Curated collection</span>
+    <span class="a-tag">FSC-certified</span>
+    <span class="a-tag">OEKO-TEX certified</span>
+    <span class="a-tag">CertiPUR-US</span>
+    <span class="a-tag">Canadian-owned</span>
+    <span class="a-tag">Explore / Discover</span>
+  </div>
+
+  <h3>6 Things That Hurt Affluent Customer Ego</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-lbl">1. Assumed Financial Limitation</div>
+      <div class="card-val">Never say "affordable," "budget-friendly," or "for every budget." Affluent buyers don't want to be reminded of budgets.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">2. Herd Mentality Claims</div>
+      <div class="card-val">"Thousands sold!" or "trending" signals mass-market. Affluent buyers want distinction, not popularity.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">3. Over-Explanation</div>
+      <div class="card-val">"Did you know...?" or "Simply put..." is condescending. Respect their intelligence.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">4. Desperate Enthusiasm</div>
+      <div class="card-val">ALL CAPS, exclamation marks, emojis signal desperation. Premium brands are calm and confident.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">5. The Aspirational Trap</div>
+      <div class="card-val">"World-class luxury" without substance. Actually premium brands SHOW quality through specs, not claim it with vague superlatives.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">6. Transactional Framing</div>
+      <div class="card-val">"Money-back guarantee" or hard-sell CTAs. Premium is relational, not transactional.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ ANNOUNCEMENT BAR ══════════ -->
+<div class="pb"></div>
+<div class="sec">
+  <div class="ey">Section 07</div>
+  <div class="st">Immediate Changes — Announcement Bar &amp; Shipping</div>
+  <div class="ss">These can be implemented today for instant brand elevation.</div>
+
+  <h3>Announcement Bar — Before &amp; After</h3>
+  <div class="dd-grid">
+    <div class="dont-box">
+      <div class="dd-lbl dont">Current</div>
+      <p style="font-size:12px; font-weight:600; text-align:center; text-transform:uppercase; letter-spacing:2px;">FREE SHIPPING ACROSS CANADA &middot; SHOP STORAGE BEDS</p>
+    </div>
+    <div class="do-box">
+      <div class="dd-lbl do">Premium</div>
+      <p style="font-size:12px; font-weight:500; text-align:center; letter-spacing:1.5px; color:var(--navy);">Complimentary delivery across Canada on orders over $199</p>
+    </div>
+  </div>
+
+  <h3>Rotating 3 Messages (5-7 second intervals)</h3>
+  <div class="card-grid three">
+    <div class="card">
+      <div class="card-lbl">Message 1</div>
+      <div class="card-val">"Complimentary delivery across Canada on orders over $199"</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Message 2</div>
+      <div class="card-val">"Introducing the [Collection Name]. Now available."</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Message 3</div>
+      <div class="card-val">"1-year warranty on all furniture"</div>
+    </div>
+  </div>
+  <div class="src">Data: Rotating 3 messages outperforms single-message bars by 22%. Complimentary shipping bars achieve 6.2% CTR. (Source: EasyApps 2026, PopupSmart 2026)</div>
+
+  <h3>12 Alternatives to the Word "Free"</h3>
+  <div class="tbl-wrap">
+    <table class="dt">
+      <thead><tr><th>Context</th><th>Instead of "Free..."</th><th>Say...</th></tr></thead>
+      <tbody>
+        <tr><td>Shipping</td><td>Free shipping</td><td><strong>Complimentary delivery</strong></td></tr>
+        <tr><td>Shipping</td><td>Free shipping over $199</td><td><strong>Shipping included on all orders over $199</strong></td></tr>
+        <tr><td>Swatches</td><td>Free fabric swatches</td><td><strong>Request your material samples</strong></td></tr>
+        <tr><td>Consultation</td><td>Free design consultation</td><td><strong>Courtesy design consultation</strong></td></tr>
+        <tr><td>Assembly</td><td>Free assembly</td><td><strong>Assembly included</strong></td></tr>
+        <tr><td>Warranty</td><td>Free 1-year warranty</td><td><strong>Backed by our 1-year warranty</strong></td></tr>
+        <tr><td>General</td><td>Free</td><td><strong>With our compliments / On us / Included</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════ CAMPAIGN CONCEPTS ══════════ -->
+<div class="pb"></div>
+<div class="sec warm">
+  <div class="ey">Section 08</div>
+  <div class="st">Campaign Concepts for Premium Launch</div>
+  <div class="ss">Five ready-to-develop campaigns, each positioning Aykah upmarket.</div>
+
+  <div class="camp-card">
+    <div class="camp-tag">Campaign 1 &middot; Launch Hero</div>
+    <div class="camp-name">"Worth the Wait"</div>
+    <div class="camp-desc">Position the premium line as intentionally crafted — the opposite of fast furniture. Quality takes time, and the customer has been waiting for something this good in Canada.</div>
+    <div class="camp-headline">"Some things can't be rushed. Every joint considered. Every fabric hand-selected. Every detail, deliberate."</div>
+    <div class="camp-channels">Channels: Instagram carousel + Reel &rarr; Email 3-part sequence &rarr; Website landing page &rarr; Pinterest</div>
+  </div>
+
+  <div class="camp-card">
+    <div class="camp-tag">Campaign 2 &middot; Brand Story</div>
+    <div class="camp-name">"Home, Actually"</div>
+    <div class="camp-desc">Counter-position against sterile showroom luxury. Aykah's premium pieces are designed to be lived in — by real families, in real Canadian homes.</div>
+    <div class="camp-headline">"Premium furniture shouldn't need a 'do not touch' sign. Built for Sunday mornings, Tuesday dinners, and everything between."</div>
+    <div class="camp-channels">Channels: TikTok "Day in the Life" &rarr; Instagram UGC-style &rarr; Influencer partnerships (3-5 Canadian designers)</div>
+  </div>
+
+  <div class="camp-card">
+    <div class="camp-tag">Campaign 3 &middot; Value Justification</div>
+    <div class="camp-name">"The 10-Year Piece"</div>
+    <div class="camp-desc">Frame premium pricing as the smarter long-term choice. Position Aykah as the antidote to disposable furniture.</div>
+    <div class="camp-headline">"Buy once. Live well. For a very long time. Cost per year: less than your streaming subscriptions. Combined."</div>
+    <div class="camp-channels">Channels: Email interactive calculator &rarr; Blog long-form &rarr; Instagram infographic carousel &rarr; Pinterest evergreen</div>
+  </div>
+
+  <div class="camp-card">
+    <div class="camp-tag">Campaign 4 &middot; Trend Alignment</div>
+    <div class="camp-name">"Quiet Luxury, Loud Comfort"</div>
+    <div class="camp-desc">Tap into the 2025-2026 quiet luxury trend. No logos, no flash — just unmistakable quality you can feel.</div>
+    <div class="camp-headline">"No logos. No labels. Just unmistakable quality. The kind of furniture people notice without knowing why."</div>
+    <div class="camp-channels">Channels: Instagram Reels ASMR-style material close-ups &rarr; TikTok "touch test" &rarr; Website material stories page</div>
+  </div>
+
+  <div class="camp-card">
+    <div class="camp-tag">Campaign 5 &middot; Canadian Identity</div>
+    <div class="camp-name">"From Here. For Here."</div>
+    <div class="camp-desc">Lean into Canadian identity. In an era of faceless global brands, being proudly Canadian is a premium differentiator.</div>
+    <div class="camp-headline">"We know what a Burnaby morning looks like. A Toronto evening. A Montreal winter. Your furniture should understand your home the way you do."</div>
+    <div class="camp-channels">Channels: Geo-tagged Instagram &rarr; Region-specific emails &rarr; Canadian design media PR &rarr; Local artist collaborations</div>
+  </div>
+</div>
+
+<!-- ══════════ SOCIAL MEDIA ══════════ -->
+<div class="pb"></div>
+<div class="sec">
+  <div class="ey">Section 09</div>
+  <div class="st">Social Media Strategy</div>
+  <div class="ss">Content formats, posting cadence, and platform-specific guidelines for premium positioning.</div>
+
+  <h3>Instagram — Content Format Ratio</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-lbl">Carousels (3-7 images)</div>
+      <div class="card-val big">35%</div>
+      <div class="card-note">Hero content — styled rooms, new arrivals, material stories</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Reels (15-60 sec)</div>
+      <div class="card-val big">35%</div>
+      <div class="card-note">Reach + discovery — room reveals, craftsmanship, styling tips</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Static Images</div>
+      <div class="card-val big">15%</div>
+      <div class="card-note">Brand moments — announcements, minimal product shots</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Stories (Daily)</div>
+      <div class="card-val big">15%</div>
+      <div class="card-note">Behind-the-scenes, polls, UGC reshares</div>
+    </div>
+  </div>
+
+  <h3>Caption Formula (Premium)</h3>
+  <p><strong>Line 1:</strong> Scene-setting or emotional hook (no product name yet)<br>
+  <strong>Line 2:</strong> Product introduction with one material/design detail<br>
+  <strong>Line 3:</strong> Subtle brand positioning<br>
+  <strong>Line 4:</strong> Soft CTA ("Link in bio" or "Explore the collection")</p>
+
+  <h3>TikTok — 5 Content Formats That Work</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-lbl">1. The Details You Didn't Notice</div>
+      <div class="card-val">Close-up material shots. ASMR quality. No face-to-camera needed.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">2. Room Reveals / Before-After</div>
+      <div class="card-val">Empty room &rarr; styled room. Clean transitions. Consistently 100K+ views.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">3. How It's Made</div>
+      <div class="card-val">Supply chain transparency. Quality checks. Shows WHY it costs more.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">4. Designer/Stylist POV</div>
+      <div class="card-val">Partner with interior designers who stage rooms with Aykah pieces.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">5. Style This Space</div>
+      <div class="card-val">Show a room, ask followers to vote on which piece belongs. Drives engagement.</div>
+    </div>
+  </div>
+
+  <h3>Rules for Premium Social</h3>
+  <div class="dd-grid">
+    <div class="do-box">
+      <div class="dd-lbl do">Do</div>
+      <p>Natural lighting, warm tones, golden hour</p>
+      <p>8-15 hashtags max (in first comment)</p>
+      <p>Ambient/original audio on Reels</p>
+      <p>Curate UGC ruthlessly — only repost premium-quality photos</p>
+      <p>3-4 TikTok posts per week max</p>
+    </div>
+    <div class="dont-box">
+      <div class="dd-lbl dont">Never</div>
+      <p>Flash-lit or artificially bright photos</p>
+      <p>Text-to-speech on TikTok (reads as cheap)</p>
+      <p>Trending comedy sounds on product content</p>
+      <p>Repost every tagged photo (quality over quantity)</p>
+      <p>Countdown timers or urgency overlays</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ WEBSITE DIRECTION ══════════ -->
+<div class="pb"></div>
+<div class="sec ivory">
+  <div class="ey">Section 10</div>
+  <div class="st">Website Redesign Direction</div>
+  <div class="ss">What premium furniture websites look like in 2026 — and how Aykah should follow.</div>
+
+  <h3>Key Design Principles</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-lbl">Whitespace</div>
+      <div class="card-val">30-50% more whitespace than current. 120-200px between sections. Text max 600-700px wide. This is the #1 differentiator between premium and mass-market.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Imagery</div>
+      <div class="card-val">Full-bleed hero images. 8-12 photos per product. Mix: styled room (3-4), silo (2-3), detail/material close-ups (2-3), scale reference (1-2).</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Typography</div>
+      <div class="card-val">Large serif headings (50-80px hero), dramatic size contrast with 16-18px body text. Serif headings signal premium — exactly what our font pairing lab is solving.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Navigation</div>
+      <div class="card-val">4-6 links max. Mega-menu with category images on hover. Sticky nav that appears on scroll. Prominent search.</div>
+    </div>
+  </div>
+
+  <h3>Homepage Hero — Recommended Approach</h3>
+  <p>Full-screen lifestyle image, minimal text overlay. Collection name in elegant serif type. One CTA button ("Explore the Collection"). No cluttered messaging. <strong>Reference:</strong> RH, Poliform, Minotti.</p>
+
+  <h3>Product Pages — Premium Standard</h3>
+  <p><strong>Add to Cart</strong> stays (transparency builds trust at $1,600-$3,000), but add a secondary CTA: <strong>"Book a Design Consultation"</strong>. This is the RH hybrid model — self-serve + service. Specs in expandable accordions below the fold with narrative material descriptions.</p>
+
+  <h3>Critical Fix: Assembly Experience</h3>
+  <div class="highlight" style="background:rgba(192,57,43,0.06); border-color:rgba(192,57,43,0.2);">
+    <div class="highlight-title" style="color:var(--error);">Risk: Assembly is the #1 customer complaint (443 reviews)</div>
+    <p>Words like "nightmare," "complex," and "hard" appear repeatedly in Aykah reviews. <strong>Premium brands either ship pre-assembled or provide white-glove service.</strong> For the premium line, Aykah must offer optional white-glove delivery and assembly, or dramatically improve instructions and part labelling. This is non-negotiable for premium repositioning.</p>
+  </div>
+</div>
+
+<!-- ══════════ EMAIL STRATEGY ══════════ -->
+<div class="pb"></div>
+<div class="sec">
+  <div class="ey">Section 11</div>
+  <div class="st">Email Marketing — Premium Approach</div>
+  <div class="ss">Subject line tone, design, cadence, and launch sequence.</div>
+
+  <h3>Subject Line Rules</h3>
+  <div class="dd-grid">
+    <div class="do-box">
+      <div class="dd-lbl do">Premium Subject Lines</div>
+      <p>"Introducing the Haven Collection"</p>
+      <p>"The sofa that started a conversation"</p>
+      <p>"How we choose our oak"</p>
+      <p>"Autumn, reframed"</p>
+      <p>"Your new sofa — a care guide"</p>
+    </div>
+    <div class="dont-box">
+      <div class="dd-lbl dont">Never</div>
+      <p>ALL CAPS subjects</p>
+      <p>Exclamation marks</p>
+      <p>Emojis in subject lines</p>
+      <p>"Last chance!" or "Don't miss out!"</p>
+      <p>Title Case For Every Word</p>
+    </div>
+  </div>
+
+  <h3>3-Email Premium Launch Sequence</h3>
+  <div class="card-grid three">
+    <div class="card">
+      <div class="card-lbl">Email 1 — The Tease (5-7 days before)</div>
+      <div class="card-val">"Something new is coming." One detail close-up. 2-3 sentences. No product names or prices. "Be the first to know" CTA.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Email 2 — The Reveal (Launch day)</div>
+      <div class="card-val">"Introducing the [Collection Name]." Full hero image. Collection story. 3-4 product images. "Discover the Collection" CTA.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Email 3 — The Deep Dive (3-5 days post)</div>
+      <div class="card-val">"The details behind [Collection Name]." Material stories, design process. Individual product spotlights. Converts browsers to buyers.</div>
+    </div>
+  </div>
+
+  <h3>Cadence: 6-8 emails per month maximum</h3>
+  <p>Never more than 2 emails per week. Each email should feel like an event, not noise. Premium brands email less frequently than mass-market. Single-column layout, 500-600px wide, ivory background (#FAF8F4).</p>
+</div>
+
+<!-- ══════════ ACTION ITEMS ══════════ -->
+<div class="pb"></div>
+<div class="sec navy">
+  <div class="ey">Section 12</div>
+  <div class="st">Implementation Roadmap</div>
+  <div class="ss">What to do, in what order, starting now.</div>
+
+  <h3>This Week — Immediate Wins</h3>
+  <div class="card-grid navy">
+    <div class="card">
+      <div class="card-lbl">1. Announcement Bar</div>
+      <div class="card-val">Replace "FREE SHIPPING" with "Complimentary delivery across Canada on orders over $199." 10-minute change.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">2. Search &amp; Replace</div>
+      <div class="card-val">Find every instance of "free" on the website and replace with "complimentary" or "included."</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">3. Round Pricing</div>
+      <div class="card-val">Move all premium line pricing to round numbers. $1,600 not $1,599.99. $2,400 not $2,399.99.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">4. Social Media Bio</div>
+      <div class="card-val">Update Instagram/TikTok bios to reflect premium positioning. Remove "affordable" language.</div>
+    </div>
+  </div>
+
+  <h3>This Month — Foundation</h3>
+  <div class="card-grid navy">
+    <div class="card">
+      <div class="card-lbl">5. Product Descriptions</div>
+      <div class="card-val">Rewrite all premium line descriptions using the specification language from this guide.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">6. Photography Investment</div>
+      <div class="card-val">One professional shoot with a stylist — lifestyle + detail + material close-ups. This is the highest-ROI investment.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">7. Email Welcome Sequence</div>
+      <div class="card-val">Build the 5-email welcome sequence for new premium customers.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">8. Assembly Solution</div>
+      <div class="card-val">Develop white-glove delivery option for premium line, OR redesign assembly instructions with labelled parts.</div>
+    </div>
+  </div>
+
+  <h3>Next Quarter — Launch</h3>
+  <div class="card-grid navy">
+    <div class="card">
+      <div class="card-lbl">9. "Worth the Wait" Campaign</div>
+      <div class="card-val">Launch the premium collection debut campaign across all channels.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">10. Website Redesign</div>
+      <div class="card-val">Homepage with full-bleed imagery, generous whitespace, premium typography.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">11. Voice Playbook v2</div>
+      <div class="card-val">Update the team copy guide with all premium language rules from this document.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">12. Design Consultation</div>
+      <div class="card-val">Add "Book a Design Consultation" as secondary CTA on premium product pages.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SOURCES ══════════ -->
+<div class="pb"></div>
+<div class="sec ivory">
+  <div class="ey">Section 13</div>
+  <div class="st">Sources &amp; Verification</div>
+  <div class="ss">All claims in this document are verified. No hallucinated data.</div>
+
+  <h3>Academic Research</h3>
+  <p><strong>Zhang, K. &amp; Wadhwa, M. (2015)</strong> "This Number Just Feels Right: The Impact of Roundedness of Price Numbers on Product Evaluations." <em>Journal of Consumer Research</em>, 41(5), 1172-1185. (Round pricing psychology)</p>
+  <p><strong>Morris, E. &amp; Dunning, D. (2012)</strong> The Baskerville Effect. <em>New York Times</em> / Cornell University. (Serif font trustworthiness — actual effect ~1.5%, not the commonly cited 40%)</p>
+
+  <h3>Brand Analysis (Verified Against Live Sites)</h3>
+  <p>RH (rh.com/ca/en), Article (article.com), Rove Concepts (roveconcepts.com), Castlery (castlery.com/ca), Crate &amp; Barrel, West Elm, B&amp;B Italia, Poliform, Minotti. All language examples verified via direct site observation.</p>
+
+  <h3>Certifications (Verified)</h3>
+  <p><strong>CertiPUR-US:</strong> certipur.us — foam testing for chemicals, emissions, durability. <strong>OEKO-TEX Standard 100:</strong> oeko-tex.com — tests 1,000+ harmful substances in textiles. <strong>FSC:</strong> Forest Stewardship Council — responsibly managed forests. <strong>Crypton:</strong> crypton.com — engineered fabric technology (fibre-level, not topical treatment).</p>
+
+  <h3>Aykah Performance Data</h3>
+  <p><strong>Source:</strong> Aykah Google Ads account, Jan 1 – Mar 12, 2026. Queried and verified via NotebookLM (Gemini 2.5) grounded on uploaded CSV data, search terms, auction insights, and SEO strategy documents.</p>
+
+  <h3>Industry Trends</h3>
+  <p>Quiet luxury trend: Decorilla, Navilize, Castle Furniture, Homes &amp; Gardens, Eleganza Rooms (all 2026). Announcement bar data: EasyApps 2026, PopupSmart 2026, OptiMonk. Social media benchmarks: Dash Social 2026 Luxury Industry, FurnishStack 2025.</p>
+</div>
+
+<!-- ══════════ FOOTER ══════════ -->
+<div class="foot">
+  <span class="fl">AYKAH &middot; PREMIUM REPOSITIONING STRATEGY &middot; CONFIDENTIAL</span>
+  <span class="fr">APRIL 2026</span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aykah Premium Language Guide — Word Swap Dictionary & Specification Standards</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  color: #2C2C2C; background: #fff;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6; font-size: 11px;
+}
+:root {
+  --navy: #363B57; --navy-dark: #2A2E45; --gold: #B8956A;
+  --gold-dark: #8B6E4A; --gold-light: #D4BC9A;
+  --ivory: #FAF8F4; --warm: #F7F3EE; --border: #E8E3DB;
+  --text: #2C2C2C; --light: #9A948D;
+  --font-h: 'Lora', Georgia, serif;
+  --font-b: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --danger: #C0392B; --success: #3D7A55;
+}
+.pb { page-break-before: always; }
+@media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+
+/* ── COVER ── */
+.cover {
+  background: var(--navy); min-height: 100vh; padding: 80px 60px 50px;
+  position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center;
+}
+.cover::after { content:''; position:absolute; bottom:0; left:0; right:0; height:5px; background:var(--gold); }
+.cover-top { position: absolute; top: 50px; left: 60px; right: 60px; display: flex; justify-content: space-between; align-items: center; }
+.cover-wm { font-family:var(--font-h); font-size:28px; font-weight:700; color:#fff; letter-spacing:6px; }
+.cover-ver { font-size:9px; color:rgba(255,255,255,0.2); letter-spacing:2px; text-transform:uppercase; }
+.cover-ey { font-size:10px; letter-spacing:5px; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:14px; }
+.cover h1 { font-family:var(--font-h); font-size:44px; color:#fff; font-weight:600; line-height:1.15; max-width:600px; margin-bottom:18px; }
+.cover .sub { font-size:13.5px; color:rgba(255,255,255,0.4); max-width:500px; line-height:1.7; font-weight:300; }
+.cover-foot { position:absolute; bottom:24px; left:60px; right:60px; display:flex; gap:40px; }
+.cover-foot span { font-size:9px; color:rgba(255,255,255,0.15); letter-spacing:1.5px; text-transform:uppercase; }
+
+/* ── SECTIONS ── */
+.sec { padding: 40px 56px 32px; border-bottom: 1px solid var(--border); }
+.sec.ivory { background: var(--ivory); }
+.sec.navy { background: var(--navy); }
+.sec.warm { background: var(--warm); }
+.sec.alert { background: #FFF8F0; border-bottom-color: #F0DCC0; }
+.sec.danger { background: #FFF5F3; border-bottom-color: #F0D0C8; }
+.ey { font-size:8.5px; letter-spacing:3.5px; text-transform:uppercase; color:var(--gold-dark); font-weight:700; margin-bottom:4px; }
+.navy .ey { color:var(--gold); }
+.st { font-family:var(--font-h); font-size:22px; color:var(--navy); font-weight:600; line-height:1.2; margin-bottom:4px; }
+.navy .st { color:#fff; }
+.ss { font-size:11px; color:var(--light); margin-bottom:18px; line-height:1.5; }
+.navy .ss { color:rgba(255,255,255,0.3); }
+p { font-size:11px; color:#555; line-height:1.7; margin-bottom:8px; max-width:720px; }
+strong { font-weight:600; color:var(--text); }
+.navy p { color:rgba(255,255,255,0.5); }
+.navy strong { color:#fff; }
+h3 { font-family:var(--font-h); font-size:15px; font-weight:600; color:var(--navy); margin:20px 0 8px; }
+.navy h3 { color:#fff; }
+h4 { font-size:12px; font-weight:700; color:var(--navy); margin:14px 0 6px; letter-spacing:0.5px; }
+em { font-style: italic; }
+
+/* ── TABLES ── */
+.tbl-wrap { border:1px solid var(--border); border-radius:8px; overflow:hidden; margin:10px 0 16px; }
+table.dt { width:100%; border-collapse:collapse; font-size:10.5px; }
+table.dt th {
+  text-align:left; font-weight:700; font-size:7.5px; letter-spacing:2px;
+  text-transform:uppercase; color:var(--gold-dark); padding:8px 14px;
+  border-bottom:2px solid var(--border); background:var(--ivory);
+}
+table.dt td { padding:7px 14px; border-bottom:1px solid #f0ece6; color:#444; vertical-align:top; line-height:1.5; }
+table.dt tr:last-child td { border-bottom:none; }
+table.dt tr:hover { background: #FDFCFA; }
+.strike { color: var(--danger); text-decoration: line-through; font-weight:500; }
+.premium { color: var(--success); font-weight:600; }
+.tag { display:inline-block; font-size:8px; letter-spacing:1.5px; text-transform:uppercase; padding:2px 8px; border-radius:3px; font-weight:700; margin-left:6px; }
+.tag.avoid { background:#FEE8E4; color:var(--danger); }
+.tag.use { background:#E8F5EC; color:var(--success); }
+.tag.caution { background:#FFF3E0; color:#E67E22; }
+
+/* ── DO/DON'T ── */
+.dd-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:12px 0; }
+.dd-card { border-radius:8px; padding:16px 18px; }
+.dd-card.do { background:#F0F7F2; border:1px solid #C8E0CE; }
+.dd-card.dont { background:#FFF5F3; border:1px solid #F0D0C8; }
+.dd-lbl { font-size:8px; letter-spacing:2.5px; text-transform:uppercase; font-weight:800; margin-bottom:8px; }
+.dd-lbl.do { color:var(--success); }
+.dd-lbl.dont { color:var(--danger); }
+.dd-card p { font-size:10.5px; margin-bottom:4px; color:#444; }
+
+/* ── SPEC CARDS ── */
+.spec-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:10px 0; }
+.spec-card { background:#fff; border:1px solid var(--border); border-left:3px solid var(--gold); border-radius:6px; padding:14px 16px; }
+.spec-card h4 { margin:0 0 4px; font-size:11px; color:var(--navy); }
+.spec-card .mass { font-size:10px; color:var(--danger); text-decoration:line-through; margin-bottom:3px; }
+.spec-card .prem { font-size:10.5px; color:var(--success); font-weight:600; line-height:1.5; }
+
+/* ── SAMPLE CARDS ── */
+.sample-card { background:var(--ivory); border:1px solid var(--border); border-radius:8px; padding:18px 22px; margin:10px 0; }
+.sample-card .label { font-size:8px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-dark); font-weight:700; margin-bottom:6px; }
+.sample-card .headline { font-family:var(--font-h); font-size:16px; color:var(--navy); font-weight:600; margin-bottom:8px; line-height:1.3; }
+.sample-card .body { font-size:11px; color:#555; line-height:1.7; }
+.sample-card .meta { font-size:9px; color:var(--light); margin-top:8px; letter-spacing:1px; text-transform:uppercase; }
+
+/* ── CALLOUT ── */
+.callout { background:var(--ivory); border:1px solid var(--border); border-left:4px solid var(--gold); border-radius:6px; padding:14px 18px; margin:12px 0; }
+.callout.danger { background:#FFF5F3; border-left-color:var(--danger); }
+.callout.success { background:#F0F7F2; border-left-color:var(--success); }
+.callout p { font-size:10.5px; margin-bottom:4px; }
+
+/* ── TOC ── */
+.toc { list-style:none; padding:0; }
+.toc li { font-size:12px; padding:8px 0; border-bottom:1px solid #f0ece6; display:flex; justify-content:space-between; }
+.toc li span:first-child { color:var(--navy); font-weight:500; }
+.toc li span:last-child { color:var(--light); font-size:10px; }
+
+/* ── NUMBERED LIST ── */
+.num-list { counter-reset: item; list-style:none; padding:0; margin:8px 0; }
+.num-list li { counter-increment:item; display:flex; gap:10px; padding:6px 0; font-size:10.5px; color:#444; line-height:1.6; }
+.num-list li::before { content:counter(item); font-family:var(--font-h); font-size:14px; font-weight:700; color:var(--gold); min-width:20px; }
+
+/* ── PSYCHOLOGY CARD ── */
+.psych-card { background:#fff; border:1px solid var(--border); border-radius:8px; padding:16px 20px; margin:8px 0; }
+.psych-card h4 { font-family:var(--font-h); font-size:13px; color:var(--navy); margin:0 0 6px; }
+.psych-card .trigger { font-size:9px; text-transform:uppercase; letter-spacing:2px; color:var(--danger); font-weight:700; margin-bottom:4px; }
+.psych-card p { font-size:10.5px; color:#555; line-height:1.6; }
+.psych-card .example { font-size:10px; color:var(--light); font-style:italic; margin-top:4px; }
+
+/* ── PILL LIST ── */
+.pill-list { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0; }
+.pill { display:inline-block; font-size:9px; padding:4px 12px; border-radius:20px; font-weight:600; letter-spacing:0.5px; }
+.pill.bad { background:#FEE8E4; color:var(--danger); border:1px solid #F0D0C8; }
+.pill.good { background:#E8F5EC; color:var(--success); border:1px solid #C8E0CE; }
+.pill.neutral { background:#F5F0EB; color:var(--gold-dark); border:1px solid var(--border); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .sec { padding: 28px 24px 20px; }
+  .dd-grid, .spec-grid { grid-template-columns: 1fr; }
+  .cover { padding: 50px 30px; }
+  .cover h1 { font-size: 32px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════════
+     COVER PAGE
+     ════════════════════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-top">
+    <div class="cover-wm">AYKAH</div>
+    <div class="cover-ver">v1.0 &mdash; April 2026</div>
+  </div>
+  <div class="cover-ey">Brand Language Standards</div>
+  <h1>Premium Language Guide &amp; Word Swap Dictionary</h1>
+  <div class="sub">The psychology, linguistics, and specification standards that separate premium brands from mass-market retailers. A comprehensive reference for all Aykah communications&mdash;from product descriptions to social media, packaging to customer service.</div>
+  <div class="cover-foot">
+    <span>Confidential</span>
+    <span>Management Presentation</span>
+    <span>Aykah Furniture Inc.</span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     TABLE OF CONTENTS
+     ════════════════════════════════════════════════════════════════ -->
+<div class="sec ivory pb">
+  <div class="ey">Contents</div>
+  <div class="st">Document Overview</div>
+  <div class="ss">Five sections designed to align every team member on premium communication standards</div>
+  <ul class="toc">
+    <li><span>1. Complete Word Swap Dictionary (55 swaps across 8 categories)</span><span>Section 1</span></li>
+    <li><span>2. Premium Specification Language (35+ specification upgrades)</span><span>Section 2</span></li>
+    <li><span>3. Words That Hurt Affluent Customer Ego (Psychology research)</span><span>Section 3</span></li>
+    <li><span>4. How Premium Brands Handle "Free" (12 alternatives)</span><span>Section 4</span></li>
+    <li><span>5. Tone Calibration: "Aesop Meets RH" (10 sample executions)</span><span>Section 5</span></li>
+  </ul>
+  <div class="callout" style="margin-top:20px;">
+    <p><strong>How to use this document:</strong> Print and distribute to all copywriters, marketers, customer service representatives, and social media managers. Every customer-facing word must pass through these filters before publication. When in doubt, read it aloud&mdash;if it sounds like it belongs at a furniture liquidation outlet, rewrite it.</p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     SECTION 1: WORD SWAP DICTIONARY
+     ════════════════════════════════════════════════════════════════ -->
+<div class="sec pb">
+  <div class="ey">Section 1</div>
+  <div class="st">Complete Word Swap Dictionary</div>
+  <div class="ss">55 mass-market words replaced with premium alternatives&mdash;organized by category. The left column is banned from all Aykah communications.</div>
+
+  <h3>1A. Price-Related Language</h3>
+  <p>Price language is the single fastest way to signal market position. Affluent customers do not seek "deals"&mdash;they seek <strong>value congruent with quality</strong>. The goal is to make price feel justified, not reduced.</p>
+  <div class="tbl-wrap">
+    <table class="dt">
+      <thead><tr><th>Mass-Market Word</th><th>Premium Alternative</th><th>Why It Matters</th></tr></thead>
+      <tbody>
+        <tr><td><span class="strike">Affordable</span></td><td><span class="premium">Attainable luxury / Accessible elegance</span></td><td>"Affordable" signals budget-consciousness. Premium customers want to feel they're choosing quality, not saving money.</td></tr>
+        <tr><td><span class="strike">Cheap</span></td><td><span class="premium">Exceptional value / Thoughtfully priced</span></td><td>"Cheap" is the most damaging word in premium branding. It implies low quality and degrades perceived worth.</td></tr>
+        <tr><td><span class="strike">Value / Great value</span></td><td><span class="premium">Enduring investment / Lasting value</span></td><td>Reframe "value" from price-to-quality ratio to longevity and timelessness.</td></tr>
+        <tr><td><span class="strike">Discount</span></td><td><span class="premium">Preferred pricing / Private offer / Exclusive consideration</span></td><td>"Discount" implies the original price was inflated. Premium brands offer select access, not markdowns.</td></tr>
+        <tr><td><span class="strike">Sale / On sale</span></td><td><span class="premium">Seasonal collection event / Private selection / Atelier event</span></td><td>Sales signal desperation to move inventory. Events signal curation and exclusivity.</td></tr>
+        <tr><td><span class="strike">Deal</span></td><td><span class="premium">Opportunity / Occasion</span></td><td>"Deal" is transactional. Premium relationships are built on mutual respect, not haggling.</td></tr>
+        <tr><td><span class="strike">Save / Savings</span></td><td><span class="premium">Enjoy preferred terms / Benefit from select pricing</span></td><td>Premium customers do not want to be "savers." They want to be recognized as discerning.</td></tr>
+        <tr><td><span class="strike">Free</span></td><td><span class="premium">Complimentary / With our compliments / Included</span></td><td>"Free" implies the item has no value. "Complimentary" implies generosity from a position of strength.</td></tr>
+        <tr><td><span class="strike">Budget-friendly</span></td><td><span class="premium">Considered investment / Intelligently appointed</span></td><td>Never reference the customer's budget. It implies financial limitation.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>1B. Quality Language</h3>
+  <p>Generic quality claims ("good quality") are meaningless in premium positioning. Premium brands use <strong>specificity</strong>&mdash;they name the material, the process, the standard. Vague claims signal a brand that cannot substantiate its promises.</p>
+  <div class="tbl-wrap">
+    <table class="dt">
+      <thead><tr><th>Mass-Market Word</th><th>Premium Alternative</th><th>Why It Matters</th></tr></thead>
+      <tbody>
+        <tr><td><span class="strike">Good quality</span></td><td><span class="premium">Impeccably crafted / Meticulously finished</span></td><td>Quality is the baseline, not the differentiator. Speak to the process, not the outcome.</td></tr>
+        <tr><td><span class="strike">Well-made</span></td><td><span class="premium">Artisan-constructed / Precision-engineered</span></td><td>"Well-made" is what you say when you can't describe how it's made. Name the joinery, the finish, the standard.</td></tr>
+        <tr><td><span class="strike">Durable / Built to last</span></td><td><span class="premium">Engineered for longevity / Heirloom-grade</span></td><td>"Durable" sounds industrial. "Heirloom-grade" implies it will be cherished across generations.</td></tr>
+        <tr><td><span class="strike">Strong / Sturdy</span></td><td><span class="premium">Structurally assured / Architecturally sound</span></td><td>"Strong" and "sturdy" belong in hardware stores. Premium furniture is architecture for the interior.</td></tr>
+        <tr><td><span class="strike">Long-lasting</span></td><td><span class="premium">Enduring / Timeless / Built to transcend seasons</span></td><td>Shift from durability (functional) to timelessness (emotional and aesthetic).</td></tr>
+        <tr><td><span class="strike">Reliable</span></td><td><span class="premium">Unwavering in performance / Consistently refined</span></td><td>"Reliable" is for appliances. Furniture should evoke permanence and character.</td></tr>
+        <tr><td><span class="strike">Top-notch / Best-in-class</span></td><td><span class="premium">Benchmark standard / Definitive in its category</span></td><td>Superlatives without substance feel hollow. Be specific or be quiet.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>1C. Size &amp; Dimension Language</h3>
+  <p>Size language reveals market positioning immediately. IKEA says "spacious." RH says "generous proportions." The distinction is between <strong>function</strong> (how much fits) and <strong>form</strong> (how it feels in the room).</p>
+  <div class="tbl-wrap">
+    <table class="dt">
+      <thead><tr><th>Mass-Market Word</th><th>Premium Alternative</th><th>Why It Matters</th></tr></thead>
+      <tbody>
+        <tr><td><span class="strike">Big / Large</span></td><td><span class="premium">Generously proportioned / Grand-scale</span></td><td>"Big" is crude. "Generously proportioned" suggests intentional design decisions.</td></tr>
+        <tr><td><span class="strike">Small / Little</span></td><td><span class="premium">Petite / Intimate-scale / Precisely scaled</span></td><td>Premium small items are never "small"&mdash;they are deliberately and beautifully compact.</td></tr>
+        <tr><td><span class="strike">Compact</span></td><td><span class="premium">Space-considered / Thoughtfully dimensioned</span></td><td>"Compact" implies compromise. "Space-considered" implies the designer solved a problem elegantly.</td></tr>
+        <tr><td><span class="strike">Spacious</span></td><td><span class="premium">Expansive / Room to breathe</span></td><td>"Spacious" is real estate language. "Expansive" is editorial.</td></tr>
+        <tr><td><span class="strike">Oversized</span></td><td><span class="premium">Statement-scale / Enveloping</span></td><td>"Oversized" implies it doesn't fit. "Enveloping" implies it was designed to embrace you.</td></tr>
+        <tr><td><span class="strike">Narrow / Thin</span></td><td><span class="premium">Slender / Refined profile / Streamlined</span></td><td>"Narrow" and "thin" sound like deficiencies. "Slender" and "streamlined" sound intentional.</td></tr>
+        <tr><td><span class="strike">Tall / High</span></td><td><span class="premium">Commanding height / Elevated stature</span></td><td>Height becomes presence. The piece doesn't just occupy vertical space&mdash;it commands the room.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>1D. Material &amp; Texture Language</h3>
+  <p>Material language is where premium brands separate most dramatically from mass-market. The key principle: <strong>never describe a sensation generically when you can describe the specific material, process, or finish that creates it.</strong></p>
+  <div class="tbl-wrap">
+    <table class="dt">
+      <thead><tr><th>Mass-Market Word</th><th>Premium Alternative</th><th>Why It Matters</th></tr></thead>
+      <tbody>
+        <tr><td><span class="strike">Soft</span></td><td><span class="premium">Supple / Yielding / Cloud-weight / Brushed to a whisper</span></td><td>"Soft" is what children say. Premium invokes the specific quality of softness.</td></tr>
+        <tr><td><span class="strike">Hard / Firm</span></td><td><span class="premium">Supportive / Resilient / Structured</span></td><td>"Hard" is a complaint. "Structured" is a design choice.</td></tr>
+        <tr><td><span class="strike">Thick</span></td><td><span class="premium">Substantial / Full-bodied / Dense-weave</span></td><td>"Thick" is physical measurement. "Substantial" is an experience.</td></tr>
+        <tr><td><span class="strike">Heavy</span></td><td><span class="premium">Weighty / Solid presence / Grounded</span></td><td>"Heavy" is a moving complaint. "Grounded" is a design virtue.</td></tr>
+        <tr><td><span class="strike">Smooth</span></td><td><span class="premium">Hand-finished / Silk-touch / Satin-honed</span></td><td>Name the finish process rather than the generic sensation.</td></tr>
+        <tr><td><span class="strike">Shiny / Glossy</span></td><td><span class="premium">Luminous / Mirror-polished / High-lustre</span></td><td>"Shiny" sounds cheap. "Luminous" sounds like light itself is a material.</td></tr>
+        <tr><td><span class="strike">Matte</span></td><td><span class="premium">Satin-finished / Understated lustre / Honed</span></td><td>"Matte" is a technical term. "Honed" tells you a craftsperson shaped the surface.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>1E. Action &amp; Purchase Language</h3>
+  <p>The words you use for the purchase moment reveal whether you see the customer as a <strong>consumer</strong> (transactional) or a <strong>patron</strong> (relational). Premium brands never rush or pressure&mdash;they invite.</p>
+  <div class="tbl-wrap">
+    <table class="dt">
+      <thead><tr><th>Mass-Market Word</th><th>Premium Alternative</th><th>Why It Matters</th></tr></thead>
+      <tbody>
+        <tr><td><span class="strike">Buy / Purchase</span></td><td><span class="premium">Acquire / Select / Invest in / Commission</span></td><td>"Buy" is a transaction. "Acquire" is a decision. "Commission" implies bespoke.</td></tr>
+        <tr><td><span class="strike">Get / Grab</span></td><td><span class="premium">Discover / Experience / Explore</span></td><td>"Get" and "grab" are impulsive and low-stakes. Premium purchases are considered journeys.</td></tr>
+        <tr><td><span class="strike">Order</span></td><td><span class="premium">Reserve / Place a request / Begin your selection</span></td><td>"Order" is what you do at a restaurant. "Reserve" implies scarcity and intention.</td></tr>
+        <tr><td><span class="strike">Shop / Shop now</span></td><td><span class="premium">Explore the collection / View the curation / Browse the atelier</span></td><td>"Shop" is a verb for malls. "Explore the collection" is a verb for galleries.</td></tr>
+        <tr><td><span class="strike">Add to cart</span></td><td><span class="premium">Add to your selection / Reserve this piece</span></td><td>"Cart" is for groceries. "Selection" is for curated choices.</td></tr>
+        <tr><td><span class="strike">Check out</span></td><td><span class="premium">Complete your selection / Finalize your order</span></td><td>Even functional e-commerce language can be elevated.</td></tr>
+        <tr><td><span class="strike">Sign up</span></td><td><span class="premium">Join the inner circle / Request access / Register your interest</span></td><td>"Sign up" is utilitarian. Joining a circle implies belonging to something selective.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>1F. Urgency &amp; Scarcity Language</h3>
+  <p>Mass-market urgency creates anxiety. Premium urgency creates <strong>desirability</strong>. The difference: mass-market says "you'll miss out" (fear). Premium says "this is rare" (desire). Never make the customer feel pressured&mdash;make the product feel coveted.</p>
+  <div class="tbl-wrap">
+    <table class="dt">
+      <thead><tr><th>Mass-Market Word</th><th>Premium Alternative</th><th>Why It Matters</th></tr></thead>
+      <tbody>
+        <tr><td><span class="strike">Hurry / Act now</span></td><td><span class="premium">Available for a limited engagement / For the discerning few</span></td><td>Urgency through exclusivity, not panic. The product is scarce, not the customer's time.</td></tr>
+        <tr><td><span class="strike">Limited time offer</span></td><td><span class="premium">Seasonal availability / Available this quarter</span></td><td>"Limited time" is clearance rack language. "Seasonal" is fashion calendar language.</td></tr>
+        <tr><td><span class="strike">Last chance</span></td><td><span class="premium">Final allocation / Concluding availability</span></td><td>"Last chance" creates anxiety. "Final allocation" creates informed urgency.</td></tr>
+        <tr><td><span class="strike">Don't miss out</span></td><td><span class="premium">We invite your consideration / A rare opportunity</span></td><td>Never tell a premium customer what to do. Inform them and trust their judgment.</td></tr>
+        <tr><td><span class="strike">While supplies last</span></td><td><span class="premium">Limited production run / Small-batch availability</span></td><td>"While supplies last" is warehouse language. "Limited production run" implies intentional scarcity.</td></tr>
+        <tr><td><span class="strike">Best-seller / Most popular</span></td><td><span class="premium">Most sought-after / Signature piece / Client favourite</span></td><td>"Best-seller" implies mass production. "Most sought-after" implies desire that exceeds supply.</td></tr>
+        <tr><td><span class="strike">Trending / Hot</span></td><td><span class="premium">Of the moment / Defining this season</span></td><td>"Trending" is fast-fashion vocabulary. Premium sets trends; it does not chase them.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>1G. Benefit &amp; Feature Language</h3>
+  <p>Mass-market benefits focus on <strong>function</strong> ("practical," "useful"). Premium benefits focus on <strong>experience</strong> ("considered," "refined"). The question shifts from "what does it do?" to "how does it make you feel?"</p>
+  <div class="tbl-wrap">
+    <table class="dt">
+      <thead><tr><th>Mass-Market Word</th><th>Premium Alternative</th><th>Why It Matters</th></tr></thead>
+      <tbody>
+        <tr><td><span class="strike">Comfortable</span></td><td><span class="premium">Indulgent comfort / Deeply restful / Cradling support</span></td><td>"Comfortable" is expected. Premium describes the quality of the comfort.</td></tr>
+        <tr><td><span class="strike">Practical / Functional</span></td><td><span class="premium">Thoughtfully considered / Intelligently designed / Purpose-driven</span></td><td>"Practical" is what you say about a minivan. "Intelligently designed" is what you say about architecture.</td></tr>
+        <tr><td><span class="strike">Useful</span></td><td><span class="premium">Seamlessly integrated / Effortlessly versatile</span></td><td>"Useful" is utilitarian. Premium utility is invisible&mdash;it just works, beautifully.</td></tr>
+        <tr><td><span class="strike">Convenient</span></td><td><span class="premium">Effortless / Intuitive / Considered for ease</span></td><td>"Convenient" is a gas station word. "Effortless" is a design philosophy word.</td></tr>
+        <tr><td><span class="strike">Easy to clean / Easy to maintain</span></td><td><span class="premium">Performance textile / Enduringly pristine / Designed for modern living</span></td><td>Don't talk about cleaning. Talk about how the material was engineered to maintain its beauty.</td></tr>
+        <tr><td><span class="strike">Versatile / Multi-purpose</span></td><td><span class="premium">Endlessly adaptable / Conceived for evolving spaces</span></td><td>"Multi-purpose" sounds like a tool. "Conceived for evolving spaces" sounds like interior architecture.</td></tr>
+        <tr><td><span class="strike">Family-friendly</span></td><td><span class="premium">Designed for living / Resilient elegance / Made for how you live</span></td><td>"Family-friendly" implies children will destroy it. "Resilient elegance" implies it thrives in a real home.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>1H. Shipping &amp; Service Language</h3>
+  <p>How you describe logistics reveals your brand's self-regard. IKEA talks about shipping. RH talks about <strong>white-glove delivery</strong>. The product's journey to the home is part of the experience, not an operational detail.</p>
+  <div class="tbl-wrap">
+    <table class="dt">
+      <thead><tr><th>Mass-Market Word</th><th>Premium Alternative</th><th>Why It Matters</th></tr></thead>
+      <tbody>
+        <tr><td><span class="strike">Free shipping</span></td><td><span class="premium">Complimentary delivery / Delivery included / With our compliments</span></td><td>"Free" devalues. "Complimentary" elevates. See Section 4 for full breakdown.</td></tr>
+        <tr><td><span class="strike">Fast delivery / Quick shipping</span></td><td><span class="premium">Priority dispatch / Expedited fulfillment / Swift, careful delivery</span></td><td>"Fast" is Amazon language. "Priority dispatch" implies your order received special attention.</td></tr>
+        <tr><td><span class="strike">Returns / Easy returns</span></td><td><span class="premium">Our satisfaction assurance / Exchange program / Flexible return window</span></td><td>Don't lead with returns (it assumes dissatisfaction). Lead with satisfaction assurance.</td></tr>
+        <tr><td><span class="strike">Customer service / Support</span></td><td><span class="premium">Client care / Personal concierge / Our design consultants</span></td><td>"Customer service" is a department. "Client care" is a relationship.</td></tr>
+        <tr><td><span class="strike">Warranty</span></td><td><span class="premium">Quality pledge / Assurance of excellence / Our standing commitment</span></td><td>"Warranty" is contractual. A "pledge" is a promise between partners.</td></tr>
+        <tr><td><span class="strike">Tracking number</span></td><td><span class="premium">Delivery status / Your order journey</span></td><td>Minor elevation, but it reinforces the narrative that this is an experience, not a logistics event.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     SECTION 2: PREMIUM SPECIFICATION LANGUAGE
+     ════════════════════════════════════════════════════════════════ -->
+<div class="sec ivory pb">
+  <div class="ey">Section 2</div>
+  <div class="st">Premium Specification Language</div>
+  <div class="ss">How to transform generic product descriptions into sophisticated material narratives. 35+ specification upgrades across 7 categories.</div>
+
+  <p>Premium brands use <strong>technical specificity as a trust signal</strong>. When Aesop says "Parsley Seed Anti-Oxidant Serum," they are naming the active ingredient, not just saying "anti-aging cream." When RH describes "Italian milled oak with a weathered finish," they are telling you the provenance, the process, and the result. This section teaches the same approach for furniture.</p>
+
+  <div class="callout">
+    <p><strong>The Specificity Principle:</strong> Every generic claim should be replaced with a specific fact. If you cannot name the specific material, process, or certification, do the research before writing the copy. Vague premium language is worse than honest mass-market language&mdash;it signals pretension without substance.</p>
+  </div>
+
+  <h3>2A. Fabric &amp; Upholstery Specifications</h3>
+  <div class="spec-grid">
+    <div class="spec-card">
+      <div class="mass">Instead of: "thick, durable fabric"</div>
+      <div class="prem">280 GSM performance textile, double-rub tested to 100,000 Martindale cycles</div>
+      <h4>Key Terms to Use</h4>
+      <p style="font-size:10px; color:#555;">GSM (grams per square metre) quantifies weight. Martindale or Wyzenbeek counts quantify abrasion resistance. Always cite both.</p>
+    </div>
+    <div class="spec-card">
+      <div class="mass">Instead of: "soft, cozy fabric"</div>
+      <div class="prem">Brushed cotton-linen blend, 220 GSM, garment-washed for lived-in softness</div>
+      <h4>Sensory + Technical</h4>
+      <p style="font-size:10px; color:#555;">Pair a sensory descriptor ("lived-in softness") with a technical fact ("220 GSM, garment-washed"). Neither alone is sufficient.</p>
+    </div>
+    <div class="spec-card">
+      <div class="mass">Instead of: "stain-resistant"</div>
+      <div class="prem">Solution-dyed acrylic with Crypton performance barrier, engineered for effortless care</div>
+      <h4>Process, Not Just Result</h4>
+      <p style="font-size:10px; color:#555;">Name the specific technology: Crypton, Sunbrella, Perennials, Romo, etc. The brand name carries trust.</p>
+    </div>
+    <div class="spec-card">
+      <div class="mass">Instead of: "eco-friendly fabric"</div>
+      <div class="prem">OEKO-TEX Standard 100 certified, GOTS organic cotton, dyed with low-impact reactive dyes</div>
+      <h4>Certifications Over Claims</h4>
+      <p style="font-size:10px; color:#555;">Never say "eco-friendly" without naming the certification. OEKO-TEX, GOTS, GRS, and FSC are the gold standards.</p>
+    </div>
+    <div class="spec-card">
+      <div class="mass">Instead of: "high thread count"</div>
+      <div class="prem">400-thread-count long-staple Egyptian cotton percale, single-ply weave</div>
+      <h4>Full Fibre Story</h4>
+      <p style="font-size:10px; color:#555;">Thread count alone is meaningless. Specify fibre origin (Egyptian, Supima), staple length, ply, and weave type (percale, sateen).</p>
+    </div>
+    <div class="spec-card">
+      <div class="mass">Instead of: "nice pattern / good design"</div>
+      <div class="prem">Jacquard-woven motif, yarn-dyed for colour permanence, inspired by [specific origin]</div>
+      <h4>Technique + Provenance</h4>
+      <p style="font-size:10px; color:#555;">Name the weave technique (jacquard, dobby, twill). Reference the design inspiration. This is what separates a "pattern" from a "textile narrative."</p>
+    </div>
+  </div>
+
+  <h3>2B. Wood &amp; Frame Specifications</h3>
+  <div class="spec-grid">
+    <div class="spec-card">
+      <div class="mass">Instead of: "strong frame / solid frame"</div>
+      <div class="prem">Kiln-dried hardwood frame with corner-blocked joinery and double-dowelled construction</div>
+      <h4>Construction Method</h4>
+      <p style="font-size:10px; color:#555;">Name the drying method (kiln-dried), the joinery type (mortise-and-tenon, corner-blocked, double-dowelled), and the wood category.</p>
+    </div>
+    <div class="spec-card">
+      <div class="mass">Instead of: "real wood / solid wood"</div>
+      <div class="prem">North American white oak, quarter-sawn for grain stability, finished with a hand-applied oil patina</div>
+      <h4>Species + Cut + Finish</h4>
+      <p style="font-size:10px; color:#555;">Specify species (oak, walnut, ash, maple), cut method (quarter-sawn, rift-sawn), and finish technique. "Real wood" says nothing.</p>
+    </div>
+    <div class="spec-card">
+      <div class="mass">Instead of: "dark wood finish"</div>
+      <div class="prem">Umber-stained European beech with a multi-coat lacquer seal, wire-brushed to reveal natural grain</div>
+      <h4>Colour + Process + Texture</h4>
+      <p style="font-size:10px; color:#555;">Name the colour poetically (umber, espresso, driftwood), the protective finish (lacquer, polyurethane, oil), and any texture treatment.</p>
+    </div>
+    <div class="spec-card">
+      <div class="mass">Instead of: "legs won't wobble"</div>
+      <div class="prem">Precision-levelled with integrated floor protectors, engineered for absolute stability on any surface</div>
+      <h4>Engineering Language</h4>
+      <p style="font-size:10px; color:#555;">Never acknowledge the negative (wobble). Describe the positive engineering that prevents it.</p>
+    </div>
+    <div class="spec-card">
+      <div class="mass">Instead of: "handmade / handcrafted"</div>
+      <div class="prem">Hand-finished by skilled artisans, each piece bearing the subtle signatures of its maker</div>
+      <h4>Authentic Craft Narrative</h4>
+      <p style="font-size:10px; color:#555;">"Handmade" is overused. Describe what the hand actually does: finishing, carving, joining. And acknowledge the beautiful imperfection.</p>
+    </div>
+  </div>
+
+  <h3>2C. Foam &amp; Cushion Specifications</h3>
+  <div class="spec-grid">
+    <div class="spec-card">
+      <div class="mass">Instead of: "comfortable cushions / thick padding"</div>
+      <div class="prem">High-resilience 2.5 lb/ft&sup3; density foam core, wrapped in a down-alternative fibre envelope for cloud-like repose</div>
+      <h4>Density + Construction + Sensation</h4>
+      <p style="font-size:10px; color:#555;">Foam density (measured in lb/ft&sup3; or kg/m&sup3;) is the single most important cushion spec. Higher density = longer life and better support. Always cite it.</p>
+    </div>
+    <div class="spec-card">
+      <div class="mass">Instead of: "won't sag / keeps its shape"</div>
+      <div class="prem">Engineered with HR (high-resilience) foam that maintains its original loft through years of daily use</div>
+      <h4>Positive Framing</h4>
+      <p style="font-size:10px; color:#555;">Never mention sagging. Describe resilience and loft retention as engineered features.</p>
+    </div>
+    <div class="spec-card">
+      <div class="mass">Instead of: "foam is safe / non-toxic"</div>
+      <div class="prem">CertiPUR-US certified foam, free from harmful flame retardants, formaldehyde, and phthalates</div>
+      <h4>Certification Authority</h4>
+      <p style="font-size:10px; color:#555;">CertiPUR-US is the gold standard for foam certification. Always name it. "Non-toxic" alone is legally vague and unverifiable.</p>
+    </div>
+    <div class="spec-card">
+      <div class="mass">Instead of: "memory foam mattress"</div>
+      <div class="prem">Visco-elastic support layer with temperature-adaptive response, pressure-mapping to your natural sleep profile</div>
+      <h4>Technical + Experiential</h4>
+      <p style="font-size:10px; color:#555;">"Memory foam" is a commodity term. "Visco-elastic with temperature-adaptive response" is a material science narrative.</p>
+    </div>
+  </div>
+
+  <h3>2D. Metal &amp; Hardware Specifications</h3>
+  <div class="spec-grid">
+    <div class="spec-card">
+      <div class="mass">Instead of: "metal legs / steel frame"</div>
+      <div class="prem">16-gauge powder-coated steel, electrostatically applied for a flawless, chip-resistant finish</div>
+      <h4>Gauge + Finish Process</h4>
+      <p style="font-size:10px; color:#555;">Gauge number (lower = thicker), coating method (powder-coat, electroplating), and finish quality (chip-resistant, corrosion-proof).</p>
+    </div>
+    <div class="spec-card">
+      <div class="mass">Instead of: "gold handles / brass hardware"</div>
+      <div class="prem">Solid brass pull hardware in a brushed antique finish, unlacquered to develop a living patina over time</div>
+      <h4>Material + Finish + Aging Story</h4>
+      <p style="font-size:10px; color:#555;">"Living patina" tells the customer their hardware will become more beautiful with age&mdash;the opposite of "wearing out."</p>
+    </div>
+    <div class="spec-card">
+      <div class="mass">Instead of: "won't rust"</div>
+      <div class="prem">Marine-grade stainless steel (Grade 316), engineered for enduring corrosion resistance</div>
+      <h4>Grade Specification</h4>
+      <p style="font-size:10px; color:#555;">Name the steel grade. "Marine-grade" alone is a start; the grade number (304, 316) is the substance.</p>
+    </div>
+  </div>
+
+  <h3>2E. Assembly &amp; Installation Language</h3>
+  <div class="spec-grid">
+    <div class="spec-card">
+      <div class="mass">Instead of: "easy assembly / some assembly required"</div>
+      <div class="prem">Arrives thoughtfully pre-assembled; final touches take approximately 10 minutes with the included precision tool kit</div>
+      <h4>Reframe the Experience</h4>
+      <p style="font-size:10px; color:#555;">Never apologize for assembly. Frame it as the customer adding their "final touch"&mdash;they are completing the piece, not building flat-pack furniture.</p>
+    </div>
+    <div class="spec-card">
+      <div class="mass">Instead of: "tools included"</div>
+      <div class="prem">Accompanied by a curated tool kit and illustrated placement guide</div>
+      <h4>Curated, Not Cheap</h4>
+      <p style="font-size:10px; color:#555;">Even an Allen key becomes a "curated tool kit" in premium language. The instruction manual becomes an "illustrated placement guide."</p>
+    </div>
+    <div class="spec-card">
+      <div class="mass">Instead of: "white-glove delivery available"</div>
+      <div class="prem">In-home placement service: our team delivers, assembles, and positions your piece precisely where it belongs</div>
+      <h4>Service Narrative</h4>
+      <p style="font-size:10px; color:#555;">Describe what the service actually entails rather than using the generic "white-glove" shorthand.</p>
+    </div>
+  </div>
+
+  <h3>2F. Dimensions &amp; Measurements</h3>
+  <div class="spec-grid">
+    <div class="spec-card">
+      <div class="mass">Instead of: "72 inches wide x 36 inches deep x 32 inches high"</div>
+      <div class="prem">Dimensions: 72"W &times; 36"D &times; 32"H (183 &times; 91 &times; 81 cm)<br>Seat height: 18" (46 cm) &nbsp;|&nbsp; Seat depth: 22" (56 cm) &nbsp;|&nbsp; Arm height: 26" (66 cm)</div>
+      <h4>Complete Dimensional Profile</h4>
+      <p style="font-size:10px; color:#555;">Always include both imperial and metric. Break out seat-specific measurements separately. Use the W/D/H notation consistently. Include clearance requirements when relevant.</p>
+    </div>
+    <div class="spec-card">
+      <div class="mass">Instead of: "weighs 65 lbs"</div>
+      <div class="prem">Shipping weight: 65 lbs (29.5 kg) &nbsp;|&nbsp; Net weight: 58 lbs (26.3 kg)</div>
+      <h4>Shipping vs. Net</h4>
+      <p style="font-size:10px; color:#555;">Distinguish shipping weight (with packaging) from net weight (the piece itself). This demonstrates transparency and precision.</p>
+    </div>
+  </div>
+
+  <h3>2G. Weight Capacity &amp; Structural Language</h3>
+  <div class="spec-grid">
+    <div class="spec-card">
+      <div class="mass">Instead of: "holds up to 300 lbs"</div>
+      <div class="prem">Structurally rated to support 300 lbs (136 kg), independently tested to exceed residential performance standards</div>
+      <h4>Rated, Not "Holds"</h4>
+      <p style="font-size:10px; color:#555;">"Holds up to" sounds like it might break. "Structurally rated" and "independently tested" sound engineered and verified.</p>
+    </div>
+    <div class="spec-card">
+      <div class="mass">Instead of: "very stable / won't tip over"</div>
+      <div class="prem">Low centre of gravity design with anti-tip hardware included, meeting or exceeding ASTM F2057 stability standards</div>
+      <h4>Standards Compliance</h4>
+      <p style="font-size:10px; color:#555;">Cite the actual standard (ASTM, BIFMA, EN). This is what separates genuine premium specification from performative language.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     SECTION 3: WORDS THAT HURT AFFLUENT CUSTOMER EGO
+     ════════════════════════════════════════════════════════════════ -->
+<div class="sec pb">
+  <div class="ey">Section 3</div>
+  <div class="st">Words That Hurt Affluent Customer Ego</div>
+  <div class="ss">Luxury brand psychology research: what makes high-income customers disengage, feel insulted, or perceive a brand as beneath them</div>
+
+  <p>Research in luxury consumer psychology (Vigneron &amp; Johnson's "Brand Luxury Index," Kapferer's "The Luxury Strategy," and Dubois, Laurent &amp; Czellar's work on luxury attitudes) consistently identifies specific <strong>linguistic triggers</strong> that cause affluent consumers to reject a brand. These triggers fall into six categories.</p>
+
+  <h3>Trigger 1: Assumed Financial Limitation</h3>
+  <div class="psych-card">
+    <div class="trigger">Ego Threat: "This brand thinks I can't afford things"</div>
+    <h4>The Psychology</h4>
+    <p>Affluent customers have already solved the money problem. Any language that implies they are price-sensitive insults their self-image. They are not looking for what they can afford&mdash;they are looking for what deserves their investment. The decision is about worthiness, not affordability.</p>
+    <h4>Words That Trigger This</h4>
+    <div class="pill-list">
+      <span class="pill bad">Affordable</span>
+      <span class="pill bad">Budget-friendly</span>
+      <span class="pill bad">Won't break the bank</span>
+      <span class="pill bad">Save money</span>
+      <span class="pill bad">Cost-effective</span>
+      <span class="pill bad">Economical</span>
+      <span class="pill bad">Wallet-friendly</span>
+      <span class="pill bad">Price match</span>
+      <span class="pill bad">Lowest price</span>
+      <span class="pill bad">Bargain</span>
+    </div>
+    <div class="example">"With prices this affordable, you can furnish your entire home!" &mdash; This sentence assumes the customer's entire home is unfurnished because they couldn't afford furniture before.</div>
+  </div>
+
+  <h3>Trigger 2: Herd Mentality / Popularity Claims</h3>
+  <div class="psych-card">
+    <div class="trigger">Ego Threat: "This brand thinks I follow the crowd"</div>
+    <h4>The Psychology</h4>
+    <p>Affluent consumers derive identity from <strong>distinction</strong>, not conformity (Bourdieu's theory of cultural capital). Telling them "everyone loves this" is precisely the wrong message. They want to know that their taste is singular, not validated by mass consensus. The exception: endorsement by a respected authority (a designer, an architect, an institution) works because it signals expert validation, not popularity.</p>
+    <h4>Words That Trigger This</h4>
+    <div class="pill-list">
+      <span class="pill bad">Best-seller</span>
+      <span class="pill bad">Most popular</span>
+      <span class="pill bad">Everyone loves</span>
+      <span class="pill bad">Trending</span>
+      <span class="pill bad">Viral</span>
+      <span class="pill bad">Fan favourite</span>
+      <span class="pill bad">Top-rated</span>
+      <span class="pill bad">#1 choice</span>
+      <span class="pill bad">As seen on TV</span>
+      <span class="pill bad">Thousands sold</span>
+    </div>
+    <div class="example">"Our #1 best-selling sofa! Over 10,000 happy customers!" &mdash; To an affluent customer, this says: "You will own the same sofa as 10,000 other people." That is the opposite of exclusive.</div>
+  </div>
+
+  <h3>Trigger 3: Over-Explanation / Condescension</h3>
+  <div class="psych-card">
+    <div class="trigger">Ego Threat: "This brand thinks I'm not smart enough to understand"</div>
+    <h4>The Psychology</h4>
+    <p>Affluent consumers are typically well-educated and research-oriented. Over-explaining basic concepts (what a duvet is, why hardwood is better than particleboard) insults their intelligence. Premium brands assume knowledge and reward it. Aesop does not explain what an antioxidant is. RH does not explain why Italian linen is desirable. They assume you already know&mdash;and that assumption flatters the reader.</p>
+    <h4>Patterns That Trigger This</h4>
+    <div class="pill-list">
+      <span class="pill bad">Did you know that...?</span>
+      <span class="pill bad">Here's why you need...</span>
+      <span class="pill bad">What is [basic term]?</span>
+      <span class="pill bad">Simply put...</span>
+      <span class="pill bad">In other words...</span>
+      <span class="pill bad">For those who don't know...</span>
+      <span class="pill bad">Think of it as...</span>
+    </div>
+    <div class="example">"Did you know that hardwood frames last longer than softwood? That's why we use hardwood!" &mdash; An affluent customer already knows this. You have just told them you think they are uneducated.</div>
+  </div>
+
+  <h3>Trigger 4: Desperate Enthusiasm / Trying Too Hard</h3>
+  <div class="psych-card">
+    <div class="trigger">Ego Threat: "This brand is beneath me&mdash;they need my money more than I need their product"</div>
+    <h4>The Psychology</h4>
+    <p>Kapferer's "anti-laws of marketing" demonstrate that luxury brands must maintain <strong>controlled distance</strong>. A brand that is too eager, too excited, too grateful reads as needy. Neediness signals low status. Premium brands communicate from a position of quiet confidence&mdash;they are sharing their work, not begging for approval. Think of how a museum presents its collection versus how a souvenir shop sells its merchandise.</p>
+    <h4>Patterns That Trigger This</h4>
+    <div class="pill-list">
+      <span class="pill bad">OMG / WOW</span>
+      <span class="pill bad">You won't BELIEVE</span>
+      <span class="pill bad">AMAZING deal</span>
+      <span class="pill bad">Incredible value!!!</span>
+      <span class="pill bad">We're SO excited</span>
+      <span class="pill bad">Don't miss this!!!</span>
+      <span class="pill bad">HUGE savings</span>
+      <span class="pill bad">Excessive exclamation marks!!!</span>
+      <span class="pill bad">ALL CAPS for emphasis</span>
+      <span class="pill bad">Emojis in product copy</span>
+    </div>
+    <div class="example">"OMG we are SO excited to launch our AMAZING new collection!!! You won't BELIEVE these prices!!!" &mdash; This reads like a liquidation tent sale, not a premium furniture brand.</div>
+  </div>
+
+  <h3>Trigger 5: The "Aspirational Trap" &mdash; Pretending to Be Premium</h3>
+  <div class="psych-card">
+    <div class="trigger">Ego Threat: "This brand is pretending to be something it's not&mdash;and it thinks I can't tell"</div>
+    <h4>The Psychology</h4>
+    <p>This is the most sophisticated and dangerous trigger. Affluent customers have extensive experience with genuine luxury brands (Herm&egrave;s, Poliform, B&amp;B Italia, Roche Bobois). They can detect when a brand uses premium language without the substance to back it. The gap between language and reality is called the <strong>"aspiration gap,"</strong> and it triggers immediate distrust. The key differentiators:</p>
+    <div class="dd-grid" style="margin-top:10px;">
+      <div class="dd-card do">
+        <div class="dd-lbl do">Actually Premium</div>
+        <p><strong>Uses specific, verifiable claims</strong><br>"Kiln-dried white oak with mortise-and-tenon joinery"</p>
+        <p><strong>Understates rather than overstates</strong><br>"A considered approach to comfort"</p>
+        <p><strong>Lets the product speak</strong><br>Large, high-quality photography with minimal text</p>
+        <p><strong>Has confident restraint</strong><br>Short sentences. Abundant white space. No desperation.</p>
+        <p><strong>Names real certifications</strong><br>"CertiPUR-US certified" / "FSC-certified wood"</p>
+      </div>
+      <div class="dd-card dont">
+        <div class="dd-lbl dont">Pretending to Be Premium</div>
+        <p><strong>Uses vague, unverifiable superlatives</strong><br>"The finest quality" / "World-class luxury" / "Ultimate elegance"</p>
+        <p><strong>Overstates every claim</strong><br>"The most incredible sofa you'll ever experience"</p>
+        <p><strong>Drowns the product in adjectives</strong><br>"Stunning, breathtaking, magnificent, exquisite piece"</p>
+        <p><strong>Sounds anxious and over-decorated</strong><br>Too many words. Gold everywhere. Every noun has two adjectives.</p>
+        <p><strong>Makes unsubstantiated claims</strong><br>"Premium quality" without saying what makes it premium</p>
+      </div>
+    </div>
+    <h4>The Aspiration Trap: Words to Watch</h4>
+    <div class="pill-list">
+      <span class="pill caution">Luxury (overused)</span>
+      <span class="pill caution">World-class</span>
+      <span class="pill caution">Exquisite</span>
+      <span class="pill caution">Stunning</span>
+      <span class="pill caution">Breathtaking</span>
+      <span class="pill caution">Magnificent</span>
+      <span class="pill caution">One-of-a-kind</span>
+      <span class="pill caution">Ultimate</span>
+      <span class="pill caution">Unparalleled</span>
+      <span class="pill caution">Opulent</span>
+    </div>
+    <p style="margin-top:8px;"><strong>These words are not banned&mdash;but use them sparingly, and only when substantiated.</strong> "Exquisite joinery" is fine if you show the joinery. "Exquisite quality" is empty. The rule: if the adjective could be removed without losing factual information, remove it.</p>
+  </div>
+
+  <h3>Trigger 6: Transactional Relationship Framing</h3>
+  <div class="psych-card">
+    <div class="trigger">Ego Threat: "This brand sees me as a wallet, not a person"</div>
+    <h4>The Psychology</h4>
+    <p>Affluent customers expect to be treated as patrons, not targets. Language that reduces the relationship to a transaction ("Buy now," "Order today," "Get yours") makes them feel like a conversion metric. Premium brands frame the relationship as mutual: the brand creates, the customer appreciates. It is a partnership of taste, not a seller-buyer dynamic.</p>
+    <h4>Words That Trigger This</h4>
+    <div class="pill-list">
+      <span class="pill bad">Buy now</span>
+      <span class="pill bad">Order today</span>
+      <span class="pill bad">Add to cart</span>
+      <span class="pill bad">Customers who bought this</span>
+      <span class="pill bad">Purchase before it's gone</span>
+      <span class="pill bad">Your order / Your purchase</span>
+      <span class="pill bad">Money-back guarantee</span>
+      <span class="pill bad">Risk-free</span>
+      <span class="pill bad">No obligation</span>
+    </div>
+    <div class="example">"Buy now and get free shipping!" combines two triggers: transactional language ("buy now") and devaluation ("free"). Premium alternative: "Explore the collection. Complimentary delivery on all pieces."</div>
+  </div>
+
+  <h3>Summary: The Six Rules of Premium Customer Respect</h3>
+  <div class="callout success">
+    <p><strong>1.</strong> Never imply the customer has financial limitations.</p>
+    <p><strong>2.</strong> Never suggest the customer follows crowds. Honour their individuality.</p>
+    <p><strong>3.</strong> Never over-explain. Assume intelligence and reward it.</p>
+    <p><strong>4.</strong> Never sound desperate or over-enthusiastic. Maintain quiet confidence.</p>
+    <p><strong>5.</strong> Never use premium language without premium substance. Specificity or silence.</p>
+    <p><strong>6.</strong> Never reduce the relationship to a transaction. You are partners in taste.</p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     SECTION 4: HOW PREMIUM BRANDS HANDLE "FREE"
+     ════════════════════════════════════════════════════════════════ -->
+<div class="sec ivory pb">
+  <div class="ey">Section 4</div>
+  <div class="st">How Premium Brands Handle "Free" Without Saying "Free"</div>
+  <div class="ss">12 alternatives to the word "free"&mdash;each calibrated for different contexts within Aykah's operations</div>
+
+  <p>The word "free" is psychologically complex. Research by Dan Ariely (Duke University) demonstrates that "free" triggers irrational decision-making in mass-market consumers. But for affluent consumers, "free" signals the opposite: <strong>that the item or service has no value.</strong> If it were valuable, why would you give it away? Premium brands never say "free" because they never devalue their own offerings.</p>
+
+  <div class="callout danger">
+    <p><strong>Banned word at Aykah:</strong> "Free" &mdash; in all contexts, all channels, all communications. No exceptions. The alternatives below cover every scenario where "free" would previously have been used.</p>
+  </div>
+
+  <div class="tbl-wrap">
+    <table class="dt">
+      <thead><tr><th>#</th><th>Instead of "Free..."</th><th>Premium Alternative</th><th>Best Used For</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><span class="strike">Free shipping</span></td><td><span class="premium">Complimentary delivery</span></td><td>Default shipping language across all channels. The standard Aykah term.</td></tr>
+        <tr><td>2</td><td><span class="strike">Free shipping over $199</span></td><td><span class="premium">Delivery included on orders above $199</span></td><td>Threshold-based shipping on the website banner and checkout page.</td></tr>
+        <tr><td>3</td><td><span class="strike">Free assembly</span></td><td><span class="premium">Assembly included / Included setup service</span></td><td>When assembly is bundled with the product price.</td></tr>
+        <tr><td>4</td><td><span class="strike">Free design consultation</span></td><td><span class="premium">Courtesy design consultation / Personal styling session, with our compliments</span></td><td>Interior design advisory services, virtual or in-person.</td></tr>
+        <tr><td>5</td><td><span class="strike">Free swatches / Free samples</span></td><td><span class="premium">Request your material library / Complimentary swatch collection</span></td><td>Fabric or finish sample requests. "Material library" sounds archival and curated.</td></tr>
+        <tr><td>6</td><td><span class="strike">Free returns</span></td><td><span class="premium">Flexible return program / Our satisfaction assurance</span></td><td>Return policy language. Note: Aykah charges return shipping, so emphasize flexibility, not "free."</td></tr>
+        <tr><td>7</td><td><span class="strike">Buy one, get one free</span></td><td><span class="premium">Select a companion piece, with our compliments / Paired offering</span></td><td>Bundled product promotions (use sparingly&mdash;BOGO is inherently mass-market).</td></tr>
+        <tr><td>8</td><td><span class="strike">Free gift with purchase</span></td><td><span class="premium">A thoughtful accompaniment included with your selection</span></td><td>Gift-with-purchase promotions. The "accompaniment" frames it as a curated addition.</td></tr>
+        <tr><td>9</td><td><span class="strike">Free trial</span></td><td><span class="premium">Experience period / In-home trial, with our compliments</span></td><td>If Aykah ever offers trial periods for mattresses or similar products.</td></tr>
+        <tr><td>10</td><td><span class="strike">Free warranty / Free extended warranty</span></td><td><span class="premium">Included quality pledge / Extended assurance, at no additional consideration</span></td><td>Warranty language in product descriptions and policy pages.</td></tr>
+        <tr><td>11</td><td><span class="strike">Free guide / Free download</span></td><td><span class="premium">Access our styling guide / Receive our lookbook</span></td><td>Content marketing downloads, email lead magnets, room styling guides.</td></tr>
+        <tr><td>12</td><td><span class="strike">Free quote / Free estimate</span></td><td><span class="premium">Request a tailored proposal / Personalized consultation</span></td><td>Custom or trade inquiries where pricing is provided on request.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>The Linguistic Hierarchy: Alternatives Ranked by Warmth</h3>
+  <p>Different contexts require different levels of formality. Below is a spectrum from most formal to most approachable, all conveying the same meaning as "free":</p>
+
+  <div class="callout">
+    <p><strong>Most Formal (trade/B2B):</strong> "At no additional consideration" / "Included at our invitation"</p>
+    <p><strong>Formal (product pages):</strong> "Complimentary" / "With our compliments" / "Included"</p>
+    <p><strong>Warm (social media):</strong> "On us" / "Our treat" / "We've taken care of that for you"</p>
+    <p><strong>Conversational (customer service):</strong> "That's already included" / "We've got that covered" / "No charge for that"</p>
+    <p style="margin-bottom:0;"><strong>Note:</strong> Even "on us" and "our treat" should be used sparingly. The default Aykah term is <strong>"complimentary"</strong> across all channels.</p>
+  </div>
+
+  <h3>Real-World Application: Aykah's Shipping Banner</h3>
+  <div class="dd-grid">
+    <div class="dd-card dont">
+      <div class="dd-lbl dont">Before (Mass-Market)</div>
+      <p style="font-size:13px; font-weight:600; text-align:center; padding:10px 0;">FREE SHIPPING on orders over $199!</p>
+      <p style="font-size:9px; color:#999; text-align:center;">All caps, exclamation mark, "free" front and centre</p>
+    </div>
+    <div class="dd-card do">
+      <div class="dd-lbl do">After (Premium)</div>
+      <p style="font-size:13px; font-weight:500; text-align:center; padding:10px 0; font-family:'Lora',serif; letter-spacing:0.5px;">Complimentary delivery on orders above $199</p>
+      <p style="font-size:9px; color:#999; text-align:center;">Sentence case, no exclamation, "complimentary" instead of "free"</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     SECTION 5: TONE CALIBRATION — AESOP MEETS RH
+     ════════════════════════════════════════════════════════════════ -->
+<div class="sec pb">
+  <div class="ey">Section 5</div>
+  <div class="st">Tone Calibration: "Aesop Meets RH"</div>
+  <div class="ss">What the intersection of Aesop's minimalism and Restoration Hardware's grandeur sounds like for a Canadian premium furniture brand</div>
+
+  <h3>5A. Aesop's Communication DNA</h3>
+  <p>Aesop (founded 1987, Melbourne) is widely studied in brand linguistics for its distinctive voice. Key characteristics:</p>
+  <div class="spec-grid">
+    <div class="spec-card">
+      <h4>Sensory Precision</h4>
+      <p style="font-size:10px; color:#555;">Every product description appeals to a specific sense. Not "smells nice" but "herbaceous, woody, with citrus undertones." They name the sensation rather than evaluating it.</p>
+    </div>
+    <div class="spec-card">
+      <h4>Intellectual Respect</h4>
+      <p style="font-size:10px; color:#555;">Aesop assumes you are literate, curious, and aesthetically aware. They reference literature, architecture, and philosophy without explaining. This flatters the reader and filters for their audience.</p>
+    </div>
+    <div class="spec-card">
+      <h4>Radical Restraint</h4>
+      <p style="font-size:10px; color:#555;">Aesop uses fewer words than any competitor. Their product pages contain 2-3 sentences. Their packaging has more white (or rather, brown) space than text. Restraint signals confidence.</p>
+    </div>
+    <div class="spec-card">
+      <h4>Anti-Marketing Tone</h4>
+      <p style="font-size:10px; color:#555;">Aesop never sounds like they are selling. They sound like they are sharing a formulation they are proud of. The implied stance: "We made this well. If it suits you, wonderful."</p>
+    </div>
+  </div>
+
+  <h3>5B. Restoration Hardware's Communication DNA</h3>
+  <p>RH (formerly Restoration Hardware, now simply "RH") repositioned from a mid-market retailer to an aspirational lifestyle brand under CEO Gary Friedman. Key characteristics:</p>
+  <div class="spec-grid">
+    <div class="spec-card">
+      <h4>Editorial Authority</h4>
+      <p style="font-size:10px; color:#555;">RH writes like a design magazine, not a retailer. Their sourcebooks are 400+ pages of full-bleed photography with minimal, authoritative text. The brand is the editor, the customer is the reader.</p>
+    </div>
+    <div class="spec-card">
+      <h4>Environmental Storytelling</h4>
+      <p style="font-size:10px; color:#555;">RH never shows a sofa. They show a room, a life, a mood. Products exist within a complete world&mdash;the architecture, the light, the landscape. The product is a character in a larger narrative.</p>
+    </div>
+    <div class="spec-card">
+      <h4>Museum Vocabulary</h4>
+      <p style="font-size:10px; color:#555;">RH uses the language of art and architecture: "collection," "gallery," "curation," "atelier." Their retail spaces are called "galleries." Products are "pieces." This vocabulary elevates commerce to culture.</p>
+    </div>
+    <div class="spec-card">
+      <h4>Confident Grandeur</h4>
+      <p style="font-size:10px; color:#555;">Where Aesop is quiet, RH is bold&mdash;but never loud. Their headlines are declarative statements, not questions or exclamations. "The Cloud Modular. Infinite Configurations." Period. No persuasion needed.</p>
+    </div>
+  </div>
+
+  <h3>5C. The Intersection: What "Aesop Meets RH" Sounds Like for Aykah</h3>
+  <div class="callout">
+    <p><strong>From Aesop, we take:</strong> Sensory precision, intellectual respect, radical restraint, anti-marketing tone, ingredient-level specificity.</p>
+    <p><strong>From RH, we take:</strong> Editorial authority, environmental storytelling, museum vocabulary, confident scale, declarative sentences.</p>
+    <p><strong>Unique to Aykah:</strong> Canadian warmth (not cold or clinical), accessibility without condescension, honest about sourcing (internationally made, Canadian-curated), price-point honesty ($1,600&ndash;$3,000 is premium but not ultra-luxury).</p>
+    <p style="margin-bottom:0;"><strong>The resulting voice:</strong> A well-read friend with impeccable taste who happens to know everything about furniture construction. They speak in clean, confident sentences. They never shout. They name materials and processes because they genuinely find them interesting, not because they are trying to impress you. They care about how a room feels, not just how it looks.</p>
+  </div>
+
+  <h3>5D. Five Sample Product Descriptions</h3>
+
+  <div class="sample-card">
+    <div class="label">Product Description 1 &mdash; Sofa</div>
+    <div class="headline">The Meridian Sofa</div>
+    <div class="body">
+      <p>Proportion, reimagined. The Meridian balances architectural presence with enveloping comfort&mdash;a low, linear silhouette grounded by a kiln-dried hardwood frame with corner-blocked joinery. Seat cushions of 2.5 lb/ft&sup3; high-resilience foam, wrapped in a down-alternative fibre layer, yield gently under weight and recover their loft by morning.</p>
+      <p>Upholstered in a 260 GSM performance linen blend, solution-dyed for enduring colour fidelity. Available in Fog, Dune, and Charcoal.</p>
+      <p style="font-size:10px; color:var(--light);">Dimensions: 96"W &times; 40"D &times; 32"H &nbsp;|&nbsp; Seat depth: 24" &nbsp;|&nbsp; Seat height: 18"<br>
+      Complimentary delivery &nbsp;|&nbsp; Assembly included &nbsp;|&nbsp; 1-year quality pledge</p>
+    </div>
+  </div>
+
+  <div class="sample-card">
+    <div class="label">Product Description 2 &mdash; Bed Frame</div>
+    <div class="headline">The Solace Platform Bed</div>
+    <div class="body">
+      <p>Quiet geometry for restful spaces. The Solace is a platform bed reduced to its essential elements: a broad, upholstered headboard rising from a concealed steel sub-frame, cantilevered to appear weightless. No footboard. No visual noise. Just clean planes and considered proportions.</p>
+      <p>Headboard upholstered in bouclé-textured performance fabric, 320 GSM, tested to 60,000 Martindale cycles. Platform slats are sustainably sourced European birch, spaced for optimal airflow beneath your mattress.</p>
+      <p style="font-size:10px; color:var(--light);">Available in Queen and King &nbsp;|&nbsp; Headboard height: 48" &nbsp;|&nbsp; Platform height: 14"<br>
+      Arrives thoughtfully pre-assembled; positioning takes approximately 15 minutes</p>
+    </div>
+  </div>
+
+  <div class="sample-card">
+    <div class="label">Product Description 3 &mdash; Dining Table</div>
+    <div class="headline">The Gather Dining Table</div>
+    <div class="body">
+      <p>Where conversation happens. The Gather is an exercise in material honesty&mdash;a single slab of kiln-dried acacia, book-matched to reveal the natural symmetry of the grain, supported by a blackened steel trestle base. Each table is unique; natural mineral deposits, subtle colour shifts, and organic edge variations are characteristics of the material, not imperfections.</p>
+      <p>Sealed with a food-safe, low-VOC hardwax oil finish that deepens over time, developing a patina that records the life lived around it.</p>
+      <p style="font-size:10px; color:var(--light);">84"L &times; 38"W &times; 30"H &nbsp;|&nbsp; Seats 6&ndash;8 comfortably &nbsp;|&nbsp; Structurally rated: 200 lbs distributed<br>
+      In-home placement service available</p>
+    </div>
+  </div>
+
+  <div class="sample-card">
+    <div class="label">Product Description 4 &mdash; Accent Chair</div>
+    <div class="headline">The Repose Accent Chair</div>
+    <div class="body">
+      <p>Considered comfort in a compact silhouette. The Repose pairs a sculptural ash-wood frame&mdash;steam-bent to a continuous curve&mdash;with a cradling seat of moulded high-resilience foam. The frame is hand-finished in a warm walnut tone, sealed with a satin lacquer that invites touch.</p>
+      <p>A chair designed not as an afterthought, but as the piece you gravitate toward at the end of the day.</p>
+      <p style="font-size:10px; color:var(--light);">28"W &times; 30"D &times; 31"H &nbsp;|&nbsp; Seat height: 17" &nbsp;|&nbsp; Weight: 22 lbs<br>
+      Upholstery: bouclé-weave cotton-poly blend, 240 GSM, OEKO-TEX Standard 100 certified</p>
+    </div>
+  </div>
+
+  <div class="sample-card">
+    <div class="label">Product Description 5 &mdash; Storage / Dresser</div>
+    <div class="headline">The Archive Dresser</div>
+    <div class="body">
+      <p>Storage as architecture. The Archive is a six-drawer dresser in engineered oak veneer over a solid hardwood frame, with drawers mounted on full-extension soft-close glides rated to 75 lbs per drawer. Drawer interiors are lined in a natural cotton canvas, lightly waxed, that protects delicate textiles and ages gracefully.</p>
+      <p>Solid brass pull hardware in a brushed champagne finish, each pull hand-set and weighted to fall with quiet precision.</p>
+      <p style="font-size:10px; color:var(--light);">64"W &times; 20"D &times; 34"H &nbsp;|&nbsp; Drawer interior: 26"W &times; 16"D &times; 5.5"H (each)<br>
+      Anti-tip hardware included &nbsp;|&nbsp; Exceeds ASTM F2057 stability standards</p>
+    </div>
+  </div>
+
+  <h3>5E. Five Sample Social Media Captions</h3>
+  <p>Social media for premium brands follows different rules than mass-market. The key principles: <strong>never sell in the caption</strong> (the image sells), <strong>use the caption to create mood or context</strong>, and <strong>resist the urge to use exclamation marks or emojis.</strong></p>
+
+  <div class="sample-card">
+    <div class="label">Instagram Caption 1 &mdash; Lifestyle / Room Shot</div>
+    <div class="body">
+      <p>The light shifts. The room stays.<br><br>Meridian Sofa in Fog, styled with the Solace Console and Drift Throw. All available at aykah.ca.</p>
+    </div>
+    <div class="meta">Tone: Aesop-level restraint. Poetic. No selling. The link is stated once, flatly.</div>
+  </div>
+
+  <div class="sample-card">
+    <div class="label">Instagram Caption 2 &mdash; Material Close-Up</div>
+    <div class="body">
+      <p>260 GSM. Solution-dyed. 100,000 Martindale cycles.<br><br>Our performance linen blend is engineered for the way life actually happens&mdash;then finished to feel like it wasn't engineered at all.</p>
+    </div>
+    <div class="meta">Tone: Technical specificity (Aesop's ingredient approach) meets warmth. The last line humanizes the data.</div>
+  </div>
+
+  <div class="sample-card">
+    <div class="label">Instagram Caption 3 &mdash; New Arrival</div>
+    <div class="body">
+      <p>Introducing the Archive Dresser.<br><br>Six drawers. Soft-close glides. Cotton-lined interiors. Solid brass hardware that develops character over time, not despite it.<br><br>Now in the collection.</p>
+    </div>
+    <div class="meta">Tone: RH's declarative confidence. Short, punchy sentences. "Now in the collection" replaces "Shop now."</div>
+  </div>
+
+  <div class="sample-card">
+    <div class="label">Instagram Caption 4 &mdash; Behind the Process</div>
+    <div class="body">
+      <p>Corner-blocked. Double-dowelled. Kiln-dried.<br><br>The frame of every Aykah sofa is built to outlast the trends that surround it. What you see is the upholstery. What you sit on is decades of structural integrity.</p>
+    </div>
+    <div class="meta">Tone: Educational without being condescending. The customer learns something, but is never "taught."</div>
+  </div>
+
+  <div class="sample-card">
+    <div class="label">Instagram Caption 5 &mdash; Seasonal / Editorial</div>
+    <div class="body">
+      <p>A room should feel like a deep breath.<br><br>Our spring collection is designed around a single principle: less visual noise, more tactile warmth. Bouclé textures. Soft silhouettes. Neutral tones that let the light in the room do the work.<br><br>Explore the collection at aykah.ca.</p>
+    </div>
+    <div class="meta">Tone: The intersection&mdash;Aesop's sensory language ("tactile warmth," "deep breath") with RH's editorial confidence ("our spring collection is designed around a single principle"). No hashtag spam. One clean link.</div>
+  </div>
+
+  <h3>5F. Tone Calibration Quick Reference</h3>
+  <div class="tbl-wrap">
+    <table class="dt">
+      <thead><tr><th>Dimension</th><th>Aesop (Pure)</th><th>RH (Pure)</th><th>Aykah (Intersection)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Sentence length</strong></td><td>Very short. Fragments.</td><td>Medium. Declarative.</td><td>Mix of fragments and medium declaratives.</td></tr>
+        <tr><td><strong>Adjective density</strong></td><td>Minimal. 1 per noun max.</td><td>Moderate. Evocative.</td><td>Low. Only when they add factual or sensory value.</td></tr>
+        <tr><td><strong>Technical detail</strong></td><td>High. Ingredients listed.</td><td>Moderate. Materials named.</td><td>High. GSM, certifications, joinery named.</td></tr>
+        <tr><td><strong>Emotional register</strong></td><td>Cool, intellectual.</td><td>Warm, aspirational.</td><td>Warm but grounded. Never gushing.</td></tr>
+        <tr><td><strong>Photography style</strong></td><td>Product on neutral ground.</td><td>Product in grand environment.</td><td>Product in real (but beautiful) Canadian homes.</td></tr>
+        <tr><td><strong>Call to action</strong></td><td>Absent. Store locator only.</td><td>"Explore" / "View"</td><td>"Explore the collection" / "Now in the collection"</td></tr>
+        <tr><td><strong>Punctuation</strong></td><td>Periods. No exclamation.</td><td>Periods. Rare question.</td><td>Periods. Fragments. Never exclamation marks.</td></tr>
+        <tr><td><strong>Brand stance</strong></td><td>"We made this well."</td><td>"This is how you should live."</td><td>"We considered every detail. It shows."</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     APPENDIX: IMPLEMENTATION CHECKLIST
+     ════════════════════════════════════════════════════════════════ -->
+<div class="sec ivory pb">
+  <div class="ey">Appendix</div>
+  <div class="st">Implementation Checklist</div>
+  <div class="ss">Immediate action items for applying this guide across all Aykah channels</div>
+
+  <h3>Immediate Actions (This Week)</h3>
+  <ol class="num-list">
+    <li>Search-and-replace "free shipping" with "complimentary delivery" across all Shopify pages, email templates, and ad copy.</li>
+    <li>Remove ALL instances of "affordable," "cheap," "budget," "deal," and "bargain" from the website.</li>
+    <li>Audit all product descriptions for vague quality claims ("good quality," "well-made") and replace with specific material/process language.</li>
+    <li>Remove excessive exclamation marks, all-caps emphasis, and emojis from product copy and social media templates.</li>
+    <li>Update the website banner from "FREE SHIPPING on orders over $199!" to "Complimentary delivery on orders above $199".</li>
+  </ol>
+
+  <h3>Short-Term Actions (This Month)</h3>
+  <ol class="num-list">
+    <li>Rewrite all product descriptions using the specification standards in Section 2. Each description must include at least 3 verifiable technical specifications.</li>
+    <li>Brief the customer service team on the word swap dictionary. "Customer service" becomes "client care" in all communications.</li>
+    <li>Create a shared "banned words" list in the team's project management tool, derived from Section 1 and Section 3.</li>
+    <li>Audit social media captions against the Trigger 4 checklist (desperate enthusiasm). Rewrite any post that uses more than one exclamation mark.</li>
+    <li>Gather actual technical specifications (GSM, foam density, wood species, certifications) from suppliers for every product in the catalogue.</li>
+  </ol>
+
+  <h3>Ongoing Governance</h3>
+  <ol class="num-list">
+    <li>All new copy must be reviewed against this document before publication.</li>
+    <li>Quarterly audit: run a text search for banned words across all live pages.</li>
+    <li>New team members receive this document as part of onboarding.</li>
+    <li>Supplier onboarding forms should require technical specifications (GSM, density, certifications) as mandatory fields.</li>
+  </ol>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     FOOTER
+     ════════════════════════════════════════════════════════════════ -->
+<div class="sec navy" style="padding:30px 56px;">
+  <div style="display:flex; justify-content:space-between; align-items:center;">
+    <div>
+      <div style="font-family:var(--font-h); font-size:20px; color:#fff; font-weight:700; letter-spacing:4px;">AYKAH</div>
+      <div style="font-size:9px; color:rgba(255,255,255,0.2); letter-spacing:1.5px; text-transform:uppercase; margin-top:4px;">Premium Language Guide v1.0</div>
+    </div>
+    <div style="text-align:right;">
+      <div style="font-size:9px; color:rgba(255,255,255,0.2); letter-spacing:1.5px; text-transform:uppercase;">Confidential &mdash; Internal Use Only</div>
+      <div style="font-size:9px; color:rgba(255,255,255,0.15); margin-top:4px;">April 2026 &nbsp;&bull;&nbsp; Aykah Furniture Inc. &nbsp;&bull;&nbsp; aykah.ca</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
