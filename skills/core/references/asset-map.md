@@ -11,7 +11,7 @@ When generating output for the team, reference the **bundled** paths (option 1).
 
 ---
 
-## 1. Bundled (in-plugin) — paths relative to `skills/home/`
+## 1. Bundled (in-plugin) — paths relative to `skills/core/`
 
 ### Voice & Language
 

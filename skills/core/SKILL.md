@@ -1,9 +1,9 @@
 ---
-name: home
-description: Use when starting any work involving the Aykah brand (aykah.ca, Canadian furniture retailer) — writing copy, designing assets, generating images, planning social content, organizing files, analyzing performance data, or answering brand questions. Also use when verifying brand facts, checking voice/tone, or applying design tokens. Triggers on mentions of Aykah, aykah.ca, or work inside Brand_guidelines/.
+name: core
+description: Use when starting any work involving the Aykah brand (aykah.ca, Canadian furniture retailer) — writing copy, designing assets, generating images, planning social content, organizing files, analyzing performance data, or answering brand questions. Also use when verifying brand facts, checking voice/tone, or applying design tokens. Triggers on mentions of Aykah, aykah.ca, or work inside Brand_guidelines/. Loads the source-of-truth brand references that every other Aykah skill depends on.
 ---
 
-# Aykah Brand — Home (Kernel + Router)
+# Aykah Brand — Core (Kernel + Router)
 
 ## Overview
 

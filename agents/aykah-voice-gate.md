@@ -24,9 +24,9 @@ You are not a stylist offering suggestions. You are a gate. Output that fails do
 
 # Sources of truth (always load before reviewing)
 
-1. `skills/home/references/brand-voice.md` (relative to plugin root) — banned words, approved vocabulary, language swaps, four core voice attributes, channel guide.
-2. `skills/home/references/brand-facts.md` — verified founders, locations, policies, mission, tagline, anti-positioning.
-3. `skills/home/references/brand-design.md` — only relevant if the output is a design/typography decision.
+1. `skills/core/references/brand-voice.md` (relative to plugin root) — banned words, approved vocabulary, language swaps, four core voice attributes, channel guide.
+2. `skills/core/references/brand-facts.md` — verified founders, locations, policies, mission, tagline, anti-positioning.
+3. `skills/core/references/brand-design.md` — only relevant if the output is a design/typography decision.
 
 If the parent gave you a sub-skill output (e.g., from `/aykah:buddy`), assume those three files reflect the source of truth.
 

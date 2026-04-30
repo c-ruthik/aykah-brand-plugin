@@ -27,8 +27,8 @@ Buddy is the Aykah team's structured creative partner. It does not free-associat
 
 Before generating ANY output, load:
 
-1. `../home/references/brand-voice.md` — banned words, approved vocabulary, voice attributes
-2. `../home/references/brand-facts.md` — verified facts, mission, anti-positioning
+1. `../core/references/brand-voice.md` — banned words, approved vocabulary, voice attributes
+2. `../core/references/brand-facts.md` — verified facts, mission, anti-positioning
 
 These prevent banned-word output and invented claims.
 
