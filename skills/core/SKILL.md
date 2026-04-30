@@ -58,6 +58,10 @@ Only load the file relevant to the task to keep context lean.
 - `references/docs/premium-repositioning.html` — strategy memo on the upmarket shift.
 - `references/docs/logo/` — logo files (`Full_logo_final.svg`/`.png`/`.ai` + breakdowns).
 
+### Feedback-logging protocol (REQUIRED for every sub-skill)
+
+- `references/feedback-protocol.md` — defines the centralized feedback-logging contract that every Aykah sub-skill follows. Outputs land in `~/Desktop/aykah-feedback/` with per-skill history and feedback files plus a cross-skill `summary.json`. The plugin maintainer collects these to upgrade the skills. **Every sub-skill must implement the logging hook described in the protocol.**
+
 ## Routing — which sub-skill to invoke
 
 | Task | Sub-skill (when shipped) |

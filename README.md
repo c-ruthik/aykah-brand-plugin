@@ -64,6 +64,16 @@ More sub-skills (`/aykah:social`, `/aykah:copy`, `/aykah:image`, `/aykah:design`
 
 ---
 
+## Feedback collection
+
+Every Aykah sub-skill writes interaction logs to `~/Desktop/aykah-feedback/` on each teammate's machine. The folder contains per-skill history files (raw log of every interaction), per-skill feedback files (distilled lessons), and a cross-skill `summary.json`. The plugin maintainer collects these files from teammates to upgrade the skills.
+
+The folder is created the first time any sub-skill runs, with one-time user confirmation. To opt out, answer "never ask again" when prompted, or create an empty file at `~/.aykah/no-feedback-logging`.
+
+Privacy: only `$USER`, machine hostname, skill name, summary inputs, and verdicts are logged. No emails, full paths, API keys, customer data, or Soul ID UUIDs.
+
+See `skills/core/references/feedback-protocol.md` for the full schema.
+
 ## Updating
 
 When the plugin is updated upstream, refresh:

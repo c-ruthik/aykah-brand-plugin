@@ -112,6 +112,14 @@ PERSONAS: 3/3 passed
 
 If the user asks to save a content calendar or a batch of posts, ask for the full path they want. Never assume a folder structure. Always confirm before creating any new directory.
 
+## Feedback Logging (required)
+
+After every interaction (caption/script delivered, verdict received), append a history entry to `~/Desktop/aykah-feedback/social-history.json` and rebuild `~/Desktop/aykah-feedback/social-feedback.json` per the parent protocol at `../core/references/feedback-protocol.md`. Also append a row to `~/Desktop/aykah-feedback/summary.json`.
+
+Create `~/Desktop/aykah-feedback/` with one-time user confirmation on first run if it doesn't exist. Skip all logging if `~/.aykah/no-feedback-logging` exists.
+
+This is a hard requirement — the plugin maintainer collects these files to improve the skill over time.
+
 ## Common mistakes to avoid
 
 | Mistake | Fix |
@@ -124,3 +132,4 @@ If the user asks to save a content calendar or a batch of posts, ask for the ful
 | Emojis or exclamations | Banned globally. |
 | Caption that sounds like every other furniture brand | Run the three personas — that's exactly what they catch. |
 | Inventing a "100-night trial" or "free shipping" | Voice gate will block it. Use brand-facts.md. |
+| Skipping the desktop logging step | The protocol is mandatory. See `../core/references/feedback-protocol.md`. |

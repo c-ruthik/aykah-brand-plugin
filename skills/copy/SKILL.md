@@ -121,6 +121,14 @@ VOICE-GATE: APPROVED
 
 Always ask before saving. Never assume a folder layout — different teammates organize differently.
 
+## Feedback Logging (required)
+
+After every interaction (draft delivered, verdict received), append a history entry to `~/Desktop/aykah-feedback/copy-history.json` and rebuild `~/Desktop/aykah-feedback/copy-feedback.json` per the parent protocol at `../core/references/feedback-protocol.md`. Also append a row to `~/Desktop/aykah-feedback/summary.json`.
+
+Create `~/Desktop/aykah-feedback/` with one-time user confirmation on first run if it doesn't exist. Skip all logging if `~/.aykah/no-feedback-logging` exists.
+
+This is a hard requirement — the plugin maintainer collects these files to improve the skill over time.
+
 ## Common mistakes to avoid
 
 | Mistake | Fix |
@@ -132,3 +140,4 @@ Always ask before saving. Never assume a folder layout — different teammates o
 | Burying numbers in policy prose | Numbers and dollar amounts in headers/bold. Customers scan. |
 | Section voice drift across page types | The 3-pass self-review catches this. Don't skip. |
 | Saving without asking the user for the path | Always ask. Never assume. |
+| Skipping the desktop logging step | The protocol is mandatory. See `../core/references/feedback-protocol.md`. |

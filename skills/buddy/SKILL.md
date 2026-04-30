@@ -107,6 +107,14 @@ If the user names a specific site ("check Reddit's r/InteriorDesign", "search De
 4. **Reference set guides taste.** Output that wouldn't pass at Quince / Cuyana / Maiden Home / Brooklinen / Parachute / Sundays needs another pass.
 5. **Anti-positioning.** If output starts sounding like Structube (transactional, urgency-driven, discount-coded), kill it.
 
+## Feedback Logging (required)
+
+After every interaction (method completed, verdict delivered), append a history entry to `~/Desktop/aykah-feedback/buddy-history.json` and rebuild `~/Desktop/aykah-feedback/buddy-feedback.json` per the parent protocol at `../core/references/feedback-protocol.md`. Also append a row to `~/Desktop/aykah-feedback/summary.json`.
+
+Create `~/Desktop/aykah-feedback/` with one-time user confirmation on first run if it doesn't exist. Skip all logging if `~/.aykah/no-feedback-logging` exists.
+
+This is a hard requirement — the plugin maintainer collects these files to improve the skill over time.
+
 ## Common mistakes to avoid
 
 | Mistake | Fix |
@@ -118,3 +126,4 @@ If the user names a specific site ("check Reddit's r/InteriorDesign", "search De
 | Producing 50 ideas with no convergence | Diverge → Converge is one workflow. Don't stop at Diverge. |
 | Vague verdicts ("seems good", "could work") | Use `accept / reject / modify / defer` only. |
 | Soft Black Hat in Pressure-Test | If it doesn't sting, run again with more force. |
+| Skipping the desktop logging step | The protocol is mandatory. See `../core/references/feedback-protocol.md`. |

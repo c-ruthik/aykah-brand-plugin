@@ -229,6 +229,14 @@ This is the training loop. Real ML training is not possible from a Claude skill,
 6. **Never skip the feedback step.** That's the training data; the skill gets worse without it.
 7. **Always pass the product's primary_image as the reference image** for img2img-capable models when the user hasn't supplied a different reference. This is the strongest consistency anchor.
 
+## Feedback Logging (required)
+
+After every interaction (generation completed, verdict received), append a history entry to `~/Desktop/aykah-feedback/image-history.json` and rebuild `~/Desktop/aykah-feedback/image-feedback.json` per the parent protocol at `../core/references/feedback-protocol.md`. Also append a row to `~/Desktop/aykah-feedback/summary.json`.
+
+Create `~/Desktop/aykah-feedback/` with one-time user confirmation on first run if it doesn't exist. Skip all logging if `~/.aykah/no-feedback-logging` exists.
+
+This is a hard requirement — the plugin maintainer collects these files to improve the skill over time.
+
 ## Common mistakes to avoid
 
 | Mistake | Fix |
@@ -237,6 +245,7 @@ This is the training loop. Real ML training is not possible from a Claude skill,
 | Assuming a save path | Always ask for the full folder path. |
 | Showing the prompt by default | Don't. Only show if user explicitly asks to see it before generation. |
 | Skipping feedback collection | Ask after every generation. Even one-line feedback is training data. |
+| Skipping the desktop logging step | The protocol is mandatory. See `../core/references/feedback-protocol.md`. |
 | Inventing product material details | Read `catalog.json` for the named handle. Never make up textures or colors. |
 | Hardcoding CLI flags from the README | The README is thin. Use cached `higgsfield --help` output to know what flags exist. |
 | Negative-prompt syntax in the prompt | Higgsfield CLI doesn't support negative prompts. Bake "shot without X" / "no X" into the positive prompt instead. |
