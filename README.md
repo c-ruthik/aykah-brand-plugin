@@ -35,8 +35,16 @@ You should see the brand kernel respond.
 | Command | What it does |
 |---|---|
 | `/aykah:home` | Brand kernel + router. Loads brand facts, voice rules, design tokens. Always run first when starting Aykah work. |
+| `/aykah:buddy` | Brand-aware thinking partner. Auto-routes any brainstorm / pressure-test / decision question to the right structured method (Frame, Diverge, Lotus Blossom, TRIZ, Pressure-Test, Scenario Wind-Tunnel, Red Team, Converge). Output passes through the brand-voice gate before delivery. |
 
-More sub-skills (`/aykah:social`, `/aykah:copy`, `/aykah:image`, `/aykah:design`, `/aykah:creator`, `/aykah:ideate`, `/aykah:organize`, `/aykah:analyze`, `/aykah:seo`) ship in subsequent versions.
+More sub-skills (`/aykah:social`, `/aykah:copy`, `/aykah:image`, `/aykah:design`, `/aykah:creator`, `/aykah:organize`, `/aykah:analyze`, `/aykah:seo`) ship in subsequent versions.
+
+### Agents (dispatched by sub-skills)
+
+| Agent | What it does |
+|---|---|
+| `aykah-researcher` | Searches Reddit, design publications, marketing/trend sites, and competitor pages for current external signal. If you name a specific site, only searches that site. |
+| `aykah-voice-gate` | Final reviewer. Runs every Aykah-facing output through banned-words check, fact verification, voice-attribute scoring, and anti-positioning audit before delivery. HARD-GATE pattern. |
 
 ### Brand kernel (loaded on-demand by `/aykah:home`)
 
