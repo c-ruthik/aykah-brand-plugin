@@ -38,6 +38,7 @@ You should see the brand kernel respond.
 | `/aykah:buddy` | Brand-aware thinking partner. Auto-routes any brainstorm / pressure-test / decision question to the right structured method (Frame, Diverge, Lotus Blossom, TRIZ, Pressure-Test, Scenario Wind-Tunnel, Red Team, Converge). Output passes through the brand-voice gate before delivery. |
 | `/aykah:social` | Channel-aware social copywriting. Writes Instagram captions, Reels/TikTok scripts (with shot lists + ASMR cues), and Pinterest pin descriptions using the Voice Guide v2 formula. Every output runs through three reviewer personas (Sanya filter, reference-set customer, Channel Guide check) plus the voice gate before delivery. |
 | `/aykah:copy` | Adaptive long-form website copywriting. The user names the section they're working on (PDP, returns, shipping, warranty, FAQ, about, founder letter, category) and the skill applies the locked Voice Guide v2 foundation, adapts to that section, runs a 3-pass self-review (Voice match · Specificity · So-what), and gates output through the voice-gate before delivery. Asks for material specs and certifications instead of inventing them. |
+| `/aykah:image` | Brand-consistent image generation via the Higgsfield CLI. Detects the CLI on first use (or shows install instructions if missing). Asks the user for mode, product, vibe, room, people, model, aspect ratio, quality, and reference image before any generation. Dispatches an interior designer agent (room/palette/staging/narrative — trains on user feedback) and a photographer agent (lens/light/composition/anti-AI-tells), assembles a 5-block prompt, generates directly, saves to a user-named folder, and stores feedback in `~/.aykah/image-state.json` for consistency across future generations. |
 
 More sub-skills (`/aykah:social`, `/aykah:copy`, `/aykah:image`, `/aykah:design`, `/aykah:creator`, `/aykah:organize`, `/aykah:analyze`, `/aykah:seo`) ship in subsequent versions.
 
@@ -47,6 +48,8 @@ More sub-skills (`/aykah:social`, `/aykah:copy`, `/aykah:image`, `/aykah:design`
 |---|---|
 | `aykah-researcher` | Searches Reddit, design publications, marketing/trend sites, and competitor pages for current external signal. If you name a specific site, only searches that site. |
 | `aykah-voice-gate` | Final reviewer. Runs every Aykah-facing output through banned-words check, fact verification, voice-attribute scoring, and anti-positioning audit before delivery. HARD-GATE pattern. |
+| `aykah-interior-designer` | Builds brand-aligned scene briefs (room, palette, materials, staging, narrative) for image generation. Reads training data from `~/.aykah/image-state.json` so its briefs converge on user taste over time. |
+| `aykah-photographer` | Adds the technical photography layer (lens, aperture, light direction, composition, anti-AI-tells) on top of the interior designer's scene brief. Bakes exclusion phrases into the positive prompt because Higgsfield CLI does not support negative prompts. |
 
 ### Brand kernel (loaded on-demand by `/aykah:core`)
 
