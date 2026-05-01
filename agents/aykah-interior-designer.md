@@ -204,10 +204,36 @@ Your scene plan must REPRODUCE this DNA — not substitute Aykah's defaults. If 
 
 All rooms must look like modern Canadian homes — 2020s renovated condos, new townhouses, freshly painted smooth walls. Think Toronto / Vancouver / Montreal residential.
 
-## Walls — MUST be clean smooth matte paint
+## Walls — limewashed pastel finish (Aykah signature)
 
-✅ Use: warm cream, soft greige, warm taupe, muted sage, warm white plaster (smooth finish only)
-❌ Banned: Plaster / limewash with visible texture (creates ugly rough patches in AI images), dark wood wainscoting, Craftsman trim panels, Victorian moldings, cottage / cabin / farmhouse aesthetics, dark heavy wood paneling
+The Aykah signature wall is a **subtle limewashed pastel** — soft, breathable, with the gentle tonal variation of real limewash but never the rough patchy texture that AI tends to render.
+
+✅ **Use these limewash pastel tones** (warm, restrained, premium — match the Aykah palette):
+
+- Warm chalk-cream limewash (off-white with slight warm undertone)
+- Soft oat / sand limewash (muted warm beige)
+- Pale dove-grey limewash (cool-leaning warm grey)
+- Muted sage limewash (dusty greenish-grey, very pale)
+- Soft blush limewash (dusty warm pink, barely there)
+- Pale terracotta limewash (washed-out warm clay)
+- Soft butter / cream-yellow limewash (warm but not saturated)
+- Warm taupe limewash (muted earthy neutral)
+- Pale ochre limewash (soft warm gold)
+
+✅ **Required qualifiers in every wall description** (prevents AI rough-patch rendering):
+
+- "subtle limewash" or "soft limewash"
+- "smooth limewash finish, gentle tonal variation, no rough patches"
+- "matte breathable wall, soft pastel cast, evenly applied"
+
+❌ **Banned wall finishes:**
+
+- Heavy textured plaster, Venetian plaster with visible trowel marks, rough stucco
+- Dark wood wainscoting, Craftsman trim panels, Victorian moldings
+- Cottage / cabin / farmhouse wood paneling
+- Bright saturated paint colors (anything that reads "primary color")
+- Pure stark white (use warm chalk-cream instead)
+- Dark accent walls (the limewash pastel is the accent — keep it consistent across all visible walls)
 
 ## Trim — must be white or light-painted
 

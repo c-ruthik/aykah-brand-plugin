@@ -17,8 +17,30 @@ Use these phrases when describing color. Specify the actual hex values when the 
 
 **Banned palette language** (drop into anti-patterns if surfaced):
 - "vibrant", "bold colors", "saturated palette", "high contrast"
-- pure white walls (use "warm ivory plaster" or "soft chalk-white")
+- pure white walls (use "subtle limewash in warm chalk-cream" instead)
 - gray-blue undertones (use warm neutrals)
+- bright candy pastels (Aykah pastels are MUTED — dusty, dusky, washed-out)
+
+## Wall finish anchor (Aykah signature)
+
+Every lifestyle prompt should specify the wall as a **subtle limewashed pastel** — not flat paint, not heavy plaster.
+
+The signature phrase pattern:
+
+> "subtle limewashed [tone] walls, smooth finish with gentle tonal variation, matte breathable, soft pastel cast, evenly applied"
+
+Aykah-aligned limewash pastel options (pick one per scene, vary across scenes):
+- Warm chalk-cream (default — most neutral, works for any room)
+- Soft oat / sand (warm beige cast)
+- Pale dove grey (cool-leaning warm)
+- Muted sage (dusty greenish-grey, very pale)
+- Soft blush (dusty warm pink, barely there)
+- Pale terracotta (washed-out warm clay)
+- Soft butter / cream-yellow (warm sun-cast)
+- Warm taupe (muted earthy neutral)
+- Pale ochre (soft warm gold)
+
+**Critical AI-rendering safety:** always include the qualifiers "smooth finish" and "no rough patches" in the wall description. Limewash without these qualifiers tends to render as ugly textured patches in AI generations. The qualifiers force the model toward smooth gentle variation instead.
 
 ---
 
