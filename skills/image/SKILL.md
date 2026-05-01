@@ -159,33 +159,45 @@ If a question doesn't apply to the chosen engine (e.g., reference image is asked
 
 ## Step 3 — Dispatch agents (in this order)
 
-### 3a. Interior Designer agent
+### 3a. Interior Designer agent (Creative Director + Designer)
 
-Send: catalog product details + user inputs (vibe, room, people, palette mood) + read-access to `~/.aykah/image-state.json` (so the agent learns from approved gens).
+Send: catalog product details + user inputs (mode, photography style, vibe, room, people, palette mood, reference image, combo count, special instructions) + read-access to `~/.aykah/image-state.json` (so the agent learns from approved gens).
 
 The designer reads:
-- `aykah-style-anchors.md` for the locked palette/materials vocabulary
-- `~/.aykah/image-state.json` for: previously-approved generations, user-stated preferences, disliked patterns
+- `../core/references/brand-facts.md` for positioning + reference set
+- `../core/references/brand-design.md` for palette + materials vocabulary
+- `references/aykah-style-anchors.md` for locked visual phrases
+- `references/aykah-lookbook.md` for canonical brand examples (closest match anchors the new plan)
+- `~/.aykah/image-state.json` for previously-approved gens, user_preferences, disliked_patterns, learned_rules
 
-Returns a **scene brief**: room description, palette, materials, staging, narrative. Brand-aligned, reference-set-aligned, anti-Structube. No technical photography terms.
+Returns a complete **scene plan**: creative direction (mood, color story split into room backdrop vs furniture accents, material palette, lighting vision concept, aesthetic references, risk level), room layout (walls, floors, windows, architectural detail), palette (60/30/10 with backdrop/accent split), materials surfaced (specific names, no generic), staging (placement, supporting furniture by exact catalog name, wall art mandatory for lifestyle, lived-in touches, plush rug specs), lighting concept (quality + time-of-day feel — no technical specs), narrative (one sentence capturing the moment), people, reference-set anchor, training-loop context, and a self-check before returning.
 
-### 3b. Photographer agent
+Brand-aligned, reference-set-aligned, anti-Structube. No technical photography terms — that's the photographer's layer.
 
-Receives the scene brief.
+### 3b. Photographer agent (Photographer + Prompt Engineer)
 
-Reads:
-- `aykah-style-anchors.md` for the locked camera/light/composition phrases
-- `aykah-anti-patterns.md` for AI-tells to bake into the positive prompt (since Higgsfield has no negative prompt field)
+Receives the scene plan from the designer + the engine context (CLI vs MCP, model, aspect ratio, quality, reference image URL, combo count).
 
-Returns the **technical layer**: lens, aperture, light direction + quality, composition, anti-AI-tell language.
+The photographer reads:
+- `references/aykah-style-anchors.md` for camera/light/composition anchors
+- `references/aykah-anti-patterns.md` for AI-tells + brand-anti-patterns to bake into the positive prompt
+- `~/.aykah/image-state.json` for user's preferred vibes, disliked patterns, learned rules
 
-## Step 4 — Assemble the full prompt and call the chosen engine
+The photographer does TWO things:
 
-Combine the designer's scene brief + the photographer's technical layer into one 5-block prompt:
+1. **Adds the technical layer** — light direction + quality + Kelvin temperature, lens (35mm/50mm/85mm prime, never hedge), aperture, camera height (always real human eye-level unless explicitly art-directed), film stock (Kodak Portra 160/400 — adds film grain, prevents 3D-render look), composition (rule-of-thirds, leading lines, depth strategy), and the exclusions block (anti-AI-tells + disliked patterns from state).
 
-```
-[Subject + product] + [Environment] + [Light] + [Camera] + [Composition + anti-AI-tells]
-```
+2. **Assembles the final flowing-paragraph prompt** ready to send to the engine — 700–1000 words depending on combo count, single paragraph, ASCII only, command syntax, catalog material/color words VERBATIM (no paraphrasing), reference-image lock line, exclusions block, ending with a `HEX VALUES: [...]` color array (5–8 hex codes from the scene palette).
+
+The photographer runs a 24-item quality verification checklist before returning — covers texture fidelity, camera specs, lighting direction, grounding contact shadows, composition technique, real-world scale cues (architectural cues like baseboards / ceiling height / doorways), photorealism cues (film grain, asymmetric placement, light falloff), wall art on every visible wall (for lifestyle), plush rug check (no jute / sisal / flatweave), fruit-bowl / plant / vase ban, and studio-mode override (no walls / floors / windows / props if studio).
+
+Returns: technical layer breakdown + the FINAL PROMPT ready to send + word count + products_used list + a short negative_prompt_hint (for engines that support negative prompts as a fallback).
+
+## Step 4 — Send the final prompt to the chosen engine
+
+The photographer agent has already assembled the final 700–1000 word flowing-paragraph prompt with the reference-image lock line, exclusions block, and HEX VALUES array. The skill does not re-assemble.
+
+Take the photographer's `FINAL PROMPT` field and send it directly.
 
 ### If engine = CLI
 
