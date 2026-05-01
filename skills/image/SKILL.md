@@ -27,8 +27,9 @@ Before any generation:
 3. `references/aykah-style-anchors.md` — locked visual phrases that go in every prompt
 4. `references/aykah-anti-patterns.md` — banned visual cues + AI-tells (must be baked into positive prompt — Higgsfield doesn't support negative prompts)
 5. `data/catalog.json` — 123 active Aykah products with material/color/texture/style metadata + Shopify image URL
-6. `~/.aykah/image-state.json` — training data: approved gens, feedback, preferences, soul_ids, default engine (auto-created on first save)
-7. `~/.aykah/engine-capabilities.json` — cached detection of installed Higgsfield engines (CLI and/or MCP) and their capabilities (auto-detected)
+6. `references/naming-guide.md` — canonical Aykah AI image naming convention (formula, shot-type vocabulary, folder structure, versioning rules)
+7. `~/.aykah/image-state.json` — training data: approved gens, feedback, preferences, soul_ids, default engine (auto-created on first save)
+8. `~/.aykah/engine-capabilities.json` — cached detection of installed Higgsfield engines (CLI and/or MCP) and their capabilities (auto-detected)
 
 **No `brand-voice.md`. No `aykah-voice-gate` agent.** Image generation does not need banned-words checking on text — the output is an image, not customer-facing copy.
 
@@ -244,17 +245,85 @@ Run the CLI. Wait for output (the CLI may be sync or return a job ID — both ha
 
 If it returns a job ID, poll until status is `completed`, `failed`, or `nsfw`. Surface the URL or local path of the result.
 
-## Step 6 — Save to user's folder
+## Step 6 — Save to user's folder (using the canonical naming convention)
 
-Ask the user where to save:
+Files MUST follow the Aykah AI image naming convention from `references/naming-guide.md`:
 
-> Where should I save the image? Provide the full folder path. I'll create the folder if it doesn't exist (with your confirmation).
+```
+aykah-<product-handle>-<variant>-<shot-type>.png
+```
 
-If the user provides a path:
-- If folder exists → save the image there as `aykah-<topic>-YYYYMMDD-HHMMSS.png`
-- If folder does NOT exist → ask once: *"Folder doesn't exist. Create it?"*. On yes, create and save. On no, ask for a different path.
+### Build the filename
 
-Never assume a default folder.
+1. **`<product-handle>`** — the catalog `handle` field, lowercase kebab-case. Never invent. Match `catalog.json` exactly. Examples: `mellow-sofa`, `aires-dining-chair`, `aura-sectional`.
+
+2. **`<variant>`** — the color or material variant the user picked or that the catalog specifies for this product. Lowercase kebab-case. Skip this segment entirely if only one variant exists. Examples: `silver-mist`, `oat-boucle`, `walnut`, `beige`.
+
+3. **`<shot-type>`** — exactly ONE from this locked vocabulary, mapped from the user's mode + framing:
+
+| User input pattern | Shot-type to use |
+|---|---|
+| Mode `product`, straight-on shot | `front` |
+| Mode `product`, 30–40° angle | `three-quarter` |
+| Mode `product`, pure profile | `side` |
+| Mode `product`, rear view | `back` |
+| Mode `product`, close crop on texture/seam/leg/hardware | `detail` |
+| Mode `product`, white/transparent background (studio) | `cutout` |
+| Mode `lifestyle` | `lifestyle` |
+| Mode `hero` (wide editorial with full room) | `hero` |
+| Mode `portrait` (person + product) | `portrait` |
+
+Pick the dominant intent — never combine (no `front-detail`).
+
+4. **Extension** — `.png` for 4K masters. `.webp` for web-optimized exports.
+
+### Build the folder path
+
+Per the naming guide, organize by **shoot or campaign**, not a single bucket. Default folder slug pattern:
+
+```
+<user-supplied root>/aykah-<campaign-or-product-slug>/
+```
+
+Where `<campaign-or-product-slug>` is either:
+- The campaign name in kebab-case (e.g., `aykah-spring-2026-launch/`) if the user named a campaign
+- The product handle (e.g., `aykah-mellow-sofa/`) if it's a single-product shoot
+
+### Ask the user
+
+> Where should I save the image?
+>
+> 1. Suggested folder name: `aykah-<product-handle>` or `aykah-<campaign-slug>` if you've got a campaign in mind
+> 2. Suggested filename: `aykah-<product-handle>-<variant>-<shot-type>.png` (per Aykah AI image naming guide)
+>
+> Reply with the **parent folder path** where this should land (e.g., `~/Desktop`, `~/Drive/Aykah/2026-Q2`). I'll create `aykah-<slug>/` inside it if needed and save with the canonical filename.
+>
+> Or override the filename / folder if you want something different.
+
+If the parent folder doesn't exist, ask once before creating it.
+
+### Versioning re-rolls (collision handling)
+
+If the canonical filename already exists in the target folder, append `-v2`, `-v3`, etc.:
+
+```
+aykah-mellow-sofa-silver-mist-front.png        # original
+aykah-mellow-sofa-silver-mist-front-v2.png     # re-roll
+aykah-mellow-sofa-silver-mist-front-v3.png     # second re-roll
+```
+
+NEVER use `-final`, `-FINAL-FINAL`, `-new`, `-latest`, or any date/time stamp like `-20260501`.
+
+### Don'ts (from the canonical guide)
+
+- No spaces, no underscores, no camelCase — kebab-case only
+- No `IMG_` or `DSC_` prefixes
+- No emojis, no parentheses, no brackets
+- Never invent a product handle — match `catalog.json`
+- Never use this format for real product photography (those have a separate guide in `Product_Images/`)
+- No date/time stamps in filenames — versioning handles iteration
+
+For full reference, the canonical guide is bundled at `references/naming-guide.md` (and `naming-guide.pdf` for human reading).
 
 ## Step 7 — Show + ask for feedback
 
