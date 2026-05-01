@@ -1,8 +1,44 @@
 # Aykah Image Anti-Patterns
 
-Higgsfield CLI does NOT expose negative prompts. Anti-patterns must be baked into the positive prompt as exclusion phrases ("shot without X", "no X", "absent X").
+Higgsfield CLI does NOT expose negative prompts. Anti-patterns must be baked into the positive prompt as exclusion phrases ("avoid X", "no X", "no Y").
 
-The photographer agent consults this file when adding the technical layer. Every generation positive prompt must end with the relevant exclusions.
+The photographer agent consults this file when adding the technical layer. Every generation positive prompt must end with the relevant exclusions. The authoritative exclusion list lives in `~/.aykah/prompt-pattern.json` under `exclusions` — this file expands and explains it.
+
+---
+
+## Benetha's full anti-AI exclusion set (locked)
+
+Every prompt's `Excluded:` block must contain phrases from these five categories. Pulled from `prompt-pattern.json`:
+
+### AI / render tells
+
+`avoid artificial rendering · avoid overly polished · avoid perfect symmetry · avoid overly clean`
+
+### Lighting
+
+`no harsh shadows · no bright whites · no flat lighting · no overexposure`
+
+### Styling
+
+`no clutter · no over-styling · no staged feel · no showroom`
+
+### Composition
+
+`avoid centered perfection · avoid catalog framing · avoid wide-angle distortion`
+
+### Objects
+
+`no bench at foot · no excessive decor · no live or dried plants beyond foliage in a single described vase · no fruit bowls · no fireplaces · no round rugs`
+
+---
+
+## Anti-words (Benetha vocabulary)
+
+These never appear in any prompt:
+
+`no stock image · no showroom · no catalog feel · no artificial rendering · no over-styling · no symmetry · no bright lighting · no harsh shadows · no overly polished look`
+
+---
 
 ---
 

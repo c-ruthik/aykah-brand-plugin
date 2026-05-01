@@ -1,25 +1,29 @@
 # Aykah Style Anchors — locked visual phrases
 
-Every prompt the skill assembles MUST include phrases from this file. They are the constants that make every generation recognizably Aykah. Both agents (interior designer + photographer) pull from here.
+Every prompt the skill assembles MUST include phrases from this file. They are the constants that make every generation recognizably Aykah. Both agents (interior designer + photographer) pull from here. The authoritative pattern lives in `~/.aykah/prompt-pattern.json`; this file expands the vocabulary side.
 
 If a generation drops these anchors, brand drift starts immediately. Never optional.
 
 ---
 
-## Palette anchors (always include)
+## Brand color rule (read this first)
 
-Use these phrases when describing color. Specify the actual hex values when the model accepts them in-prompt.
+**Brand colors (Navy `#363B57`, Ivory `#FAF8F4`, Gold `#B8956A`) are IGNORED in image generation.** They are graphic-design / web / typography colors, not image colors.
 
-- "Aykah palette — deep navy (#363B57), warm ivory (#FAF8F4), brushed warm-gold accent (#B8956A)"
-- "60/30/10 ratio — ivory dominant, navy secondary, warm gold accent only"
-- "warm-neutral cast, slightly desaturated, never cold blue tones"
-- "natural undertones — never pure white, never pure black, never high-saturation primaries"
+Default image palette = Benetha's **earthy neutrals**:
+
+`warm beige · cream · taupe · soft brown · deep brown · earthy neutrals · muted tones · desaturated tones · soft charcoal accents`
+
+**No hex codes in prompts ever.** Use descriptive words only.
+
+Apply brand colors only when the user explicitly names them ("include a navy throw", "brushed brass lamp"). Never auto-inject.
 
 **Banned palette language** (drop into anti-patterns if surfaced):
 - "vibrant", "bold colors", "saturated palette", "high contrast"
-- pure white walls (use "subtle limewash in warm chalk-cream" instead)
+- pure white walls (use "lightly textured warm beige limewash" instead)
 - gray-blue undertones (use warm neutrals)
 - bright candy pastels (Aykah pastels are MUTED — dusty, dusky, washed-out)
+- hex codes inline in any prompt
 
 ## Wall finish anchor (Aykah signature)
 

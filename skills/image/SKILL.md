@@ -22,16 +22,31 @@ For social copy → `/aykah:social`. For long-form copy → `/aykah:copy`. For b
 
 Before any generation:
 
-1. `../core/references/brand-facts.md` — positioning, reference brand set (Quince, Cuyana, Maiden Home, Brooklinen, Parachute, Sundays), anti-positioning (NOT Structube)
-2. `../core/references/brand-design.md` — locked palette (Navy #363B57, Ivory #FAF8F4, Gold #B8956A) and materials vocabulary
-3. `references/aykah-style-anchors.md` — locked visual phrases that go in every prompt
-4. `references/aykah-anti-patterns.md` — banned visual cues + AI-tells (must be baked into positive prompt — Higgsfield doesn't support negative prompts)
-5. `data/catalog.json` — 123 active Aykah products with material/color/texture/style metadata + Shopify image URL
-6. `references/naming-guide.md` — canonical Aykah AI image naming convention (formula, shot-type vocabulary, folder structure, versioning rules)
-7. `~/.aykah/image-state.json` — training data: approved gens, feedback, preferences, soul_ids, default engine (auto-created on first save)
-8. `~/.aykah/engine-capabilities.json` — cached detection of installed Higgsfield engines (CLI and/or MCP) and their capabilities (auto-detected)
+1. **`~/.aykah/prompt-pattern.json`** — **HIGHEST PRIORITY.** The Aykah Image Prompt Pattern (Benetha-derived). Contains 9-block skeleton, vocabulary, exclusions, scene formula, templates by product type. If this file doesn't exist, copy it from the bundled template at `data/prompt-pattern.json` (one-time bootstrap on first run).
+2. `../core/references/brand-facts.md` — positioning, reference brand set (Quince, Cuyana, Maiden Home, Brooklinen, Parachute, Sundays), anti-positioning (NOT Structube)
+3. `../core/references/brand-design.md` — design tokens. **NOTE: brand colors here are graphic-design-only. Do NOT auto-inject Navy / Ivory / Gold into image prompts. Image gen uses Benetha's earthy-neutrals palette by default. Only apply brand colors when the user explicitly names them.**
+4. `references/aykah-style-anchors.md` — visual phrases (Benetha vocabulary folded in)
+5. `references/aykah-anti-patterns.md` — banned visual cues + AI-tells + Benetha's full anti-AI/anti-staged/anti-symmetry set (must be baked into positive prompt — Higgsfield doesn't support negative prompts)
+6. `data/catalog.json` — 123 active Aykah products with material/color/texture/style metadata + Shopify image URL
+7. `data/prompt-pattern.json` — bundled template (canonical pattern; copied to `~/.aykah/prompt-pattern.json` on first run)
+8. `references/naming-guide.md` — canonical Aykah AI image naming convention
+9. `~/.aykah/image-state.json` — training data: approved gens, feedback, preferences, soul_ids, default engine (auto-created on first save)
+10. `~/.aykah/engine-capabilities.json` — cached detection of installed Higgsfield engines (auto-detected)
 
 **No `brand-voice.md`. No `aykah-voice-gate` agent.** Image generation does not need banned-words checking on text — the output is an image, not customer-facing copy.
+
+## Prompt-pattern bootstrap (first-run setup)
+
+On the first invocation of `/aykah:image` (or whenever `~/.aykah/prompt-pattern.json` doesn't exist):
+
+1. Check if `~/.aykah/prompt-pattern.json` exists.
+2. If NOT, copy `data/prompt-pattern.json` (bundled in this plugin) to `~/.aykah/prompt-pattern.json`.
+3. From now on, both agents read the durable copy at `~/.aykah/prompt-pattern.json` — plugin updates can't clobber learned local state.
+
+When the plugin ships a pattern update (e.g., `v1` → `v2`):
+
+1. Compare `version` field in bundled vs durable copy.
+2. If bundled is newer, ask the user: *"Pattern update available: v1 → v2. Merge updates? [yes / no / show diff]"*. On `yes`, overwrite. On `no`, keep durable copy as-is. On `show diff`, display the changes and re-prompt.
 
 ## Step 1 — Detect engines (CLI or MCP)
 

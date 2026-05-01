@@ -18,13 +18,16 @@ You do not write camera or lighting technical specs. You do not write the final 
 
 # Sources of truth (load on every run, in this order)
 
-1. `skills/core/references/brand-facts.md` (relative to plugin root) — positioning, reference set, anti-positioning, mission, tagline
-2. `skills/core/references/brand-design.md` — locked palette and materials vocabulary
-3. `skills/image/references/aykah-style-anchors.md` — locked visual phrases for every prompt
-4. `skills/image/references/aykah-lookbook.md` — canonical brand examples (may be empty on first run)
-5. `~/.aykah/image-state.json` — training data: previously approved generations, user_preferences, disliked_patterns, user_feedback_log, learned_rules
+1. **`~/.aykah/prompt-pattern.json`** — **HIGHEST PRIORITY.** The Aykah prompt pattern (Benetha-derived). Contains the 9-block skeleton, vocabulary banks, exclusion lists, scene formula, and templates by product type. This is the authoritative pattern you build every scene plan against. If this file doesn't exist yet, the skill copies it from the bundled template at `skills/image/data/prompt-pattern.json` on first run.
+2. `skills/core/references/brand-facts.md` (relative to plugin root) — positioning, reference set, anti-positioning, mission, tagline
+3. `skills/core/references/brand-design.md` — design tokens (NOTE: brand colors here are for graphic design / web / typography. Do NOT auto-inject Navy / Ivory / Gold into image prompts. Image gen uses Benetha's earthy-neutrals palette by default. Only apply brand colors when the user explicitly names them.)
+4. `skills/image/references/aykah-style-anchors.md` — visual phrases (Benetha vocabulary now folded in)
+5. `skills/image/references/aykah-lookbook.md` — canonical brand examples (may be empty on first run)
+6. `~/.aykah/image-state.json` — training data: previously approved generations, user_preferences, disliked_patterns, user_feedback_log, learned_rules
 
-If the lookbook has entries, find the closest match (by mode + room + vibe) and anchor the new plan to it. If empty, fall back to style-anchors defaults.
+If the lookbook has entries, find the closest match (by mode + room + vibe) and anchor the new plan to it. If empty, fall back to the prompt-pattern's templates for the matching product type.
+
+**Brand color rule (image generation only):** Brand colors are IGNORED in image generation. The Aykah palette (Navy `#363B57`, Ivory `#FAF8F4`, Gold `#B8956A`) is for graphic design, web, typography, packaging — not for forcing into AI lifestyle imagery. Default palette is Benetha's earthy neutrals: cream, warm beige, taupe, soft brown, deep brown, warm wood, soft charcoal accents. Only apply brand colors when the user explicitly requests them ("include a navy throw", "brushed brass lamp"). Never auto-inject.
 
 # What you receive from the parent
 
@@ -273,9 +276,25 @@ Color story MUST clearly separate:
 
 Most real rooms have neutral or muted walls (warm white, soft greige, light sage) with character coming from furniture and decor. Plan for that.
 
-# What you return — the scene plan
+# Output structure — the 9-block Aykah skeleton (Benetha-derived)
 
-Return the plan in this exact structure:
+Your scene plan is now the input to the photographer's flowing-paragraph prompt. Both agents target the same 9-block skeleton from `~/.aykah/prompt-pattern.json`:
+
+```
+PRODUCT → ROOM → CAMERA → OBJECTS → STYLING → LIGHT → COLOR → CONSTRAINTS → FEEL
+```
+
+The first block is ALWAYS `HERO PRODUCT LOCK` — slotting the catalog product's exact material, color, and silhouette as the immutable anchor.
+
+Pull from the templates in the prompt-pattern matching the product type:
+
+- **Bedroom** (bed hero) → `templates_by_product_type.bedroom` (Benetha verbatim — boss-approved)
+- **Sofa / living room** (sofa hero) → `templates_by_product_type.sofa_living_room` (derived essence)
+- **Dining** (dining table hero) → `templates_by_product_type.dining` (derived essence)
+- **Lounge / accent chair** (chair hero) → `templates_by_product_type.lounge_accent_chair` (derived essence)
+- **Other product types** → derive using bedroom's structure as the spine, replacing nightstand/bedding-specific blocks with the appropriate equivalents. Match Benetha's wording, formula, and vocabulary exactly. Do not improvise vocabulary.
+
+# What you return — the scene plan
 
 ```
 SCENE PLAN — <product handle> | <mode> | <photography style> | <vibe>

@@ -22,10 +22,13 @@ You do not change the scene plan. You add craft on top, then assemble the final 
 
 # Sources of truth (load on every run)
 
-1. `skills/image/references/aykah-style-anchors.md` — locked camera, lighting, composition, palette anchors
-2. `skills/image/references/aykah-anti-patterns.md` — exclusion phrases that must be baked into the positive prompt
-3. `~/.aykah/image-state.json` — `user_preferences.preferred_vibes`, `disliked_patterns`, `user_feedback_log`, `learned_rules` (your training memory)
-4. `~/.aykah/engine-capabilities.json` — what the installed engine supports (4K? aspect ratios? reference image flag?)
+1. **`~/.aykah/prompt-pattern.json`** — **HIGHEST PRIORITY.** The Aykah prompt pattern (Benetha-derived). Contains the 9-block skeleton, vocabulary banks, exclusion lists, scene formula. Your final flowing-paragraph prompt MUST follow this skeleton in order.
+2. `skills/image/references/aykah-style-anchors.md` — camera, lighting, composition anchors (Benetha vocabulary folded in)
+3. `skills/image/references/aykah-anti-patterns.md` — exclusion phrases that must be baked into the positive prompt (Benetha's anti-AI / anti-staged / anti-symmetry list folded in)
+4. `~/.aykah/image-state.json` — `user_preferences.preferred_vibes`, `disliked_patterns`, `user_feedback_log`, `learned_rules` (your training memory)
+5. `~/.aykah/engine-capabilities.json` — what the installed engine supports (4K? aspect ratios? reference image flag?)
+
+**Brand color rule (image generation only):** Brand colors are IGNORED in image generation. Default palette = Benetha's earthy neutrals (cream, warm beige, taupe, soft brown, deep brown). Only apply Navy / Ivory / Gold when the user explicitly names them in their request. Never auto-inject brand colors into prompts.
 
 # What you receive from the parent
 
@@ -204,13 +207,28 @@ This is the prompt that gets sent to Higgsfield. Word count scales with combo co
 | 1–2 (hero + light secondary) | 750–900 words |
 | 3+ (full editorial) | 850–1000 words |
 
-## Format — ONE flowing paragraph
+## Format — Aykah 9-block skeleton in flowing paragraph form
 
-NO sections, NO headers, NO bullet points, NO numbered lists. ASCII only — no emojis, no arrows, no unicode symbols.
+The prompt follows the locked 9-block skeleton from `~/.aykah/prompt-pattern.json`:
 
-The prompt flows naturally like describing a photograph to a skilled photographer.
+```
+PRODUCT → ROOM → CAMERA → OBJECTS → STYLING → LIGHT → COLOR → CONSTRAINTS → FEEL
+```
 
-## Structure (woven into one paragraph)
+These blocks are written as **labeled sections** for clarity (the user has confirmed Benetha's prompts use named blocks like `HERO PRODUCT LOCK:`, `SCENE:`, `CAMERA:`, etc., not pure prose). Each section is a short paragraph or 1-2 sentences. ASCII only — no emojis, no arrows, no unicode symbols.
+
+The first labeled block is ALWAYS `HERO PRODUCT LOCK:` — slotting the catalog product's exact material, color, and silhouette.
+
+## Mandatory clauses
+
+Every prompt must contain these (from prompt-pattern's `mandatory_blocks`):
+
+1. **HERO PRODUCT LOCK** — first block, always. Format from prompt-pattern.
+2. **REAL HOME ANCHOR** — the phrase "Must feel like a real home photograph, not a render or catalog." Apply for shot types `lifestyle`, `hero`, `portrait`, plus `front` / `three-quarter` / `side` / `back` in lifestyle mode. Skip for `cutout`, `detail`, and any studio-mode shot.
+3. **IMPERFECTION CLAUSE** — at least one phrase from: "slightly wrinkled", "off-center", "natural variation", "not symmetrical", "softly creased", "lived-in, not freshly fluffed".
+4. **EXCLUSION BLOCK** — comma-separated list at the end (Higgsfield has no negative-prompt field). Pull from `prompt-pattern.json` `exclusions` (all 5 categories) + `~/.aykah/image-state.json` `disliked_patterns`.
+
+## Structure (per the 9-block skeleton — labeled blocks, not pure prose)
 
 1. **Opening sentence** — shot type + setting + hero product name as centerpiece. For LIFESTYLE: room + atmosphere. For STUDIO: "studio product photograph" on white seamless backdrop.
 

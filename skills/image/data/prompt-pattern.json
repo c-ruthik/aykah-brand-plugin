@@ -1,0 +1,189 @@
+{
+  "version": "v1",
+  "name": "Aykah Image Prompt Pattern (Benetha-derived)",
+  "last_updated": "2026-05-01",
+  "source_doc": "02_Strategy/Aykah-Prompt-Pattern-v1.md",
+  "principles": {
+    "core_rule": "It must feel like a real home photograph, not a render.",
+    "defining_diff": "controlled imperfection + lighting specificity + anti-AI constraints",
+    "brand_color_policy": "IGNORED in image generation. Brand palette (Navy #363B57, Ivory #FAF8F4, Gold #B8956A) is graphic-design-only. Use earthy neutrals by default. Apply brand colors only when user explicitly requests them in the prompt."
+  },
+  "skeleton": [
+    "PRODUCT",
+    "ROOM",
+    "CAMERA",
+    "OBJECTS",
+    "STYLING",
+    "LIGHT",
+    "COLOR",
+    "CONSTRAINTS",
+    "FEEL"
+  ],
+  "mandatory_blocks": {
+    "HERO_PRODUCT_LOCK": {
+      "always_first": true,
+      "format": "Use the exact [product type] provided. Do not change [shape / proportions / structure / material / texture]. Maintain [exact material + color from catalog.json]. No redesign, no resizing, no distortion.",
+      "applies_to": "every prompt, no exceptions"
+    },
+    "REAL_HOME_ANCHOR": {
+      "phrase": "Must feel like a real home photograph, not a render or catalog.",
+      "applies_to_shot_types": ["lifestyle", "hero", "portrait"],
+      "applies_to_modes": ["lifestyle"],
+      "skip_for_shot_types": ["cutout", "detail"],
+      "skip_for_modes": ["studio"]
+    },
+    "IMPERFECTION_CLAUSE": {
+      "required": true,
+      "examples": [
+        "slightly wrinkled",
+        "off-center composition",
+        "natural variation",
+        "not symmetrical",
+        "softly creased",
+        "lived-in, not freshly fluffed"
+      ],
+      "min_per_scene": 1
+    }
+  },
+  "vocabulary": {
+    "materials_textures": [
+      "boucle", "linen", "soft cotton", "woven", "textured throw",
+      "limewash", "subtle textured wallpaper", "vertical weave",
+      "ceramic", "warm wood", "walnut", "espresso",
+      "matte finishes", "fabric shade"
+    ],
+    "light_descriptors": [
+      "soft, diffused daylight", "indirect daylight", "ambient light",
+      "warm glow", "gentle shadow gradients", "natural falloff",
+      "slightly dim", "cozy", "late afternoon", "early evening",
+      "moody but not dark"
+    ],
+    "palette_words": [
+      "warm beige", "cream", "taupe", "soft brown", "deep brown",
+      "earthy neutrals", "muted tones", "desaturated tones",
+      "soft charcoal accents"
+    ],
+    "palette_words_note": "Descriptive only. NEVER use hex codes in prompts.",
+    "room_descriptors": [
+      "warm minimal", "modern organic", "lived-in", "curated",
+      "quiet luxury", "intimate", "natural and livable", "not overly designed"
+    ],
+    "camera_lens_terms": [
+      "eye-level", "straight-on", "3/4 view", "angled perspective",
+      "close-up crop", "editorial framing", "natural lens",
+      "no wide-angle distortion", "off-center composition"
+    ],
+    "style_references": [
+      "Lone Fox", "modern organic home", "editorial home",
+      "designer home", "real home photography"
+    ],
+    "aykah_reference_set_available": [
+      "Quince", "Cuyana", "Maiden Home", "Brooklinen", "Parachute", "Sundays Furniture"
+    ],
+    "aykah_reference_set_note": "Available as taste anchors when scene calls for them. Not forced.",
+    "anti_words": [
+      "no stock image", "no showroom", "no catalog feel",
+      "no artificial rendering", "no over-styling", "no symmetry",
+      "no bright lighting", "no harsh shadows", "no overly polished look"
+    ]
+  },
+  "scene_formula": {
+    "props_count_max": 4,
+    "props_count_min": 3,
+    "anchor_furniture_max": 2,
+    "anchor_furniture_dining_exception": "4-6 chairs + sideboard for dining tables",
+    "lighting_sources": "at least 1 natural + 1 artificial",
+    "light_direction": "almost always side light from off-frame window",
+    "time_anchor_default": "late afternoon or early evening",
+    "time_anchor_override": "respect user-specified vibe when provided",
+    "narrative_tone": "real home moment, not staged",
+    "always_include_props": ["vase", "books", "soft textiles"],
+    "soft_formula": "1 hero object + 1 anchor furniture + 2-3 soft props + 1 light source + 1 natural light direction"
+  },
+  "exclusions": {
+    "ai_render_tells": [
+      "avoid artificial rendering",
+      "avoid overly polished",
+      "avoid perfect symmetry",
+      "avoid overly clean"
+    ],
+    "lighting": [
+      "no harsh shadows",
+      "no bright whites",
+      "no flat lighting",
+      "no overexposure"
+    ],
+    "styling": [
+      "no clutter",
+      "no over-styling",
+      "no staged feel",
+      "no showroom"
+    ],
+    "composition": [
+      "avoid centered perfection",
+      "avoid catalog framing",
+      "avoid wide-angle distortion"
+    ],
+    "objects": [
+      "no bench at foot",
+      "no excessive decor",
+      "no live or dried plants beyond foliage in a single described vase",
+      "no fruit bowls",
+      "no fireplaces",
+      "no round rugs"
+    ]
+  },
+  "templates_by_product_type": {
+    "bedroom": {
+      "source": "Benetha verbatim — boss-approved",
+      "anchor_furniture": "1 or 2 nightstands",
+      "lighting_fixture": "fabric-shaded table lamp on one side",
+      "product_styling": {
+        "base": "neutral bedding",
+        "layers": "pillows + textures + 1 accent tone",
+        "add": "throw",
+        "condition": "wrinkled, relaxed, imperfect"
+      },
+      "always_avoid": ["bench at foot of bed"]
+    },
+    "sofa_living_room": {
+      "source": "Derived — captures Benetha's essence + structure + vocabulary",
+      "anchor_furniture": "warm walnut coffee table + 1 small side table",
+      "lighting_fixture": "fabric-shaded table lamp on side table",
+      "product_styling": {
+        "cushions": "neutral base + 1 accent tone",
+        "throw": "casual drape on arm",
+        "condition": "softly creased, lived-in, not perfectly fluffed"
+      },
+      "always_avoid": ["fireplaces", "live plants", "TV on wall"]
+    },
+    "dining": {
+      "source": "Derived — same essence, dining-specific anchors",
+      "anchor_furniture": "4-6 matching dining chairs + sideboard or credenza on back wall",
+      "lighting_fixture": "warm pendant or chandelier above the table",
+      "product_styling": {
+        "surface": "clean wood",
+        "centerpiece": "single ceramic bowl OR small stoneware tray",
+        "chairs": "varied angles — some pulled out, some tucked in, one rotated 10° off-axis",
+        "condition": "honest and simple"
+      },
+      "always_avoid": ["throws on chairs (it's a dining room, not a living room)", "place settings", "wine glasses with wine", "fruit bowls"]
+    },
+    "lounge_accent_chair": {
+      "source": "Derived — intimate corner, single-chair focus",
+      "anchor_furniture": "1 small warm walnut side table + 1 floor lamp partial in frame",
+      "lighting_fixture": "fabric-shaded table lamp",
+      "product_styling": {
+        "throw": "casually draped over back or arm",
+        "condition": "softly creased, lived-in"
+      },
+      "always_avoid": ["companion seating in frame (single chair only)"]
+    }
+  },
+  "style_bible_short": "Built on controlled imperfection and lighting realism. Strict product accuracy first, then warm modern organic environment using earthy neutrals only. Soft side daylight + warm secondary light, late afternoon or early evening mood. Composition off-center and editorial. Styling minimal and repeatable — vase, books, one small object. Aggressively excludes anything artificial, bright, overly polished, or staged. The defining rule: it must feel like a real home photograph, not a render.",
+  "iteration": {
+    "current_version": "v1",
+    "history_kept": true,
+    "rule": "When boss's taste evolves, copy v1 to v2, edit v2, update prompt-pattern.json. Never overwrite v1."
+  }
+}
