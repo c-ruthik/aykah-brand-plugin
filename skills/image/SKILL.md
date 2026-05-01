@@ -27,14 +27,18 @@ Before any generation:
 3. `references/aykah-style-anchors.md` — locked visual phrases that go in every prompt
 4. `references/aykah-anti-patterns.md` — banned visual cues + AI-tells (must be baked into positive prompt — Higgsfield doesn't support negative prompts)
 5. `data/catalog.json` — 123 active Aykah products with material/color/texture/style metadata + Shopify image URL
-6. `~/.aykah/image-state.json` — training data: approved gens, feedback, preferences, soul_ids (auto-created on first save)
-7. `~/.aykah/cli-capabilities.json` — cached `higgsfield --help` output (auto-detected)
+6. `~/.aykah/image-state.json` — training data: approved gens, feedback, preferences, soul_ids, default engine (auto-created on first save)
+7. `~/.aykah/engine-capabilities.json` — cached detection of installed Higgsfield engines (CLI and/or MCP) and their capabilities (auto-detected)
 
 **No `brand-voice.md`. No `aykah-voice-gate` agent.** Image generation does not need banned-words checking on text — the output is an image, not customer-facing copy.
 
-## Step 1 — Detect CLI
+## Step 1 — Detect engines (CLI or MCP)
 
-On first use (or if cache is empty / older than 30 days):
+The skill supports TWO ways of calling Higgsfield: the CLI binary or the Higgsfield MCP server. Detect both at startup, ask the user to pick if both are available, and use the chosen engine for the rest of the session.
+
+On first use (or if `~/.aykah/engine-capabilities.json` is empty / older than 30 days):
+
+### Detect the CLI
 
 ```bash
 which higgsfield                                      # is the CLI on PATH?
@@ -45,50 +49,113 @@ higgsfield soul --help                                # character training
 higgsfield workspace --help                           # balance + history
 ```
 
-Parse the output, write the discovered flags + values to `~/.aykah/cli-capabilities.json`. The skill reads this cache on every invocation to know what flags to ask about.
+Parse output and capture: cli_version, available models, available flags (--quality, --reference, --aspect-ratio, etc.), supports_4k boolean.
 
-### If CLI is NOT installed
+### Detect the MCP
 
-Show this and STOP — do not proceed:
+Check the available tools list for any tool whose name starts with `mcp__higgsfield`. If present, the Higgsfield MCP is connected.
+
+For each detected MCP tool (e.g. `mcp__higgsfield__generate_image`, `mcp__higgsfield__create_character`, `mcp__higgsfield__list_characters`), record the tool's parameter schema.
+
+Also check the MCP resources `higgsfield://styles`, `higgsfield://characters`, `higgsfield://motions` if accessible.
+
+### Write capabilities cache
+
+Write to `~/.aykah/engine-capabilities.json`:
+
+```json
+{
+  "detected_at": "2026-04-30T15:00:00Z",
+  "cli": {
+    "installed": true | false,
+    "version": "<from --version>",
+    "path": "/usr/local/bin/higgsfield",
+    "available_models": ["nano_banana_2", "soul_2", "flux", "..."],
+    "supported_flags": ["--prompt", "--reference", "--quality", "--aspect-ratio", "..."],
+    "supports_4k": true | false,
+    "supports_reference_image": true | false
+  },
+  "mcp": {
+    "installed": true | false,
+    "tools": ["mcp__higgsfield__generate_image", "mcp__higgsfield__create_character", "..."],
+    "available_models": ["soul_2", "nano_banana_pro", "..."],
+    "supports_4k": true | false,
+    "supports_reference_image": true | false,
+    "supports_character_id": true
+  }
+}
+```
+
+### Engine selection
+
+After detection, route based on what's available:
+
+**Both installed** → ask the user once which to use this session:
+
+> I see both Higgsfield CLI and Higgsfield MCP installed. Which do you want to use?
+>
+>   1. CLI (recommended) — supports 4K output and reference-image conditioning natively. 35+ models. Direct shell calls, fast, full feature parity with Higgsfield's web app.
+>   2. MCP — async, Soul ID character consistency, integrates with Claude tool calls. 4K and reference-image support depend on the installed MCP variant (some don't expose them).
+>
+> Reply: `cli` / `mcp` / `save cli as default` / `save mcp as default`
+>
+> If you save as default, the choice is stored in `~/.aykah/image-state.json` and won't be asked again.
+
+**Default recommendation: CLI** because the user has confirmed CLI supports 4K + reference images, while MCP variants don't always expose those parameters. Use MCP only when the user explicitly prefers it or CLI isn't installed.
+
+If a default is already saved in state, skip this question and use it. The user can override per-generation by saying "use cli for this one" or "use mcp for this one."
+
+**Only CLI installed** → use CLI silently.
+
+**Only MCP installed** → use MCP silently.
+
+**Neither installed** → show this and STOP:
 
 ```
-Higgsfield CLI is not installed. To use /aykah:image, install it first:
+Neither Higgsfield CLI nor Higgsfield MCP is installed. /aykah:image needs at least one. Install your preferred option:
 
-  Mac/Linux:
-    curl -fsSL https://raw.githubusercontent.com/higgsfield-ai/cli/main/install.sh | sh
+  Option A — Higgsfield CLI (recommended for power users)
+    Mac/Linux:
+      curl -fsSL https://raw.githubusercontent.com/higgsfield-ai/cli/main/install.sh | sh
+    Or via Homebrew:
+      brew install higgsfield-ai/tap/higgsfield
+    Then authenticate:
+      higgsfield auth login
 
-  Or via Homebrew:
-    brew install higgsfield-ai/tap/higgsfield
+  Option B — Higgsfield MCP (recommended for Claude-Code-only workflows)
+    In Claude Code, open Settings → Connectors → Add MCP server
+    Server URL: https://mcp.higgsfield.ai/mcp
+    Auth: OAuth via Higgsfield account (no API key needed)
 
-Then authenticate:
-  higgsfield auth login
-
-Then run /aykah:image again.
+After installing one (or both), run /aykah:image again.
 ```
 
 Do not try to fall back to other tools without explicit user direction.
 
 ## Step 2 — Ask the user (one batch)
 
-Ask the question set in a single message, listing only the options that the CLI capabilities cache confirms exist. Defaults pulled from `~/.aykah/image-state.json` if previously set.
+Ask the question set in a single message, listing only the options that the chosen engine's capability cache confirms exist. Defaults pulled from `~/.aykah/image-state.json` if previously set.
 
 ```
-Before I generate, I need a few things:
+Before I generate (engine: <CLI or MCP>), I need a few things:
 
   1. Mode? [product / lifestyle / portrait / hero]
   2. Product? [pick from catalog by handle, e.g. "aires-dining-chair", or describe]
   3. Vibe / time of day? [calm morning / golden hour / overcast / candid evening / styled]
   4. Room? [from product's room_suggestions, or describe]
   5. People? [0 / 1 / 2-4]   (if 1+, ask: Soul ID OR generic description)
-  6. Model? [list from CLI capabilities, e.g. nano_banana_2 / soul_2 / flux / ...]
-  7. Aspect ratio? [list from CLI capabilities]
-  8. Quality? [4K if available, else highest]
+  6. Model? [list from chosen engine's available_models]
+  7. Aspect ratio? [list from chosen engine's capabilities]
+  8. Quality? [4K if engine.supports_4k is true, else highest]
   9. Reference image? [URL OR product's primary_image OR a previously approved gen OR none]
+                       (only ask if chosen engine.supports_reference_image is true)
 ```
 
 If the user names a product handle, look it up in `data/catalog.json` and silently use the materials, colors, textures, style_tags, room_suggestions, and primary_image — don't re-ask the user for those.
 
 If a question's value is already in their state JSON as a saved default (e.g., they always shoot 4K, or always use the same Soul ID), don't re-ask. Just confirm the default in one line and move on.
+
+If a question doesn't apply to the chosen engine (e.g., reference image is asked when `supports_reference_image` is false), skip it.
 
 ## Step 3 — Dispatch agents (in this order)
 
@@ -112,7 +179,7 @@ Reads:
 
 Returns the **technical layer**: lens, aperture, light direction + quality, composition, anti-AI-tell language.
 
-## Step 4 — Assemble the full prompt
+## Step 4 — Assemble the full prompt and call the chosen engine
 
 Combine the designer's scene brief + the photographer's technical layer into one 5-block prompt:
 
@@ -120,7 +187,9 @@ Combine the designer's scene brief + the photographer's technical layer into one
 [Subject + product] + [Environment] + [Light] + [Camera] + [Composition + anti-AI-tells]
 ```
 
-Build the CLI command:
+### If engine = CLI
+
+Build the shell command:
 
 ```bash
 higgsfield generate create <MODEL> \
@@ -132,6 +201,26 @@ higgsfield generate create <MODEL> \
 ```
 
 **Use exactly the flags the CLI capabilities cache confirms exist.** Do not invent flags.
+
+### If engine = MCP
+
+Call the appropriate MCP tool directly:
+
+```
+mcp__higgsfield__generate_image(
+  prompt: "<full assembled prompt>",
+  quality: "4k" | "1080p" | "720p"     # whatever MCP exposes
+  style_id: "<UUID>"                    # if user picked a style preset
+  character_id: "<UUID>"                # if user picked a Soul ID
+  image_reference_url: "<URL>"          # only if MCP supports it (npm variant does)
+  width_and_height: "2048x1152"         # if exposed
+  seed: <int>                           # if exposed
+)
+```
+
+After the tool returns a `job_set_id`, poll with `mcp__higgsfield__get_generation_status(job_set_id)` every 10 seconds until status is `completed`, `failed`, or `nsfw`. The completed response contains the image URL.
+
+**Use exactly the parameters the MCP tool schema confirms exist.** If a parameter the user wants isn't supported by the installed MCP variant, tell them honestly: *"This MCP variant doesn't expose `<parameter>`. Switch to CLI or skip this option."*
 
 ## Step 5 — Generate directly
 
@@ -247,5 +336,7 @@ This is a hard requirement — the plugin maintainer collects these files to imp
 | Skipping feedback collection | Ask after every generation. Even one-line feedback is training data. |
 | Skipping the desktop logging step | The protocol is mandatory. See `../core/references/feedback-protocol.md`. |
 | Inventing product material details | Read `catalog.json` for the named handle. Never make up textures or colors. |
-| Hardcoding CLI flags from the README | The README is thin. Use cached `higgsfield --help` output to know what flags exist. |
+| Hardcoding CLI flags from the README | The README is thin. Use cached `higgsfield --help` output (in `~/.aykah/engine-capabilities.json`) to know what flags exist. |
+| Picking an engine that doesn't support 4K when user wants 4K | CLI supports 4K + reference images. MCP variants may not. Default to CLI unless user explicitly picks MCP. |
+| Re-asking the engine question every session | If user said "save as default", read `~/.aykah/image-state.json` and use that. Only re-ask when both engines are present and no default is saved. |
 | Negative-prompt syntax in the prompt | Higgsfield CLI doesn't support negative prompts. Bake "shot without X" / "no X" into the positive prompt instead. |

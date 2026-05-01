@@ -1,6 +1,8 @@
-# CLI Detection — Higgsfield Setup & Capability Discovery
+# Engine Detection — Higgsfield CLI and MCP Setup & Capability Discovery
 
-This file documents how the skill detects the Higgsfield CLI on the user's machine, caches what flags it actually exposes, and what to do when it isn't installed.
+This file documents how the skill detects the Higgsfield engines (CLI and/or MCP) installed on the user's machine, caches what each one exposes, and what to do when neither is installed.
+
+The skill supports BOTH engines. When both are installed, the user picks once (and can save as default). The default recommendation is **CLI** because it natively supports 4K output and reference-image conditioning — features MCP variants don't always expose.
 
 ---
 
@@ -33,7 +35,7 @@ So instead of hardcoding flags from the README, the skill runs the CLI's own `--
 
 ## Detection commands
 
-Run on first use, or when `~/.aykah/cli-capabilities.json` is missing or older than 30 days:
+Run on first use, or when `~/.aykah/engine-capabilities.json` is missing or older than 30 days:
 
 ```bash
 which higgsfield                                      # PATH check
@@ -59,7 +61,7 @@ Capture stdout from each. If a command exits non-zero, log the error and skip.
 
 ## Capability cache schema
 
-Write to `~/.aykah/cli-capabilities.json`:
+Write to `~/.aykah/engine-capabilities.json`:
 
 ```json
 {
@@ -97,29 +99,52 @@ Write to `~/.aykah/cli-capabilities.json`:
 
 ---
 
-## When CLI is not installed
+## MCP detection
 
-The skill detects this by `which higgsfield` returning empty. Show this exact message and STOP — do not generate, do not fall back silently:
+In addition to the CLI, the skill checks whether the Higgsfield MCP server is connected. Detection: scan the available tools list for any tool whose name starts with `mcp__higgsfield`.
+
+If at least one such tool exists (e.g., `mcp__higgsfield__generate_image`, `mcp__higgsfield__create_character`, `mcp__higgsfield__list_characters`):
+
+- Mark `mcp.installed: true` in the cache
+- Record the tool names + their parameter schemas under `mcp.tools`
+- Probe whether the MCP exposes `4k` quality option and `image_reference_url` parameter — record `mcp.supports_4k` and `mcp.supports_reference_image` accordingly
+
+The official hosted MCP at `https://mcp.higgsfield.ai/mcp` may expose more parameters than the open-source variants (`geopopos/higgsfield_ai_mcp` Python and `higgsfield-mcp` npm). Schema not always public — discover from the actual `mcp__higgsfield__*` tool signatures available at runtime.
+
+## When neither engine is installed
+
+Show this and STOP — do not generate:
 
 ```
-Higgsfield CLI is not installed. To use /aykah:image you need to install it.
+Neither Higgsfield CLI nor Higgsfield MCP is installed. /aykah:image needs at least one. Install your preferred option:
 
-Install (Mac/Linux):
-  curl -fsSL https://raw.githubusercontent.com/higgsfield-ai/cli/main/install.sh | sh
+  Option A — Higgsfield CLI (recommended)
+    Supports 4K output, reference-image conditioning, 35+ models.
 
-Or via Homebrew:
-  brew install higgsfield-ai/tap/higgsfield
+    Mac/Linux install:
+      curl -fsSL https://raw.githubusercontent.com/higgsfield-ai/cli/main/install.sh | sh
 
-Then authenticate:
-  higgsfield auth login
-  (device-code flow — opens a browser to higgsfield.ai)
+    Or via Homebrew:
+      brew install higgsfield-ai/tap/higgsfield
 
-Then re-run /aykah:image.
+    Authenticate:
+      higgsfield auth login
+      (device-code flow — opens a browser to higgsfield.ai)
 
-Need an account first? Sign up at https://higgsfield.ai
+  Option B — Higgsfield MCP
+    Easier to install (no shell setup), integrates with Claude tool calls.
+    4K and reference-image support depend on MCP variant.
+
+    In Claude Code: Settings → Connectors → Add MCP server
+    Server URL: https://mcp.higgsfield.ai/mcp
+    Auth: OAuth via Higgsfield account (no API key needed)
+
+After installing one (or both), re-run /aykah:image.
+
+Need a Higgsfield account? Sign up at https://higgsfield.ai
 ```
 
-Do NOT auto-install. Do NOT fall back to a different image MCP without explicit user direction. Some teammates may not have authority to install CLIs.
+Do NOT auto-install. Do NOT fall back to a different image tool without explicit user direction. Some teammates may not have authority to install CLIs.
 
 ---
 
@@ -145,7 +170,7 @@ Auto-refresh cache when:
 - User explicitly asks ("re-detect the CLI", "refresh capabilities")
 - A generation fails with a "flag not recognized" error (the CLI may have removed/renamed a flag)
 
-Manual refresh: delete `~/.aykah/cli-capabilities.json` and run any `/aykah:image` command. The skill will re-detect on next invocation.
+Manual refresh: delete `~/.aykah/engine-capabilities.json` and run any `/aykah:image` command. The skill will re-detect on next invocation.
 
 ---
 
