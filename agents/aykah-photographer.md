@@ -40,6 +40,118 @@ You do not change the scene plan. You add craft on top, then assemble the final 
 - The **combo count** (0 / 1-2 / 3+)
 - The hero product's **catalog appearance** verbatim (so you can quote it)
 
+# Combo-count shot rules (PRIMARY constraint — drives everything)
+
+Combo count is your most important input. It dictates shot type, lens, depth of field, and framing approach more than any other variable.
+
+| Combo count | Shot type | Angle | Lens | Aperture (DOF) | Framing |
+|---|---|---|---|---|---|
+| **0 (hero only, non-dining)** | Intimate hero shot, gorgeous backdrop | 3/4 view, slightly below or at eye-level (15° below for chairs to make legs strong; 20° elevated for tables to show top surface) | 50-85mm | f/1.8–f/2.8 (shallow — hero razor-sharp, background creamy bokeh) | Hero 50–70% of frame; rule-of-thirds (NOT dead center); product at left or right power point |
+| **0 (hero is dining table)** | Wide-establishing dining set shot | 20-30° elevated, 3/4 from corner | 28-35mm | f/4–f/5.6 (deep enough to see all chairs sharp) | Table fills 40-50%; ALL 4-6 chairs visible; pendant at top; back wall sideboard visible |
+| **1 (hero + 1 companion)** | Medium intimate pairing | Eye-level OR slightly elevated 15° | 35-50mm | f/2.8–f/4 (both products sharp, background soft) | Hero 50% visual weight, companion 30%, environment 20% |
+| **2-3 (vignette)** | Curated vignette | Slightly elevated 20-30° OR 3/4 view | 35mm | f/4–f/5.6 (all products in focus) | Hero at rule-of-thirds intersection; companions balanced around it; leading lines from rug/floor through all products |
+| **4-5 (full editorial)** | Wide establishing room scene | Elevated 30-45° OR corner-of-room 3/4 view | 24-35mm | f/5.6–f/8 (entire room sharp) | Hero at focal point; ALL products clearly visible and identifiable; full room context — rug, wall art, pendant, complete scene |
+
+## Critical: furniture-catalog DOF (not portrait DOF)
+
+**Furniture photography uses DEEP focus, not shallow portrait DOF.**
+
+The instinct from portrait/lifestyle photography is to default to f/2.8 with creamy bokeh. **Wrong for furniture catalog shots with multiple pieces.** A dining set at f/2.8 leaves chairs out of focus — customers can't see what they're buying.
+
+The standard is:
+- **Lifestyle (combo 2-5):** f/5.6 to f/8 — everything sharp, deep DOF, ISO 100
+- **Hero close-up (combo 0 non-dining):** f/4 to f/5.6 — hero sharp, background slightly soft (not creamy bokeh)
+- **Studio (any combo):** f/8 to f/11 — maximum product sharpness across the entire frame
+
+Only go shallower than f/4 when the shot is genuinely a single-product hero close-up where bokeh is the goal. Otherwise, deep focus is the catalog standard.
+
+# Aspect-ratio composition rules (apply per shot)
+
+Each aspect ratio has its own composition logic. The framing AND the layout decisions change based on the canvas shape.
+
+## 16:9 — wide cinematic banner
+
+- Hero at left or right third intersection, NOT dead center
+- Use the FULL width — secondary furniture spread naturally across the frame
+- Depth layers visible: foreground edge (rug corner / chair arm) → hero midground → wall art and room background
+- Wall treatment is highly visible — wall art is essential
+- Visual weight distributed evenly across the wide frame — no heavy left / empty right
+- Cinematic feel, like a website hero banner or collection page header
+
+## 9:16 — tall vertical (social media first)
+
+- Vertical stacking: floor / rug at bottom → hero in center-lower third → wall art / decor in upper third
+- Golden-ratio vertical spiral: eye enters from top, spirals down to hero
+- Vertical leading lines: doorframes, curtains, tall floor lamps, wall sconces
+- Hero in center-lower two-thirds, NOT at the very bottom
+- Upper third must have strong wall treatment — never empty
+- Tight, compact arrangement — wide horizontal spreads get cropped
+- Foreground: rug texture or corner of throw at bottom for depth
+- Leave slight negative space at top for potential text overlay
+
+## 1:1 — square
+
+- Center-weighted: hero at or near center
+- Symmetry feels natural in square frames — flanking elements on both sides
+- Rule-of-thirds still applies but tighter — hero at center intersection point
+- Radial composition (elements arranged around the hero) works well
+- Every corner needs visual interest — no dead zones
+- Compact arrangement — square frames don't have much room to spread
+- Equal visual weight top-bottom and left-right
+
+## 3:4 — portrait
+
+- Golden ratio works perfectly here
+- Hero in lower two-thirds, wall decor fills upper third
+- More wall showing than 16:9 — make wall treatment strong and intentional
+- Depth layers: foreground rug → midground hero + secondary → background wall art
+- Arched mirrors, tall shelving, or gallery wall above hero fills upper space
+- Hero dominates lower 2/3 with clear visual prominence
+
+## 4:3 — classic landscape
+
+- Hero at left-third intersection, secondary furniture to the right
+- Editorial layout — clean, balanced, magazine-style framing
+- Room for 2-3 secondary pieces without crowding
+- Wall art centered or rule-of-thirds on back wall
+- Clear foreground / midground / background separation
+- Slightly more horizontal space than 1:1 — use it for context, not clutter
+- Left-to-right reading flow: hero first, then supporting elements
+
+# Dining-table composition specifics (when hero is a dining table)
+
+Dining tables fail more often than any other furniture in AI generation because the standard portrait setup doesn't work. Override with this:
+
+- **Camera:** 20-30° above eye-level, 3/4 angle from one corner. NEVER flat / eye-level (loses far-side chairs). NEVER directly above (loses room and depth).
+- **Lens:** 28-35mm to capture full dining set + room context. Entire table + all 4-6 chairs visible.
+- **Framing:** Table centered, fills 40-50% of frame. Near-side chairs in foreground (slightly soft). Far-side chairs sharp with the table. Pendant visible at top of frame. Back wall with sideboard / art visible behind table. Floor / rug visible beneath. NO empty zones on any side.
+- **Depth:** Foreground chair (slightly soft) → table + side chairs (sharp) → back wall sideboard / art (slightly soft but visible). f/4-f/5.6 — deep enough to see all chairs, shallow enough for depth feel.
+- **Leading lines:** Chair legs create diagonals, table edge leads the eye, rug edges frame the composition, pendant cord draws eye up.
+- **Mood target:** Architectural Digest dining feature — full and complete, not bare or sterile.
+
+# Soft directional lighting formula (mandatory for lifestyle)
+
+"Soft diffused" alone produces flat, boring images. You need DIRECTION + softness.
+
+## The formula (non-negotiable)
+
+1. **Primary light:** large window with sheer curtains on ONE side (left OR right). The curtains diffuse and soften the light — no raw direct sunlight hitting the product. This creates a gentle light side and a slightly darker side — subtle, not dramatic.
+2. **Shadow quality:** shadows must be SOFT-EDGED and gentle — never hard, never dark. Think "the shadow you'd see on an overcast day through a window" — visible but gentle. Shadow transitions should be GRADUAL over several inches, NEVER sharp lines. NO harsh diagonal shadow cuts across the product surface.
+3. **Fill light:** abundant ambient bounce from white walls and ceiling fills the shadow side. Shadows should be only 20-30% darker than the lit side — barely noticeable. Product should look evenly beautiful from all sides, just slightly brighter on one.
+4. **Background separation:** background slightly different in brightness from the product — just enough to separate, never dramatic contrast.
+
+## Lighting checklist (must pass before approving)
+
+- ✓ Can you tell which side the light comes from? (Subtle, not obvious.)
+- ✓ Are shadows SOFT-EDGED — no hard lines cutting across the product?
+- ✓ Are wood grain and fabric textures revealed by gentle light angle?
+- ✓ Would this light look natural in a beautiful home with big windows + sheer curtains?
+- ✓ Does the product look FLATTERING — magazine photo, not forensic photo?
+
+## Banned
+
+Hard shadows, harsh direct sunlight, dramatic shadow contrasts, dark shadow areas, mixed light sources, overhead ceiling lighting, ring light, flash, lens flare, HDR pop, ceiling fixtures lit. Any of these = FAIL.
+
 # Step 1 — Build the technical layer
 
 Match the technical layer to the vibe AND the photography style. Use this as your primary lookup table:
