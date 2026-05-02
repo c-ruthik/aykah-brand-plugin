@@ -14,12 +14,19 @@ This file is the contract. Every sub-skill follows it.
   summary.json                   # lightweight roll-up across all skills
   image-history.json             # /aykah:image — every generation
   image-feedback.json            # /aykah:image — distilled lessons
+  image-stats.json               # /aykah:image — invocation counter
   copy-history.json              # /aykah:copy — every draft + verdict
   copy-feedback.json             # /aykah:copy — distilled lessons
+  copy-stats.json                # /aykah:copy — invocation counter
   social-history.json            # /aykah:social — every caption/script + verdict
   social-feedback.json           # /aykah:social — distilled lessons
+  social-stats.json              # /aykah:social — invocation counter
   buddy-history.json             # /aykah:buddy — every method run + outcome
   buddy-feedback.json            # /aykah:buddy — distilled lessons
+  buddy-stats.json               # /aykah:buddy — invocation counter
+  campaign-history.json          # /aykah:campaign — every brief / tagline / hook
+  campaign-feedback.json         # /aykah:campaign — distilled lessons
+  campaign-stats.json            # /aykah:campaign — invocation counter
 ```
 
 Files appear only as the corresponding skills are used. Untouched skills don't create empty files.
@@ -185,6 +192,22 @@ Each sub-skill defines what goes in `inputs` and `output`. Keep it summary-level
 }
 ```
 
+### campaign
+```json
+"inputs": {
+  "type": "event-tagline",
+  "mode": "standard",
+  "context_summary": "<first 200 chars of user's request>",
+  "researcher_used": true
+},
+"output": {
+  "candidates_generated": 7,
+  "candidates_passed_voice_gate": 6,
+  "candidates_blocked": 1,
+  "recommended_pick_summary": "<first 100 chars of recommended candidate>"
+}
+```
+
 ---
 
 ## Distilled feedback file format
@@ -285,3 +308,79 @@ exists.
 ```
 
 That single paragraph delegates everything to this file. No duplication across sub-skills.
+
+---
+
+## 20-invocation feedback prompt (v2 pattern — added 2026-05-02 with `/aykah:campaign`)
+
+In addition to silent history logging, every sub-skill MUST surface a periodic feedback prompt every 20 invocations. This was introduced with `/aykah:campaign` and is the canonical pattern for all skills going forward.
+
+### Stats file format (`<skill>-stats.json`)
+
+```json
+{
+  "invocations_total": 23,
+  "invocations_since_last_feedback": 3,
+  "last_feedback_at": "2026-04-28T10:15:00Z"
+}
+```
+
+Counter is **per-skill**, not global. Each skill tracks its own count independently. Plugin-wide counter would mix contexts (caption feedback shouldn't fire after image generation).
+
+### Counter increment + prompt logic
+
+After every successful interaction:
+
+1. Read `<skill>-stats.json` (create with zeros if missing).
+2. Increment `invocations_total` and `invocations_since_last_feedback` by 1.
+3. Write the file back.
+4. If `invocations_since_last_feedback` is a multiple of 20 (20, 40, 60, …), append the feedback prompt block to the user-facing output:
+
+   ```
+   ───────────────────────────────────────
+   💭 You've used /aykah:<skill> 20 times since your last feedback. The plugin
+   maintainer uses your feedback to upgrade this skill. Want to share what's
+   working / not working?
+
+   - Reply now: `/aykah:<skill> --feedback "your note here"`
+   - Reply later: same flag, anytime in any session
+   - Skip: just keep going. The prompt resets after 5 more invocations.
+   ───────────────────────────────────────
+   ```
+
+5. If the user ignores the prompt and runs the skill 5 MORE times without using `--feedback`, RESET `invocations_since_last_feedback` to 0 and don't surface the prompt again until the next 20.
+
+### `--feedback` flag (works anytime, any input)
+
+If the user invokes the skill with `--feedback "their note"` (with or without other arguments):
+
+1. Append the note to `~/Desktop/aykah-feedback/<skill>-feedback.json`:
+
+   ```json
+   {
+     "timestamp": "<ISO 8601 UTC>",
+     "user": "<$USER>",
+     "skill": "<skill>",
+     "feedback": "<the user's note verbatim>",
+     "context_last_3_invocations": [
+       /* last 3 entries from <skill>-history.json, summary level only */
+     ]
+   }
+   ```
+
+2. Reset `invocations_since_last_feedback` to 0 in `<skill>-stats.json`.
+3. Update `last_feedback_at` to the current timestamp.
+4. Acknowledge to the user in one line: "Feedback saved. Thanks. Continuing." (or "Feedback saved. Thanks." if no other request was attached).
+5. If the user ALSO included a real request in the same invocation (e.g., `/aykah:campaign hook for spring event --feedback "previous taglines too formal"`), process the request normally AFTER saving feedback.
+6. If the invocation was feedback-only (no other input), save and exit. Do not generate any other output.
+
+### Retrofit checklist (for existing skills)
+
+When retrofitting `/aykah:social`, `/aykah:copy`, `/aykah:image`, `/aykah:buddy` with this v2 pattern, each skill needs:
+
+1. A new `<skill>-stats.json` file path documented in its SKILL.md
+2. A counter increment step added to its workflow
+3. The 20-invocation prompt block defined in its Feedback Logging section
+4. The `--feedback` flag handling logic added to its workflow
+
+This is queued for a separate sprint. `/aykah:campaign` ships the pattern first.

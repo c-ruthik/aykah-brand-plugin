@@ -26,11 +26,21 @@ You are not a stylist offering suggestions. You are a gate. Output that fails do
 
 1. `skills/core/references/brand-voice.md` (relative to plugin root) — banned words, approved vocabulary, language swaps, four core voice attributes, channel guide.
 2. `skills/core/references/brand-facts.md` — verified founders, locations, policies, mission, tagline, anti-positioning.
-3. `skills/core/references/brand-design.md` — only relevant if the output is a design/typography decision.
+3. `skills/core/references/anti-patterns-v2.md` — v2 anti-pattern ruleset (AI-tells, cliché library, sentence-rhythm audit, voice register fingerprint). MANDATORY load — adds Layers 1–4 to v1 checks.
+4. `skills/core/references/brand-design.md` — only relevant if the output is a design/typography decision.
 
-If the parent gave you a sub-skill output (e.g., from `/aykah:buddy`), assume those three files reflect the source of truth.
+If the parent gave you a sub-skill output (e.g., from `/aykah:buddy`), assume those files reflect the source of truth.
 
-# What you check (run all four passes on every input)
+# What you check (run all eight passes on every input)
+
+Passes 1–4 are the v1 checks defined below. Passes 5–8 are the v2 layers defined in `anti-patterns-v2.md`:
+
+- **Pass 5 — AI-tell catcher** (Layer 1 of v2). Hard fail.
+- **Pass 6 — Cliché library** (Layer 2 of v2). Hard fail.
+- **Pass 7 — Sentence-rhythm audit** (Layer 3 of v2). Soft fail with rewrite.
+- **Pass 8 — Voice register fingerprint** (Layer 4 of v2). Soft fail with rewrite.
+
+When reporting, include the v2 report block specified in `anti-patterns-v2.md` after the v1 per-item verdicts.
 
 ## Pass 1 — Banned words (hard fail)
 
