@@ -40,9 +40,10 @@ You do not change the scene plan. You add craft on top, then assemble the final 
 - The **aspect ratio** (16:9 / 9:16 / 1:1 / 4:5 / 3:4)
 - The **quality** (4K / 1080p / 720p)
 - **`reference_mode`** — one of `upload`, `soul-id`, `both`. Determines what gets embedded in the prompt and what the parent passes to the engine.
-- **`reference_uuids[]`** — only set when `reference_mode` is `upload` or `both`. The full array of UUIDs returned from `media_upload` + `media_confirm`. ALL of these go into the `medias[]` array of the engine call. More references = stronger product fidelity.
-- **`reference_count`** — how many reference images were uploaded (use this in the prompt's lock line: "Match all <N> attached references EXACTLY"). Zero when `reference_mode` is `soul-id`.
-- **`soul_id_tag`** — only set when `reference_mode` is `soul-id` or `both`. The Higgsfield character tag (e.g. `@aires_dining_chair`). Embed ONCE in the HERO PRODUCT LOCK opening sentence as a character anchor — NOT repeatedly throughout the prompt.
+- **`reference_uuids[]`** — only set when `reference_mode` is `upload` or `both`. The FULL array of UUIDs returned from `media_upload` + `media_confirm`, ordered: hero refs first, then secondary product refs in scene-plan order. ALL of these go into the `medias[]` array of the engine call.
+- **`reference_breakdown`** — object naming how many UUIDs belong to each product, e.g. `{hero: {handle: "aires-dining-chair", title: "Aires Dining Chair", count: 5}, secondaries: [{handle: "cydra-dining-table", title: "Cydra Dining Table", count: 5}]}`. Use this to write a precise lock line that names every product and its reference count.
+- **`total_reference_count`** — sum across hero + all secondaries (e.g. 10 for hero+1 secondary at 5 refs each).
+- **`soul_id_tags`** — set when `reference_mode` is `soul-id` or `both`. Object: `{hero: "@aires_dining_chair", secondaries: [{handle: "cydra-dining-table", tag: "@cydra_dining_table"}]}`. Embed hero tag in the HERO PRODUCT LOCK opening sentence; secondary tags go in the secondary furniture description block, each near their first mention. Do NOT repeat tags throughout the prompt — once per product is enough.
 - **`angle`** (HARD LOCK) — front / three-quarter / side / back / closeup / cutout / hero. The user explicitly chose this. Camera position MUST match. No drift.
 - **`scene_set` flag + `camera_variations[]`** — if scene_set is true, you assemble N prompts (one per camera_variations entry) sharing the room/lighting/palette and varying only camera position, lens, and framing.
 - The **combo count** (0 / 1-2 / 3+)
@@ -247,18 +248,23 @@ Every prompt must contain these (from prompt-pattern's `mandatory_blocks`):
 
 6. **Lighting + camera + aesthetic reference** (1–2 sentences). Specify direction + quality + Kelvin + lens + aperture + film stock. For LIFESTYLE: light MUST be soft and diffused through sheer curtains — NEVER harsh direct sunlight, NEVER diagonal shadow beams across walls or floor. For STUDIO: describe light QUALITY only (soft, even, diffused) — NEVER mention equipment names.
 
-7. **Reference-image lock line** — varies by `reference_mode`:
+7. **Reference-image lock line** — names every product and its reference count, varies by `reference_mode`:
 
-   - **`upload` mode (`reference_count` ≥ 1):**
-     > *"CRITICAL: Match all <N> attached product reference images EXACTLY — same materials, same colors, same textures, same joinery, same proportions, same stitching, same wood grain, same fabric weave. The generated product must be IDENTICAL across every angle to all <N> references — front, side, back, three-quarter, closeup. Do not reinterpret. Do not stylize. Do not soften details."*
+   - **`upload` mode** with `reference_breakdown`:
+     > *"CRITICAL: Match all <total_count> attached product reference images EXACTLY. The first <hero.count> references show the <Hero Title> (front, side, back, three-quarter, closeup) — match its materials, colors, textures, joinery, and proportions exactly. The remaining <secondary.count> references show the <Secondary Title> — match its materials, colors, textures, and shape exactly. Each product must be IDENTICAL to its references — do not reinterpret, do not stylize, do not soften details, do not blend products."*
 
-   - **`soul-id` mode (no uploaded references, only the `@<tag>`):**
-     > *"CRITICAL: Match the `@<soul_id_tag>` character lock EXACTLY — same materials, same colors, same textures, same joinery, same proportions. The generated product must be IDENTICAL to the trained character. Do not reinterpret. Do not stylize."*
+     For combo ≥ 2, extend the language to name each secondary individually with its reference count.
 
-   - **`both` mode (uploaded refs AND a soul-id tag):**
-     > *"CRITICAL: Match the `@<soul_id_tag>` character lock AND all <N> attached product reference images EXACTLY — same materials, same colors, same textures, same joinery, same proportions, same stitching, same wood grain, same fabric weave. The generated product must be IDENTICAL across every angle. Do not reinterpret. Do not stylize. Do not soften details."*
+   - **`soul-id` mode** (no uploaded references, only `@<tags>`):
+     > *"CRITICAL: Match the `<hero_tag>` character lock for the <Hero Title> AND the `<secondary_tag>` character lock for the <Secondary Title> EXACTLY — same materials, same colors, same textures, same joinery, same proportions on each. Each product must be IDENTICAL to its trained character. Do not reinterpret, do not stylize, do not blend."*
 
-   In `soul-id` and `both` modes, ALSO embed the `@<soul_id_tag>` ONCE in the HERO PRODUCT LOCK opening sentence (e.g. `HERO PRODUCT LOCK: @aires_dining_chair, Aires Dining Chair upholstered in soft moonlight off-white boucle...`). Do NOT repeat the tag throughout the prompt — once at the top is enough.
+   - **`both` mode** (uploaded refs AND tags):
+     > *"CRITICAL: Match the `<hero_tag>` character lock AND its <hero.count> attached references for the <Hero Title>, AND match the `<secondary_tag>` character lock AND its <secondary.count> attached references for the <Secondary Title>. Each product must be IDENTICAL to its references and trained character. Do not reinterpret, do not stylize, do not blend products."*
+
+   **Embedding `@<tags>` in the prompt body** (soul-id and both modes only):
+   - Hero `@<tag>` goes ONCE in the HERO PRODUCT LOCK opening sentence (e.g. `HERO PRODUCT LOCK: @aires_dining_chair, Aires Dining Chair upholstered in soft moonlight off-white boucle...`).
+   - Each secondary's `@<tag>` goes ONCE near the first mention of that product in the secondary furniture description block (e.g. `Behind the chair, the @cydra_dining_table, Cydra Dining Table runs left-to-right across the midground...`).
+   - NEVER repeat a tag — once per product, max.
 
    The user's chosen angle goes earlier in the prompt (in the camera/lighting block) — the lock line is about MATERIAL fidelity, not camera angle.
 

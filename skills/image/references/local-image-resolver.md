@@ -136,6 +136,75 @@ Check `~/.aykah/engine-capabilities.json` for the CLI's actual reference flag �
 
 ---
 
+## Multi-product upload (combo ≥ 1)
+
+For scenes with combo ≥ 1, every secondary catalog product gets the same upload treatment as the hero. This locks visual fidelity for ALL products in the scene, not just the hero.
+
+### When secondary uploads happen
+
+After the designer agent returns the scene plan (Step 3a), but BEFORE the photographer is dispatched (Step 3b). At that point, the parent skill knows which secondary products are in the scene.
+
+### Secondary upload sequence
+
+For each secondary product in the scene plan:
+
+1. **Resolve folder** — same logic as hero: `category-mapping.json[secondary.pairing_category]` → `~/Downloads/Product_Images/ecom-images/<category-folder>/<secondary-handle>/`.
+2. **List variants.**
+3. **Pick variant:**
+   - If user named it in initial request → use it.
+   - If only one variant → use silently.
+   - Multiple variants → ask user: *"Variant for <Secondary Title>? [<variants>]"*.
+4. **Upload all images** in the chosen variant folder via `media_upload({files: [...]})` + `media_confirm`.
+5. **Append UUIDs** to the running `reference_uuids[]` list.
+
+### Final medias[] order
+
+Order matters — Higgsfield often weights early images more heavily. Stack hero first:
+
+```
+medias[] = [
+  { role: "image", value: <hero-front-uuid> },
+  { role: "image", value: <hero-side-uuid> },
+  { role: "image", value: <hero-back-uuid> },
+  { role: "image", value: <hero-three-quarter-uuid> },
+  { role: "image", value: <hero-closeup-uuid> },
+  { role: "image", value: <secondary-1-front-uuid> },
+  { role: "image", value: <secondary-1-side-uuid> },
+  ...
+]
+```
+
+### Reference breakdown passed to photographer
+
+```json
+{
+  "hero": {
+    "handle": "aires-dining-chair",
+    "title": "Aires Dining Chair",
+    "variant": "moonlight-boucle",
+    "count": 5
+  },
+  "secondaries": [
+    {
+      "handle": "cydra-dining-table",
+      "title": "Cydra Dining Table",
+      "variant": "slate",
+      "count": 5
+    }
+  ],
+  "total_reference_count": 10
+}
+```
+
+The photographer uses this to write a precise lock line: *"...match all 10 references — first 5 for Aires Dining Chair, next 5 for Cydra Dining Table..."*
+
+### Failure modes for secondaries
+
+- **Secondary's folder missing:** ask user: *"No reference photos for `<secondary-handle>` in ecom-images. Skip and rely on text description, OR paste a manual path?"* Default = skip + text-only for that piece.
+- **Secondary's variant folder empty:** ask for a different variant or skip.
+- **Upload fails for one secondary:** retry once. If still fails, surface and continue with remaining products.
+- **User has Soul ID for hero but not secondary** (in `both` mode): use `@hero_tag` + uploaded refs for hero, text-only for secondary. Surface this to user.
+
 ## Pass-through to the photographer
 
 The photographer agent receives:

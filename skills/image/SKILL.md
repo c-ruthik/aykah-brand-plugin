@@ -330,6 +330,30 @@ Before passing the scene plan to the photographer:
 
 Detailed logic in `references/catalog-validator.md`.
 
+### 3a.2 — Secondary furniture reference upload (combo ≥ 1)
+
+For every secondary catalog product in the scene plan, upload its reference photos too — not just the hero's. Without this, secondary products have no visual lock and can drift in the gen.
+
+For each secondary product the designer picked:
+
+1. **Resolve secondary folder** using the same logic as Step 2.5b (look up `pairing_category` in `category-mapping.json` → build path `~/Downloads/Product_Images/ecom-images/<category-folder>/<secondary-handle>/`).
+2. **List variant subfolders.**
+3. **Ask user for variant** (one quick question per secondary):
+   *"Variant for <Secondary Title>? [<variants from folder>]"*
+   - If only one variant exists → use it silently
+   - If user already named the secondary's variant in initial request → use it
+4. **Upload secondary's images** via `media_upload` (batch + media_confirm), capture UUIDs.
+5. **Append secondary UUIDs to the hero's `reference_uuids[]` list** — order: hero refs first, then secondary refs in the order the designer placed them in the scene plan. Higgsfield often weights early images more heavily, so hero stays dominant.
+6. **If secondary's folder doesn't exist** (handle not in ecom-images), surface to user:
+   *"No reference photos found for `<secondary-handle>` in ecom-images. Skip and rely on text description, OR paste a manual path?"*
+   Default to skip + text-only description for that secondary if user doesn't pick a path.
+
+For `soul-id` mode in combo ≥ 1: look up each secondary's tag in `product-tags.json`. Photographer embeds all `@<tag>`s in the prompt — hero tag first in the HERO PRODUCT LOCK block, secondary tags in the secondary furniture description block.
+
+For `both` mode in combo ≥ 1: do both — upload secondary references AND embed secondary `@<tag>`s.
+
+This keeps fidelity high across every catalog product in the scene, not just the hero. Detailed logic in `references/local-image-resolver.md` under "Multi-product upload".
+
 ### 3b. Photographer agent (Photographer + Prompt Engineer)
 
 Receives the scene plan from the designer + the engine context (CLI vs MCP, model, aspect ratio, quality, **reference image UUIDs[] from Step 2.5c (if upload or both mode)**, **soul_id_tag (if soul-id or both mode, e.g. `@aires_dining_chair`)**, **reference_mode (upload / soul-id / both)**, **angle hard-lock**, **scene_set flag + camera_variations**, combo count).
