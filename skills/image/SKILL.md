@@ -176,13 +176,20 @@ Before I generate (engine: <CLI or MCP>), I need a few things:
   4. Room? [from product's room_suggestions, or describe]
   5. People? [0 / 1 / 2-4]   (if 1+, ask: Soul ID OR generic description)
   6. Angle? [front / three-quarter / side / back / closeup / cutout / hero]
-  7. Variant? [list ONLY the variant subfolders found under the product's auto-resolved
-     ecom-images folder — e.g. for aires-dining-chair: moonlight-boucle / almond-cream / espresso-bean]
-  8. How many scenes? [1 / 2 / 3 / 4 ...]
+  7. Reference mode? [upload / soul-id / both]
+     - upload (default): I'll auto-resolve and upload local product photos
+       from ecom-images. Strongest for product fidelity (4-5 angles).
+     - soul-id: I'll use the @<product-tag> from product-tags.json. Smaller
+       payload, but Higgsfield Soul ID sometimes only weights 1 reference.
+     - both: upload local photos AND embed the @soul-id tag. Strongest lock,
+       slight latency cost.
+  8. Variant? [list ONLY the variant subfolders found under the product's auto-resolved
+     ecom-images folder — only asked when reference mode is upload or both]
+  9. How many scenes? [1 / 2 / 3 / 4 ...]
      (if >1: triggers Scene Set mode — one room, N camera variations)
-  9. Model? [list from chosen engine's available_models]
-  10. Aspect ratio? [list from chosen engine's capabilities]
-  11. Quality? [4K if engine.supports_4k is true, else highest]
+  10. Model? [list from chosen engine's available_models]
+  11. Aspect ratio? [list from chosen engine's capabilities]
+  12. Quality? [4K if engine.supports_4k is true, else highest]
 ```
 
 ### Smart parsing of the initial request (skip questions when possible)
@@ -190,7 +197,8 @@ Before I generate (engine: <CLI or MCP>), I need a few things:
 Before asking, scan the user's initial prompt for:
 
 - **Angle keywords** — `front`, `three-quarter` / `3/4` / `angle`, `side`, `back`, `closeup` / `detail`, `cutout`, `hero`. If found, skip Q6 and confirm in one line: *"Angle: three-quarter (parsed from your request)."*
-- **Variant names** — if the user names a variant in their initial request (e.g. "moonlight boucle aires", "silver mist mellow"), kebab-case it and use it as the variant directly — skip Q7. Manual folder override still possible via `--refs <path>` flag (rare).
+- **Variant names** — if the user names a variant in their initial request (e.g. "moonlight boucle aires", "silver mist mellow"), kebab-case it and use it as the variant directly — skip Q8. Manual folder override still possible via `--refs <path>` flag (rare).
+- **Reference mode keywords** — `--soul-id` (soul-id only), `--upload` (upload only, default), `--both` (combine). If parsed from user request, skip Q7.
 - **Scene count** — `5 scenes`, `3 angles`, `--count 4`. If found, skip Q8.
 - **Product handle** — if the user names a handle that exists in `catalog.json`, skip Q2.
 
@@ -209,6 +217,25 @@ Three sequential checks before any agent is dispatched:
 If the user named a product handle:
 - Look it up in `data/catalog.json`. If not found, surface immediately: *"`<handle>` is not in the catalog. Did you mean `<closest-3-matches>`? Or describe the product manually."*
 - Do NOT silently invent product metadata.
+
+### 2.5a-bis — Reference mode router
+
+The user picked one of three modes in Q7. Each mode has its own resolution path:
+
+| Mode | What happens |
+|---|---|
+| `upload` (default) | Auto-resolve folder by handle+variant, upload all images, pass UUIDs as `medias[]`. Step 2.5b + 2.5c. |
+| `soul-id` | Look up `data/product-tags.json[handle]` → get `@<tag>`. Pass the `@<tag>` to the photographer to embed in the prompt as a Higgsfield character reference. NO upload step. Skip 2.5b + 2.5c. |
+| `both` | Run upload flow (2.5b + 2.5c) AND look up the soul-id tag. Both signals passed to photographer. Strongest lock. |
+
+For `soul-id` mode resolution:
+1. Load `data/product-tags.json`.
+2. Look up the hero product's handle. If found → use that `@<tag>`.
+3. If not found, try fuzzy match against the longer Shopify-SEO-style keys (e.g. `aykah-aires-dining-chairs-set-of-2-...-moonlight-boucle` → `@aires_boucle_dining_chairs`).
+4. If still not found, surface to user: *"No Soul ID tag exists for `<handle>`. Switch to upload mode, or paste a tag manually:"*
+5. The photographer agent receives `soul_id_tag: "@aires_dining_chair"` and embeds it once in the prompt's hero-product-lock block.
+
+For `upload` and `both`, continue to 2.5b.
 
 ### 2.5b — Auto-resolve reference folder from product handle + variant
 
@@ -265,7 +292,14 @@ If upload of any single image fails, retry once. If retry fails, surface to user
 
 Send the agent:
 - **The hero product's full catalog entry** (verbatim — title, materials, colors, textures, style_tags, dimensions, room_suggestions, key_features)
-- **A FILTERED CATALOG SLICE** (CRITICAL — prevents hallucination): pre-load `data/catalog.json` and filter to products matching the scene's category. Include only handles where `pairing_category` matches the hero's pairing category, OR `room_suggestions` overlaps. Inject the filtered list (typically 10–20 products) inline in the agent prompt as a JSON array of `{handle, title, type, materials, colors, textures}`. **The agent picks ONLY from this list for secondary furniture. Cannot hallucinate what isn't in front of it.**
+- **A FILTERED CATALOG SLICE** (CRITICAL — prevents hallucination): pre-load `data/catalog.json` AND `data/pairing-rules.json`. Build the slice using natural-pairing rules:
+  1. Look up `pairing-rules.json → pairing[hero.pairing_category]` → returns the list of natural companion categories (e.g. `dining-chair` → `[dining-table, sideboard, buffet, bar-cart]`)
+  2. Filter catalog to products whose `pairing_category` is in that companion list
+  3. Apply style narrowing: keep only products whose `style_tags` overlap with `pairing-rules.json → styleCompatibility[hero's primary style_tag]` (e.g. modern → [modern, contemporary, minimalist, scandinavian])
+  4. Cap at 25 products
+  5. Inline the filtered list in the agent prompt as a JSON array of `{handle, title, type, materials, colors, textures, pairing_category}`
+  
+  This is a smarter filter than "match same category" — for an Aires dining chair (pairing_category: `dining-chair`), the filter returns dining tables / sideboards / buffets / bar carts (real companions) instead of 25 other dining chairs (useless siblings). **The agent picks ONLY from this list for secondary furniture. Cannot hallucinate what isn't in front of it.**
 - **Scene Set mode flag** — if user requested >1 scene of the same product, set `scene_set: true` and `scene_count: N`. The designer then returns ONE room/lighting/palette plan plus N camera variation specs (different angles, framing, focal lengths) — NOT N independent rooms.
 - **Angle hard input** — the angle the user picked (front / three-quarter / side / back / closeup / cutout / hero). Designer plans staging around it: front view = symmetric layout, side = profile-friendly placement, etc.
 - User inputs (mode, photography style, vibe, room, people, palette mood, special instructions)
@@ -298,7 +332,9 @@ Detailed logic in `references/catalog-validator.md`.
 
 ### 3b. Photographer agent (Photographer + Prompt Engineer)
 
-Receives the scene plan from the designer + the engine context (CLI vs MCP, model, aspect ratio, quality, **reference image UUIDs[] from Step 2.5c**, **angle hard-lock**, **scene_set flag + camera_variations**, combo count).
+Receives the scene plan from the designer + the engine context (CLI vs MCP, model, aspect ratio, quality, **reference image UUIDs[] from Step 2.5c (if upload or both mode)**, **soul_id_tag (if soul-id or both mode, e.g. `@aires_dining_chair`)**, **reference_mode (upload / soul-id / both)**, **angle hard-lock**, **scene_set flag + camera_variations**, combo count).
+
+In `soul-id` or `both` mode, the photographer embeds the `@<tag>` once in the HERO PRODUCT LOCK opening sentence of the prompt (e.g. `HERO PRODUCT LOCK: @aires_dining_chair, Aires Dining Chair upholstered in...`). Higgsfield interprets the `@<tag>` as a character lock. In `upload` mode, no `@<tag>` is added.
 
 The photographer reads:
 - `references/aykah-style-anchors.md` for camera/light/composition anchors

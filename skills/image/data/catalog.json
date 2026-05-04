@@ -3,6 +3,9 @@
     "handle": "aires-dining-chair",
     "title": "Aires Dining Chair",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "This dining chair features a rounded silhouette with a low, curved backrest and a cushioned seat, both upholstered in a soft, textured fabric. The chair is supported by four tapered wooden legs in a warm, dark finish, creating a balanced and inviting aesthetic.",
     "product_color": "The chair features a soft, off-white boucle upholstery paired with warm, dark-stained wooden legs.",
     "colors": [
@@ -23,7 +26,7 @@
       "minimalist",
       "mid-century modern"
     ],
-    "dimensions": "H: 75cm, W: 50cm, D: 55cm",
+    "dimensions_estimate": "H: 75cm, W: 50cm, D: 55cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -37,12 +40,17 @@
       "Tapered legs"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:36:38.197560",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Boucle_ECOM_1.jpg?v=1763747543"
   },
   {
     "handle": "alessio-bookcase-and-tall-cabinet",
     "title": "Alessio Bookcase & Tall Cabinet",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Alessio Bookcase & Tall Cabinet features a striking arched silhouette, framed by a sleek black metal outline. The upper section offers open shelving with a light wood finish, while the lower section has two cabinet doors with a woven cane texture, creating a blend of modern and natural aesthetics.",
     "product_color": "The bookcase features a black metal frame, light wood shelves, and woven cane cabinet doors in a natural tan color.",
     "colors": [
@@ -66,7 +74,7 @@
       "bohemian",
       "minimalist"
     ],
-    "dimensions": "H: 180cm, W: 80cm, D: 40cm",
+    "dimensions_estimate": "H: 180cm, W: 80cm, D: 40cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -82,12 +90,17 @@
       "Tall cabinet"
     ],
     "pairing_category": "bookshelf",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:39:31.435629",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Alessio_Bookcase_ECOM.jpg?v=1758227301"
   },
   {
     "handle": "alora-sofa",
     "title": "Alora Sofa",
     "type": "Sofa beds",
+    "productCategory": "Furniture > Sofa beds",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "This sofa features a clean, contemporary design with a boxy silhouette and squared-off arms. Upholstered in a textured fabric, it includes two matching throw pillows for added comfort and style. The sofa sits on short, dark legs, giving it a slightly elevated and modern look.",
     "product_color": "The sofa is upholstered in a light beige fabric with a subtle woven texture, complemented by dark brown or black legs.",
     "colors": [
@@ -109,7 +122,7 @@
       "minimalist",
       "functional"
     ],
-    "dimensions": "Estimated dimensions: H: 80cm, W: 180cm, D: 85cm",
+    "dimensions_estimate": "Estimated dimensions: H: 80cm, W: 180cm, D: 85cm",
     "room_suggestions": [
       "Living Room",
       "Guest Room",
@@ -124,12 +137,17 @@
       "Compact design"
     ],
     "pairing_category": "sofa",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:37:10.401819",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Alora-1.png?v=1755210810"
   },
   {
     "handle": "amelie-dining-chair",
     "title": "Amelie Dining Chair",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This Amelie dining chair features a rounded silhouette with a curved backrest and a plush, textured seat. The chair's design blends comfort and style, making it a cozy and inviting addition to any dining space. The wooden frame provides a sturdy base, while the soft boucle upholstery adds a touch of luxury.",
     "product_color": "The chair features a soft, off-white boucle fabric on the seat and backrest, complemented by a natural oak wood frame.",
     "colors": [
@@ -152,7 +170,7 @@
       "scandinavian",
       "minimalist"
     ],
-    "dimensions": "Estimated dimensions: H: 75cm, W: 55cm, D: 55cm",
+    "dimensions_estimate": "Estimated dimensions: H: 75cm, W: 55cm, D: 55cm",
     "room_suggestions": [
       "Dining Room",
       "Living Room",
@@ -166,12 +184,17 @@
       "Comfortable seating"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:37:35.974651",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Amelie_Chair_ECOM1.jpg?v=1760046218"
   },
   {
     "handle": "araam-sectional",
     "title": "Araam Sectional",
     "type": "Sofa beds",
+    "productCategory": "Furniture > Sofa beds",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "This sectional sofa features a chaise lounge on one end, offering a comfortable spot to stretch out. The sofa is upholstered in a light beige fabric, with a clean, modern design characterized by rounded arms and a low profile. It appears to have a storage compartment beneath the seats, adding functionality to its stylish form.",
     "product_color": "The sectional is upholstered in a light beige fabric with a subtle texture.",
     "colors": [
@@ -192,7 +215,7 @@
       "minimalist",
       "functional"
     ],
-    "dimensions": "H: 85cm, W: 250cm, D: 160cm",
+    "dimensions_estimate": "H: 85cm, W: 250cm, D: 160cm",
     "room_suggestions": [
       "Living Room",
       "Guest Room",
@@ -207,12 +230,17 @@
       "Sectional"
     ],
     "pairing_category": "sectional",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:37:49.679461",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/532935752_743333701806779_8802991272061004702_n_ba980d8f-4fce-4a25-b30e-40e248aaec50.jpg?v=1757023876"
   },
   {
     "handle": "arbour-dining-table",
     "title": "Arbour Dining Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This dining table features a rectangular tabletop with clean, straight edges, supported by two substantial, block-like legs. The light-toned wood grain is visible, lending a natural and warm aesthetic to the piece. Its simple silhouette and sturdy construction create a functional and visually appealing design.",
     "product_color": "The table is a light, natural wood color with visible wood grain.",
     "colors": [
@@ -233,7 +261,7 @@
       "scandinavian",
       "natural"
     ],
-    "dimensions": "H: 75cm, W: 180cm, D: 90cm",
+    "dimensions_estimate": "H: 75cm, W: 180cm, D: 90cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -247,12 +275,17 @@
       "Sturdy legs"
     ],
     "pairing_category": "dining-table",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:37:54.215289",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Arbour_Dining_Table_ECOM_1.jpg?v=1760133725"
   },
   {
     "handle": "arc-bench",
     "title": "Arc Bench",
     "type": "",
+    "productCategory": "",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Arc Bench is a modern and minimalist piece of furniture with a unique U-shaped silhouette. It features rounded edges and a seamless, upholstered design, creating a soft and inviting aesthetic.",
     "product_color": "The bench is upholstered in a soft, off-white boucle fabric, giving it a cozy and textured appearance.",
     "colors": [
@@ -273,7 +306,7 @@
       "contemporary",
       "scandinavian"
     ],
-    "dimensions": "H: 45cm, W: 45cm, D: 35cm",
+    "dimensions_estimate": "H: 45cm, W: 45cm, D: 35cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -288,12 +321,17 @@
       "Compact size"
     ],
     "pairing_category": "bench",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:39:35.534929",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Arc_Small_ECOM_1.jpg?v=1769188510"
   },
   {
     "handle": "arc-bench-large",
     "title": "Arc Bench Large",
     "type": "",
+    "productCategory": "",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Arc Bench presents a clean, minimalist design with a continuous, rounded silhouette. Upholstered in a textured fabric, the bench offers a soft and inviting appearance, making it a versatile addition to various interior settings. Its simple yet elegant form enhances the visual appeal of any space.",
     "product_color": "The bench is upholstered in a soft, off-white textured fabric.",
     "colors": [
@@ -315,7 +353,7 @@
       "contemporary",
       "scandinavian"
     ],
-    "dimensions": "H: 45cm, W: 120cm, D: 40cm",
+    "dimensions_estimate": "H: 45cm, W: 120cm, D: 40cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -330,12 +368,17 @@
       "Rounded edges"
     ],
     "pairing_category": "bench",
+    "enriched": true,
+    "enriched_at": "2026-02-26T16:30:27.886743",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Arc_Bench_Large_ECOM_1_0a3b5951-95f6-4ead-aecc-be60c4e4aedc.png?v=1770924094"
   },
   {
     "handle": "aura-lift-up-storage-bed",
     "title": "Aura Lift Up Storage Bed",
     "type": "Beds & Bed Frames",
+    "productCategory": "Furniture > Beds & Bed Frames",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Aura Lift Up Storage Bed features a clean, modern silhouette with a tall, rectangular headboard upholstered in a light, textured fabric. Its low profile and neutral color palette create a serene and inviting atmosphere, complemented by the soft bedding and natural wood accents.",
     "product_color": "The bed is primarily a soft, off-white or cream color with a textured fabric. The bedding is white, and the throw blanket is a light tan.",
     "colors": [
@@ -364,7 +407,7 @@
       "neutral",
       "storage"
     ],
-    "dimensions": "H: 120cm, W: 160cm, D: 210cm",
+    "dimensions_estimate": "H: 120cm, W: 160cm, D: 210cm",
     "room_suggestions": [
       "Bedroom"
     ],
@@ -374,12 +417,17 @@
       "Lift-up frame"
     ],
     "pairing_category": "bed",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:39:40.447303",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Aura_Cream_Lifestyle_1.jpg?v=1771620503"
   },
   {
     "handle": "aura-platform-bed",
     "title": "Aura Platform Bed",
     "type": "Beds & Bed Frames",
+    "productCategory": "Furniture > Beds & Bed Frames",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This platform bed features a clean and modern design with a minimalist aesthetic. The headboard is a simple, rectangular shape with slightly tapered sides, while the bed frame is low-profile and supported by short, cylindrical legs. The overall look is understated and elegant, perfect for a contemporary bedroom.",
     "product_color": "The bed frame and headboard are a soft beige color, complemented by black legs and white bedding.",
     "colors": [
@@ -401,7 +449,7 @@
       "contemporary",
       "platform bed"
     ],
-    "dimensions": "H: 100cm, W: 160cm, D: 200cm",
+    "dimensions_estimate": "H: 100cm, W: 160cm, D: 200cm",
     "room_suggestions": [
       "Bedroom",
       "Guest Room",
@@ -416,12 +464,17 @@
       "Simple headboard"
     ],
     "pairing_category": "bed",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:39:05.633426",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Aura_Platform_ECOM_Front.png?v=1758239650"
   },
   {
     "handle": "ava-velvet-platform-bed",
     "title": "Ava Velvet Platform Bed",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Ava Velvet Platform Bed presents a soft and inviting aesthetic with its plush, light pink velvet upholstery. The headboard features a vertical channel design, adding a touch of modern elegance, while the low-profile platform and tapered gold legs contribute to its sleek silhouette. This bed exudes a sense of calm and sophistication, perfect for creating a serene bedroom retreat.",
     "product_color": "The bed is upholstered in a soft, light pink velvet with gold-toned legs.",
     "colors": [
@@ -445,7 +498,7 @@
       "glam",
       "minimalist"
     ],
-    "dimensions": "Estimated dimensions: H: 120cm, W: 160cm, D: 210cm",
+    "dimensions_estimate": "Estimated dimensions: H: 120cm, W: 160cm, D: 210cm",
     "room_suggestions": [
       "Bedroom",
       "Guest Room",
@@ -460,12 +513,17 @@
       "Low profile"
     ],
     "pairing_category": "bed",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:39:46.492412",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Ava_Pink_new_copy_2.png?v=1741636768"
   },
   {
     "handle": "blanco-black-dining-table",
     "title": "Blanco Black Dining Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Blanco Black Dining Table features a sleek, modern design with a round tabletop and a unique pedestal base. Its all-black finish gives it a sophisticated and minimalist aesthetic, making it a stylish addition to any dining space. The table's clean lines and simple silhouette create a visually appealing focal point.",
     "product_color": "The table is entirely black, with a smooth, matte finish that enhances its modern appeal.",
     "colors": [
@@ -486,7 +544,7 @@
       "contemporary",
       "sleek"
     ],
-    "dimensions": "Estimated dimensions: H: 75cm, W: 90cm, D: 90cm",
+    "dimensions_estimate": "Estimated dimensions: H: 75cm, W: 90cm, D: 90cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -500,12 +558,17 @@
       "Minimalist design"
     ],
     "pairing_category": "dining-table",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:44:41.814450",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Blanco_Black_DT_ECOM.png?v=1752258965"
   },
   {
     "handle": "blanco-walnut-dining-table",
     "title": "Blanco Walnut Dining Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This dining table features a round, walnut-veneered top with a rich wood grain pattern. It is supported by a sleek, white pedestal base that flares out to a circular foot, creating a modern and minimalist silhouette.",
     "product_color": "The table has a dark brown walnut wood grain top and a glossy white base.",
     "colors": [
@@ -528,7 +591,7 @@
       "scandinavian",
       "contemporary"
     ],
-    "dimensions": "H: 75cm, W: 120cm, D: 120cm",
+    "dimensions_estimate": "H: 75cm, W: 120cm, D: 120cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -543,12 +606,17 @@
       "Minimalist design"
     ],
     "pairing_category": "dining-table",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:39:50.692895",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Blanco_Walnut_DT_ECOM.jpg?v=1752182634"
   },
   {
     "handle": "blanco-white-dining-table",
     "title": "Blanco White Dining Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This dining table features a sleek, modern design with a round tabletop and a pedestal base. The entire table is finished in a crisp white color, creating a clean and minimalist aesthetic. Its simple silhouette and smooth surfaces make it a versatile piece for various dining spaces.",
     "product_color": "The table is a solid, bright white color with a smooth, matte finish.",
     "colors": [
@@ -567,7 +635,7 @@
       "contemporary",
       "scandinavian"
     ],
-    "dimensions": "Estimated dimensions: H: 75cm, W: 100cm, D: 100cm",
+    "dimensions_estimate": "Estimated dimensions: H: 75cm, W: 100cm, D: 100cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -581,12 +649,17 @@
       "Smooth surface"
     ],
     "pairing_category": "dining-table",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:45:05.161506",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/products/Blanco_White_ECOM.png?v=1752258955"
   },
   {
     "handle": "brittany-4-drawer-storage-bed",
     "title": "Brittany 4 Drawer Storage Bed",
     "type": "Beds & Bed Frames",
+    "productCategory": "Furniture > Beds & Bed Frames",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Brittany 4 Drawer Storage Bed features a tall, wingback-style headboard upholstered in a soft grey fabric with diamond button tufting. The bed frame is also upholstered in the same grey fabric and includes two drawers at the foot of the bed for storage, offering a blend of style and functionality.",
     "product_color": "The bed is upholstered in a soft grey fabric with a tufted headboard. A light brown throw blanket is draped across the bed.",
     "colors": [
@@ -611,7 +684,7 @@
       "storage",
       "upholstered"
     ],
-    "dimensions": "H: 120cm, W: 160cm, D: 210cm",
+    "dimensions_estimate": "H: 120cm, W: 160cm, D: 210cm",
     "room_suggestions": [
       "Bedroom",
       "Guest Room",
@@ -624,12 +697,17 @@
       "Wingback headboard"
     ],
     "pairing_category": "bed",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:39:56.189460",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Photoresizingtemplate_800x800px_8.png?v=1763755486"
   },
   {
     "handle": "brittany-lift-up-storage-bed",
     "title": "Brittany Lift Up Storage Bed",
     "type": "Beds & Bed Frames",
+    "productCategory": "Furniture > Beds & Bed Frames",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Brittany Lift Up Storage Bed features a tall, wingback headboard with button-tufted detailing, upholstered in a soft, neutral fabric. Its clean lines and platform base create a modern silhouette, while the neutral color palette ensures it will complement any bedroom decor.",
     "product_color": "The bed is upholstered in a light beige or cream-colored fabric, with a smooth, matte finish.",
     "colors": [
@@ -654,7 +732,7 @@
       "minimalist",
       "neutral"
     ],
-    "dimensions": "H: 120cm, W: 160cm, D: 210cm",
+    "dimensions_estimate": "H: 120cm, W: 160cm, D: 210cm",
     "room_suggestions": [
       "Bedroom",
       "Guest Room",
@@ -669,12 +747,17 @@
       "Platform bed"
     ],
     "pairing_category": "bed",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:40:01.409693",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Brittany_Gas_Lift.png?v=1752078943"
   },
   {
     "handle": "calia-loveseat",
     "title": "Calia Loveseat",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Calia Loveseat presents a clean, modern silhouette with gently rounded arms and a tailored appearance. Its neutral upholstery is accented by button tufting on the back cushions, while the tapered wooden legs add a touch of mid-century charm. The loveseat is complemented by decorative pillows in varying textures and tones, enhancing its overall visual appeal.",
     "product_color": "The loveseat features a soft, off-white textured fabric with dark wooden legs and accent pillows in beige and cream.",
     "colors": [
@@ -698,7 +781,7 @@
       "contemporary",
       "mid-century modern"
     ],
-    "dimensions": "Estimated dimensions: H: 80cm, W: 180cm, D: 90cm",
+    "dimensions_estimate": "Estimated dimensions: H: 80cm, W: 180cm, D: 90cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -712,12 +795,17 @@
       "Neutral color palette"
     ],
     "pairing_category": "sofa",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:46:40.401031",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Calia_loveseat_01.jpg?v=1757104184"
   },
   {
     "handle": "calia-sofa",
     "title": "Calia Sofa",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This sofa features a rounded silhouette with a low profile, creating a welcoming and comfortable seating experience. The light-colored, textured fabric upholstery is complemented by the dark wood legs, adding a touch of warmth and sophistication. The button-tufted back cushions enhance the sofa's classic appeal.",
     "product_color": "The sofa is upholstered in a light beige textured fabric and features dark brown tapered wood legs.",
     "colors": [
@@ -738,7 +826,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "H: 75cm, W: 200cm, D: 85cm",
+    "dimensions_estimate": "H: 75cm, W: 200cm, D: 85cm",
     "room_suggestions": [
       "Living Room",
       "Office",
@@ -752,12 +840,17 @@
       "Tapered legs"
     ],
     "pairing_category": "sofa",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:46:45.125275",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Calia_Ecom_1.png?v=1756199733"
   },
   {
     "handle": "cameo-nightstand",
     "title": "Cameo Nightstand",
     "type": "",
+    "productCategory": "",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Cameo Nightstand features a sleek, rectangular silhouette with a smooth, dark finish. It has two drawers with minimalist gold-tone handles, supported by four slender, cylindrical gold-tone legs. The overall design exudes a modern and sophisticated aesthetic.",
     "product_color": "The nightstand is primarily black with a smooth finish, accented by gold-tone handles and legs.",
     "colors": [
@@ -777,7 +870,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "H: 55cm, W: 50cm, D: 40cm",
+    "dimensions_estimate": "H: 55cm, W: 50cm, D: 40cm",
     "room_suggestions": [
       "Bedroom",
       "Living Room",
@@ -791,12 +884,17 @@
       "Storage"
     ],
     "pairing_category": "nightstand",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:40:05.639683",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Cameo_ECOM_NS.jpg?v=1752259233"
   },
   {
     "handle": "capri-dining-chair",
     "title": "Capri Dining Chair",
     "type": "",
+    "productCategory": "",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Capri Dining Chair features a rounded silhouette with a low back and a comfortable upholstered seat. The chair is covered in a textured, off-white fabric and supported by four tapered, black legs, giving it a modern and inviting appearance.",
     "product_color": "The chair features a soft, off-white textured fabric and black tapered legs.",
     "colors": [
@@ -817,7 +915,7 @@
       "minimalist",
       "scandinavian"
     ],
-    "dimensions": "H: 80cm, W: 50cm, D: 55cm",
+    "dimensions_estimate": "H: 80cm, W: 50cm, D: 55cm",
     "room_suggestions": [
       "Dining Room",
       "Living Room",
@@ -831,12 +929,17 @@
       "Compact design"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:47:28.111031",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Capri_Dining_Chair_Boucle_ECOM_1.jpg?v=1761002170"
   },
   {
     "handle": "celeste-sofa-bed",
     "title": "Celeste Sofa Bed",
     "type": "Sofa beds",
+    "productCategory": "Furniture > Sofa beds",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Celeste Sofa Bed is a modern and functional piece, featuring a clean-lined silhouette with a split back design. Upholstered in a sleek, dark grey fabric with subtle, angled stitching details on the back cushions, it rests on four tapered, light-toned wooden legs, adding a touch of Scandinavian charm.",
     "product_color": "The sofa bed is upholstered in a dark grey fabric, complemented by light-toned natural wood legs.",
     "colors": [
@@ -858,7 +961,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "H: 80cm, W: 200cm, D: 85cm",
+    "dimensions_estimate": "H: 80cm, W: 200cm, D: 85cm",
     "room_suggestions": [
       "Living Room",
       "Guest Room",
@@ -874,12 +977,17 @@
       "Convertible"
     ],
     "pairing_category": "sofa",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:47:44.384434",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Celeste_Grey_ECOM_1.png?v=1752528533"
   },
   {
     "handle": "cloud-ottoman",
     "title": "Cloud Ottoman",
     "type": "",
+    "productCategory": "",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Cloud Ottoman features a cylindrical base and a rounded backrest, both generously upholstered in a soft, textured fabric. Its compact silhouette and plush appearance create a cozy and inviting seating option, perfect for adding a touch of comfort and style to any space.",
     "product_color": "The ottoman is covered in a soft, white boucle fabric, creating a fluffy and inviting texture.",
     "colors": [
@@ -898,7 +1006,7 @@
       "contemporary",
       "cozy"
     ],
-    "dimensions": "Estimated dimensions: H: 75cm, W: 50cm, D: 50cm",
+    "dimensions_estimate": "Estimated dimensions: H: 75cm, W: 50cm, D: 50cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -913,12 +1021,17 @@
       "Upholstered backrest"
     ],
     "pairing_category": "ottoman",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:48:06.433686",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Cloud_Ottoman_White_ECOM_1_93511174-3a81-4fbf-8d59-de466d247417.jpg?v=1770244297"
   },
   {
     "handle": "cloudlet-dining-chair",
     "title": "Cloudlet Dining chair",
     "type": "",
+    "productCategory": "",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Cloudlet Dining Chair is a modern and minimalist piece featuring a rounded seat and a straight, supportive backrest. The chair's silhouette is clean and geometric, with cylindrical legs that add to its contemporary appeal. The soft, textured fabric gives it a cozy and inviting look.",
     "product_color": "The chair is upholstered in a soft, off-white textured fabric, creating a clean and neutral aesthetic.",
     "colors": [
@@ -940,7 +1053,7 @@
       "contemporary",
       "scandinavian"
     ],
-    "dimensions": "H: 75cm, W: 50cm, D: 50cm",
+    "dimensions_estimate": "H: 75cm, W: 50cm, D: 50cm",
     "room_suggestions": [
       "Dining Room",
       "Living Room",
@@ -956,12 +1069,17 @@
       "Supportive backrest"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-02-26T16:30:32.604046",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Cloudlet_Natural_Linen_ECOM_1_58dc5d7f-4e29-4aa5-8158-8999ecda1996.jpg?v=1771625105"
   },
   {
     "handle": "cydra-dining-table",
     "title": "Cydra Dining Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "This dining table features a sleek, elongated oval tabletop in a dark wood finish. It rests upon two cylindrical bases with a vertically ribbed texture, creating a modern and sophisticated silhouette. The table's dark color and clean lines contribute to its minimalist aesthetic.",
     "product_color": "The table is a dark, almost black color, with a visible wood grain texture on the tabletop and a ribbed texture on the cylindrical legs.",
     "colors": [
@@ -982,7 +1100,7 @@
       "contemporary",
       "scandinavian"
     ],
-    "dimensions": "Estimated dimensions: H: 75cm, W: 200cm, D: 100cm",
+    "dimensions_estimate": "Estimated dimensions: H: 75cm, W: 200cm, D: 100cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -998,12 +1116,17 @@
       "Minimalist design"
     ],
     "pairing_category": "dining-table",
+    "enriched": true,
+    "enriched_at": "2026-02-26T16:30:37.569703",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Cydra_Slate_ECOM_2.jpg?v=1771879445"
   },
   {
     "handle": "daisy-armchair",
     "title": "Daisy Armchair",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Daisy Armchair presents a cozy and inviting silhouette with its rounded form and integrated armrests. Upholstered in a textured fabric, it features a matching square cushion for added comfort and style. Its compact design makes it a versatile addition to various spaces.",
     "product_color": "The armchair is upholstered in a soft, off-white boucle fabric.",
     "colors": [
@@ -1024,7 +1147,7 @@
       "minimalist",
       "cozy"
     ],
-    "dimensions": "H: 75cm, W: 85cm, D: 80cm",
+    "dimensions_estimate": "H: 75cm, W: 85cm, D: 80cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -1038,12 +1161,17 @@
       "Compact design"
     ],
     "pairing_category": "accent-chair",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:48:24.942217",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Daisy_Armchair_ECOM_1_5d873284-b0e1-41e8-a79b-a50ee7c85be3.jpg?v=1759441047"
   },
   {
     "handle": "dario-dining-chair",
     "title": "Dario Dining Chair",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Dario Dining Chair features a sleek, modern design with a focus on texture and contrast. Its dark wood frame provides a solid foundation, while the woven cane back adds an element of visual interest and breathability. The light-colored upholstered seat offers a comfortable and inviting place to sit.",
     "product_color": "The chair features a dark wood frame, a woven cane back, and a light beige upholstered seat.",
     "colors": [
@@ -1068,7 +1196,7 @@
       "minimalist",
       "transitional"
     ],
-    "dimensions": "Estimated dimensions: H: 85cm, W: 45cm, D: 50cm",
+    "dimensions_estimate": "Estimated dimensions: H: 85cm, W: 45cm, D: 50cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -1082,12 +1210,17 @@
       "Modern design"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:48:38.878021",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Dario_DC_ECOM_1.jpg?v=1758225780"
   },
   {
     "handle": "dora-platform-bed",
     "title": "Dora Platform Bed",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Dora Platform Bed features a simple, rectangular headboard upholstered in a soft grey fabric with button tufting. Its low profile and clean lines give it a modern and minimalist aesthetic. The bed frame is also upholstered in the same grey fabric and sits on dark, tapered legs.",
     "product_color": "The bed features a soft grey fabric upholstery with dark legs, complemented by neutral-toned bedding.",
     "colors": [
@@ -1111,7 +1244,7 @@
       "contemporary",
       "platform"
     ],
-    "dimensions": "H: 100cm, W: 160cm, D: 210cm",
+    "dimensions_estimate": "H: 100cm, W: 160cm, D: 210cm",
     "room_suggestions": [
       "Bedroom",
       "Guest Room",
@@ -1126,12 +1259,17 @@
       "Clean lines"
     ],
     "pairing_category": "bed",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:40:10.859907",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/products/Untitleddesign_13.png?v=1752088369"
   },
   {
     "handle": "eiffel-dining-chair",
     "title": "Eiffel Dining Chair",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Eiffel Dining Chair features a sleek, minimalist design with a molded white seat that gently curves for comfort. Its distinctive base is constructed from natural wood legs arranged in an intricate, geometric pattern, offering both stability and visual interest. The chair's clean lines and airy silhouette make it a versatile addition to any modern dining space.",
     "product_color": "The chair features a smooth, white seat paired with light-toned natural wood legs and black metal supports.",
     "colors": [
@@ -1154,7 +1292,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "H: 82cm, W: 46cm, D: 50cm",
+    "dimensions_estimate": "H: 82cm, W: 46cm, D: 50cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -1169,12 +1307,17 @@
       "Easy to clean"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:40:16.172895",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/products/Eiffel_Lifestyle.png?v=1752255427"
   },
   {
     "handle": "eiffel-glass-dining-table",
     "title": "Eiffel Glass Dining Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This dining table features a round, transparent glass top that allows light to pass through, creating an airy feel. The table is supported by four light-colored wooden legs connected by a black metal framework, providing a sturdy and stylish base. Its minimalist design makes it a versatile addition to any modern dining space.",
     "product_color": "The table features a clear glass top, light-colored wooden legs, and a black metal support structure.",
     "colors": [
@@ -1199,7 +1342,7 @@
       "scandinavian",
       "contemporary"
     ],
-    "dimensions": "H: 75cm, W: 80cm, D: 80cm",
+    "dimensions_estimate": "H: 75cm, W: 80cm, D: 80cm",
     "room_suggestions": [
       "Kitchen",
       "Dining Room",
@@ -1213,12 +1356,17 @@
       "Minimalist design"
     ],
     "pairing_category": "dining-table",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:49:42.082663",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/products/Eiffel_Glass_DT_ECOM.png?v=1752172531"
   },
   {
     "handle": "eiffel-white-counter-stool",
     "title": "Eiffel White Counter Stool",
     "type": "Bar Stools",
+    "productCategory": "Furniture > Bar Stools",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Eiffel White Counter Stool showcases a minimalist design with a molded white seat that gently curves for comfort. It features a network of thin black metal supports connecting the seat to the light-toned wooden legs, complemented by a black circular footrest, creating a visually appealing and functional piece.",
     "product_color": "The stool features a smooth, matte white seat, light-toned natural wood legs, and black metal supports and footrest.",
     "colors": [
@@ -1241,7 +1389,7 @@
       "scandinavian",
       "contemporary"
     ],
-    "dimensions": "H: 90cm, W: 45cm, D: 45cm",
+    "dimensions_estimate": "H: 90cm, W: 45cm, D: 45cm",
     "room_suggestions": [
       "Kitchen",
       "Dining Room",
@@ -1257,12 +1405,17 @@
       "Minimalist design"
     ],
     "pairing_category": "bar-stool",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:40:20.649339",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/products/Eiffel_CS.png?v=1752090806"
   },
   {
     "handle": "eiffel-white-dining-table",
     "title": "Eiffel White Dining Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Eiffel White Dining Table features a clean, round white tabletop supported by a network of black metal rods and light-toned wooden legs. The design is simple yet striking, offering a modern aesthetic with a touch of Scandinavian influence. The table's silhouette is airy and open, making it a visually appealing addition to any dining space.",
     "product_color": "The table has a smooth white top, light natural wood legs, and black metal supports.",
     "colors": [
@@ -1284,7 +1437,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "Estimated dimensions: H: 75cm, W: 80cm, D: 80cm",
+    "dimensions_estimate": "Estimated dimensions: H: 75cm, W: 80cm, D: 80cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -1299,12 +1452,17 @@
       "Sturdy construction"
     ],
     "pairing_category": "dining-table",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:40:25.273401",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Eiffel_White_ECOM_Closeup.png?v=1752172219"
   },
   {
     "handle": "eira-lift-up-storage-bed",
     "title": "Eira Lift Up Storage Bed",
     "type": "Beds & Bed Frames",
+    "productCategory": "Furniture > Beds & Bed Frames",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Eira Lift-Up Storage Bed features a clean, rectangular silhouette with rounded corners on the headboard, upholstered in a soft, textured fabric. Its minimalist design is complemented by a low profile and subtle wood trim at the base, creating a serene and inviting aesthetic. The bed offers a seamless blend of comfort and functionality, perfect for modern living spaces.",
     "product_color": "The bed is primarily a soft, off-white or cream color, with a textured boucle-like fabric and a thin strip of warm-toned wood visible at the base.",
     "colors": [
@@ -1327,7 +1485,7 @@
       "scandinavian",
       "contemporary"
     ],
-    "dimensions": "H: 90cm, W: 160cm, D: 210cm",
+    "dimensions_estimate": "H: 90cm, W: 160cm, D: 210cm",
     "room_suggestions": [
       "Bedroom",
       "Guest Room",
@@ -1341,12 +1499,17 @@
       "Minimalist design"
     ],
     "pairing_category": "bed",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:50:11.744511",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Eira_ECOM_1.png?v=1764979345"
   },
   {
     "handle": "elaan-sectional",
     "title": "Elaan Sectional",
     "type": "Sofa",
+    "productCategory": "Furniture > Sofa",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "This sectional sofa features a modular design with rounded edges and a low profile, creating a comfortable and inviting seating arrangement. The sofa is upholstered in a textured fabric and includes several throw pillows in varying shapes, enhancing its plush and modern aesthetic.",
     "product_color": "The sectional is a soft, off-white or cream color with a subtle textured fabric.",
     "colors": [
@@ -1368,7 +1531,7 @@
       "contemporary",
       "modular"
     ],
-    "dimensions": "H: 75cm, W: 300cm, D: 200cm",
+    "dimensions_estimate": "H: 75cm, W: 300cm, D: 200cm",
     "room_suggestions": [
       "Living Room",
       "Lounge",
@@ -1383,12 +1546,17 @@
       "Sectional"
     ],
     "pairing_category": "sectional",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:50:16.050556",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Elaan_Sectional_ECOM_1.jpg?v=1766191242"
   },
   {
     "handle": "elin-sofa-bed",
     "title": "Elin Sofa Bed",
     "type": "",
+    "productCategory": "",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Elin Sofa Bed features a clean, modern silhouette with a low profile and rounded armrests, upholstered in a soft, textured fabric. Its minimalist design is complemented by tapered wooden legs, adding a touch of warmth and sophistication. The sofa's inviting appearance makes it a stylish and comfortable addition to any living space.",
     "product_color": "The sofa is upholstered in a soft, off-white boucle fabric, and it features dark brown, tapered wooden legs.",
     "colors": [
@@ -1409,7 +1577,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "Estimated dimensions: H: 75cm, W: 200cm, D: 85cm",
+    "dimensions_estimate": "Estimated dimensions: H: 75cm, W: 200cm, D: 85cm",
     "room_suggestions": [
       "Living Room",
       "Guest Room",
@@ -1424,12 +1592,17 @@
       "Convertible"
     ],
     "pairing_category": "sofa",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:40:30.110448",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Elin_Grey_ECOM_1.jpg?v=1769885698"
   },
   {
     "handle": "elina-side-table",
     "title": "Elina Side Table",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Elina Side Table features a cylindrical body crafted from woven natural fibers, creating a textured and organic aesthetic. Its round wooden top provides a smooth, contrasting surface, making it a versatile accent piece with a relaxed, bohemian vibe. The open weave allows light to filter through, adding visual interest to any space.",
     "product_color": "The side table showcases a warm, natural brown hue in its woven body, complemented by a light brown wooden top.",
     "colors": [
@@ -1451,7 +1624,7 @@
       "natural",
       "rustic"
     ],
-    "dimensions": "Estimated dimensions: H: 45cm, W: 40cm, D: 40cm",
+    "dimensions_estimate": "Estimated dimensions: H: 45cm, W: 40cm, D: 40cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -1465,12 +1638,17 @@
       "Lightweight"
     ],
     "pairing_category": "side-table",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:50:24.592966",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Elina_Side_Table_ECOM_1.jpg?v=1758226727"
   },
   {
     "handle": "elmwood-dining-table",
     "title": "Elmwood Dining Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Elmwood Dining Table features a smooth, oval-shaped tabletop with rounded edges, supported by four cylindrical legs. Its minimalist design and light wood finish create a warm and inviting aesthetic, perfect for a modern dining space.",
     "product_color": "The table showcases a light, natural wood color with visible grain patterns, giving it a warm and organic feel.",
     "colors": [
@@ -1491,7 +1669,7 @@
       "scandinavian",
       "contemporary"
     ],
-    "dimensions": "H: 75cm, W: 160cm, D: 90cm",
+    "dimensions_estimate": "H: 75cm, W: 160cm, D: 90cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -1505,12 +1683,17 @@
       "Minimalist design"
     ],
     "pairing_category": "dining-table",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:50:28.251040",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Elmwood_DT_ECOM_1.jpg?v=1758324015"
   },
   {
     "handle": "enigma-3-seater-sofa",
     "title": "Enigma 3-Seater Sofa",
     "type": "Sofa",
+    "productCategory": "Furniture > Sofa",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This 3-seater sofa presents a clean, modern silhouette with its boxy shape and vertical channel tufting on the back. The rich blue upholstery gives it a luxurious and inviting appearance, while the low profile and straight lines contribute to a minimalist aesthetic.",
     "product_color": "The sofa is upholstered in a vibrant royal blue velvet fabric, complemented by sleek black legs.",
     "colors": [
@@ -1532,7 +1715,7 @@
       "minimalist",
       "luxe"
     ],
-    "dimensions": "H: 75cm, W: 210cm, D: 85cm",
+    "dimensions_estimate": "H: 75cm, W: 210cm, D: 85cm",
     "room_suggestions": [
       "Living Room",
       "Lounge",
@@ -1546,12 +1729,17 @@
       "Velvet upholstery"
     ],
     "pairing_category": "sofa",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:50:37.550245",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Enigma_Blue_ECOM_1.png?v=1752521674"
   },
   {
     "handle": "enigma-loveseat",
     "title": "Enigma Loveseat",
     "type": "Sofa",
+    "productCategory": "Furniture > Sofa",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Enigma Loveseat presents a clean, contemporary silhouette with its straight lines and subtly curved armrests. The back features a tufted design, adding a touch of sophistication to its minimalist aesthetic. The loveseat is elevated by sleek, dark-finished legs, enhancing its modern appeal.",
     "product_color": "The loveseat is upholstered in a light beige fabric with a subtle texture, complemented by dark brown or black legs.",
     "colors": [
@@ -1573,7 +1761,7 @@
       "minimalist",
       "classic"
     ],
-    "dimensions": "Estimated dimensions: H: 75cm, W: 150cm, D: 80cm",
+    "dimensions_estimate": "Estimated dimensions: H: 75cm, W: 150cm, D: 80cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -1587,12 +1775,17 @@
       "Sleek legs"
     ],
     "pairing_category": "sofa",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:50:42.157973",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Enigma_Oat_ECOM_Back_1.png?v=1752524203"
   },
   {
     "handle": "eris-dining-chair",
     "title": "Eris Dining Chair",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Eris Dining Chair features a unique, blocky silhouette with rounded edges, creating a modern and inviting aesthetic. Upholstered in a textured fabric, the chair's design incorporates open spaces in the backrest, adding a touch of visual lightness to its sturdy form.",
     "product_color": "The chair is upholstered in a light, off-white textured fabric.",
     "colors": [
@@ -1614,7 +1807,7 @@
       "minimalist",
       "scandinavian"
     ],
-    "dimensions": "H: 75cm, W: 50cm, D: 55cm",
+    "dimensions_estimate": "H: 75cm, W: 50cm, D: 55cm",
     "room_suggestions": [
       "Dining Room",
       "Living Room",
@@ -1628,12 +1821,17 @@
       "Textured fabric"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-02-26T16:30:41.722439",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Cloudlet_Natural_Linen_ECOM_1.jpg?v=1770929185"
   },
   {
     "handle": "fez-lift-up-storage-bed",
     "title": "Fez Lift Up Storage Bed",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Fez Lift Up Storage Bed features a tall, vertically channeled headboard with studded detailing along the edges, creating a sophisticated and modern aesthetic. The base of the bed is similarly designed with vertical panels, offering a cohesive and stylish look, while the neutral color palette ensures versatility in various bedroom settings.",
     "product_color": "The bed features a soft grey upholstered headboard and base, complemented by white bedding and a dark grey throw.",
     "colors": [
@@ -1658,7 +1856,7 @@
       "elegant",
       "upholstered"
     ],
-    "dimensions": "H: 150cm, W: 200cm, D: 220cm",
+    "dimensions_estimate": "H: 150cm, W: 200cm, D: 220cm",
     "room_suggestions": [
       "Bedroom",
       "Master Bedroom",
@@ -1671,12 +1869,17 @@
       "Studded detailing"
     ],
     "pairing_category": "bed",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:40:35.571160",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Fez_Grey_Bed.png?v=1752089061"
   },
   {
     "handle": "gather-bench",
     "title": "Gather Bench",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "This bench features a simple, rectangular silhouette with a cushioned top and straight, sturdy legs. The light-colored wood frame and neutral-toned fabric create a clean and versatile aesthetic. The bench's minimalist design makes it suitable for various interior styles.",
     "product_color": "The bench features a soft, neutral grey fabric seat and a light, natural wood frame.",
     "colors": [
@@ -1699,7 +1902,7 @@
       "scandinavian",
       "neutral"
     ],
-    "dimensions": "H: 45cm, W: 120cm, D: 40cm",
+    "dimensions_estimate": "H: 45cm, W: 120cm, D: 40cm",
     "room_suggestions": [
       "Entryway",
       "Dining Room",
@@ -1713,12 +1916,17 @@
       "Simple design"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:51:37.833582",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Gather_Bench_ECOM.jpg?v=1758228209"
   },
   {
     "handle": "gather-bookcase",
     "title": "Gather Bookcase",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Gather Bookcase features a unique design with rounded shelves and a cabinet base. The light, natural wood finish and vertical ribbed texture on the cabinet doors add a touch of rustic elegance. Its silhouette is both modern and organic, making it a stylish storage solution.",
     "product_color": "The bookcase is a light, natural wood color with subtle variations in tone and a visible wood grain.",
     "colors": [
@@ -1739,7 +1947,7 @@
       "organic",
       "contemporary"
     ],
-    "dimensions": "H: 160cm, W: 80cm, D: 40cm",
+    "dimensions_estimate": "H: 160cm, W: 80cm, D: 40cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -1754,12 +1962,17 @@
       "Storage compartment"
     ],
     "pairing_category": "bookshelf",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:51:41.923626",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Gather_Bookcase_ECOM_1.jpg?v=1758227659"
   },
   {
     "handle": "gather-dining-chair",
     "title": "Gather Dining Chair",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Gather Dining Chair features a rounded silhouette with a fully upholstered seat and back. The soft, textured fabric contrasts beautifully with the light-toned wooden legs, creating a warm and inviting aesthetic. Its simple yet elegant design makes it a versatile addition to any dining space.",
     "product_color": "The chair features a soft grey, textured boucle-like fabric on the seat and back, complemented by light-toned natural wood legs.",
     "colors": [
@@ -1781,7 +1994,7 @@
       "scandinavian",
       "contemporary"
     ],
-    "dimensions": "H: 80cm, W: 50cm, D: 55cm",
+    "dimensions_estimate": "H: 80cm, W: 50cm, D: 55cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -1795,12 +2008,17 @@
       "Comfortable"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:51:46.263921",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Gather_DC_ECOM_1.jpg?v=1758228030"
   },
   {
     "handle": "gather-extendable-dining-table",
     "title": "Gather Extendable Dining Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This extendable dining table features a rectangular tabletop with rounded corners, supported by four sturdy, cylindrical legs. The light, natural wood finish showcases the wood grain, giving it a rustic yet modern appeal. Its simple silhouette and neutral color palette make it a versatile addition to any dining space.",
     "product_color": "The table has a light, natural wood finish with visible wood grain.",
     "colors": [
@@ -1821,7 +2039,7 @@
       "minimalist",
       "scandinavian"
     ],
-    "dimensions": "H: 75cm, W: 160cm, D: 90cm",
+    "dimensions_estimate": "H: 75cm, W: 160cm, D: 90cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -1835,12 +2053,17 @@
       "Natural finish"
     ],
     "pairing_category": "dining-table",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:40:39.680892",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Gather_Extendable_Dining_Table_ECOM_1.jpg?v=1758231163"
   },
   {
     "handle": "gather-sideboard",
     "title": "Gather Sideboard",
     "type": "",
+    "productCategory": "",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Gather Sideboard features a unique design with a rounded silhouette and vertical ribbed detailing. Its light, natural finish and simple hardware add to its understated elegance, making it a versatile piece for various interior styles. The sideboard sits on a simple, minimalist base with straight legs.",
     "product_color": "The sideboard has a light, natural wood finish with subtle variations in tone, creating a textured and organic appearance.",
     "colors": [
@@ -1863,7 +2086,7 @@
       "natural",
       "coastal"
     ],
-    "dimensions": "Estimated dimensions: H: 80cm, W: 150cm, D: 45cm",
+    "dimensions_estimate": "Estimated dimensions: H: 80cm, W: 150cm, D: 45cm",
     "room_suggestions": [
       "Dining Room",
       "Living Room",
@@ -1879,12 +2102,17 @@
       "Natural wood finish"
     ],
     "pairing_category": "dining-table",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:51:54.125081",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Gather_SB_ECOM_1.jpg?v=1758227870"
   },
   {
     "handle": "harlow-dining-chair",
     "title": "Harlow Dining Chair",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Harlow Dining Chair features a sleek, minimalist design with a curved backrest and a woven seat. Its black frame provides a striking contrast to the light-colored seat, creating a visually appealing piece. The chair's silhouette is both modern and timeless, making it a versatile addition to any dining space.",
     "product_color": "The chair has a black wooden frame and a woven seat in a light tan or beige color.",
     "colors": [
@@ -1907,7 +2135,7 @@
       "scandinavian",
       "contemporary"
     ],
-    "dimensions": "H: 75cm, W: 55cm, D: 50cm",
+    "dimensions_estimate": "H: 75cm, W: 55cm, D: 50cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -1921,12 +2149,17 @@
       "Lightweight"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:52:06.847579",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Harlow_Black_ECOM_Front.png?v=1752255404"
   },
   {
     "handle": "haven-sofa",
     "title": "Haven Sofa",
     "type": "Sofa",
+    "productCategory": "Furniture > Sofa",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "This Haven sofa presents a warm and inviting aesthetic with its rounded silhouette and plush cushions. The sofa features a rich, earthy tone and is supported by four tapered wooden legs, adding a touch of mid-century modern charm. Its clean lines and comfortable design make it a perfect centerpiece for a cozy living space.",
     "product_color": "The sofa is upholstered in a soft, reddish-brown fabric with a velvety texture, complemented by dark brown wooden legs.",
     "colors": [
@@ -1949,7 +2182,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "H: 80cm, W: 180cm, D: 85cm",
+    "dimensions_estimate": "H: 80cm, W: 180cm, D: 85cm",
     "room_suggestions": [
       "Living Room",
       "Lounge",
@@ -1963,12 +2196,17 @@
       "Comfortable seating"
     ],
     "pairing_category": "sofa",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:52:10.738807",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/HavenRustECOM1.jpg?v=1766191331"
   },
   {
     "handle": "homestead-extendable-dining-table",
     "title": "Homestead Extendable Dining Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This dining table features a rectangular tabletop with a visible seam suggesting an extendable design. The light-colored wood grain adds a touch of natural warmth, while the straight, tapered legs contribute to a clean and modern silhouette. Its simple design makes it a versatile piece for various dining room styles.",
     "product_color": "The dining table is a light, natural wood color with visible wood grain.",
     "colors": [
@@ -1988,7 +2226,7 @@
       "scandinavian",
       "contemporary"
     ],
-    "dimensions": "H: 75cm, W: 140cm, D: 90cm",
+    "dimensions_estimate": "H: 75cm, W: 140cm, D: 90cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -2002,12 +2240,17 @@
       "Light wood finish"
     ],
     "pairing_category": "dining-table",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:40:43.782234",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Homestead_DT_ECOM_1.jpg?v=1758228383"
   },
   {
     "handle": "homestead-nightstand",
     "title": "Homestead Nightstand",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Homestead Nightstand is a charming piece with a rustic yet modern appeal. It features a rectangular body with two drawers, each adorned with horizontal plank detailing, and it stands on four tapered legs that provide a subtle lift and a touch of elegance.",
     "product_color": "The nightstand showcases a light, natural wood tone with visible wood grain, giving it a warm and organic feel.",
     "colors": [
@@ -2027,7 +2270,7 @@
       "minimalist",
       "natural"
     ],
-    "dimensions": "H: 60cm, W: 50cm, D: 40cm",
+    "dimensions_estimate": "H: 60cm, W: 50cm, D: 40cm",
     "room_suggestions": [
       "Bedroom",
       "Guest Room",
@@ -2041,12 +2284,17 @@
       "Natural wood finish"
     ],
     "pairing_category": "nightstand",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:52:22.254225",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Homestead_Night_Stand_ECOM_1.jpg?v=1758227202"
   },
   {
     "handle": "hora-media-unit",
     "title": "Hora Media Unit",
     "type": "",
+    "productCategory": "",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Hora Media Unit is a sleek and modern storage solution. It features a rich, dark wood finish contrasted by a clean white sliding door, creating a visually appealing two-tone design. The unit is elevated by tapered legs, adding a touch of mid-century modern flair.",
     "product_color": "The unit features a dark brown wood finish paired with a smooth, matte white sliding door.",
     "colors": [
@@ -2066,7 +2314,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "H: 50cm, W: 120cm, D: 40cm",
+    "dimensions_estimate": "H: 50cm, W: 120cm, D: 40cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -2080,12 +2328,17 @@
       "Two-tone design"
     ],
     "pairing_category": "media-unit",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:52:26.139164",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Hora_Media_Unit.jpg?v=1752253989"
   },
   {
     "handle": "jenny-lift-up-storage-bed",
     "title": "Jenny Lift Up Storage Bed",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Jenny Lift Up Storage Bed features a tall, vertically channeled headboard upholstered in a light beige fabric, creating a sophisticated and inviting focal point. Its clean lines and neutral color palette lend a sense of calm elegance, while the plush bedding and decorative pillows add layers of comfort and style. The bed frame itself is also upholstered in the same light beige fabric, creating a cohesive and seamless design.",
     "product_color": "The bed features a light beige upholstered headboard and base, complemented by brown and green decorative pillows and a beige throw blanket.",
     "colors": [
@@ -2110,7 +2363,7 @@
       "elegant",
       "neutral"
     ],
-    "dimensions": "H: 130cm, W: 160cm, D: 210cm",
+    "dimensions_estimate": "H: 130cm, W: 160cm, D: 210cm",
     "room_suggestions": [
       "Bedroom"
     ],
@@ -2119,12 +2372,17 @@
       "Storage compartment"
     ],
     "pairing_category": "bed",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:40:48.425709",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Jenny_Lifestyle_01.jpg?v=1772824591"
   },
   {
     "handle": "juniper-loveseat",
     "title": "Juniper Loveseat",
     "type": "Sofa",
+    "productCategory": "Furniture > Sofa",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This loveseat features a unique silhouette with rounded, armless backrests that curve gently inward. The plush, textured upholstery gives it a cozy and inviting appearance, complemented by round throw pillows and cylindrical bolster pillows for added comfort and style.",
     "product_color": "The loveseat is upholstered in a soft, off-white boucle fabric, with black legs.",
     "colors": [
@@ -2146,7 +2404,7 @@
       "scandinavian",
       "minimalist"
     ],
-    "dimensions": "H: 75cm, W: 180cm, D: 90cm",
+    "dimensions_estimate": "H: 75cm, W: 180cm, D: 90cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -2161,12 +2419,17 @@
       "Compact size"
     ],
     "pairing_category": "sofa",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:52:44.752499",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Juniper_Loveseat_ECOM_1.jpg?v=1759373439"
   },
   {
     "handle": "juniper-sofa",
     "title": "Juniper Sofa",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This sofa features a low profile with a rounded silhouette, upholstered in a textured fabric. The back is divided into two sections, each with a round pillow and a bolster pillow for added comfort. The sofa is supported by short, dark legs, giving it a grounded and modern appearance.",
     "product_color": "The sofa is upholstered in a soft, off-white boucle fabric.",
     "colors": [
@@ -2188,7 +2451,7 @@
       "minimalist",
       "scandinavian"
     ],
-    "dimensions": "H: 75cm, W: 220cm, D: 95cm",
+    "dimensions_estimate": "H: 75cm, W: 220cm, D: 95cm",
     "room_suggestions": [
       "Living Room",
       "Lounge",
@@ -2203,12 +2466,17 @@
       "Low profile"
     ],
     "pairing_category": "sofa",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:52:49.555460",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Juniper_Sofa_ECOM_1.png?v=1759373601"
   },
   {
     "handle": "juno-sofa",
     "title": "Juno Sofa",
     "type": "Sofa",
+    "productCategory": "Furniture > Sofa",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "This sofa features a classic silhouette with a modern twist. The clean lines and plush upholstery create a comfortable and inviting seating experience. Its neutral color and simple design make it a versatile addition to any living space.",
     "product_color": "The sofa is upholstered in a soft, off-white fabric with a subtle texture, complemented by light-toned natural wood legs.",
     "colors": [
@@ -2230,7 +2498,7 @@
       "minimalist",
       "scandinavian"
     ],
-    "dimensions": "Estimated dimensions: H: 80cm, W: 180cm, D: 85cm",
+    "dimensions_estimate": "Estimated dimensions: H: 80cm, W: 180cm, D: 85cm",
     "room_suggestions": [
       "Living Room",
       "Office",
@@ -2245,12 +2513,17 @@
       "Comfortable"
     ],
     "pairing_category": "sofa",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:52:59.114361",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Juno_Sofa_ECOM1.png?v=1765232947"
   },
   {
     "handle": "koda-nightstand",
     "title": "Koda Nightstand",
     "type": "",
+    "productCategory": "",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Koda Nightstand features a clean, rectangular silhouette with a single drawer, offering a minimalist aesthetic. It's elevated by four tapered, cylindrical legs that provide a touch of mid-century modern charm. The light wood finish enhances its simple yet elegant visual character.",
     "product_color": "The nightstand features a light, natural wood color with a subtle grain texture.",
     "colors": [
@@ -2269,7 +2542,7 @@
       "scandinavian",
       "mid-century modern"
     ],
-    "dimensions": "H: 55cm, W: 45cm, D: 35cm",
+    "dimensions_estimate": "H: 55cm, W: 45cm, D: 35cm",
     "room_suggestions": [
       "Bedroom",
       "Living Room",
@@ -2284,12 +2557,17 @@
       "Compact size"
     ],
     "pairing_category": "nightstand",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:40:53.123585",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Koda_Night_stand_ECOM_1.png?v=1758746317"
   },
   {
     "handle": "kova-sectional",
     "title": "Kova Sectional",
     "type": "Sofa",
+    "productCategory": "Furniture > Sofa",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "This Kova sectional sofa features a clean, modern design with a comfortable and inviting silhouette. The sofa is upholstered in a textured, off-white fabric and has a low profile, complemented by the warm wood accents of the legs. The chaise lounge extension adds to the overall sense of relaxation and style.",
     "product_color": "The sofa is upholstered in a soft, off-white textured fabric, with warm brown wood legs.",
     "colors": [
@@ -2310,7 +2588,7 @@
       "scandinavian",
       "contemporary"
     ],
-    "dimensions": "H: 80cm, W: 300cm, D: 180cm",
+    "dimensions_estimate": "H: 80cm, W: 300cm, D: 180cm",
     "room_suggestions": [
       "Living Room",
       "Lounge",
@@ -2325,12 +2603,17 @@
       "Wooden legs"
     ],
     "pairing_category": "sectional",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:53:42.811119",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/KovaSectionalEcom.png?v=1755818440"
   },
   {
     "handle": "lark-dining-table",
     "title": "Lark Dining Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Lark Dining Table presents a modern and sophisticated aesthetic with its round tabletop and fluted pedestal base. The dark wood finish adds warmth and elegance, making it a focal point in any dining space. Its clean lines and minimalist design create a timeless appeal.",
     "product_color": "The table features a rich, dark brown wood finish, while the chairs are upholstered in a soft, off-white boucle fabric.",
     "colors": [
@@ -2354,7 +2637,7 @@
       "contemporary",
       "scandinavian"
     ],
-    "dimensions": "H: 75cm, W: 120cm, D: 120cm",
+    "dimensions_estimate": "H: 75cm, W: 120cm, D: 120cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -2369,12 +2652,17 @@
       "Minimalist design"
     ],
     "pairing_category": "dining-table",
+    "enriched": true,
+    "enriched_at": "2026-02-26T16:30:46.983134",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Lark_Table_1_Lifestyle.png?v=1771878864"
   },
   {
     "handle": "laurel-dining-bench",
     "title": "Laurel Dining Bench",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "This Laurel Dining Bench showcases a minimalist design with a rectangular top and sturdy, block-like legs. The bench features a warm, medium-toned wood finish with a smooth, even surface, creating a clean and inviting aesthetic.",
     "product_color": "The bench is a medium brown wood tone, with a smooth, matte finish that highlights the natural wood grain.",
     "colors": [
@@ -2393,7 +2681,7 @@
       "contemporary",
       "simple"
     ],
-    "dimensions": "H: 45cm, W: 150cm, D: 35cm",
+    "dimensions_estimate": "H: 45cm, W: 150cm, D: 35cm",
     "room_suggestions": [
       "Dining Room",
       "Entryway",
@@ -2407,12 +2695,17 @@
       "Minimalist aesthetic"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:40:57.509538",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/VeraDiningBenchECOM1.webp?v=1766189681"
   },
   {
     "handle": "laurel-dining-table",
     "title": "Laurel Dining Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Laurel Dining Table is a rectangular table crafted from rich, dark wood. It features a smooth, flat tabletop with slightly rounded edges, supported by two substantial, block-like legs positioned near the ends, creating a sturdy and minimalist silhouette.",
     "product_color": "The table is a warm, dark brown with a smooth, matte finish, showcasing the natural wood grain.",
     "colors": [
@@ -2432,7 +2725,7 @@
       "contemporary",
       "rustic"
     ],
-    "dimensions": "Estimated dimensions: H: 75cm, W: 180cm, D: 90cm",
+    "dimensions_estimate": "Estimated dimensions: H: 75cm, W: 180cm, D: 90cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -2446,12 +2739,17 @@
       "Solid wood"
     ],
     "pairing_category": "dining-table",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:41:01.775580",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/VeraDiningTableECOM1.webp?v=1766189301"
   },
   {
     "handle": "liva-sectional",
     "title": "Liva Sectional",
     "type": "Sofa",
+    "productCategory": "Furniture > Sofa",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "This L-shaped sectional sofa features a clean, modern design with a low profile and wide track arms. The light grey upholstery and simple silhouette create a versatile piece that can complement a variety of interior styles. The wooden base and legs add a touch of warmth and sophistication.",
     "product_color": "Light grey woven fabric with a subtle texture, complemented by a natural wood base and legs.",
     "colors": [
@@ -2472,7 +2770,7 @@
       "minimalist",
       "scandinavian"
     ],
-    "dimensions": "H: 80cm, W: 280cm, D: 180cm",
+    "dimensions_estimate": "H: 80cm, W: 280cm, D: 180cm",
     "room_suggestions": [
       "Living Room",
       "Office",
@@ -2487,12 +2785,17 @@
       "Comfortable cushions"
     ],
     "pairing_category": "sectional",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:54:24.592262",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Liva_Sectional_ECOM_1.jpg?v=1752778668"
   },
   {
     "handle": "lucio-coffee-table",
     "title": "Lucio Coffee Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Lucio Coffee Table presents a unique, sculptural form. Its round tabletop and base are connected by a cinched, hourglass-shaped body, creating a visually striking silhouette. The table's textured surface adds depth and character, making it a focal point in any room.",
     "product_color": "The table features a light beige color with subtle variations and a textured surface.",
     "colors": [
@@ -2514,7 +2817,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "H: 45cm, W: 60cm, D: 60cm",
+    "dimensions_estimate": "H: 45cm, W: 60cm, D: 60cm",
     "room_suggestions": [
       "Living Room",
       "Entryway",
@@ -2528,12 +2831,17 @@
       "Unique silhouette"
     ],
     "pairing_category": "dining-table",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:54:47.228579",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Lucio_Coffee_Table_ECOM_1.jpg?v=1758226963"
   },
   {
     "handle": "lucio-side-table",
     "title": "Lucio Side Table",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Lucio Side Table is a cylindrical piece with a smooth, rounded top and base, and a slightly recessed bottom. It features a natural stone-like pattern with horizontal striations, giving it an organic and earthy feel. The table's simple silhouette and neutral color palette make it a versatile addition to any space.",
     "product_color": "The side table features a light beige color with subtle variations and darker beige veining, mimicking the appearance of natural stone.",
     "colors": [
@@ -2556,7 +2864,7 @@
       "organic",
       "contemporary"
     ],
-    "dimensions": "H: 45cm, W: 35cm, D: 35cm",
+    "dimensions_estimate": "H: 45cm, W: 35cm, D: 35cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -2572,12 +2880,17 @@
       "Versatile"
     ],
     "pairing_category": "side-table",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:54:51.366424",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Lucio_Side_Table_ECOM.jpg?v=1758227033"
   },
   {
     "handle": "luke-black-chair-w-wooden-legs",
     "title": "Luke Black Chair w/ Wooden Legs",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This chair features a sleek, black, bucket-style seat with a slightly curved back for comfort. It is supported by four splayed wooden legs that create a stable and stylish base, giving it a modern and minimalist aesthetic.",
     "product_color": "The chair has a smooth, matte black seat and light-toned natural wood legs.",
     "colors": [
@@ -2598,7 +2911,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "Estimated dimensions: H: 80cm, W: 45cm, D: 50cm",
+    "dimensions_estimate": "Estimated dimensions: H: 80cm, W: 45cm, D: 50cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -2613,12 +2926,17 @@
       "Lightweight"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:54:55.370736",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/products/Photoresizingtemplate_1000x1000px_12_a84bc14d-441b-46b8-a7eb-7cfd5be38bb3.png?v=1658885192"
   },
   {
     "handle": "luke-dining-chair",
     "title": "Luke Dining Chair",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Luke Dining Chair features a sleek, modern design with a curved seat and backrest. The seat is padded for comfort and the chair is supported by wooden legs. Its minimalist silhouette and neutral color make it a versatile addition to any dining space.",
     "product_color": "The chair features a smooth, light grey seat and back, complemented by natural wood legs.",
     "colors": [
@@ -2639,7 +2957,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "Estimated dimensions: H: 80cm, W: 50cm, D: 50cm",
+    "dimensions_estimate": "Estimated dimensions: H: 80cm, W: 50cm, D: 50cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -2653,12 +2971,17 @@
       "Ergonomic design"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:41:08.273872",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/products/Luke_White_ECOM.png?v=1771516912"
   },
   {
     "handle": "lumera-dining-table",
     "title": "Lumera Dining Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Lumera Dining Table features a sleek, oval-shaped tabletop with a faux marble finish, lending a touch of modern elegance. It is supported by a solid, tapered wooden base with a natural wood grain, creating a visually appealing contrast between the smooth top and the textured base. The table's minimalist design makes it a versatile addition to any dining space.",
     "product_color": "The table features a white faux marble top with grey veining, paired with a light brown wooden base.",
     "colors": [
@@ -2681,7 +3004,7 @@
       "contemporary",
       "scandinavian"
     ],
-    "dimensions": "Estimated dimensions: H: 75cm, W: 180cm, D: 100cm",
+    "dimensions_estimate": "Estimated dimensions: H: 75cm, W: 180cm, D: 100cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -2695,12 +3018,17 @@
       "Minimalist design"
     ],
     "pairing_category": "dining-table",
+    "enriched": true,
+    "enriched_at": "2026-02-26T16:30:51.469596",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Lumera_Oak_ECOM_2.jpg?v=1771980284"
   },
   {
     "handle": "luna-dresser",
     "title": "Luna Dresser",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Luna Dresser is a sleek and modern piece, featuring a clean white finish and a subtly textured, vertically ribbed drawer front design. Its rectangular silhouette is elevated by slender, gold-toned legs and matching drawer pulls, creating a sophisticated and contemporary aesthetic.",
     "product_color": "The dresser is primarily white with gold-toned legs and drawer pulls, offering a clean and elegant contrast.",
     "colors": [
@@ -2722,7 +3050,7 @@
       "minimalist",
       "elegant"
     ],
-    "dimensions": "Estimated dimensions: H: 85cm, W: 150cm, D: 45cm",
+    "dimensions_estimate": "Estimated dimensions: H: 85cm, W: 150cm, D: 45cm",
     "room_suggestions": [
       "Entryway",
       "Bedroom",
@@ -2736,12 +3064,17 @@
       "Storage drawers"
     ],
     "pairing_category": "dresser",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:55:11.639750",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Luna_Dresser_white_-_entryway.png?v=1752178385"
   },
   {
     "handle": "luna-media-unit",
     "title": "Luna Media Unit",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Luna Media Unit is a sleek and modern storage solution. It features a clean, rectangular silhouette with a textured, vertically ribbed facade. The unit is elevated by slender, gold-toned legs, adding a touch of elegance.",
     "product_color": "The media unit is primarily white with gold-toned legs and handles.",
     "colors": [
@@ -2761,7 +3094,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "H: 60cm, W: 180cm, D: 45cm",
+    "dimensions_estimate": "H: 60cm, W: 180cm, D: 45cm",
     "room_suggestions": [
       "Living Room",
       "Entryway",
@@ -2775,12 +3108,17 @@
       "Elevated legs"
     ],
     "pairing_category": "media-unit",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:55:15.936974",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Luna_Media_Unit_ECOM.jpg?v=1752254421"
   },
   {
     "handle": "luna-sideboard",
     "title": "Luna Sideboard",
     "type": "",
+    "productCategory": "",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Luna Sideboard is a sleek and modern storage solution. It features a rectangular silhouette with a smooth top surface and vertically ribbed doors, offering a subtle textural contrast. The sideboard is elevated by slender, cylindrical legs, adding a touch of elegance to its minimalist design.",
     "product_color": "The sideboard is primarily black with a smooth finish, accented by gold-colored handles and leg tips.",
     "colors": [
@@ -2801,7 +3139,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "H: 75cm, W: 180cm, D: 45cm",
+    "dimensions_estimate": "H: 75cm, W: 180cm, D: 45cm",
     "room_suggestions": [
       "Living Room",
       "Dining Room",
@@ -2815,12 +3153,17 @@
       "Elevated legs"
     ],
     "pairing_category": "credenza",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:55:19.829987",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Luna_Sideboard_ECOM.jpg?v=1752259114"
   },
   {
     "handle": "lunel-lift-up-storage-bed",
     "title": "Lunel Lift Up Storage Bed",
     "type": "Beds & Bed Frames",
+    "productCategory": "Furniture > Beds & Bed Frames",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Lunel Lift Up Storage Bed features a rounded headboard and a clean, rectangular base, both upholstered in a textured fabric. The bed's silhouette is soft and inviting, with a modern aesthetic enhanced by the neutral color palette and simple design.",
     "product_color": "The bed is upholstered in a light beige textured fabric, complemented by a white mattress and pillows.",
     "colors": [
@@ -2842,7 +3185,7 @@
       "contemporary",
       "storage"
     ],
-    "dimensions": "H: 100cm, W: 160cm, D: 210cm",
+    "dimensions_estimate": "H: 100cm, W: 160cm, D: 210cm",
     "room_suggestions": [
       "Bedroom",
       "Guest Room",
@@ -2856,12 +3199,17 @@
       "Clean lines"
     ],
     "pairing_category": "bed",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:41:13.110812",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Lunel_Bed_Beige_ECOM_1.jpg?v=1772660279"
   },
   {
     "handle": "lyra-media-unit",
     "title": "Lyra Media Unit",
     "type": "",
+    "productCategory": "",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Lyra Media Unit is a rectangular console table featuring a light wood finish and black metal legs. It has two open shelves in the center and two cabinets on either side, each with a woven cane panel insert. The unit offers a blend of modern and natural elements, making it a stylish storage solution.",
     "product_color": "The media unit features a light natural wood finish with woven cane door panels and black metal legs.",
     "colors": [
@@ -2886,7 +3234,7 @@
       "natural",
       "minimalist"
     ],
-    "dimensions": "Estimated dimensions: H: 60cm, W: 150cm, D: 40cm",
+    "dimensions_estimate": "Estimated dimensions: H: 60cm, W: 150cm, D: 40cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -2901,12 +3249,17 @@
       "Elevated legs"
     ],
     "pairing_category": "media-unit",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:55:28.519241",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Lyra_Media_Unit_ECOM.jpg?v=1752254490"
   },
   {
     "handle": "lyra-nightstand",
     "title": "Lyra Nightstand",
     "type": "",
+    "productCategory": "",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Lyra Nightstand features a clean, boxy silhouette with a light wood grain finish, offering a modern and minimalist aesthetic. It includes an open shelf and a drawer with a woven cane front and a sleek black knob, supported by a black metal base that adds a touch of industrial chic.",
     "product_color": "The nightstand is primarily a light, natural wood color with a woven cane drawer front and a black metal base.",
     "colors": [
@@ -2931,7 +3284,7 @@
       "scandinavian",
       "contemporary"
     ],
-    "dimensions": "H: 55cm, W: 50cm, D: 40cm",
+    "dimensions_estimate": "H: 55cm, W: 50cm, D: 40cm",
     "room_suggestions": [
       "Bedroom",
       "Guest Room",
@@ -2946,12 +3299,17 @@
       "Storage compartment"
     ],
     "pairing_category": "nightstand",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:41:18.214919",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Lyra_NS_ECOM_1.png?v=1753143669"
   },
   {
     "handle": "maeve-dining-chair",
     "title": "Maeve Dining Chair",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Maeve Dining Chair features a light-toned wooden frame with a gently curved backrest for comfortable support. Its seat is upholstered in a textured grey fabric, providing a subtle contrast to the light wood and adding a touch of modern elegance to its overall design.",
     "product_color": "The chair features a light, natural wood finish on the frame and a textured grey fabric seat.",
     "colors": [
@@ -2973,7 +3331,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "H: 80cm, W: 50cm, D: 50cm",
+    "dimensions_estimate": "H: 80cm, W: 50cm, D: 50cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -2987,12 +3345,17 @@
       "Simple design"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:55:48.458566",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/MaeveDiningChairECOM1.webp?v=1766189817"
   },
   {
     "handle": "maeve-dining-table",
     "title": "Maeve Dining Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "This dining table features a rectangular tabletop with rounded corners, lending a soft, contemporary feel. The table is supported by four cylindrical legs, creating a clean and minimalist silhouette. The light wood finish enhances its natural appeal, making it a versatile addition to any dining space.",
     "product_color": "The table is a light, natural wood color with visible wood grain.",
     "colors": [
@@ -3013,7 +3376,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "Estimated dimensions: H: 75cm, W: 140cm, D: 80cm",
+    "dimensions_estimate": "Estimated dimensions: H: 75cm, W: 140cm, D: 80cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -3027,12 +3390,17 @@
       "Natural finish"
     ],
     "pairing_category": "dining-table",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:41:22.469401",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Maeve_Dining_Table_ECOM_1.webp?v=1766190020"
   },
   {
     "handle": "maeve-sideboard",
     "title": "Maeve Sideboard",
     "type": "",
+    "productCategory": "",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Maeve Sideboard presents a clean, modern silhouette with its light wood finish and streamlined design. It features a combination of cabinet doors and drawers, offering versatile storage solutions. The piece is elevated by slender legs, adding to its airy and contemporary appeal.",
     "product_color": "The sideboard is a light, natural wood color with visible wood grain texture.",
     "colors": [
@@ -3052,7 +3420,7 @@
       "scandinavian",
       "contemporary"
     ],
-    "dimensions": "H: 80cm, W: 180cm, D: 45cm",
+    "dimensions_estimate": "H: 80cm, W: 180cm, D: 45cm",
     "room_suggestions": [
       "Living Room",
       "Dining Room",
@@ -3066,12 +3434,17 @@
       "Elevated legs"
     ],
     "pairing_category": "credenza",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:55:56.418795",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Maeve_Sideboard.webp?v=1766189973"
   },
   {
     "handle": "magnolia-coffee-table",
     "title": "Magnolia Coffee Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Magnolia Coffee Table features a clean, rectangular silhouette with a white tabletop and a contrasting wood-grain drawer front. Its minimalist design is complemented by tapered wooden legs, adding a touch of mid-century modern charm. The table offers both open shelf space and concealed storage, making it a functional and stylish addition to any living space.",
     "product_color": "The coffee table features a bright white top and sides, a light wood-grain drawer front, and light brown wooden legs.",
     "colors": [
@@ -3094,7 +3467,7 @@
       "minimalist",
       "functional"
     ],
-    "dimensions": "Estimated dimensions: H: 45cm, W: 120cm, D: 60cm",
+    "dimensions_estimate": "Estimated dimensions: H: 45cm, W: 120cm, D: 60cm",
     "room_suggestions": [
       "Living Room",
       "Office",
@@ -3109,12 +3482,17 @@
       "Two-tone design"
     ],
     "pairing_category": "dining-table",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:56:01.114914",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Magnolia_-3_home_office.jpg?v=1752178259"
   },
   {
     "handle": "marcel-sofa-bed",
     "title": "Marcel Sofa Bed",
     "type": "",
+    "productCategory": "",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Marcel Sofa Bed presents a clean, contemporary silhouette with a focus on comfort and versatility. Its squared-off arms and tufted back cushions offer a structured yet inviting appearance, while the light-colored upholstery complements a variety of interior styles. The sofa is elevated by tapered wooden legs, adding a touch of mid-century modern flair.",
     "product_color": "The sofa features a light beige fabric upholstery with a subtle woven texture, complemented by dark brown tapered wooden legs.",
     "colors": [
@@ -3137,7 +3515,7 @@
       "minimalist",
       "scandinavian"
     ],
-    "dimensions": "H: 80cm, W: 190cm, D: 85cm",
+    "dimensions_estimate": "H: 80cm, W: 190cm, D: 85cm",
     "room_suggestions": [
       "Living Room",
       "Guest Room",
@@ -3153,12 +3531,17 @@
       "Tapered legs"
     ],
     "pairing_category": "sofa",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:41:27.480282",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Marcel_Warm_Vanilla_Lifestyle_1.png?v=1770245313"
   },
   {
     "handle": "mariela-coffee-table",
     "title": "Mariela Coffee Table",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Mariela Coffee Table features a round tabletop supported by two chunky, curved legs. The light-toned wood grain is visible, giving it a natural and organic feel. Its simple yet sturdy design makes it a functional and stylish centerpiece for any living space.",
     "product_color": "The coffee table is a light, natural wood color with visible wood grain texture.",
     "colors": [
@@ -3178,7 +3561,7 @@
       "natural",
       "contemporary"
     ],
-    "dimensions": "H: 40cm, W: 90cm, D: 90cm",
+    "dimensions_estimate": "H: 40cm, W: 90cm, D: 90cm",
     "room_suggestions": [
       "Living Room",
       "Lounge",
@@ -3192,12 +3575,17 @@
       "Minimalist design"
     ],
     "pairing_category": "coffee-table",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:56:30.214892",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Mariela_Coffee_Table_ECOM_1.webp?v=1766175520"
   },
   {
     "handle": "mariela-console",
     "title": "Mariela Console",
     "type": "",
+    "productCategory": "",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Mariela Console is a simple yet elegant piece of furniture. It features a rectangular tabletop with rounded edges, supported by sturdy legs and a lower shelf for additional storage or display. The light wood finish gives it a natural and airy feel, making it a versatile addition to any room.",
     "product_color": "The console is a light, natural wood color with visible wood grain.",
     "colors": [
@@ -3219,7 +3607,7 @@
       "natural",
       "simple"
     ],
-    "dimensions": "H: 75cm, W: 90cm, D: 35cm",
+    "dimensions_estimate": "H: 75cm, W: 90cm, D: 35cm",
     "room_suggestions": [
       "Entryway",
       "Living Room",
@@ -3233,12 +3621,17 @@
       "Neutral color"
     ],
     "pairing_category": "console-table",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:56:34.068842",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Mariela_Console_ECOM_1.webp?v=1766176624"
   },
   {
     "handle": "mariela-side-table",
     "title": "Mariela Side Table",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Mariela Side Table features a simple yet elegant design. It has a round tabletop supported by three sturdy, curved legs, creating a balanced and visually appealing silhouette. The light wood finish enhances its natural charm, making it a versatile addition to any room.",
     "product_color": "The side table is a light, natural wood color with a visible wood grain texture.",
     "colors": [
@@ -3258,7 +3651,7 @@
       "natural",
       "contemporary"
     ],
-    "dimensions": "Estimated dimensions: H: 45cm, W: 40cm, D: 40cm",
+    "dimensions_estimate": "Estimated dimensions: H: 45cm, W: 40cm, D: 40cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -3273,12 +3666,17 @@
       "Compact"
     ],
     "pairing_category": "side-table",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:56:38.332547",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Mariela_ECOM_1.jpg?v=1758226377"
   },
   {
     "handle": "marine-dining-chair",
     "title": "Marine Dining Chair",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Marine Dining Chair is a sleek and modern seating option. It features a tall, slightly curved backrest and a padded seat, both upholstered in a smooth, light-colored material. The chair is supported by four slender, tapered black legs, creating a minimalist and elegant silhouette.",
     "product_color": "The chair features a light cream or white upholstery with smooth texture, contrasted by sleek black metal legs.",
     "colors": [
@@ -3299,7 +3697,7 @@
       "contemporary",
       "elegant"
     ],
-    "dimensions": "H: 90cm, W: 45cm, D: 55cm",
+    "dimensions_estimate": "H: 90cm, W: 45cm, D: 55cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -3315,12 +3713,17 @@
       "Easy to clean"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:41:38.230784",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Marine_White_ECOM.png?v=1752257478"
   },
   {
     "handle": "maverick-coffee-table",
     "title": "Maverick Coffee Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Maverick Coffee Table showcases a rectangular silhouette with a rich, warm wood finish. It features a lift-top design that reveals a spacious storage compartment, complemented by an open shelf on one side for displaying books or decor. Tapered legs add a touch of mid-century modern charm to its functional design.",
     "product_color": "The coffee table features a warm, medium-toned brown wood finish with a smooth texture.",
     "colors": [
@@ -3341,7 +3744,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "H: 45cm, W: 120cm, D: 60cm",
+    "dimensions_estimate": "H: 45cm, W: 120cm, D: 60cm",
     "room_suggestions": [
       "Living Room",
       "Office",
@@ -3356,12 +3759,17 @@
       "Rectangular shape"
     ],
     "pairing_category": "dining-table",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:57:01.676210",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Mav-upper.png?v=1759948991"
   },
   {
     "handle": "mellow-sectional",
     "title": "Mellow Sectional",
     "type": "Sofa",
+    "productCategory": "Furniture > Sofa",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "This sectional sofa presents a modern and inviting aesthetic with its clean lines and plush cushions. The vertical channel tufting adds a touch of texture and visual interest, while the rounded bolster pillows soften the overall silhouette. Its modular design and neutral color make it a versatile centerpiece for any living space.",
     "product_color": "The sectional is upholstered in a soft, off-white fabric with a subtle texture, complemented by dark, low-profile legs.",
     "colors": [
@@ -3384,7 +3792,7 @@
       "contemporary",
       "modular"
     ],
-    "dimensions": "H: 75cm, W: 300cm, D: 200cm",
+    "dimensions_estimate": "H: 75cm, W: 300cm, D: 200cm",
     "room_suggestions": [
       "Living Room",
       "Lounge",
@@ -3399,12 +3807,17 @@
       "Low Profile"
     ],
     "pairing_category": "sectional",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:57:23.953265",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/MellowSectionalCreamECOM1Left_fb9d3f01-4cd3-47ac-a391-92bac65941e7.jpg?v=1770668375"
   },
   {
     "handle": "mellow-sofa",
     "title": "Mellow Sofa",
     "type": "Sofa",
+    "productCategory": "Furniture > Sofa",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This sofa features a unique segmented design, creating a plush and inviting seating experience. The rounded armrests and soft, textured fabric contribute to its cozy and modern aesthetic. Two matching throw pillows enhance the overall comfort and visual appeal.",
     "product_color": "The sofa is upholstered in a soft, white boucle fabric with small, dark legs.",
     "colors": [
@@ -3425,7 +3838,7 @@
       "contemporary",
       "soft"
     ],
-    "dimensions": "H: 75cm, W: 220cm, D: 90cm",
+    "dimensions_estimate": "H: 75cm, W: 220cm, D: 90cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -3439,56 +3852,17 @@
       "Includes throw pillows"
     ],
     "pairing_category": "sofa",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:57:28.195698",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Mellow_ECOM_1.jpg?v=1755207767"
-  },
-  {
-    "handle": "mink-velvet-dining-chair",
-    "title": "Mink Velvet Dining Chair",
-    "type": "Kitchen & Dining Room Chairs",
-    "description": "This dining chair features a rounded back and seat upholstered in a rich, vibrant blue velvet. The silhouette is simple and elegant, supported by sleek, black metal legs accented with gold tips, adding a touch of modern sophistication.",
-    "product_color": "The chair is upholstered in a deep blue velvet, complemented by black metal legs with gold accents at the feet.",
-    "colors": [
-      "blue",
-      "black",
-      "gold"
-    ],
-    "primary_color": "blue",
-    "textures": [
-      "velvet",
-      "smooth"
-    ],
-    "materials": [
-      "velvet",
-      "metal"
-    ],
-    "style_tags": [
-      "modern",
-      "contemporary",
-      "minimalist",
-      "glam"
-    ],
-    "dimensions": "H: 85cm, W: 50cm, D: 55cm",
-    "room_suggestions": [
-      "Dining Room",
-      "Living Room",
-      "Bedroom",
-      "Office",
-      "Entryway"
-    ],
-    "key_features": [
-      "Velvet upholstery",
-      "Metal legs",
-      "Rounded back",
-      "Gold accents",
-      "Sleek design"
-    ],
-    "pairing_category": "dining-chair",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Mink_blue_ecom.png?v=1752257747"
   },
   {
     "handle": "mirae-dining-chair",
     "title": "Mirae Dining Chair",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Mirae Dining Chair features a rounded silhouette with a plush, textured seat and backrest, upholstered in a soft, off-white fabric. The chair's frame is constructed from a rich, dark wood, providing a striking contrast and adding a touch of warmth to its overall design. Its minimalist form and inviting texture make it a stylish and comfortable seating option.",
     "product_color": "The chair features a soft, off-white textured fabric on the seat and back, complemented by a dark brown wood frame.",
     "colors": [
@@ -3510,7 +3884,7 @@
       "scandinavian",
       "contemporary"
     ],
-    "dimensions": "H: 75cm, W: 50cm, D: 50cm",
+    "dimensions_estimate": "H: 75cm, W: 50cm, D: 50cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -3524,12 +3898,17 @@
       "Minimalist design"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-02-26T16:30:56.408073",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Mirae_Walnut_ECOM_1.jpg?v=1772138144"
   },
   {
     "handle": "moda-media-unit",
     "title": "Moda Media Unit",
     "type": "",
+    "productCategory": "",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "This media unit features a clean, rectangular silhouette with a white top and shelving. The sides are finished in a dark wood tone, creating a striking contrast. Supported by light wood tapered legs, it offers a blend of modern and mid-century design elements.",
     "product_color": "The media unit is primarily white with dark wood-toned side panels and light natural wood legs.",
     "colors": [
@@ -3551,7 +3930,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "H: 50cm, W: 120cm, D: 40cm",
+    "dimensions_estimate": "H: 50cm, W: 120cm, D: 40cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -3565,12 +3944,18 @@
       "Storage space"
     ],
     "pairing_category": "media-unit",
+    "enriched": true,
+    "enriched_at": "2026-02-09T16:58:04.223727",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Moda_Media_Unit.jpg?v=1752253887"
   },
   {
     "handle": "moro-side-table",
     "title": "Moro Side Table",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Moro_Side_Table_ECOM_1.jpg?v=1758226722",
     "description": "The Moro Side Table features a simple yet elegant design. It has a round tabletop supported by a pedestal base with a slightly curved silhouette. The table's smooth, matte finish gives it a modern and sophisticated look.",
     "product_color": "The side table is a uniform matte black color.",
     "colors": [
@@ -3589,7 +3974,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "Estimated dimensions: H: 45cm, W: 40cm, D: 40cm",
+    "dimensions_estimate": "Estimated dimensions: H: 45cm, W: 40cm, D: 40cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -3603,12 +3988,17 @@
       "Compact size"
     ],
     "pairing_category": "side-table",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Moro_Side_Table_ECOM_1.jpg?v=1758226722"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:03:42.412467"
   },
   {
     "handle": "mysa-dining-table",
     "title": "Mysa Dining Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "Aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Mysa_Dining_Table_ECOM_1.webp?v=1766189419",
     "description": "The Mysa Dining Table showcases a smooth, oval-shaped tabletop crafted from rich, dark wood, creating a warm and inviting atmosphere. Its minimalist design features two sturdy, rectangular legs that provide a solid base while maintaining a clean and contemporary silhouette.",
     "product_color": "The table features a warm, dark brown wood finish with visible wood grain.",
     "colors": [
@@ -3628,7 +4018,7 @@
       "contemporary",
       "scandinavian"
     ],
-    "dimensions": "H: 75cm, W: 180cm, D: 90cm",
+    "dimensions_estimate": "H: 75cm, W: 180cm, D: 90cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -3642,12 +4032,17 @@
       "Sturdy legs"
     ],
     "pairing_category": "dining-table",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Mysa_Dining_Table_ECOM_1.webp?v=1766189419"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:02:27.577967"
   },
   {
     "handle": "naomi-accent-chair",
     "title": "Naomi Accent Chair",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/naomi-accent-chair1.jpg?v=1764192370",
     "description": "This accent chair features a rounded silhouette with a low, enveloping back and integrated arms, creating a cozy and inviting seating experience. The chair is upholstered in a textured fabric and sits atop a pedestal base, giving it a modern and sculptural appearance. Its neutral color allows it to blend seamlessly into a variety of interior styles.",
     "product_color": "The chair is upholstered in a light beige, textured fabric with a subtle, woven appearance.",
     "colors": [
@@ -3668,7 +4063,7 @@
       "minimalist",
       "scandinavian"
     ],
-    "dimensions": "H: 75cm, W: 80cm, D: 75cm",
+    "dimensions_estimate": "H: 75cm, W: 80cm, D: 75cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -3684,12 +4079,16 @@
       "Textured fabric"
     ],
     "pairing_category": "dining-chair",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/naomi-accent-chair1.jpg?v=1764192370"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:02:54.261298"
   },
   {
     "handle": "nest-6-seater",
     "title": "Nest 6 Seater",
     "type": "Sofa",
+    "productCategory": "Furniture > Sofa",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This modular sofa features a clean, contemporary design with a low profile and a boxy silhouette. The sofa is upholstered in a textured, light-colored fabric and is composed of several individual sections that can be arranged in various configurations, making it a versatile piece for any living space.",
     "product_color": "The sofa is upholstered in a light cream or off-white textured fabric.",
     "colors": [
@@ -3710,7 +4109,7 @@
       "modular",
       "minimalist"
     ],
-    "dimensions": "H: 70cm, W: 350cm, D: 100cm",
+    "dimensions_estimate": "H: 70cm, W: 350cm, D: 100cm",
     "room_suggestions": [
       "Living Room",
       "Lounge",
@@ -3725,12 +4124,17 @@
       "Comfortable"
     ],
     "pairing_category": "dining-table",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:41:54.297369",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Nest_Cream_ECOM_1.jpg?v=1768265412"
   },
   {
     "handle": "nora-lift-up-storage-bed",
     "title": "Nora Lift Up Storage Bed",
     "type": "Beds & Bed Frames",
+    "productCategory": "Furniture > Beds & Bed Frames",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Nora Lift Up Storage Bed features a tall, rectangular headboard with button-tufted detailing, upholstered in a light beige fabric. The bed frame is also upholstered in the same fabric, creating a cohesive and elegant look. Its clean lines and neutral color palette evoke a sense of calm and sophistication.",
     "product_color": "The bed is a light beige color with a soft, textured fabric and button tufting on the headboard.",
     "colors": [
@@ -3757,7 +4161,7 @@
       "neutral",
       "minimalist"
     ],
-    "dimensions": "H: 120cm, W: 160cm, D: 210cm",
+    "dimensions_estimate": "H: 120cm, W: 160cm, D: 210cm",
     "room_suggestions": [
       "Bedroom",
       "Guest Room",
@@ -3771,12 +4175,17 @@
       "Clean lines"
     ],
     "pairing_category": "bed",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:41:59.899759",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Nora_Lift-Up_Storage_Bed.png?v=1752078691"
   },
   {
     "handle": "nord-sofa-bed",
     "title": "Nord Sofa Bed",
     "type": "Sofa beds",
+    "productCategory": "Furniture > Sofa beds",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This sofa bed features a clean, contemporary design with a low profile and square silhouette. The light-colored fabric upholstery and button-tufted seat cushions create a comfortable and inviting look. It appears to have a chaise lounge extension on one side, adding to its versatility.",
     "product_color": "The sofa bed is upholstered in a light beige or off-white fabric with a subtle woven texture. It has dark, possibly black, legs.",
     "colors": [
@@ -3798,7 +4207,7 @@
       "minimalist",
       "functional"
     ],
-    "dimensions": "H: 80cm, W: 220cm, D: 90cm",
+    "dimensions_estimate": "H: 80cm, W: 220cm, D: 90cm",
     "room_suggestions": [
       "Living Room",
       "Guest Room",
@@ -3812,12 +4221,17 @@
       "Storage compartment"
     ],
     "pairing_category": "sofa",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:42:09.950659",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Nord_ECOM.png?v=1752518958"
   },
   {
     "handle": "numa-lift-up-storage-bed",
     "title": "Numa Lift Up Storage Bed",
     "type": "Beds & Bed Frames",
+    "productCategory": "Furniture > Beds & Bed Frames",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This bed features a clean, modern design with a fully upholstered frame and headboard. The headboard has softly rounded corners and a recessed detail, adding a touch of elegance. The bed sits low to the ground, giving it a contemporary silhouette.",
     "product_color": "The bed is upholstered in a soft, textured off-white fabric. The bedding is crisp white.",
     "colors": [
@@ -3839,7 +4253,7 @@
       "contemporary",
       "storage"
     ],
-    "dimensions": "H: 90cm, W: 160cm, D: 210cm",
+    "dimensions_estimate": "H: 90cm, W: 160cm, D: 210cm",
     "room_suggestions": [
       "Bedroom",
       "Guest Room",
@@ -3852,12 +4266,18 @@
       "Low profile"
     ],
     "pairing_category": "bed",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:42:15.168443",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Numa_ECOM_1.png?v=1764979222"
   },
   {
     "handle": "ollie-sectional",
     "title": "Ollie Sectional",
     "type": "Sofa beds",
+    "productCategory": "Furniture > Sofa beds",
+    "vendor": "Aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Ollie_Sectional_Lifestyle.jpg?v=1768595003",
     "description": "This sectional sofa features a modular design with wide, comfortable cushions and a low profile, creating a relaxed and inviting atmosphere. The neutral color and clean lines contribute to a modern aesthetic, while the various throw pillows add texture and visual interest. The ottoman section can be moved to either side, allowing for versatile configurations.",
     "product_color": "The sectional is a light beige or off-white color with a subtle textured fabric, complemented by beige and cream throw pillows.",
     "colors": [
@@ -3881,7 +4301,7 @@
       "contemporary",
       "modular"
     ],
-    "dimensions": "Estimated dimensions: H: 80cm, W: 300cm, D: 200cm",
+    "dimensions_estimate": "Estimated dimensions: H: 80cm, W: 300cm, D: 200cm",
     "room_suggestions": [
       "Living Room",
       "Family Room",
@@ -3896,12 +4316,17 @@
       "Comfortable"
     ],
     "pairing_category": "sectional",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Ollie_Sectional_Lifestyle.jpg?v=1768595003"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:04:09.112173"
   },
   {
     "handle": "pouf-ottoman",
     "title": "Pouf Ottoman",
     "type": "",
+    "productCategory": "",
+    "vendor": "Aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/PuffOttomanIvoryECOM1.jpg?v=1770244020",
     "description": "This pouf ottoman features a cylindrical shape with a rounded top, creating a soft and inviting silhouette. Its seamless design and plush texture contribute to a minimalist and comfortable aesthetic, making it a versatile addition to any living space. The ottoman's solid color enhances its clean and contemporary appeal.",
     "product_color": "The pouf is a solid, bright white color with a soft, textured fabric.",
     "colors": [
@@ -3920,7 +4345,7 @@
       "contemporary",
       "soft"
     ],
-    "dimensions": "H: 45cm, W: 35cm, D: 35cm",
+    "dimensions_estimate": "H: 45cm, W: 35cm, D: 35cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -3935,12 +4360,17 @@
       "Plush texture"
     ],
     "pairing_category": "ottoman",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/PuffOttomanIvoryECOM1.jpg?v=1770244020"
+    "enriched": true,
+    "enriched_at": "2026-02-26T16:31:00.930698"
   },
   {
     "handle": "raya-dining-chair",
     "title": "Raya Dining Chair",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "Aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Raya_Dining_Chair_ECOM10.jpg?v=1764725268",
     "description": "The Raya Dining Chair showcases a blend of modern and minimalist design. It features a light-colored, possibly woven, seat cushion supported by a dark-stained wood frame and slender, tapered legs, creating a clean and elegant silhouette.",
     "product_color": "The chair features a light beige or off-white woven seat cushion and dark brown stained wood legs.",
     "colors": [
@@ -3963,7 +4393,7 @@
       "scandinavian",
       "contemporary"
     ],
-    "dimensions": "H: 85cm, W: 50cm, D: 55cm",
+    "dimensions_estimate": "H: 85cm, W: 50cm, D: 55cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -3976,12 +4406,17 @@
       "Minimalist design"
     ],
     "pairing_category": "dining-chair",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Raya_Dining_Chair_ECOM10.jpg?v=1764725268"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:02:31.444891"
   },
   {
     "handle": "rumi-armchair",
     "title": "Rumi Armchair",
     "type": "Sofa",
+    "productCategory": "Furniture > Sofa",
+    "vendor": "Aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Rumi_03.jpg?v=1755901872",
     "description": "The Rumi Armchair presents a rounded silhouette with a low profile, offering a cozy and inviting seating option. Its plush, curved back and seat are upholstered in a textured fabric, resting on a dark wood swivel base, creating a harmonious blend of comfort and modern design.",
     "product_color": "The armchair is upholstered in a soft, off-white boucle fabric and features a dark brown wood base.",
     "colors": [
@@ -4003,7 +4438,7 @@
       "minimalist",
       "scandinavian"
     ],
-    "dimensions": "H: 75cm, W: 85cm, D: 80cm",
+    "dimensions_estimate": "H: 75cm, W: 85cm, D: 80cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -4017,12 +4452,17 @@
       "Comfortable design"
     ],
     "pairing_category": "accent-chair",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Rumi_03.jpg?v=1755901872"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:04:04.946027"
   },
   {
     "handle": "runa-coffee-table",
     "title": "Runa Coffee Table",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Runa-coffee-table2.webp?v=1764194291",
     "description": "The Runa Coffee Table presents a warm and inviting aesthetic with its round silhouette and light wood finish. Its thick, cylindrical legs provide a sturdy base, while the smooth tabletop offers a clean surface for decor or everyday use. The table's simple yet elegant design complements a variety of interior styles.",
     "product_color": "The coffee table features a light, natural wood tone with visible wood grain, creating a warm and organic feel.",
     "colors": [
@@ -4042,7 +4482,7 @@
       "natural",
       "contemporary"
     ],
-    "dimensions": "H: 40cm, W: 90cm, D: 90cm",
+    "dimensions_estimate": "H: 40cm, W: 90cm, D: 90cm",
     "room_suggestions": [
       "Living Room",
       "Sitting Room",
@@ -4056,12 +4496,17 @@
       "Minimalist design"
     ],
     "pairing_category": "coffee-table",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Runa-coffee-table2.webp?v=1764194291"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:03:20.616383"
   },
   {
     "handle": "runa-console",
     "title": "Runa Console",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Runa_Console_2.webp?v=1764192556",
     "description": "The Runa Console features a minimalist design with a light wood finish and a smooth, rounded tabletop. It has two cylindrical legs that provide a sturdy base, creating a clean and contemporary silhouette. The console's simple elegance is enhanced by the natural wood grain and soft, neutral tones.",
     "product_color": "The console is a light, natural wood color with a smooth finish.",
     "colors": [
@@ -4084,7 +4529,7 @@
       "contemporary",
       "natural"
     ],
-    "dimensions": "H: 80cm, W: 120cm, D: 40cm",
+    "dimensions_estimate": "H: 80cm, W: 120cm, D: 40cm",
     "room_suggestions": [
       "Entryway",
       "Living Room",
@@ -4098,12 +4543,17 @@
       "Natural wood finish"
     ],
     "pairing_category": "console-table",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Runa_Console_2.webp?v=1764192556"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:03:25.642506"
   },
   {
     "handle": "runa-dining-table",
     "title": "Runa Dining Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Runa-Dining-Table-1.webp?v=1764195016",
     "description": "The Runa Dining Table presents a clean, rectangular silhouette with rounded corners and substantial, cylindrical legs, exuding a sense of modern simplicity. Crafted from light-toned wood, the table's smooth surface and minimalist design create an inviting space for dining and gathering. The accompanying chairs feature a matching wood frame and a light-colored upholstered seat, complementing the table's understated elegance.",
     "product_color": "The dining table and chairs are made of light-toned wood with a smooth finish, while the chair seats are upholstered in a light beige fabric.",
     "colors": [
@@ -4126,7 +4576,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "H: 75cm, W: 180cm, D: 90cm",
+    "dimensions_estimate": "H: 75cm, W: 180cm, D: 90cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -4141,12 +4591,17 @@
       "Upholstered seats"
     ],
     "pairing_category": "dining-table",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Runa-Dining-Table-1.webp?v=1764195016"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:03:12.256952"
   },
   {
     "handle": "runa-large-sideboard",
     "title": "Runa Large Sideboard",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Runa-Large-Sideboard-1.webp?v=1764194455",
     "description": "The Runa Large Sideboard is a rustic yet refined piece, featuring a light-toned wood construction with visible wood grain. It has four doors with round, minimalist handles and sits on a solid base, offering a blend of storage and style.",
     "product_color": "The sideboard features a light, natural wood tone with visible wood grain, complemented by minimalist round handles.",
     "colors": [
@@ -4167,7 +4622,7 @@
       "minimalist",
       "natural"
     ],
-    "dimensions": "Estimated dimensions: H: 80cm, W: 160cm, D: 45cm",
+    "dimensions_estimate": "Estimated dimensions: H: 80cm, W: 160cm, D: 45cm",
     "room_suggestions": [
       "Living Room",
       "Dining Room",
@@ -4181,12 +4636,17 @@
       "Natural wood finish"
     ],
     "pairing_category": "credenza",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Runa-Large-Sideboard-1.webp?v=1764194455"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:03:07.770234"
   },
   {
     "handle": "runa-round-dining-table",
     "title": "Runa Round Dining Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Runa-Dining-Table-Round-1.webp?v=1764195686",
     "description": "The Runa Round Dining Table showcases a minimalist design with a natural aesthetic. It features a round tabletop made of light-toned wood, supported by three cylindrical legs, creating a sturdy and visually appealing silhouette. The table's clean lines and organic materials lend a sense of warmth and sophistication to any dining space.",
     "product_color": "The table is a light natural wood color, while the chairs have a light beige boucle fabric seat and back with a matching light wood frame.",
     "colors": [
@@ -4210,7 +4670,7 @@
       "modern",
       "natural"
     ],
-    "dimensions": "H: 75cm, W: 120cm, D: 120cm",
+    "dimensions_estimate": "H: 75cm, W: 120cm, D: 120cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -4224,12 +4684,17 @@
       "Three-leg base"
     ],
     "pairing_category": "dining-table",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Runa-Dining-Table-Round-1.webp?v=1764195686"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:03:03.447978"
   },
   {
     "handle": "runa-small-sideboard",
     "title": "Runa Small Sideboard",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Runa-Sideboard-Small-1.webp?v=1764195780",
     "description": "The Runa Small Sideboard features a minimalist design with a natural wood finish. It has a rectangular shape with rounded edges and a simple, clean silhouette. The cabinet doors have a unique circular handle, adding a touch of modern flair to the piece.",
     "product_color": "The sideboard showcases a light, natural wood color with visible wood grain, giving it a warm and organic feel.",
     "colors": [
@@ -4249,7 +4714,7 @@
       "scandinavian",
       "natural"
     ],
-    "dimensions": "Estimated dimensions: H: 80cm, W: 85cm, D: 40cm",
+    "dimensions_estimate": "Estimated dimensions: H: 80cm, W: 85cm, D: 40cm",
     "room_suggestions": [
       "Living Room",
       "Dining Room",
@@ -4263,12 +4728,17 @@
       "Natural wood finish"
     ],
     "pairing_category": "credenza",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Runa-Sideboard-Small-1.webp?v=1764195780"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:03:16.407146"
   },
   {
     "handle": "saville-dining-chair",
     "title": "Saville Dining Chair",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Saville_Dining_Chair_ECOM_1.jpg?v=1760211046",
     "description": "The Saville Dining Chair features a curved, upholstered backrest and seat, offering both comfort and a touch of elegance. Its simple yet refined silhouette is supported by tapered, dark-stained wooden legs, creating a balanced and inviting design. The chair's neutral upholstery makes it a versatile addition to various dining spaces.",
     "product_color": "The chair features a light beige, textured fabric upholstery paired with dark brown, stained wooden legs.",
     "colors": [
@@ -4289,7 +4759,7 @@
       "contemporary",
       "transitional"
     ],
-    "dimensions": "Estimated dimensions: H: 85cm, W: 50cm, D: 55cm",
+    "dimensions_estimate": "Estimated dimensions: H: 85cm, W: 50cm, D: 55cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -4303,12 +4773,17 @@
       "Neutral color"
     ],
     "pairing_category": "dining-chair",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Saville_Dining_Chair_ECOM_1.jpg?v=1760211046"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:03:30.056052"
   },
   {
     "handle": "savino-coffee-table",
     "title": "Savino Coffee Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Savino_ECOM_1.jpg?v=1760040680",
     "description": "The Savino Coffee Table features a round, clear glass top that allows a view of the unique base. The base is constructed from vertical black slats, creating a visually striking, cylindrical silhouette with an open, airy feel. Its modern design makes it a standout piece, perfect for contemporary living spaces.",
     "product_color": "The coffee table features a clear glass top and a black slatted base.",
     "colors": [
@@ -4329,7 +4804,7 @@
       "minimalist",
       "geometric"
     ],
-    "dimensions": "Estimated dimensions: H: 40cm, W: 80cm, D: 80cm",
+    "dimensions_estimate": "Estimated dimensions: H: 40cm, W: 80cm, D: 80cm",
     "room_suggestions": [
       "Living Room",
       "Lounge",
@@ -4344,12 +4819,16 @@
       "Open design"
     ],
     "pairing_category": "dining-table",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Savino_ECOM_1.jpg?v=1760040680"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:03:38.606385"
   },
   {
     "handle": "savoy-arc-counter-stool",
     "title": "Savoy Arc Counter Stool",
     "type": "Bar Stools",
+    "productCategory": "Furniture > Bar Stools",
+    "vendor": "Aykah",
+    "status": "active",
     "description": "The Savoy Arc Counter Stool features a curved backrest and seat upholstered in a light fabric, offering a comfortable and stylish seating option. Its wooden frame, with a warm brown finish, provides sturdy support and complements the fabric, creating a balanced and inviting design.",
     "product_color": "The stool features a light beige fabric upholstery on the seat and backrest, paired with a warm brown wood frame.",
     "colors": [
@@ -4371,7 +4850,7 @@
       "minimalist",
       "scandinavian"
     ],
-    "dimensions": "H: 95cm, W: 45cm, D: 50cm",
+    "dimensions_estimate": "H: 95cm, W: 45cm, D: 50cm",
     "room_suggestions": [
       "Kitchen",
       "Dining Room",
@@ -4387,12 +4866,17 @@
       "Comfortable"
     ],
     "pairing_category": "bar-stool",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:42:19.313833",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Savory_Arc_Counter_Stool_Mocha_ECOM_1.jpg?v=1762482149"
   },
   {
     "handle": "sera-pu-leather-chair",
     "title": "Sera PU Leather Chair",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Sera PU Leather Chair presents a sleek and modern silhouette. It features a gently curved backrest and a subtly contoured seat, both upholstered in smooth black PU leather. The chair is supported by four slender, tapered black metal legs, contributing to its minimalist aesthetic.",
     "product_color": "The chair is entirely black, with a smooth, matte finish on the PU leather and a similar finish on the metal legs.",
     "colors": [
@@ -4412,7 +4896,7 @@
       "contemporary",
       "scandinavian"
     ],
-    "dimensions": "H: 85cm, W: 45cm, D: 50cm",
+    "dimensions_estimate": "H: 85cm, W: 45cm, D: 50cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -4427,12 +4911,17 @@
       "Minimalist design"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:42:30.654552",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Sera_Black_PU_ECOM_1.png?v=1752255865"
   },
   {
     "handle": "sera-velvet-chair-w-black-legs",
     "title": "Sera Velvet Chair w/ Black Legs",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Sera Velvet Chair features a curved back and seat upholstered in a rich green velvet. It is supported by sleek, tapered black metal legs, offering a modern and sophisticated silhouette. The chair's design is both comfortable and stylish, making it a perfect addition to any dining or living space.",
     "product_color": "The chair is upholstered in a deep green velvet with black metal legs.",
     "colors": [
@@ -4454,7 +4943,7 @@
       "minimalist",
       "velvet"
     ],
-    "dimensions": "H: 85cm, W: 50cm, D: 55cm",
+    "dimensions_estimate": "H: 85cm, W: 50cm, D: 55cm",
     "room_suggestions": [
       "Dining Room",
       "Living Room",
@@ -4468,12 +4957,17 @@
       "Comfortable seat"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:42:35.571407",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Sera_Jade_Velvet_LS.jpg?v=1752255930"
   },
   {
     "handle": "sera-velvet-chair-w-oak-legs",
     "title": "Sera Velvet Chair w/ Oak Legs",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This chair features a sleek, modern design with a gently curved backrest that provides comfortable support. The seat is upholstered in a smooth, light grey fabric, complemented by the warm tones of the dark brown, tapered wooden legs. Its minimalist silhouette and neutral color palette make it a versatile addition to any dining or living space.",
     "product_color": "Light grey velvet chair with dark brown tapered oak legs.",
     "colors": [
@@ -4495,7 +4989,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "H: 85cm, W: 50cm, D: 55cm",
+    "dimensions_estimate": "H: 85cm, W: 50cm, D: 55cm",
     "room_suggestions": [
       "Dining Room",
       "Living Room",
@@ -4509,12 +5003,17 @@
       "Minimalist design"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:42:40.632356",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Sera_grey_velvet.jpg?v=1752256338"
   },
   {
     "handle": "sera-velvet-chair-w-veneer-legs",
     "title": "Sera Velvet Chair w/ Veneer Legs",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This chair features a curved silhouette with a seamless transition from the backrest to the seat, upholstered in a rich, jewel-toned velvet. The sleek, tapered legs are made of light-toned wood, providing a subtle contrast to the vibrant upholstery and adding a touch of natural warmth.",
     "product_color": "The chair is upholstered in a deep emerald green velvet, complemented by light brown wooden legs.",
     "colors": [
@@ -4536,7 +5035,7 @@
       "minimalist",
       "mid-century"
     ],
-    "dimensions": "Estimated dimensions: H: 85cm, W: 50cm, D: 55cm",
+    "dimensions_estimate": "Estimated dimensions: H: 85cm, W: 50cm, D: 55cm",
     "room_suggestions": [
       "Dining Room",
       "Living Room",
@@ -4551,12 +5050,17 @@
       "Comfortable seating"
     ],
     "pairing_category": "dining-chair",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:42:51.980155",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Sera_Veneer_Green_ECOM.png?v=1752256903"
   },
   {
     "handle": "sienna-sofa",
     "title": "Sienna Sofa",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Sienna Sofa presents a modern, curved silhouette upholstered in a soft, textured fabric. Its rounded back and seat create a welcoming and comfortable aesthetic, complemented by two round throw pillows for added visual interest.",
     "product_color": "The sofa is upholstered in a soft, off-white boucle fabric, giving it a warm and inviting appearance.",
     "colors": [
@@ -4577,7 +5081,7 @@
       "scandinavian",
       "minimalist"
     ],
-    "dimensions": "Estimated dimensions: H: 75cm, W: 220cm, D: 95cm",
+    "dimensions_estimate": "Estimated dimensions: H: 75cm, W: 220cm, D: 95cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -4592,12 +5096,18 @@
       "Comfortable seating"
     ],
     "pairing_category": "sofa",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:42:57.045425",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Sienna_ECOM_1.jpg?v=1759365612"
   },
   {
     "handle": "solace-dining-chair",
     "title": "Solace Dining Chair",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Solace_Dining_Chair_Lifestyle_1.jpg?v=1760134800",
     "description": "The Solace Dining Chair features a minimalist design with a gently curved backrest and seat upholstered in a light-colored fabric. The chair's frame is crafted from wood with a warm, natural finish, creating a clean and inviting silhouette. Its simple yet elegant aesthetic makes it a versatile addition to any dining space.",
     "product_color": "The chair features a light cream-colored fabric upholstery with a subtle texture, complemented by a warm-toned natural wood frame.",
     "colors": [
@@ -4619,7 +5129,7 @@
       "scandinavian",
       "contemporary"
     ],
-    "dimensions": "Estimated dimensions: H: 80cm, W: 50cm, D: 55cm",
+    "dimensions_estimate": "Estimated dimensions: H: 80cm, W: 50cm, D: 55cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -4634,12 +5144,17 @@
       "Minimalist design"
     ],
     "pairing_category": "dining-chair",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Solace_Dining_Chair_Lifestyle_1.jpg?v=1760134800"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:03:46.729353"
   },
   {
     "handle": "solace-dining-table",
     "title": "Solace Dining Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Solace_Dining_Table_ECOM_1.jpg?v=1760051071",
     "description": "This dining table features a rectangular tabletop with a smooth, warm wood finish. The table's design incorporates tapered legs connected by a horizontal support, creating a clean and minimalist silhouette. Its warm wood tone and simple design make it an inviting and versatile piece.",
     "product_color": "The table is a warm, medium-toned brown wood with a smooth finish.",
     "colors": [
@@ -4658,7 +5173,7 @@
       "scandinavian",
       "contemporary"
     ],
-    "dimensions": "H: 75cm, W: 140cm, D: 80cm",
+    "dimensions_estimate": "H: 75cm, W: 140cm, D: 80cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -4672,12 +5187,17 @@
       "Minimalist design"
     ],
     "pairing_category": "dining-table",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Solace_Dining_Table_ECOM_1.jpg?v=1760051071"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:03:54.955453"
   },
   {
     "handle": "solace-extendable-dining-table",
     "title": "Solace Extendable Dining Table",
     "type": "Kitchen & Dining Room Tables",
+    "productCategory": "Furniture > Kitchen & Dining Room Tables",
+    "vendor": "aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Solace_Extendable_Dining_Table_ECOM_1.jpg?v=1760041846",
     "description": "The Solace Extendable Dining Table features a rectangular tabletop with rounded corners, crafted from rich, dark-toned wood. Its clean lines and tapered legs give it a mid-century modern aesthetic, making it a stylish and functional centerpiece for any dining space.",
     "product_color": "The table is a rich, dark brown with a smooth wood grain texture.",
     "colors": [
@@ -4696,7 +5216,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "H: 75cm, W: 160cm, D: 90cm",
+    "dimensions_estimate": "H: 75cm, W: 160cm, D: 90cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -4710,12 +5230,17 @@
       "Rounded corners"
     ],
     "pairing_category": "dining-table",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Solace_Extendable_Dining_Table_ECOM_1.jpg?v=1760041846"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:03:59.013231"
   },
   {
     "handle": "sorelle-sofa",
     "title": "Sorelle Sofa",
     "type": "Sofa",
+    "productCategory": "Furniture > Sofa",
+    "vendor": "Aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/SorelleBeigeECOM1.jpg?v=1764725507",
     "description": "This sofa features a rounded silhouette with a low profile, exuding a modern and inviting aesthetic. Upholstered in a textured fabric, it rests on a solid wood base that adds a touch of warmth and sophistication to the overall design. The clean lines and minimalist form make it a versatile piece for various interior styles.",
     "product_color": "The sofa is upholstered in a light beige textured fabric and has a light-toned natural wood base.",
     "colors": [
@@ -4737,7 +5262,7 @@
       "contemporary",
       "scandinavian"
     ],
-    "dimensions": "H: 75cm, W: 210cm, D: 90cm",
+    "dimensions_estimate": "H: 75cm, W: 210cm, D: 90cm",
     "room_suggestions": [
       "Living Room",
       "Lounge",
@@ -4751,12 +5276,17 @@
       "Textured fabric"
     ],
     "pairing_category": "sofa",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/SorelleBeigeECOM1.jpg?v=1764725507"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:02:36.109951"
   },
   {
     "handle": "teddy-ottoman",
     "title": "Teddy Ottoman",
     "type": "",
+    "productCategory": "",
+    "vendor": "Aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Teddy_Ottoman_ECOM_1.png?v=1769044649",
     "description": "This ottoman presents a simple, cubic silhouette, upholstered in a textured, off-white fabric. The design is clean and minimalist, with subtle seams defining the edges, giving it a soft, inviting appearance.",
     "product_color": "The ottoman is upholstered in a soft, off-white textured fabric.",
     "colors": [
@@ -4776,7 +5306,7 @@
       "contemporary",
       "casual"
     ],
-    "dimensions": "Estimated dimensions: H: 40cm, W: 40cm, D: 40cm",
+    "dimensions_estimate": "Estimated dimensions: H: 40cm, W: 40cm, D: 40cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -4791,12 +5321,17 @@
       "Versatile"
     ],
     "pairing_category": "ottoman",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Teddy_Ottoman_ECOM_1.png?v=1769044649"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:02:41.280036"
   },
   {
     "handle": "tova-dining-chair",
     "title": "Tova Dining Chair",
     "type": "Kitchen & Dining Room Chairs",
+    "productCategory": "Furniture > Kitchen & Dining Room Chairs",
+    "vendor": "aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Tova_DC_ECOM_1.jpg?v=1762566681",
     "description": "The Tova Dining Chair presents a clean and contemporary silhouette. It features a rectangular backrest and seat upholstered in a light fabric, supported by a simple, straight-legged wooden frame. The chair's design emphasizes minimalism and functionality, making it a versatile addition to any dining space.",
     "product_color": "The chair features a light beige fabric upholstery and a light natural wood frame.",
     "colors": [
@@ -4817,7 +5352,7 @@
       "scandinavian",
       "contemporary"
     ],
-    "dimensions": "H: 85cm, W: 45cm, D: 50cm",
+    "dimensions_estimate": "H: 85cm, W: 45cm, D: 50cm",
     "room_suggestions": [
       "Dining Room",
       "Kitchen",
@@ -4831,12 +5366,16 @@
       "Lightweight"
     ],
     "pairing_category": "dining-chair",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Tova_DC_ECOM_1.jpg?v=1762566681"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:03:50.947657"
   },
   {
     "handle": "tracy-lift-up-storage-bed",
     "title": "Tracy Lift Up Storage Bed",
     "type": "",
+    "productCategory": "",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This bed features a tall, rectangular headboard upholstered in a deep blue fabric with a diamond-tufted design and silver nailhead trim along the edges. The bed frame is also upholstered in the same blue fabric, creating a cohesive and luxurious look. The overall design exudes sophistication and comfort, making it a focal point in any bedroom.",
     "product_color": "The bed is primarily a deep, rich blue, with silver nailhead trim along the headboard's edges. The bedding is mostly white, with a textured off-white throw pillow.",
     "colors": [
@@ -4862,7 +5401,7 @@
       "elegant",
       "tufted"
     ],
-    "dimensions": "H: 140cm, W: 180cm, D: 210cm",
+    "dimensions_estimate": "H: 140cm, W: 180cm, D: 210cm",
     "room_suggestions": [
       "Bedroom",
       "Master Bedroom",
@@ -4877,12 +5416,18 @@
       "Tall headboard"
     ],
     "pairing_category": "bed",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:43:02.860460",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Tracy_Blue_Lift_Up_Storage_Beds.jpg?v=1752089685"
   },
   {
     "handle": "veyra-loveseat",
     "title": "Veyra Loveseat",
     "type": "Sofa",
+    "productCategory": "Furniture > Sofa",
+    "vendor": "Aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Verya_LS_ECOM_1_5e2bcb50-69ea-41dc-b563-f50b08d36e7d.jpg?v=1764984979",
     "description": "The Veyra Loveseat features a cozy, inviting design with a rounded silhouette and plush cushions. Upholstered in a textured fabric, it includes two matching throw pillows for added comfort and style. Its compact size makes it ideal for smaller spaces, while its neutral color ensures it complements a variety of decor styles.",
     "product_color": "The loveseat is upholstered in a soft, off-white textured fabric, complemented by matching throw pillows and dark, barely visible legs.",
     "colors": [
@@ -4906,7 +5451,7 @@
       "cozy",
       "neutral"
     ],
-    "dimensions": "H: 75cm, W: 160cm, D: 85cm",
+    "dimensions_estimate": "H: 75cm, W: 160cm, D: 85cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -4922,12 +5467,17 @@
       "Comfortable cushions"
     ],
     "pairing_category": "sofa",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Verya_LS_ECOM_1_5e2bcb50-69ea-41dc-b563-f50b08d36e7d.jpg?v=1764984979"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:02:45.455583"
   },
   {
     "handle": "veyra-sofa",
     "title": "Veyra Sofa",
     "type": "Sofa",
+    "productCategory": "Furniture > Sofa",
+    "vendor": "Aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Verya_Sofa_ECOM_1.jpg?v=1764727812",
     "description": "The Veyra sofa presents a cozy and inviting silhouette with its rounded arms and plush cushions. Upholstered in a textured, light-colored fabric, it offers a comfortable seating experience and a relaxed aesthetic. The sofa is complemented by two matching throw pillows, enhancing its overall appeal.",
     "product_color": "The sofa is upholstered in a textured, off-white fabric with subtle variations in tone, complemented by dark, low-profile legs.",
     "colors": [
@@ -4950,7 +5500,7 @@
       "cozy",
       "neutral"
     ],
-    "dimensions": "H: 80cm, W: 220cm, D: 90cm",
+    "dimensions_estimate": "H: 80cm, W: 220cm, D: 90cm",
     "room_suggestions": [
       "Living Room",
       "Bedroom",
@@ -4965,12 +5515,16 @@
       "Comfortable seating"
     ],
     "pairing_category": "sofa",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Verya_Sofa_ECOM_1.jpg?v=1764727812"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:02:49.613675"
   },
   {
     "handle": "willow-grey-counter-stool",
     "title": "Willow Grey Counter Stool",
     "type": "Bar Stools",
+    "productCategory": "Furniture > Bar Stools",
+    "vendor": "aykah",
+    "status": "active",
     "description": "The Willow Grey Counter Stool features a sleek, modern design with a molded grey seat that gently curves for comfort. Its light wood frame is composed of elegantly arched legs, connected by a black metal support bar, creating a visually appealing and sturdy structure.",
     "product_color": "The stool features a smooth, matte grey seat paired with a light-toned natural wood frame and a black metal footrest.",
     "colors": [
@@ -4993,7 +5547,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "H: 65cm, W: 45cm, D: 40cm",
+    "dimensions_estimate": "H: 65cm, W: 45cm, D: 40cm",
     "room_suggestions": [
       "Kitchen",
       "Dining Room",
@@ -5007,12 +5561,17 @@
       "Lightweight"
     ],
     "pairing_category": "bar-stool",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:43:07.563611",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/products/Willow_Grey_ECOM.png?v=1752170874"
   },
   {
     "handle": "willow-white-counter-stool",
     "title": "Willow White Counter Stool",
     "type": "Bar Stools",
+    "productCategory": "Furniture > Bar Stools",
+    "vendor": "aykah",
+    "status": "active",
     "description": "This counter stool features a sleek, minimalist design with a curved white seat that offers a comfortable and stylish place to sit. The light wood legs are angled outward, providing stability and a touch of natural warmth, while the black metal footrest adds a modern accent.",
     "product_color": "The stool features a smooth, matte white seat, light-toned natural wood legs, and a black metal footrest.",
     "colors": [
@@ -5035,7 +5594,7 @@
       "minimalist",
       "contemporary"
     ],
-    "dimensions": "Estimated dimensions: H: 65cm, W: 45cm, D: 40cm",
+    "dimensions_estimate": "Estimated dimensions: H: 65cm, W: 45cm, D: 40cm",
     "room_suggestions": [
       "Kitchen",
       "Dining Room",
@@ -5051,12 +5610,18 @@
       "Lightweight"
     ],
     "pairing_category": "bar-stool",
+    "enriched": true,
+    "enriched_at": "2026-03-17T14:43:12.253287",
     "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/products/Willow_White_ECOM.png?v=1752170686"
   },
   {
     "handle": "zir-lift-up-storage-bed",
     "title": "Zir Lift Up Storage Bed",
     "type": "Beds & Bed Frames",
+    "productCategory": "Furniture > Beds & Bed Frames",
+    "vendor": "Aykah",
+    "status": "active",
+    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Zir_Lift_Up_Storage_Bed_Grey_ECOM_1.jpg?v=1764254067",
     "description": "The Zir Lift-Up Storage Bed features a clean, modern design with a rectangular headboard and a low-profile frame. The bed is upholstered in a textured grey fabric, giving it a sophisticated and contemporary look. Its simple silhouette and neutral color make it a versatile addition to any bedroom.",
     "product_color": "The bed is upholstered in a textured grey fabric.",
     "colors": [
@@ -5078,7 +5643,7 @@
       "minimalist",
       "storage"
     ],
-    "dimensions": "H: 110cm, W: 160cm, D: 210cm",
+    "dimensions_estimate": "H: 110cm, W: 160cm, D: 210cm",
     "room_suggestions": [
       "Bedroom"
     ],
@@ -5088,6 +5653,7 @@
       "Upholstered headboard"
     ],
     "pairing_category": "bed",
-    "primary_image": "https://cdn.shopify.com/s/files/1/0272/0658/2390/files/Zir_Lift_Up_Storage_Bed_Grey_ECOM_1.jpg?v=1764254067"
+    "enriched": true,
+    "enriched_at": "2026-02-09T17:02:58.508436"
   }
 ]

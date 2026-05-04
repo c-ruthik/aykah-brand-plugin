@@ -1,0 +1,249 @@
+{
+    "pairing": {
+        "dining-chair": [
+            "dining-table",
+            "sideboard",
+            "buffet",
+            "bar-cart"
+        ],
+        "dining-table": [
+            "dining-chair",
+            "sideboard",
+            "buffet",
+            "pendant-light"
+        ],
+        "sofa": [
+            "coffee-table",
+            "side-table",
+            "accent-chair",
+            "floor-lamp",
+            "media-console"
+        ],
+        "sectional": [
+            "coffee-table",
+            "side-table",
+            "accent-chair",
+            "floor-lamp",
+            "ottoman"
+        ],
+        "accent-chair": [
+            "side-table",
+            "floor-lamp",
+            "ottoman",
+            "bookshelf"
+        ],
+        "lounge-chair": [
+            "side-table",
+            "floor-lamp",
+            "ottoman",
+            "accent-table"
+        ],
+        "coffee-table": [
+            "sofa",
+            "sectional",
+            "accent-chair",
+            "rug"
+        ],
+        "side-table": [
+            "sofa",
+            "accent-chair",
+            "bed",
+            "floor-lamp"
+        ],
+        "console-table": [
+            "mirror",
+            "table-lamp",
+            "decorative-objects",
+            "wall-art"
+        ],
+        "credenza": [
+            "table-lamp",
+            "decorative-objects",
+            "wall-art",
+            "mirror"
+        ],
+        "media-console": [
+            "sofa",
+            "sectional",
+            "floor-lamp",
+            "decorative-objects"
+        ],
+        "bed": [
+            "nightstand",
+            "dresser",
+            "bench",
+            "floor-lamp"
+        ],
+        "nightstand": [
+            "bed",
+            "table-lamp",
+            "decorative-objects"
+        ],
+        "dresser": [
+            "bed",
+            "mirror",
+            "decorative-objects",
+            "table-lamp"
+        ],
+        "desk": [
+            "desk-chair",
+            "table-lamp",
+            "bookshelf",
+            "storage"
+        ],
+        "desk-chair": [
+            "desk",
+            "bookshelf",
+            "floor-lamp"
+        ],
+        "bookshelf": [
+            "accent-chair",
+            "floor-lamp",
+            "decorative-objects"
+        ],
+        "ottoman": [
+            "sofa",
+            "sectional",
+            "accent-chair",
+            "lounge-chair"
+        ],
+        "bench": [
+            "bed",
+            "console-table",
+            "dining-table"
+        ],
+        "bar-stool": [
+            "kitchen-island",
+            "bar-cart",
+            "counter"
+        ],
+        "rug": [
+            "sofa",
+            "sectional",
+            "coffee-table",
+            "dining-table",
+            "bed"
+        ]
+    },
+    "categoryMapping": {
+        "seating": [
+            "sofa",
+            "sectional",
+            "accent-chair",
+            "lounge-chair",
+            "dining-chair",
+            "desk-chair",
+            "bar-stool",
+            "ottoman",
+            "bench"
+        ],
+        "tables": [
+            "coffee-table",
+            "side-table",
+            "console-table",
+            "dining-table",
+            "desk",
+            "nightstand"
+        ],
+        "storage": [
+            "credenza",
+            "media-console",
+            "dresser",
+            "bookshelf",
+            "sideboard",
+            "buffet"
+        ],
+        "beds": [
+            "bed"
+        ],
+        "lighting": [
+            "floor-lamp",
+            "table-lamp",
+            "pendant-light"
+        ],
+        "rugs": [
+            "rug"
+        ],
+        "decor": [
+            "mirror",
+            "wall-art",
+            "decorative-objects",
+            "plant"
+        ]
+    },
+    "styleCompatibility": {
+        "modern": [
+            "modern",
+            "contemporary",
+            "minimalist",
+            "scandinavian"
+        ],
+        "traditional": [
+            "traditional",
+            "classic",
+            "transitional",
+            "farmhouse"
+        ],
+        "industrial": [
+            "industrial",
+            "modern",
+            "rustic",
+            "loft"
+        ],
+        "mid-century": [
+            "mid-century",
+            "modern",
+            "scandinavian",
+            "retro"
+        ],
+        "bohemian": [
+            "bohemian",
+            "eclectic",
+            "global",
+            "traditional"
+        ],
+        "coastal": [
+            "coastal",
+            "transitional",
+            "scandinavian",
+            "relaxed"
+        ],
+        "scandinavian": [
+            "scandinavian",
+            "modern",
+            "minimalist",
+            "mid-century"
+        ]
+    },
+    "colorHarmony": {
+        "neutral": [
+            "neutral",
+            "warm",
+            "cool",
+            "earth"
+        ],
+        "warm": [
+            "warm",
+            "neutral",
+            "earth",
+            "terracotta"
+        ],
+        "cool": [
+            "cool",
+            "neutral",
+            "blue",
+            "gray"
+        ],
+        "earth": [
+            "earth",
+            "warm",
+            "neutral",
+            "green"
+        ],
+        "bold": [
+            "bold",
+            "neutral",
+            "contrast"
+        ]
+    }
+}

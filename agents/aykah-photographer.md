@@ -39,8 +39,10 @@ You do not change the scene plan. You add craft on top, then assemble the final 
 - The **engine** (cli / mcp) and **model** (nano_banana_2 / soul_2 / etc.)
 - The **aspect ratio** (16:9 / 9:16 / 1:1 / 4:5 / 3:4)
 - The **quality** (4K / 1080p / 720p)
-- **`reference_uuids[]`** — the full array of UUIDs returned from `media_upload` + `media_confirm`. ALL of these go into the `medias[]` array of the engine call. More references = stronger product fidelity.
-- **`reference_count`** — how many reference images were uploaded (use this in the prompt's lock line: "Match all <N> attached references EXACTLY").
+- **`reference_mode`** — one of `upload`, `soul-id`, `both`. Determines what gets embedded in the prompt and what the parent passes to the engine.
+- **`reference_uuids[]`** — only set when `reference_mode` is `upload` or `both`. The full array of UUIDs returned from `media_upload` + `media_confirm`. ALL of these go into the `medias[]` array of the engine call. More references = stronger product fidelity.
+- **`reference_count`** — how many reference images were uploaded (use this in the prompt's lock line: "Match all <N> attached references EXACTLY"). Zero when `reference_mode` is `soul-id`.
+- **`soul_id_tag`** — only set when `reference_mode` is `soul-id` or `both`. The Higgsfield character tag (e.g. `@aires_dining_chair`). Embed ONCE in the HERO PRODUCT LOCK opening sentence as a character anchor — NOT repeatedly throughout the prompt.
 - **`angle`** (HARD LOCK) — front / three-quarter / side / back / closeup / cutout / hero. The user explicitly chose this. Camera position MUST match. No drift.
 - **`scene_set` flag + `camera_variations[]`** — if scene_set is true, you assemble N prompts (one per camera_variations entry) sharing the room/lighting/palette and varying only camera position, lens, and framing.
 - The **combo count** (0 / 1-2 / 3+)
@@ -245,11 +247,18 @@ Every prompt must contain these (from prompt-pattern's `mandatory_blocks`):
 
 6. **Lighting + camera + aesthetic reference** (1–2 sentences). Specify direction + quality + Kelvin + lens + aperture + film stock. For LIFESTYLE: light MUST be soft and diffused through sheer curtains — NEVER harsh direct sunlight, NEVER diagonal shadow beams across walls or floor. For STUDIO: describe light QUALITY only (soft, even, diffused) — NEVER mention equipment names.
 
-7. **Reference-image lock line** — ALWAYS end the body of the prompt with this sentence, parameterized by `reference_count`:
+7. **Reference-image lock line** — varies by `reference_mode`:
 
-   > *"CRITICAL: Match all <N> attached product reference images EXACTLY — same materials, same colors, same textures, same joinery, same proportions, same stitching, same wood grain, same fabric weave. The generated product must be IDENTICAL across every angle to all <N> references — front, side, back, three-quarter, closeup. Do not reinterpret. Do not stylize. Do not soften details."*
+   - **`upload` mode (`reference_count` ≥ 1):**
+     > *"CRITICAL: Match all <N> attached product reference images EXACTLY — same materials, same colors, same textures, same joinery, same proportions, same stitching, same wood grain, same fabric weave. The generated product must be IDENTICAL across every angle to all <N> references — front, side, back, three-quarter, closeup. Do not reinterpret. Do not stylize. Do not soften details."*
 
-   Replace `<N>` with the actual `reference_count` (e.g., 5). The reinforcement of "all N" + listing the angles + explicit anti-stylization keeps Higgsfield from drifting on materials.
+   - **`soul-id` mode (no uploaded references, only the `@<tag>`):**
+     > *"CRITICAL: Match the `@<soul_id_tag>` character lock EXACTLY — same materials, same colors, same textures, same joinery, same proportions. The generated product must be IDENTICAL to the trained character. Do not reinterpret. Do not stylize."*
+
+   - **`both` mode (uploaded refs AND a soul-id tag):**
+     > *"CRITICAL: Match the `@<soul_id_tag>` character lock AND all <N> attached product reference images EXACTLY — same materials, same colors, same textures, same joinery, same proportions, same stitching, same wood grain, same fabric weave. The generated product must be IDENTICAL across every angle. Do not reinterpret. Do not stylize. Do not soften details."*
+
+   In `soul-id` and `both` modes, ALSO embed the `@<soul_id_tag>` ONCE in the HERO PRODUCT LOCK opening sentence (e.g. `HERO PRODUCT LOCK: @aires_dining_chair, Aires Dining Chair upholstered in soft moonlight off-white boucle...`). Do NOT repeat the tag throughout the prompt — once at the top is enough.
 
    The user's chosen angle goes earlier in the prompt (in the camera/lighting block) — the lock line is about MATERIAL fidelity, not camera angle.
 
