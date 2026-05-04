@@ -1,8 +1,8 @@
-# Local Image Resolver — folder validation + multi-image upload
+# Local Image Resolver — auto-resolve from ecom-images + multi-image upload
 
-How `/aykah:image` handles user-provided reference image folders. The user pastes a folder path; the skill scans it, confirms with the user, uploads all images to Higgsfield, and passes the UUIDs to the photographer agent.
+How `/aykah:image` finds and uploads product reference images. The skill **auto-resolves the reference folder from the product handle + variant** using the local ecom-images library at `~/Downloads/Product_Images/ecom-images/`. No folder path question needed in the common case.
 
-This replaces the previous Shopify-URL-based reference flow. **Higgsfield gets visual references from the user's local files, not from the Shopify CDN.**
+This replaces both the Shopify-URL-based flow and the earlier "ask for folder path every time" flow. **Default behavior: auto-resolve. Manual override: `--refs <path>`.**
 
 ---
 
@@ -14,41 +14,73 @@ The user has high-quality product photos on their laptop, organized by product h
 
 ---
 
-## The folder input flow (Step 2.5b in SKILL.md)
+## The auto-resolution flow (Step 2.5b in SKILL.md)
 
-### Validation sequence
+### Resolution sequence
 
-1. **Path exists and is a directory?**
-   - Use `bash test -d <path>` or equivalent.
-   - If not, ask: *"That path doesn't exist or isn't a folder. Paste the full path again."*
-   - If user pasted with `~` (home shorthand), expand it before checking.
-   - If user pasted with quotes (`"path with spaces"`), strip them.
+1. **Load category mapping:**
+   ```
+   data/category-mapping.json → category_to_folder
+   ```
+   Maps `pairing_category` (from catalog) to the ecom-images subfolder name. Example mappings: `dining-chair` → `dining-chairs`, `sofa` → `sofas-and-loveseats`, `coffee-table` → `coffee-tables`.
 
-2. **Scan for image files (case-insensitive):**
+2. **Look up the hero product's pairing_category in `catalog.json`.**
+
+3. **Build the product folder path:**
+   ```
+   ~/Downloads/Product_Images/ecom-images/<mapped-category-folder>/<product-handle>/
+   ```
+   Example for `aires-dining-chair`:
+   ```
+   ~/Downloads/Product_Images/ecom-images/dining-chairs/aires-dining-chair/
+   ```
+
+4. **List variant subfolders** inside that product folder. Each subfolder is a colorway/material variant (e.g. `moonlight-boucle/`, `almond-cream/`, `espresso-bean/`).
+
+5. **Pick the variant:**
+   - If user named a variant in initial request (kebab-cased match), use it.
+   - If only one variant exists, use it silently.
+   - If multiple variants exist and user didn't pick, ask:
+     *"Variant? [moonlight-boucle / almond-cream / espresso-bean]"*
+
+6. **Resolve final variant folder path:**
+   ```
+   ~/Downloads/Product_Images/ecom-images/<category-folder>/<handle>/<variant>/
+   ```
+
+7. **Scan for image files (case-insensitive):**
    - Extensions accepted: `.jpg`, `.jpeg`, `.png`, `.webp`
-   - Top-level only by default — do NOT recurse into subfolders unless user opts in.
-   - Skip hidden files (`.DS_Store`, `._*`, etc.).
-   - Skip thumbnail/resized variants if obvious from naming (`*-thumb.jpg`, `*-150x150.jpg`).
+   - Top-level only — variant folders flat by convention.
+   - Skip hidden files (`.DS_Store`, `._*`).
+   - Files follow naming: `<handle>-<variant>-<angle>.jpg` where angle ∈ {front, side, back, angle, closeup}.
 
-3. **Count check:**
-   - 0 images at top level → ask: *"No images at top level of `<folder>`. Want me to recurse into subfolders? [y/n]"*
-     - If yes, recurse one level deep (don't go deeper without explicit ask).
-     - If still 0, ask for a different folder.
-   - 1–3 images → confirm and warn: *"Found 2 images. More references = better match — 4–5 is ideal. Continue with 2, or point me to a folder with more? [continue/different]"*
-   - 4–10 images → ideal. Confirm count and proceed.
-   - 11+ images → confirm but cap at 10: *"Found 23 images. I'll upload the first 10 (more isn't always better — Higgsfield weights early images more heavily). OK? [y/n]"*
+8. **User confirmation in one line:**
+   *"Resolved 5 images at `~/Downloads/Product_Images/ecom-images/dining-chairs/aires-dining-chair/moonlight-boucle/`. Uploading all 5 as product references."*
 
-4. **User confirmation:**
-   - Always confirm count and folder back to the user in one line before uploading.
-   - Example: *"Found 5 images in `~/Downloads/Product_Images/ecom-images/dining-chairs/aires-dining-chair/moonlight-boucle/`. Uploading all 5 as product references. Continue? [y/n]"*
+### Fallback chain
+
+If steps fail, fall through in order:
+
+1. **`pairing_category` not in mapping** → scan ALL ecom-images category folders for a matching handle subfolder. If found in any, use it.
+2. **Handle folder doesn't exist anywhere** → ask user manually: *"No reference images found for `<handle>` under any category. Paste a folder path manually:"*
+3. **Variant folder empty** → list other available variants, ask user to pick a different one or paste a manual path.
+
+### Manual override
+
+User can bypass auto-resolution with `--refs <path>` flag. Example:
+```
+/aykah:image aires-dining-chair lifestyle three-quarter --refs ~/Downloads/special-shoot/
+```
+When `--refs` is set, skip steps 1–7 and use the user-provided folder directly. Still validate the folder exists and has at least 1 image.
 
 ### Edge cases
 
-- **Spaces in path:** strip surrounding quotes, accept either escaped (`\ `) or quoted (`"path with spaces"`).
-- **Symlinks:** follow them. If symlink target doesn't exist, treat as missing path.
-- **Permission denied:** ask user to fix permissions or pick a different folder.
-- **Mixed extensions:** include all supported extensions; don't filter to one type.
-- **Folder with non-image files mixed in:** silently ignore non-image files; don't list them.
+- **Variant folder names with spaces/casing:** the ecom-images library mostly uses kebab-case lower (`silver-mist`) but a few have spaces or capitalization (`Silver Mist`, `Beige`). Normalize both directions: when user types `silver-mist`, also try `Silver Mist`, `silver mist`, `silvermist`. Case-insensitive folder matching.
+- **Symlinks:** follow them. If symlink target doesn't exist, fall through to fallback chain.
+- **Permission denied:** surface and ask user to fix or use `--refs` override.
+- **Mixed extensions in variant folder:** include all supported extensions; don't filter.
+- **Non-image files mixed in:** silently ignore.
+- **Hero is a CUSTOM product / not in catalog:** auto-resolution can't work — require `--refs` override or describe-only mode.
 
 ---
 

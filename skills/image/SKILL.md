@@ -176,9 +176,8 @@ Before I generate (engine: <CLI or MCP>), I need a few things:
   4. Room? [from product's room_suggestions, or describe]
   5. People? [0 / 1 / 2-4]   (if 1+, ask: Soul ID OR generic description)
   6. Angle? [front / three-quarter / side / back / closeup / cutout / hero]
-  7. Reference images folder?
-     [paste the FULL path to a local folder — I'll upload every image in it
-      as product references. More refs = more accurate match.]
+  7. Variant? [list ONLY the variant subfolders found under the product's auto-resolved
+     ecom-images folder — e.g. for aires-dining-chair: moonlight-boucle / almond-cream / espresso-bean]
   8. How many scenes? [1 / 2 / 3 / 4 ...]
      (if >1: triggers Scene Set mode — one room, N camera variations)
   9. Model? [list from chosen engine's available_models]
@@ -191,7 +190,7 @@ Before I generate (engine: <CLI or MCP>), I need a few things:
 Before asking, scan the user's initial prompt for:
 
 - **Angle keywords** — `front`, `three-quarter` / `3/4` / `angle`, `side`, `back`, `closeup` / `detail`, `cutout`, `hero`. If found, skip Q6 and confirm in one line: *"Angle: three-quarter (parsed from your request)."*
-- **Folder paths** — anything starting with `/`, `~/`, or matching `--refs <path>`. If found, skip Q7.
+- **Variant names** — if the user names a variant in their initial request (e.g. "moonlight boucle aires", "silver mist mellow"), kebab-case it and use it as the variant directly — skip Q7. Manual folder override still possible via `--refs <path>` flag (rare).
 - **Scene count** — `5 scenes`, `3 angles`, `--count 4`. If found, skip Q8.
 - **Product handle** — if the user names a handle that exists in `catalog.json`, skip Q2.
 
@@ -211,15 +210,30 @@ If the user named a product handle:
 - Look it up in `data/catalog.json`. If not found, surface immediately: *"`<handle>` is not in the catalog. Did you mean `<closest-3-matches>`? Or describe the product manually."*
 - Do NOT silently invent product metadata.
 
-### 2.5b — Reference folder validation
+### 2.5b — Auto-resolve reference folder from product handle + variant
 
-The user provided a folder path. Run these checks:
+**Default:** the skill resolves the reference folder automatically from the local ecom-images library — no folder path question needed.
 
-1. Path exists and is a directory? If not, ask again.
-2. Scan top-level for `.jpg`, `.jpeg`, `.png`, `.webp` files (case-insensitive).
-3. If 0 images found at top level, ask if they want subfolder recursion.
-4. Confirm count back to user in one line: *"Found 5 images in `<folder>`. Uploading all 5 as product references. Continue? [y/n]"*
-5. If user says no, ask for a different folder.
+Resolution sequence:
+
+1. Load `data/category-mapping.json` to get the `category_to_folder` map.
+2. Load the hero product's `pairing_category` from `catalog.json`.
+3. Look up the mapped folder name (e.g. `dining-chair` → `dining-chairs`).
+4. Build the product folder path:
+   ```
+   ~/Downloads/Product_Images/ecom-images/<category-folder>/<product-handle>/
+   ```
+5. List the variant subfolders inside that path (e.g. `moonlight-boucle/`, `almond-cream/`, `espresso-bean/`).
+6. **If multiple variants exist** and the user didn't name one in their initial request, ask:
+   *"Variant? [moonlight-boucle / almond-cream / espresso-bean]"*
+7. **If only one variant exists**, use it silently.
+8. **If zero variants found**, fall back to scanning all category folders for the handle. If still nothing, ask user for a manual path.
+9. **If product folder doesn't exist at all** (handle not in ecom-images), surface and ask for a manual path: *"No reference images found for `<handle>` under any category. Paste a folder path manually:"*
+10. Once variant is chosen, scan the resolved variant folder for `.jpg / .jpeg / .png / .webp` files at top level.
+11. Confirm back to user in one line: *"Resolved 5 images at `<path>`. Uploading all 5 as references."*
+12. Proceed to upload (Step 2.5c).
+
+**Manual override:** if the user passes `--refs <path>`, skip the auto-resolution and use their path directly (still validates folder exists + has images).
 
 Detailed logic in `references/local-image-resolver.md`.
 

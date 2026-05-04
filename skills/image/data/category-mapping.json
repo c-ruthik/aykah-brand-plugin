@@ -1,0 +1,49 @@
+{
+  "_comment": "Maps catalog.pairing_category to ecom-images subfolder. Used for auto-resolving local product reference images by handle.",
+  "_base_path": "~/Downloads/Product_Images/ecom-images",
+  "_path_pattern": "<base>/<category-folder>/<product-handle>/<variant-name>/<file>.jpg",
+  "_last_updated": "2026-05-04",
+
+  "category_to_folder": {
+    "accent-chair": "sofas-and-loveseats",
+    "bar-stool": "counter-stools",
+    "bed": "beds",
+    "bench": "ottomans",
+    "bookshelf": "sideboards-and-shelves",
+    "coffee-table": "coffee-tables",
+    "console-table": "sideboards-and-shelves",
+    "credenza": "sideboards-and-shelves",
+    "dining-chair": "dining-chairs",
+    "dining-table": "dining-tables",
+    "dresser": "sideboards-and-shelves",
+    "media-unit": "media-units",
+    "nightstand": "side-tables",
+    "ottoman": "ottomans",
+    "sectional": "sofas-and-loveseats",
+    "side-table": "side-tables",
+    "sofa": "sofas-and-loveseats"
+  },
+
+  "_fallback_rule": "If pairing_category is missing or not in the map, fall back to scanning all category folders for a matching <product-handle> subfolder. If still not found, ask user for the path manually.",
+
+  "_filename_convention": "Files inside variant folders follow: <product-handle>-<variant-name>-<angle>.jpg. Angles: front, side, back, angle (= three-quarter), closeup (= detail).",
+
+  "_example_resolution": {
+    "input": {
+      "handle": "aires-dining-chair",
+      "variant": "moonlight-boucle"
+    },
+    "lookup": {
+      "catalog_pairing_category": "dining-chair",
+      "mapped_folder": "dining-chairs"
+    },
+    "resolved_path": "~/Downloads/Product_Images/ecom-images/dining-chairs/aires-dining-chair/moonlight-boucle/",
+    "expected_files": [
+      "aires-dining-chair-moonlight-boucle-front.jpg",
+      "aires-dining-chair-moonlight-boucle-side.jpg",
+      "aires-dining-chair-moonlight-boucle-back.jpg",
+      "aires-dining-chair-moonlight-boucle-angle.jpg",
+      "aires-dining-chair-moonlight-boucle-closeup.jpg"
+    ]
+  }
+}
