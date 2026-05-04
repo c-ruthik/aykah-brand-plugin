@@ -139,6 +139,17 @@ Example camera_variations for `scene_set: true, scene_count: 3` of a sofa:
 
 # Combo-count rules (MANDATORY secondary furniture counts)
 
+**CANONICAL DEFINITION (locked 2026-05-04):**
+
+> **Combo N = N secondary catalog products PLUS the hero.**
+>
+> - Combo 0 = hero only (0 secondary catalog products)
+> - Combo 1 = hero + 1 secondary catalog product
+> - Combo 2 = hero + 2 secondary catalog products
+> - Combo N = hero + N secondary catalog products
+>
+> **Decor does NOT count toward combo.** Rugs, lamps, mirrors, wall art, throws, candles, ceramics, plants — all described by material/style only, never invented as Aykah products. Aykah doesn't sell decor.
+
 The combo count from the parent dictates how many secondary catalog products you select:
 
 | Combo count | Required secondary furniture | Notes |
