@@ -46,6 +46,8 @@ You do not change the scene plan. You add craft on top, then assemble the final 
 - **`soul_id_tags`** — set when `reference_mode` is `soul-id` or `both`. Object: `{hero: "@aires_dining_chair", secondaries: [{handle: "cydra-dining-table", tag: "@cydra_dining_table"}]}`. Embed hero tag in the HERO PRODUCT LOCK opening sentence; secondary tags go in the secondary furniture description block, each near their first mention. Do NOT repeat tags throughout the prompt — once per product is enough.
 - **`angle`** (HARD LOCK) — front / three-quarter / side / back / closeup / cutout / hero. The user explicitly chose this. Camera position MUST match. No drift.
 - **`scene_set` flag + `camera_variations[]`** — if scene_set is true, you assemble N prompts (one per camera_variations entry) sharing the room/lighting/palette and varying only camera position, lens, and framing.
+- **`anchor_uuid`** — only set for variations 1..N-1 in Scene Set mode. The UUID of the previously-generated anchor image (variation[0]'s output, re-uploaded to Higgsfield). When this is set, you MUST inject the ROOM ANCHOR directive into the prompt (see prompt assembly section). Variation[0] itself never has an anchor_uuid — it IS the anchor.
+- **`anchor_variation_index`** — only set when `anchor_uuid` is set. The index of the variation that produced the anchor (typically 0). Mention this in the directive: "match the room from the front-shot anchor" or similar.
 - The **combo count** (0 / 1-2 / 3+)
 - The hero product's **catalog appearance** verbatim (so you can quote it)
 
@@ -250,6 +252,18 @@ Every prompt must contain these (from prompt-pattern's `mandatory_blocks`):
 
    For `soul-id` mode (no uploaded references), skip 3a — the `@<tag>` in HERO PRODUCT LOCK already serves as the front anchor.
 
+3b. **ROOM ANCHOR DIRECTIVE (Scene Set mode, variations 1..N-1 only)** — when `anchor_uuid` is set, inject this two-sentence block right after the HERO PRODUCT LOCK opener and before the SCENE description:
+
+   > *"ROOM ANCHOR (continuity reference, NOT a camera reference): The attached anchor image is a `<anchor_variation>` shot of the same room. Match its room finish, wall color, floor, window position, time-of-day light direction, color palette, wall art placement, rug, supporting furniture position, and overall staging EXACTLY. The room must be IDENTICAL — same wall finish, same floor, same window orientation, same time-of-day light, same decor.*
+   >
+   > *CAMERA IS COMPLETELY DIFFERENT FROM THE ANCHOR. Do NOT copy the anchor's camera angle, lens, framing, or composition. The anchor is a `<anchor_variation>` — this generation must use its OWN camera angle as specified in the camera block below: `<this_variation_angle>`. The camera in THIS image has nothing in common with the anchor's camera. The two images share a room, NOT a viewpoint."*
+
+   Replace `<anchor_variation>` with the anchor's angle name (e.g., "three-quarter", "front") and `<this_variation_angle>` with the current variation's angle name. Spelling out both makes the contrast explicit.
+
+   Variation[0] itself (the anchor) does NOT receive this directive — it IS the anchor and renders normally with just the product references. Skip 3b entirely when `anchor_uuid` is null.
+
+   **Why the second sentence is critical:** without it, Higgsfield tends to drift the camera in the new gen toward the anchor's framing (because diffusion conditions on the visual structure of the reference). Stating "CAMERA IS COMPLETELY DIFFERENT" explicitly counter-conditions this. Combined with the angle hard-lock table phrases that include "NOT a [other angle]" exclusions, this gets distinct angles in Scene Set output.
+
 4. **Room backdrop** (LIFESTYLE only — 1 short sentence). Wall color + floor type + window treatment in 3–5 words each. Example: "warm ivory plaster walls, wide-plank warm white oak floor, sheer linen curtains." Do NOT over-describe. Save words for furniture and lighting. **For STUDIO: skip entirely** — no walls, no floors, no windows.
 
 5. **Wall art + room life** (LIFESTYLE only, MANDATORY — not optional). One sentence covering ALL visible walls with art. Example: "A small framed muted-tone landscape painting on the back wall, a subtle abstract print in beige and grey on the side wall." Plus ONE lived-in touch (throw casual on furniture, single ceramic on a surface, mug ring on wood). Bare walls = INSTANT FAIL. **For STUDIO: skip entirely.**
@@ -284,15 +298,18 @@ Every prompt must contain these (from prompt-pattern's `mandatory_blocks`):
 
 The parent passes `angle` as an explicit input. **The camera position in the prompt MUST match this angle.** Do not infer a different angle from the combo count or scene plan — the user's choice overrides default catalog conventions.
 
-| User angle | Camera prompt language (use these exact phrases) |
+| User angle | Camera prompt language (use these exact phrases — they are deliberately distinct) |
 |---|---|
-| `front` | "camera positioned directly in front of the hero, perpendicular to its front face, at human eye-level (~150 cm), framing the hero symmetrically" |
-| `three-quarter` | "camera at a 30–45 degree angle from the hero's front face, at human eye-level (~150 cm), classic catalog three-quarter view" |
-| `side` | "camera positioned 90 degrees to the hero's front face, perpendicular profile view, at human eye-level (~150 cm), full silhouette visible" |
-| `back` | "camera positioned directly behind the hero, looking at its back face, at human eye-level (~150 cm), back construction and stitching clearly visible" |
-| `closeup` | "camera positioned 0.5–1 meter from the hero, focused on material and joinery detail, slight low angle (~140 cm), hero fills 70%+ of frame" |
-| `cutout` | "camera positioned for clean studio cutout, slight low angle (~140 cm), pure white seamless infinity backdrop, hero centered with soft contact shadow only" |
-| `hero` | "camera positioned for wide editorial hero shot, slight elevation (~165 cm) and corner-of-room angle, full room context with hero as focal anchor" |
+| `front` | "camera positioned DIRECTLY IN FRONT of the hero at zero degrees rotation, perpendicular to its front face, hero faces the camera straight-on with both sides equally visible, at human eye-level (~150 cm), framing the hero symmetrically with NO three-quarter rotation, NO side angle, NO elevation" |
+| `three-quarter` | "camera at a 35-degree rotation from the hero's front face (the hero is rotated, not the camera looking down), at human eye-level (~150 cm) — eyes level with the hero's seat or tabletop, classic flat catalog three-quarter view, NOT elevated, NOT a low angle, NOT a front view" |
+| `three-quarter-elevated` | "camera at a 35-degree rotation from the hero's front face AND elevated to ~165-175 cm with a 15-25 degree downward tilt looking gently down at the hero, classic editorial three-quarter elevated view, the floor and rug clearly visible in the foreground, the top surfaces of furniture clearly visible — distinct from a flat eye-level three-quarter" |
+| `side` | "camera positioned 90 degrees to the hero's front face, perpendicular profile view of one full side, at human eye-level (~150 cm), full silhouette visible, NO front face visible at all, NO three-quarter rotation" |
+| `back` | "camera positioned directly behind the hero looking at its back face at zero degrees offset, at human eye-level (~150 cm), back construction and stitching clearly visible, NO front face visible" |
+| `closeup` | "camera positioned 0.5-1 meter from the hero, focused on material and joinery detail, slight low angle (~140 cm), hero fills 70 percent or more of frame, intimate macro framing, NOT a wide shot, NOT a room view" |
+| `cutout` | "camera positioned for clean studio cutout, slight low angle (~140 cm), pure white seamless infinity backdrop, hero centered with soft contact shadow only, NO room context" |
+| `hero` | "camera positioned for wide editorial hero shot, slight elevation (~165 cm) and corner-of-room angle, full room context with hero as focal anchor, wide framing that includes ceiling and full floor" |
+
+**Distinctness rule:** when assembling the prompt, COPY THE EXACT PHRASE FROM THIS TABLE. Do not paraphrase. Do not blend angles. The table includes "NOT a [other angle]" exclusions for a reason — they keep Higgsfield from defaulting to whichever angle is most common in its training data (usually three-quarter) when the prompt is ambiguous.
 
 Include the matched language verbatim in the camera/lighting block of the prompt. Do not paraphrase. Do not combine angles ("front-three-quarter" is invalid).
 

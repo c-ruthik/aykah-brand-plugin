@@ -175,7 +175,7 @@ Before I generate (engine: <CLI or MCP>), I need a few things:
   3. Vibe / time of day? [calm morning / golden hour / overcast / candid evening / styled]
   4. Room? [from product's room_suggestions, or describe]
   5. People? [0 / 1 / 2-4]   (if 1+, ask: Soul ID OR generic description)
-  6. Angle? [front / three-quarter / side / back / closeup / cutout / hero]
+  6. Angle? [front / three-quarter / three-quarter-elevated / side / back / closeup / cutout / hero]
   7. Reference mode? [upload / soul-id / both]
      - upload (default): I'll auto-resolve and upload local product photos
        from ecom-images. Strongest for product fidelity (4-5 angles).
@@ -431,30 +431,55 @@ By default, do NOT show the prompt or command before running. Generate immediate
 
 Run synchronously. Wait for the engine to return. Save and surface to user.
 
-### Scene Set generation (count > 1) — pipelined
+### Scene Set generation (count > 1) — anchor-conditioned
 
-Don't render N scenes back-to-back. Pipeline them so render-time and assembly-time overlap. Approximate timeline for 3 scenes:
+**Pure parallel pipelining causes room drift** — each gen reinterprets the room independently because diffusion is stochastic. Even when the designer plans ONE shared room, three independent gens produce three different rooms. Confirmed in real-world testing.
+
+**Fix: anchor-conditioned rendering.** Variation[0] renders first synchronously as the visual anchor. Its output is downloaded, re-uploaded to Higgsfield, and the new UUID is injected into `medias[]` for variations 1..N-1 along with a ROOM ANCHOR directive in the prompt. This forces visual conditioning on the same room/lighting/staging.
+
+Approximate timeline for 3 scenes (~95s total vs ~30s drifting):
 
 ```
-T+0:00  Scene 1: dispatch render in BACKGROUND (run_in_background: true if available)
-T+0:01  Scene 2: assemble prompt (designer's camera_variations[1] + photographer)
-T+0:02  Scene 2: dispatch render in background
-T+0:03  Scene 3: assemble prompt
-T+0:04  Scene 3: dispatch render
-T+0:08  Scene 1 returns → save → notify user with image
-T+0:10  Scene 2 returns → save → notify
-T+0:12  Scene 3 returns → save → notify
-        Total: ~12 min vs sequential 24+ min
+T+0:00   Variation[0] (anchor): assemble prompt + dispatch render SYNCHRONOUSLY
+T+0:30   Variation[0] returns → download PNG → re-upload via media_upload + media_confirm → capture anchor_uuid
+T+0:35   Variations 1 + 2: assemble prompts (with ROOM ANCHOR directive + anchor_uuid in medias[])
+T+0:36   Variations 1 + 2: dispatch in BACKGROUND in parallel
+T+1:06   Variation 1 returns → save → notify
+T+1:10   Variation 2 returns → save → notify
+         Total: ~70-95s for 3 scenes, with rooms locked to anchor
 ```
 
 Implementation:
-1. Dispatch each scene's render with `run_in_background: true` if the engine supports it. Capture the `job_set_id` or background-job handle.
-2. Move immediately to assembling the next scene's prompt while the previous render is in flight.
-3. Maintain a `pending_scenes[]` array with `{scene_index, job_id, prompt_summary}`.
-4. As each background job completes, save its output and surface to user **in the order they finish, not the order they started.**
-5. If a scene fails, surface the error and continue with remaining scenes — don't abort the batch.
 
-If the engine does NOT support background rendering (e.g., MCP variant returns synchronously), fall back to sequential generation and tell the user: *"This engine doesn't support background pipelining. Generating sequentially — expect <N × 8min>."*
+1. **Render variation[0] first, synchronously.** Use `mcp__claude_ai_Higgsfield__job_status` with `sync: true` and poll until `completed`. Capture `results.rawUrl`.
+
+2. **Download the output PNG** from `rawUrl` to a temp path.
+
+3. **Re-upload to Higgsfield** via `media_upload({files: [{filename: "anchor.png", content_type: "image/png"}]})`, PUT the bytes to the presigned URL, then `media_confirm` to capture `anchor_uuid`.
+
+4. **Append `anchor_uuid` to `medias[]`** for variations 1..N-1. Order matters: hero product refs first, secondary product refs second, **anchor_uuid LAST** (Higgsfield weights early refs more heavily for product fidelity, late refs for style/scene conditioning — putting the anchor late keeps product locks dominant while still locking the room).
+
+5. **Inject ROOM ANCHOR directive into the prompt** for variations 1..N-1 — handled by photographer agent receiving `anchor_uuid` parameter (see agent instructions).
+
+6. **Dispatch variations 1..N-1 with `run_in_background: true`** if supported. They can run in parallel since they all share the same anchor.
+
+7. **Save each gen as it completes.** Variation[0] saves first; 1..N-1 save in order they finish.
+
+### Why variation[0] is the anchor
+
+Designer orders `camera_variations[]` by importance — variation[0] is typically the hero/wide shot, the most "establishing" view of the scene. It's the right anchor because:
+
+- Wide framing = more of the room visible = more for subsequent gens to condition on
+- It's the canonical Aykah view, so subsequent angle variations should feel consistent with it
+- Designer's prioritization is the source of truth
+
+If the user wants a different anchor, they can say so explicitly: *"use the front shot as anchor"* or pass `--anchor-index 1`.
+
+### When to skip anchor mode
+
+- **Single-scene gens (count = 1):** no anchor needed, no Scene Set mode active.
+- **User explicitly opts out:** `--no-anchor` flag falls back to pure parallel pipelining (faster but rooms drift).
+- **Engine doesn't return image URLs synchronously:** fall back to sequential without anchor and warn user.
 
 ### Polling fallback
 
