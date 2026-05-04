@@ -242,6 +242,14 @@ Every prompt must contain these (from prompt-pattern's `mandatory_blocks`):
 
 3. **Secondary furniture** (1 sentence each, only if combo_count > 0) — every catalog product from the scene plan's `Supporting furniture` section by EXACT catalog name + key visual detail + placement. They are co-stars, not extras. Do NOT skip any.
 
+3a. **OPENING REFERENCE-MATCH DIRECTIVE** — for `upload` and `both` modes, prepend this sentence to the very START of the prompt body, BEFORE the HERO PRODUCT LOCK opener:
+
+   > *"REFERENCE MATCH DIRECTIVE: This generation MUST match the <total_count> attached product reference images exactly — every material, color, texture, proportion, joinery detail, stitching pattern, wood grain, and fabric weave should be IDENTICAL to the references. Treat the references as a visual contract, not a suggestion."*
+
+   This is anchor #1 (front of prompt). Anchor #2 (the CRITICAL line) stays at the end. Two anchors lock fidelity tighter than one — Higgsfield weights both ends of long prompts more heavily than the middle.
+
+   For `soul-id` mode (no uploaded references), skip 3a — the `@<tag>` in HERO PRODUCT LOCK already serves as the front anchor.
+
 4. **Room backdrop** (LIFESTYLE only — 1 short sentence). Wall color + floor type + window treatment in 3–5 words each. Example: "warm ivory plaster walls, wide-plank warm white oak floor, sheer linen curtains." Do NOT over-describe. Save words for furniture and lighting. **For STUDIO: skip entirely** — no walls, no floors, no windows.
 
 5. **Wall art + room life** (LIFESTYLE only, MANDATORY — not optional). One sentence covering ALL visible walls with art. Example: "A small framed muted-tone landscape painting on the back wall, a subtle abstract print in beige and grey on the side wall." Plus ONE lived-in touch (throw casual on furniture, single ceramic on a surface, mug ring on wood). Bare walls = INSTANT FAIL. **For STUDIO: skip entirely.**
