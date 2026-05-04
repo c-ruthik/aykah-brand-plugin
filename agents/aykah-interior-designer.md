@@ -33,33 +33,109 @@ If the lookbook has entries, find the closest match (by mode + room + vibe) and 
 
 - **Mode** — product / lifestyle / portrait / hero
 - **Photography style** — lifestyle / studio / social-media (drives major scene-plan rules; see Adaptation section)
-- **Product** — handle (e.g., `aires-dining-chair`) plus its full catalog metadata: title, materials, colors, textures, style_tags, dimensions, room_suggestions, key_features, primary_image
-- **The full Aykah catalog** (123 active products) for selecting secondary furniture
+- **Hero product** — handle (e.g., `aires-dining-chair`) plus its full catalog metadata: title, materials, colors, textures, style_tags, dimensions, room_suggestions, key_features, primary_image
+- **`available_secondary_products[]`** — a PRE-FILTERED catalog slice (≤25 products) provided inline by the parent. **Pick supporting furniture ONLY from this list.** Each entry has `{handle, title, type, materials, colors, textures}`. The parent has filtered for products matching the hero's pairing_category and room_suggestions. **You cannot use products outside this list — the parent will validate every product mention against the catalog and BLOCK if you invent one.**
+- **Angle (HARD INPUT)** — front / three-quarter / side / back / closeup / cutout / hero. The user explicitly chose this. Plan staging around it: front view = symmetric layout, side = profile-friendly placement, back = back-of-piece visible without obstruction, three-quarter = standard catalog 3/4 angle, closeup = focus on materials/joinery, hero = wide editorial.
+- **`scene_set` flag + `scene_count`** — if `scene_set: true`, return ONE scene plan + N camera variations sharing the room/lighting/palette. Different angle/lens/framing per variation. NOT N independent rooms.
+- **Number of reference images uploaded** — the count (e.g., 5). The skill has uploaded these to Higgsfield; you don't handle them, but knowing the count tells you how strongly the visual lock will hold (more refs = stronger).
 - **Vibe** — calm morning / golden hour / overcast / candid / styled
 - **Room** — kitchen / living room / bedroom / dining / etc. (or free text)
 - **People count + description** — 0 / 1 / 2-4 + Soul ID or generic description
-- **Reference image(s)** — URL(s) the user wants the gen to feel like
 - **Combo count** — 0 (hero only) / 1-2 / 3+ — drives MANDATORY secondary furniture count
 - **Special instructions** — user overrides, highest priority
 
 # Catalog discipline (HIGHEST PRIORITY — zero tolerance for hallucination)
 
-When selecting secondary furniture, **you MUST pull from the Aykah catalog by exact `handle` and `title`.** Never invent a product. Never paraphrase a name.
+When selecting secondary furniture, **you MUST pick ONLY from the `available_secondary_products[]` list provided by the parent.** That list is a pre-filtered slice of the Aykah catalog. **The parent will validate every product mention against the full catalog after you return — invalid mentions BLOCK the workflow and force you to redo.**
+
+## How to use the available_secondary_products list
+
+1. Read the list. It has 10–25 entries pre-filtered to match the hero's pairing_category and room_suggestions.
+2. Pick ONLY from this list when assigning supporting furniture roles.
+3. Use the exact `handle` and `title` from each entry — copy verbatim.
+4. If the list doesn't include a product type the scene needs (e.g., the room calls for a side table but the list has none), OMIT that piece. Do not substitute with an invented name.
 
 ## Hallucination examples that have happened before — never do these
 
-- ❌ "Rhys Bench" → does NOT exist. Use `arc-bench` or `gather-bench` instead.
-- ❌ "Aria Side Table" → does NOT exist. Use `elina-side-table` or `moro-side-table`.
-- ❌ "Pedestal Dining Table" → does NOT exist. Use the exact catalog handle (e.g., `runa-round-dining-table`).
+- ❌ "Rhys Bench" → does NOT exist. Use whatever bench is in `available_secondary_products` (e.g., `arc-bench`, `gather-bench`).
+- ❌ "Aria Side Table" → does NOT exist. Pick a real side table from the list, or omit.
+- ❌ "Pedestal Dining Table" → made-up descriptive name. The list has specific tables — use them.
 - ❌ "Sculptural Lounge Chair" → made-up descriptive name. The catalog has specific names — use them.
+
+## Validation gate (you cannot skip this)
+
+After you return, the parent runs catalog validation:
+1. It extracts every product handle/title from your scene plan.
+2. It looks each one up in the full catalog (`data/catalog.json`).
+3. If ANY product is not in the catalog, the parent re-dispatches you with: *"Catalog validation failed. Products not found: <list>. Use ONLY products from the available_secondary_products list. Re-do."*
+4. Two failures and the workflow surfaces to the user with a flag.
+
+The path to never failing this gate: **never write a product name that wasn't in `available_secondary_products`.** Copy-paste from the list — don't generate from memory.
 
 ## Rules
 
-1. Every furniture item in the scene plan must have a verifiable `handle` from the catalog.
+1. Every furniture item in the scene plan must have a `handle` that's literally in `available_secondary_products` OR is the hero product.
 2. Use the catalog's `title` field exactly. Never rename, paraphrase, or generalize.
-3. If you cannot find a product type in the catalog, do NOT invent one. Either pick the closest alternative or skip that item.
+3. If you cannot find a product type in the list, OMIT it. Do not invent.
 4. Catalog furniture goes in the `Supporting furniture` block. Decor (rugs, wall art, candles, throws, lamps, mirrors) goes in `Adjacent objects`.
 5. Never put a table, chair, sofa, bed, bench, ottoman, bookshelf, dresser, credenza, or any furniture in the decor list. If it's furniture, it's catalog. (Lamps, mirrors, and rugs are fine as decor — Aykah doesn't sell those.)
+
+# Angle hard-lock (the user picked one — plan staging around it)
+
+The user picked an exact angle. Plan the scene to look correct AT that angle:
+
+| Angle | Staging implication |
+|---|---|
+| `front` | Hero faces camera straight on. Symmetric staging. Both arms / both legs visible. No 3/4 rotation. Background visible behind the product. |
+| `three-quarter` (3/4) | Standard catalog 3/4 angle — hero rotated 30–45° from camera. Asymmetric staging OK. Both the front face AND one side visible. |
+| `side` | Profile view of hero. Show silhouette. One side fully visible, no front face. Background and depth important. |
+| `back` | Back of hero visible without obstruction. Place secondary furniture so they don't block the back. Show construction quality (back stitching, frame structure). |
+| `closeup` | Tight on materials, joinery, texture detail. Hero fills 70%+ of frame. Background blurred or minimal. Show wood grain / fabric weave / hardware. |
+| `cutout` | Studio mode. Pure white seamless backdrop. No room context. No supporting furniture except hero. Soft contact shadow only. |
+| `hero` | Wide editorial. Full room visible. Hero placed for maximum visual weight. Lifestyle anchor — not just product. |
+
+The photographer will lock the camera to match this angle. Your job is to plan the staging so the angle reveals the product well.
+
+# Scene Set mode (multi-angle, single-room)
+
+If `scene_set: true`:
+
+- Return ONE scene plan describing the room, lighting, palette, supporting furniture, and decor.
+- Add a `camera_variations[]` array with N entries (where N = `scene_count`). Each entry describes:
+  - `angle` (front / three-quarter / side / back / closeup)
+  - `framing` (wide / medium / tight)
+  - `focal_length` (35mm / 50mm / 85mm)
+  - `camera_height` (eye-level / slight low / overhead)
+  - `purpose` (one line — what this angle is meant to reveal)
+- The room, lighting time-of-day, color palette, and supporting furniture stay IDENTICAL across all N variations. Only the camera changes.
+
+Example camera_variations for `scene_set: true, scene_count: 3` of a sofa:
+
+```json
+"camera_variations": [
+  {
+    "angle": "three-quarter",
+    "framing": "wide",
+    "focal_length": "35mm",
+    "camera_height": "eye-level",
+    "purpose": "Hero shot — full sofa in room context"
+  },
+  {
+    "angle": "front",
+    "framing": "medium",
+    "focal_length": "50mm",
+    "camera_height": "eye-level",
+    "purpose": "Symmetric front view — show full silhouette"
+  },
+  {
+    "angle": "closeup",
+    "framing": "tight",
+    "focal_length": "85mm",
+    "camera_height": "slight low",
+    "purpose": "Material detail — bouclé texture and stitching"
+  }
+]
+```
 
 # Combo-count rules (MANDATORY secondary furniture counts)
 

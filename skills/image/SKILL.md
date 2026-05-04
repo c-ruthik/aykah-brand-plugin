@@ -9,6 +9,19 @@ Brand-consistent image generation. The skill orchestrates two specialist sub-age
 
 **Core rule:** never generate without confirmed user inputs. Never invent product details. Never assume a save folder.
 
+## Scene Set mode (multi-angle, single-room consistency)
+
+When the user asks for **multiple scenes of the same product** (e.g., "5 scenes of Aires" or "front, three-quarter, side, and detail of Mellow"), the skill activates **Scene Set mode**:
+
+- Designer produces ONE scene plan + N camera variations (different angle, lens, framing)
+- All N gens share the room, lighting, palette, supporting furniture, materials
+- Only the camera position changes between renders
+- Result: a coherent set that looks like the same shoot, not 5 disconnected images
+
+This solves the "different room every time" inconsistency. Use when the user wants a PDP carousel, multi-angle product set, or hero + variations.
+
+To opt out and get N independent scene plans (different rooms), the user can pass `--no-scene-set` or ask for "different rooms" / "different scenes" explicitly.
+
 ## When to use
 
 - Lifestyle shots of Aykah products in a room context
@@ -27,7 +40,9 @@ Before any generation:
 3. `../core/references/brand-design.md` — design tokens. **NOTE: brand colors here are graphic-design-only. Do NOT auto-inject Navy / Ivory / Gold into image prompts. Image gen uses Benetha's earthy-neutrals palette by default. Only apply brand colors when the user explicitly names them.**
 4. `references/aykah-style-anchors.md` — visual phrases (Benetha vocabulary folded in)
 5. `references/aykah-anti-patterns.md` — banned visual cues + AI-tells + Benetha's full anti-AI/anti-staged/anti-symmetry set (must be baked into positive prompt — Higgsfield doesn't support negative prompts)
-6. `data/catalog.json` — 123 active Aykah products with material/color/texture/style metadata + Shopify image URL
+6. `data/catalog.json` — 123 active Aykah products with material/color/texture/style metadata + Shopify image URL. **The catalog is the ONLY source of truth for product names — never invent.**
+7. `references/local-image-resolver.md` — folder validation, supported file types, batch upload sequence
+8. `references/catalog-validator.md` — catalog discipline rules (filter inline + validate after pattern)
 7. `data/prompt-pattern.json` — bundled template (canonical pattern; copied to `~/.aykah/prompt-pattern.json` on first run)
 8. `references/naming-guide.md` — canonical Aykah AI image naming convention
 9. `~/.aykah/image-state.json` — training data: approved gens, feedback, preferences, soul_ids, default engine (auto-created on first save)
@@ -160,39 +175,116 @@ Before I generate (engine: <CLI or MCP>), I need a few things:
   3. Vibe / time of day? [calm morning / golden hour / overcast / candid evening / styled]
   4. Room? [from product's room_suggestions, or describe]
   5. People? [0 / 1 / 2-4]   (if 1+, ask: Soul ID OR generic description)
-  6. Model? [list from chosen engine's available_models]
-  7. Aspect ratio? [list from chosen engine's capabilities]
-  8. Quality? [4K if engine.supports_4k is true, else highest]
-  9. Reference image? [URL OR product's primary_image OR a previously approved gen OR none]
-                       (only ask if chosen engine.supports_reference_image is true)
+  6. Angle? [front / three-quarter / side / back / closeup / cutout / hero]
+  7. Reference images folder?
+     [paste the FULL path to a local folder — I'll upload every image in it
+      as product references. More refs = more accurate match.]
+  8. How many scenes? [1 / 2 / 3 / 4 ...]
+     (if >1: triggers Scene Set mode — one room, N camera variations)
+  9. Model? [list from chosen engine's available_models]
+  10. Aspect ratio? [list from chosen engine's capabilities]
+  11. Quality? [4K if engine.supports_4k is true, else highest]
 ```
+
+### Smart parsing of the initial request (skip questions when possible)
+
+Before asking, scan the user's initial prompt for:
+
+- **Angle keywords** — `front`, `three-quarter` / `3/4` / `angle`, `side`, `back`, `closeup` / `detail`, `cutout`, `hero`. If found, skip Q6 and confirm in one line: *"Angle: three-quarter (parsed from your request)."*
+- **Folder paths** — anything starting with `/`, `~/`, or matching `--refs <path>`. If found, skip Q7.
+- **Scene count** — `5 scenes`, `3 angles`, `--count 4`. If found, skip Q8.
+- **Product handle** — if the user names a handle that exists in `catalog.json`, skip Q2.
 
 If the user names a product handle, look it up in `data/catalog.json` and silently use the materials, colors, textures, style_tags, room_suggestions, and primary_image — don't re-ask the user for those.
 
-If a question's value is already in their state JSON as a saved default (e.g., they always shoot 4K, or always use the same Soul ID), don't re-ask. Just confirm the default in one line and move on.
+If a question's value is already in their state JSON as a saved default, don't re-ask. Confirm the default in one line and move on.
 
-If a question doesn't apply to the chosen engine (e.g., reference image is asked when `supports_reference_image` is false), skip it.
+If a question doesn't apply to the chosen engine (e.g., reference images when `supports_reference_image` is false), skip it.
+
+## Step 2.5 — Validate inputs and prepare references
+
+Three sequential checks before any agent is dispatched:
+
+### 2.5a — Catalog validation (pre-flight)
+
+If the user named a product handle:
+- Look it up in `data/catalog.json`. If not found, surface immediately: *"`<handle>` is not in the catalog. Did you mean `<closest-3-matches>`? Or describe the product manually."*
+- Do NOT silently invent product metadata.
+
+### 2.5b — Reference folder validation
+
+The user provided a folder path. Run these checks:
+
+1. Path exists and is a directory? If not, ask again.
+2. Scan top-level for `.jpg`, `.jpeg`, `.png`, `.webp` files (case-insensitive).
+3. If 0 images found at top level, ask if they want subfolder recursion.
+4. Confirm count back to user in one line: *"Found 5 images in `<folder>`. Uploading all 5 as product references. Continue? [y/n]"*
+5. If user says no, ask for a different folder.
+
+Detailed logic in `references/local-image-resolver.md`.
+
+### 2.5c — Multi-image upload to Higgsfield
+
+If engine = MCP:
+
+1. Call `mcp__higgsfield__media_upload` with `files[]` batch of all reference images:
+   ```
+   media_upload({
+     files: [
+       { filename: "aires-front.jpg", content_type: "image/jpeg" },
+       { filename: "aires-side.jpg", content_type: "image/jpeg" },
+       ...
+     ]
+   })
+   ```
+2. The response returns presigned upload URLs. PUT the bytes of each local file to its URL.
+3. Call `mcp__higgsfield__media_confirm` to commit. Captures the UUIDs.
+4. Store the UUIDs as `reference_uuids[]` for the photographer agent to use in `medias[]`.
+
+If engine = CLI: pass the local file paths to the `--reference` flag (CLI behavior depends on installed version).
+
+If upload of any single image fails, retry once. If retry fails, surface to user and skip that image.
 
 ## Step 3 — Dispatch agents (in this order)
 
 ### 3a. Interior Designer agent (Creative Director + Designer)
 
-Send: catalog product details + user inputs (mode, photography style, vibe, room, people, palette mood, reference image, combo count, special instructions) + read-access to `~/.aykah/image-state.json` (so the agent learns from approved gens).
+Send the agent:
+- **The hero product's full catalog entry** (verbatim — title, materials, colors, textures, style_tags, dimensions, room_suggestions, key_features)
+- **A FILTERED CATALOG SLICE** (CRITICAL — prevents hallucination): pre-load `data/catalog.json` and filter to products matching the scene's category. Include only handles where `pairing_category` matches the hero's pairing category, OR `room_suggestions` overlaps. Inject the filtered list (typically 10–20 products) inline in the agent prompt as a JSON array of `{handle, title, type, materials, colors, textures}`. **The agent picks ONLY from this list for secondary furniture. Cannot hallucinate what isn't in front of it.**
+- **Scene Set mode flag** — if user requested >1 scene of the same product, set `scene_set: true` and `scene_count: N`. The designer then returns ONE room/lighting/palette plan plus N camera variation specs (different angles, framing, focal lengths) — NOT N independent rooms.
+- **Angle hard input** — the angle the user picked (front / three-quarter / side / back / closeup / cutout / hero). Designer plans staging around it: front view = symmetric layout, side = profile-friendly placement, etc.
+- User inputs (mode, photography style, vibe, room, people, palette mood, special instructions)
+- Read-access to `~/.aykah/image-state.json` (so the agent learns from approved gens)
 
 The designer reads:
 - `../core/references/brand-facts.md` for positioning + reference set
 - `../core/references/brand-design.md` for palette + materials vocabulary
 - `references/aykah-style-anchors.md` for locked visual phrases
 - `references/aykah-lookbook.md` for canonical brand examples (closest match anchors the new plan)
+- `references/catalog-validator.md` for catalog discipline rules
 - `~/.aykah/image-state.json` for previously-approved gens, user_preferences, disliked_patterns, learned_rules
 
 Returns a complete **scene plan**: creative direction (mood, color story split into room backdrop vs furniture accents, material palette, lighting vision concept, aesthetic references, risk level), room layout (walls, floors, windows, architectural detail), palette (60/30/10 with backdrop/accent split), materials surfaced (specific names, no generic), staging (placement, supporting furniture by exact catalog name, wall art mandatory for lifestyle, lived-in touches, plush rug specs), lighting concept (quality + time-of-day feel — no technical specs), narrative (one sentence capturing the moment), people, reference-set anchor, training-loop context, and a self-check before returning.
 
+If `scene_set: true`, the scene plan includes a `camera_variations[]` array — N entries, each describing a unique camera position, lens choice, and framing for that angle, while sharing all room/lighting/palette/staging.
+
 Brand-aligned, reference-set-aligned, anti-Structube. No technical photography terms — that's the photographer's layer.
+
+### 3a.1 — Catalog validation gate (post-designer)
+
+Before passing the scene plan to the photographer:
+
+1. Extract every product mention from the scene plan (hero + supporting furniture).
+2. For each, look up the handle/title in `data/catalog.json`.
+3. If ANY product mentioned is not in the catalog, BLOCK and re-dispatch the designer with: *"Catalog validation failed. Products not found: `<list>`. Use only products from the filtered catalog list provided. Re-do."*
+4. After redo, validate again. Two failed attempts = surface to user.
+
+Detailed logic in `references/catalog-validator.md`.
 
 ### 3b. Photographer agent (Photographer + Prompt Engineer)
 
-Receives the scene plan from the designer + the engine context (CLI vs MCP, model, aspect ratio, quality, reference image URL, combo count).
+Receives the scene plan from the designer + the engine context (CLI vs MCP, model, aspect ratio, quality, **reference image UUIDs[] from Step 2.5c**, **angle hard-lock**, **scene_set flag + camera_variations**, combo count).
 
 The photographer reads:
 - `references/aykah-style-anchors.md` for camera/light/composition anchors
@@ -232,33 +324,67 @@ higgsfield generate create <MODEL> \
 
 ### If engine = MCP
 
-Call the appropriate MCP tool directly:
+Call the MCP tool directly with the multi-image reference array:
 
 ```
-mcp__higgsfield__generate_image(
-  prompt: "<full assembled prompt>",
-  quality: "4k" | "1080p" | "720p"     # whatever MCP exposes
-  style_id: "<UUID>"                    # if user picked a style preset
-  character_id: "<UUID>"                # if user picked a Soul ID
-  image_reference_url: "<URL>"          # only if MCP supports it (npm variant does)
-  width_and_height: "2048x1152"         # if exposed
-  seed: <int>                           # if exposed
-)
+mcp__higgsfield__generate_image({
+  params: {
+    model: "<model_id from models_explore>",
+    prompt: "<full assembled prompt>",
+    aspect_ratio: "<user choice>",
+    count: <scene_count if scene_set, else 1>,
+    medias: [
+      { role: "reference", value: "<UUID-from-Step-2.5c-image-1>" },
+      { role: "reference", value: "<UUID-from-Step-2.5c-image-2>" },
+      { role: "reference", value: "<UUID-from-Step-2.5c-image-3>" },
+      ...all UUIDs from the user's reference folder...
+    ]
+  }
+})
 ```
 
-After the tool returns a `job_set_id`, poll with `mcp__higgsfield__get_generation_status(job_set_id)` every 10 seconds until status is `completed`, `failed`, or `nsfw`. The completed response contains the image URL.
+**Pass ALL reference UUIDs** captured in Step 2.5c. More references = stronger product fidelity. The role string depends on the model — check `models_explore.medias[].roles` first; common values include `"reference"`, `"product_reference"`, `"style_reference"`. Use the model's documented role.
 
 **Use exactly the parameters the MCP tool schema confirms exist.** If a parameter the user wants isn't supported by the installed MCP variant, tell them honestly: *"This MCP variant doesn't expose `<parameter>`. Switch to CLI or skip this option."*
 
-## Step 5 — Generate directly
+## Step 5 — Generate (with background pipelining for batches)
 
 By default, do NOT show the prompt or command before running. Generate immediately.
 
 **Exception:** if the user explicitly asks ("show me the prompt first", "let me see the command before you run it"), display the assembled prompt + command and wait for approval.
 
-Run the CLI. Wait for output (the CLI may be sync or return a job ID — both handled).
+### Single-scene generation (count = 1)
 
-If it returns a job ID, poll until status is `completed`, `failed`, or `nsfw`. Surface the URL or local path of the result.
+Run synchronously. Wait for the engine to return. Save and surface to user.
+
+### Scene Set generation (count > 1) — pipelined
+
+Don't render N scenes back-to-back. Pipeline them so render-time and assembly-time overlap. Approximate timeline for 3 scenes:
+
+```
+T+0:00  Scene 1: dispatch render in BACKGROUND (run_in_background: true if available)
+T+0:01  Scene 2: assemble prompt (designer's camera_variations[1] + photographer)
+T+0:02  Scene 2: dispatch render in background
+T+0:03  Scene 3: assemble prompt
+T+0:04  Scene 3: dispatch render
+T+0:08  Scene 1 returns → save → notify user with image
+T+0:10  Scene 2 returns → save → notify
+T+0:12  Scene 3 returns → save → notify
+        Total: ~12 min vs sequential 24+ min
+```
+
+Implementation:
+1. Dispatch each scene's render with `run_in_background: true` if the engine supports it. Capture the `job_set_id` or background-job handle.
+2. Move immediately to assembling the next scene's prompt while the previous render is in flight.
+3. Maintain a `pending_scenes[]` array with `{scene_index, job_id, prompt_summary}`.
+4. As each background job completes, save its output and surface to user **in the order they finish, not the order they started.**
+5. If a scene fails, surface the error and continue with remaining scenes — don't abort the batch.
+
+If the engine does NOT support background rendering (e.g., MCP variant returns synchronously), fall back to sequential generation and tell the user: *"This engine doesn't support background pipelining. Generating sequentially — expect <N × 8min>."*
+
+### Polling fallback
+
+If a generation returns a job ID rather than running synchronously, poll until status is `completed`, `failed`, or `nsfw`. Surface the URL or local path of each result.
 
 ## Step 6 — Save to user's folder (using the canonical naming convention)
 

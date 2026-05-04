@@ -39,7 +39,10 @@ You do not change the scene plan. You add craft on top, then assemble the final 
 - The **engine** (cli / mcp) and **model** (nano_banana_2 / soul_2 / etc.)
 - The **aspect ratio** (16:9 / 9:16 / 1:1 / 4:5 / 3:4)
 - The **quality** (4K / 1080p / 720p)
-- The **reference image URL** if one is being used
+- **`reference_uuids[]`** — the full array of UUIDs returned from `media_upload` + `media_confirm`. ALL of these go into the `medias[]` array of the engine call. More references = stronger product fidelity.
+- **`reference_count`** — how many reference images were uploaded (use this in the prompt's lock line: "Match all <N> attached references EXACTLY").
+- **`angle`** (HARD LOCK) — front / three-quarter / side / back / closeup / cutout / hero. The user explicitly chose this. Camera position MUST match. No drift.
+- **`scene_set` flag + `camera_variations[]`** — if scene_set is true, you assemble N prompts (one per camera_variations entry) sharing the room/lighting/palette and varying only camera position, lens, and framing.
 - The **combo count** (0 / 1-2 / 3+)
 - The hero product's **catalog appearance** verbatim (so you can quote it)
 
@@ -242,11 +245,78 @@ Every prompt must contain these (from prompt-pattern's `mandatory_blocks`):
 
 6. **Lighting + camera + aesthetic reference** (1–2 sentences). Specify direction + quality + Kelvin + lens + aperture + film stock. For LIFESTYLE: light MUST be soft and diffused through sheer curtains — NEVER harsh direct sunlight, NEVER diagonal shadow beams across walls or floor. For STUDIO: describe light QUALITY only (soft, even, diffused) — NEVER mention equipment names.
 
-7. **Reference-image lock line** — ALWAYS end the body of the prompt with this exact sentence: *"CRITICAL: Match the attached product reference images EXACTLY — same materials, same colors, same textures, same proportions, same design details. The generated product must be IDENTICAL to the reference photos, not an interpretation."*
+7. **Reference-image lock line** — ALWAYS end the body of the prompt with this sentence, parameterized by `reference_count`:
+
+   > *"CRITICAL: Match all <N> attached product reference images EXACTLY — same materials, same colors, same textures, same joinery, same proportions, same stitching, same wood grain, same fabric weave. The generated product must be IDENTICAL across every angle to all <N> references — front, side, back, three-quarter, closeup. Do not reinterpret. Do not stylize. Do not soften details."*
+
+   Replace `<N>` with the actual `reference_count` (e.g., 5). The reinforcement of "all N" + listing the angles + explicit anti-stylization keeps Higgsfield from drifting on materials.
+
+   The user's chosen angle goes earlier in the prompt (in the camera/lighting block) — the lock line is about MATERIAL fidelity, not camera angle.
 
 8. **Anti-pattern exclusions block** — comma-separated list at the end of the body, prefixed with `Excluded:` or `Avoid:`. Pull from `aykah-anti-patterns.md` AND `~/.aykah/image-state.json` `disliked_patterns`. Always include the AI-tell exclusions: hands with finger anatomy detail, magazine-perfect throw blanket, center-symmetric framing, overhead ceiling lighting, mixed light sources, plastic-shine textiles, espresso wood stain, glossy varnish on oak, direct camera contact from any people, readable text or logos in frame.
 
 9. **HEX VALUES array** (mandatory, on its own line at the very end). 5–8 hex codes that define the scene's palette. Format: `HEX VALUES: ["#363B57", "#FAF8F4", "#B8956A", ...]`
+
+# Angle hard-lock (the user picked exactly one — match it precisely)
+
+The parent passes `angle` as an explicit input. **The camera position in the prompt MUST match this angle.** Do not infer a different angle from the combo count or scene plan — the user's choice overrides default catalog conventions.
+
+| User angle | Camera prompt language (use these exact phrases) |
+|---|---|
+| `front` | "camera positioned directly in front of the hero, perpendicular to its front face, at human eye-level (~150 cm), framing the hero symmetrically" |
+| `three-quarter` | "camera at a 30–45 degree angle from the hero's front face, at human eye-level (~150 cm), classic catalog three-quarter view" |
+| `side` | "camera positioned 90 degrees to the hero's front face, perpendicular profile view, at human eye-level (~150 cm), full silhouette visible" |
+| `back` | "camera positioned directly behind the hero, looking at its back face, at human eye-level (~150 cm), back construction and stitching clearly visible" |
+| `closeup` | "camera positioned 0.5–1 meter from the hero, focused on material and joinery detail, slight low angle (~140 cm), hero fills 70%+ of frame" |
+| `cutout` | "camera positioned for clean studio cutout, slight low angle (~140 cm), pure white seamless infinity backdrop, hero centered with soft contact shadow only" |
+| `hero` | "camera positioned for wide editorial hero shot, slight elevation (~165 cm) and corner-of-room angle, full room context with hero as focal anchor" |
+
+Include the matched language verbatim in the camera/lighting block of the prompt. Do not paraphrase. Do not combine angles ("front-three-quarter" is invalid).
+
+## Self-check before returning
+
+Before returning the prompt, verify:
+- Does the camera language in the prompt match the table above for the user's chosen angle? If not, REWRITE.
+- Does the staging in the scene plan support the angle? (e.g., "back" angle requires the scene plan to have placed the hero so its back is visible — if scene blocks it, flag back to designer.)
+
+# Scene Set mode (multi-angle, single-room — assemble N prompts)
+
+If `scene_set: true` and `camera_variations[]` is provided:
+
+1. Assemble ONE base prompt using the shared scene plan (room, lighting, palette, supporting furniture, decor).
+2. For each entry in `camera_variations[]`, swap in that variation's angle, lens, framing, and camera height. The rest of the prompt stays IDENTICAL.
+3. Return an array of N prompts, one per variation.
+
+Format the return as:
+
+```json
+{
+  "scene_set": true,
+  "shared_scene_summary": "<one-line summary of room/lighting/palette>",
+  "prompts": [
+    {
+      "variation_index": 0,
+      "angle": "three-quarter",
+      "framing": "wide",
+      "focal_length": "35mm",
+      "final_prompt": "<full assembled prompt>",
+      "word_count": 850
+    },
+    {
+      "variation_index": 1,
+      "angle": "front",
+      "framing": "medium",
+      "focal_length": "50mm",
+      "final_prompt": "<full assembled prompt — IDENTICAL except camera/framing/lens>",
+      "word_count": 845
+    },
+    ...
+  ],
+  "consistency_check": "All N prompts share identical room, lighting, palette, materials, supporting furniture. Only camera/framing/lens differ. Verified."
+}
+```
+
+The parent dispatches each prompt as its own render job (background-pipelined per Step 5 of SKILL.md).
 
 ## Hard prompt-craft rules
 
