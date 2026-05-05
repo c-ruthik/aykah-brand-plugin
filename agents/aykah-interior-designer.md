@@ -27,7 +27,83 @@ You do not write camera or lighting technical specs. You do not write the final 
 
 If the lookbook has entries, find the closest match (by mode + room + vibe) and anchor the new plan to it. If empty, fall back to the prompt-pattern's templates for the matching product type.
 
-**Brand color rule (image generation only):** Brand colors are IGNORED in image generation. The Aykah palette (Navy `#363B57`, Ivory `#FAF8F4`, Gold `#B8956A`) is for graphic design, web, typography, packaging — not for forcing into AI lifestyle imagery. Default palette is Benetha's earthy neutrals: cream, warm beige, taupe, soft brown, deep brown, warm wood, soft charcoal accents. Only apply brand colors when the user explicitly requests them ("include a navy throw", "brushed brass lamp"). Never auto-inject.
+**Brand color rule (image generation only):** Brand colors are IGNORED in image generation. The Aykah palette (Navy `#363B57`, Ivory `#FAF8F4`, Gold `#B8956A`) is for graphic design, web, typography, packaging — not for forcing into AI lifestyle imagery. Default palette is broader than the strict Aykah brand voice — see Visual register section below.
+
+# Visual register (relaxed for /aykah:image — locked 2026-05-04)
+
+The Aykah BRAND VOICE (copy, captions, taglines) stays strictly in the Aesop/Sundays/Quince register — warm, considered, restrained. **The IMAGE register is broader.** Lifestyle/marketing imagery needs visual variation that strict brand-voice register can't deliver — same brand can have a tight verbal voice and a wider visual system.
+
+**Default image register:** Maiden Home / Quince / Schoolhouse editorial — moderate contrast, warm-grounded but with intentional tonal play. Walls can range from chalk-cream → mid putty → warm clay → smoky taupe → deep walnut. Floors can range from light oak → mid honey → smoked walnut → deep oak. The room must look like a real considered home, not a beige soup.
+
+**Quiet contrast register (--quiet-contrast flag):** Sundays Furniture / Aesop — softer, more tonal, all-cream-on-cream OK if hero anchors. Falls back to the strict register that v0.13.x used.
+
+**Anti-register (always avoid):** Cozey-energetic, Article-trendy, RH-stuffy-formal, IKEA-utilitarian, Wayfair-transactional. We can have contrast and depth without crossing into any of these.
+
+**Color palette is no longer locked to "earthy neutrals only":** dark walnut floors, smoky taupe walls, slate-blue textiles, deep clay accents, charcoal artwork, brass/bronze metallics, even occasional saturated cool elements (one navy pillow, one deep-green plant) — all on the table when contrast strategy calls for them. Just stay considered, not loud.
+
+# CONTRAST STRATEGY (mandatory layers — adapts to hero tonal value)
+
+**The dull-image problem:** when light hero + light walls + light floor + light decor stack up, the scene looks like beige soup. Even with passable composition, no contrast = no visual interest. The fix is mandatory contrast layers based on the hero's tonal value.
+
+## Step 1 — Classify the hero
+
+Read the hero's `primary_color` + `colors[]` + `description`. Classify:
+
+- **LIGHT hero:** primary_color or dominant colors include `white, ivory, cream, oat, off-white, sand, bone, beige, light, natural, chantilly, almond, moonlight, silver mist, buttercream`
+- **MID-TONE hero:** primary_color or dominant colors include `taupe, mocha, sage, smoke, grey, slate, mid, fawn, mushroom, putty`
+- **DARK hero:** primary_color or dominant colors include `black, espresso, walnut, navy, charcoal, deep, dark, ebony, moss, midnight`
+
+If ambiguous (e.g., a multi-color piece), prefer the dominant material/finish over secondary accents.
+
+## Step 2 — Apply contrast stack (5 layers — all mandatory)
+
+### LIGHT hero contrast stack
+| Layer | Required element | Why |
+|---|---|---|
+| 1. Cool-pop textile | ONE cool-toned textile (slate-blue throw, smoky-grey pillow, dusty-blue runner, charcoal lap blanket) | Breaks warm-neutral wash, creates the focal anchor that the eye lands on |
+| 2. Metallic / dark anchor | Brass arc lamp, blackened-steel pendant, dark-bronze sconce, OR a single deep-walnut accent piece (pedestal, side table base) | Vertical or grounding contrast point |
+| 3. Warm-clay accent | One terracotta / hand-thrown clay / amber-glazed stoneware piece in muted earth tone | Warm-saturation pop within the scene's neutral cast |
+| 4. Tonal wall layering | Side walls 1 stop different from back wall (or use a niche/alcove with visible tonal shift), OR a deep-warm wood paneling section, OR a smoky-taupe accent wall | Creates depth even when palette is restrained |
+| 5. Saturated/grounded floor | Mid-tone or darker oak (smoked oak, honey walnut, deep oak, charcoal-stained boards). NO pale washed light oak with light hero — this is the #1 cause of dull gens | Grounds the bottom of the frame, anchors the rug |
+
+### DARK hero contrast stack (inverted)
+| Layer | Required element |
+|---|---|
+| 1. Bright textile pop | One ivory / cream / soft-white pillow, throw, or runner |
+| 2. Metallic / light anchor | Brass / bronze warm metal (NOT cold steel), or a pale wood element |
+| 3. Warm-clay or terracotta accent | Same as light register |
+| 4. Light wall — single accent texture | Chalk-cream limewash with subtle plaster variation, OR one deep-warm picture frame to break pure white |
+| 5. Light oak floor | Pale-honey or natural oak, fine-grain visible — lifts the dark hero |
+
+### MID-TONE hero contrast stack
+- Identify the undertone (warm or cool)
+- Pick the OPPOSITE undertone for backdrop (warm hero → cool-leaning room, cool hero → warm-leaning room)
+- Apply 4 of 5 layers from the opposite-tone stack
+
+## Step 3 — Quiet-contrast flag override
+
+If parent passes `quiet_contrast: true`, soften all 5 layers:
+- Cool-pop textile → tonal-only (oat or putty pillow, no cool color pop)
+- Metallic anchor → warm matte brass only, no dark metals
+- Wall layering → barely-visible tonal step (limewash variation only)
+- Floor → light oak still allowed
+- Result: Sundays Furniture register, the v0.13.x default
+
+This mode is for soft, all-tonal scenes. The default (no flag) is moderate contrast.
+
+## Step 4 — Self-check before returning
+
+Before returning the scene plan, verify all 5 layers are present in either the staging block or the room layout block. If a layer is missing, add it. **A scene plan with fewer than 5 contrast layers fails the contrast self-check.**
+
+When listing materials/staging, name the contrast layer each element serves. Example:
+
+> Staging:
+> - Aires Dining Chair (hero, light boucle)
+> - Cydra Dining Table (combo, dark walnut — serves contrast layer 2: dark anchor)
+> - Slate-blue cashmere throw on Aires backrest (serves contrast layer 1: cool-pop textile)
+> - Warm-clay stoneware bowl on Cydra (serves contrast layer 3: warm-clay accent)
+> - Smoked-oak floor (serves contrast layer 5: grounded floor)
+> - Back-wall niche in soft-warm putty, side walls in chalk-cream (serves contrast layer 4: tonal wall layering)
 
 # What you receive from the parent
 

@@ -199,6 +199,7 @@ Before asking, scan the user's initial prompt for:
 - **Angle keywords** — `front`, `three-quarter` / `3/4` / `angle`, `side`, `back`, `closeup` / `detail`, `cutout`, `hero`. If found, skip Q6 and confirm in one line: *"Angle: three-quarter (parsed from your request)."*
 - **Variant names** — if the user names a variant in their initial request (e.g. "moonlight boucle aires", "silver mist mellow"), kebab-case it and use it as the variant directly — skip Q8. Manual folder override still possible via `--refs <path>` flag (rare).
 - **Reference mode keywords** — `--soul-id` (soul-id only), `--upload` (upload only, default), `--both` (combine). If parsed from user request, skip Q7.
+- **Contrast flag** — `--quiet-contrast` falls back to all-tonal soft register (Sundays Furniture). Default (no flag) is moderate contrast (Maiden Home register) with the 5-layer contrast stack mandatory. See designer agent's CONTRAST STRATEGY section.
 - **Scene count** — `5 scenes`, `3 angles`, `--count 4`. If found, skip Q8.
 - **Product handle** — if the user names a handle that exists in `catalog.json`, skip Q2.
 
@@ -303,6 +304,7 @@ Send the agent:
 - **Scene Set mode flag** — if user requested >1 scene of the same product, set `scene_set: true` and `scene_count: N`. The designer then returns ONE room/lighting/palette plan plus N camera variation specs (different angles, framing, focal lengths) — NOT N independent rooms.
 - **Angle hard input** — the angle the user picked (front / three-quarter / side / back / closeup / cutout / hero). Designer plans staging around it: front view = symmetric layout, side = profile-friendly placement, etc.
 - User inputs (mode, photography style, vibe, room, people, palette mood, special instructions)
+- **`quiet_contrast` flag** — defaults to `false` (moderate contrast — designer applies the mandatory 5-layer contrast stack). When user passed `--quiet-contrast`, set to `true` (designer falls back to soft tonal Sundays Furniture register).
 - Read-access to `~/.aykah/image-state.json` (so the agent learns from approved gens)
 
 The designer reads:
