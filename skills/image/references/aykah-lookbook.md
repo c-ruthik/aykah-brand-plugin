@@ -6,11 +6,40 @@ When the interior designer agent runs, it reads this file to anchor every new sc
 
 ---
 
-## Status: empty (v1)
+## Status: 6 living-room canonical references (v0.14.5)
 
-The lookbook is **empty on first install**. It populates as the team approves generations.
+The plugin now ships with 6 approved canonical reference images in `references/lookbook-living-room/`. These define the Aykah living-room DNA. The interior designer agent MUST match this visual register for any living-room scene.
 
-The skill works without canonical examples — it falls back on `aykah-style-anchors.md` and the catalog product images. But once the lookbook has 5+ entries, consistency improves significantly because the designer agent has real Aykah references, not just abstract anchors.
+### Canonical living-room references
+
+| File | Vibe | Key DNA elements |
+|---|---|---|
+| `01-warm-cozy-corner-tile-feature-wall.jpg` | Warm cozy corner | Tile-paneled feature wall, single dark abstract art frame, mixed-texture pillows (boucle + linen + sheepskin + rust velvet), light wood drum coffee table, cream berber rug, warm-grey curtain |
+| `02-bright-airy-vintage-classic-with-credenza.jpg` | Bright + airy + classic | Plain warm-cream wall, vintage landscape art on dark walnut credenza, brass-and-black chandelier, dark walnut coffee table, forest green accent chair, vintage faded rug, ~1.5m olive tree, white tulips |
+| `03-gallery-wall-fluted-tables-vintage-rug.jpg` | Editorial-considered | White wainscot + picture rail + gallery of 3 black-frame photos with picture lights, dark fluted nesting coffee tables, mixed earth-tone pillows (forest green/brown/boucle/patterned), stoneware vase with branches, vintage faded medallion rug |
+| `04-bright-spacious-coffered-ceiling-open-concept.jpg` | Bright + spacious + open | Coffered ceiling architectural feature, bright-white limewashed walls, black round coffee table, sage-green throw, jute rug, white tulips in stoneware, open to kitchen + dining nook beyond |
+| `05-intimate-corner-cozy-textured-pillows.jpg` | Intimate cozy | Plain warm-cream wall, ONE large dark moody bison painting, ivory boucle sofa, 3 muted earth-tone textured pillows, light wood drum coffee table, chunky cable-knit throw, rust-red branches in cream stoneware, vintage faded rug |
+| `06-bright-airy-light-wood-natural-jute.jpg` | Bright + airy + light-wood | Bright white limewashed walls, ONE matte-black-framed art piece + black-and-white sconce, light-oak live-edge coffee table, blonde wooden sideboard, jute rug, tall stoneware with branches, all-cream textured pillow stack |
+
+### What these 6 share (the canonical living-room DNA)
+
+- **Brightness:** all bright daylight, never moody or dim
+- **Walls:** warm-natural cream OR bright-white lime-washed, ONE architectural feature per scene (wainscot OR paneling OR coffered ceiling OR feature wall — never stacked)
+- **Wall art:** ONE substantial framed piece OR coordinated gallery — provides the dark anchor
+- **Pillows:** 3–5 in tonal harmony (warm neutrals + earth accents, NEVER cool-blue or saturated)
+- **Coffee table:** always characterful (drum, fluted, live-edge, dark walnut)
+- **Wood tone:** ONE dominates per scene (light blonde OR dark walnut, not both stacked)
+- **Rug:** vintage-faded warm OR cream loop-pile OR jute — textured, never plain
+- **Greenery:** substantial single element (olive tree ~1.5m or tall branches in stoneware)
+- **Decor:** stoneware vessel + book + considered objects (always present, never bare)
+- **Light:** 5400K natural daylight, single window source, sheer linen filter
+- **Lighting fixture:** ONE visible fixture (sconce, chandelier, floor lamp, pendant)
+
+The designer agent applies these constraints organically — building a real interior-designed room, not picking from menus.
+
+### Status
+
+The lookbook also accepts approved AI generations over time. As the team approves gens via Step 7 of the skill, summaries get appended below.
 
 ---
 

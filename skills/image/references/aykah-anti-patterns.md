@@ -6,6 +6,60 @@ The photographer agent consults this file when adding the technical layer. Every
 
 ---
 
+## v0.14.5 Living Room DNA Anti-Patterns (locked 2026-05-05)
+
+These bans were learned from real boss feedback after 11 iterations on Ollie Sectional + new living-room reference set:
+
+### Pink-cast prevention
+- "warm" qualifier overuse — repeating "warm" multiple times in cream descriptions amplifies into pink. Use "warm-natural" once.
+- Light-oak window frames — too much warm wood, room goes pink. Use WHITE window casings instead.
+- Light-oak beam + light-oak coffee table + light-oak floor stacked = pink loop. Pick ONE warm-wood note as dominant.
+- 4400K Kelvin — pulls amber. NEVER use.
+
+### Sterile-cool prevention
+- 6500K Kelvin — sterile cool, Nordic-minimal. NEVER use.
+- Pure stark-white walls without limewash texture — feels like department store. Always specify lime-washed plaster.
+- Empty walls without art or architectural feature — feels designer-fake. Always include ONE architectural feature.
+
+### Walnut accent wall ban
+- Walnut vertical-plank walls behind sofa push EVERYTHING warm-amber. DROP walnut accent walls entirely.
+- Use cream lime-washed plaster + ONE warm-wood beam OR ONE dark-walnut credenza instead.
+
+### Pillow palette ban
+- NO cool-blue, slate-blue, dusty-blue, grey-blue, navy pillows or throws on living-room sofas. EVER.
+- NO pure chocolate-vs-olive contrast (boss feedback: too loud).
+- NO bright/saturated/flashy accent pillows.
+- Pillows stay in 3-step warm-neutral spectrum: ivory → oatmeal → deep-greige → brown. Earth-accent (rust/forest-green) OK as ONE accent.
+- Texture mix > color mix.
+
+### Greenery substantiality
+- NO small fiddle-leaf in small pot — reads "decorator-fake" / "placed-in".
+- Always specify size: olive tree ~1.5m, tall branches in stoneware floor vase, etc.
+
+### Rug ban
+- NO vintage-faded subtle-pattern as a default — user prefers cozy chunky knit / loop-pile / berber for bright-airy.
+- NO sisal alone, NO flatweave low-pile alone, NO bright bold geometric.
+- Vintage faded warm-tones OK for cozy register specifically.
+
+### Wall feature stacking ban
+- NEVER stack wainscot + picture rail + gallery wall + coffered ceiling + multiple windows + statement frame all in one scene.
+- Designer picks ONE architectural feature that complements the scene.
+
+### Bare/empty room ban
+- NO plain blank walls without ONE architectural feature.
+- NO sparse staging where the sofa floats in an empty room.
+- Always include: lighting fixture, considered decor, plant, rug, drapes, art OR architectural feature.
+
+### Dual-mode rendering ban (Ollie sleeper lesson)
+- For dual-function products (sleeper sofas, storage benches), NEVER render both functions open simultaneously. Pick ONE function per gen.
+- Sleeper extended + chaise lid open = always fails structural fidelity in nano_banana_2 / marketing_studio_image.
+
+### Cool-pop textile ban (overrides v0.14.4)
+- v0.14.4 mandated cool-pop textile for light heroes. **REMOVED.** Living rooms stay tonal-harmony only.
+- Contrast comes from ONE dark anchor (frame / coffee table / credenza), NOT from cool-color pops.
+
+---
+
 ## Benetha's full anti-AI exclusion set (locked)
 
 Every prompt's `Excluded:` block must contain phrases from these five categories. Pulled from `prompt-pattern.json`:

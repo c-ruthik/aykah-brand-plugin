@@ -29,81 +29,161 @@ If the lookbook has entries, find the closest match (by mode + room + vibe) and 
 
 **Brand color rule (image generation only):** Brand colors are IGNORED in image generation. The Aykah palette (Navy `#363B57`, Ivory `#FAF8F4`, Gold `#B8956A`) is for graphic design, web, typography, packaging — not for forcing into AI lifestyle imagery. Default palette is broader than the strict Aykah brand voice — see Visual register section below.
 
-# Visual register (relaxed for /aykah:image — locked 2026-05-04)
+# Visual register (locked 2026-05-05 — v9 living-room DNA)
 
-The Aykah BRAND VOICE (copy, captions, taglines) stays strictly in the Aesop/Sundays/Quince register — warm, considered, restrained. **The IMAGE register is broader.** Lifestyle/marketing imagery needs visual variation that strict brand-voice register can't deliver — same brand can have a tight verbal voice and a wider visual system.
+The Aykah BRAND VOICE (copy, captions, taglines) stays strictly in the Aesop/Sundays/Quince register — warm, considered, restrained. **The IMAGE register is room-aware and DNA-driven from approved references.**
 
-**Default image register:** Maiden Home / Quince / Schoolhouse editorial — moderate contrast, warm-grounded but with intentional tonal play. Walls can range from chalk-cream → mid putty → warm clay → smoky taupe → deep walnut. Floors can range from light oak → mid honey → smoked walnut → deep oak. The room must look like a real considered home, not a beige soup.
+**Default image register:** **Bright, airy, spacious, well-interior-designed — yet not dull.** Magazine-natural midpoint with proper contrast ratio (NOT flashy, NOT bright/saturated colors, NOT cool-pop accents). Real-home register, not bare/empty rooms. Furnished, considered, woodwork-detailed spaces.
 
-**Quiet contrast register (--quiet-contrast flag):** Sundays Furniture / Aesop — softer, more tonal, all-cream-on-cream OK if hero anchors. Falls back to the strict register that v0.13.x used.
+**Anti-register (always avoid):**
+- Cozey-energetic, Article-trendy, RH-stuffy-formal, IKEA-utilitarian, Wayfair-transactional
+- Sterile-cool / Nordic-minimal (too cold, no warmth)
+- Warm-amber moody (over-warmed, pushes pink)
+- Bare/empty plain rooms (designer-fake, not lived-in)
+- Flashy / saturated / cool-pop accents (slate-blue throws, navy pillows, etc.)
 
-**Anti-register (always avoid):** Cozey-energetic, Article-trendy, RH-stuffy-formal, IKEA-utilitarian, Wayfair-transactional. We can have contrast and depth without crossing into any of these.
+**Lookbook anchors:** see `references/lookbook-living-room/` — 6 approved reference images that define the canonical living-room DNA. Match this register, not menu-style options.
 
-**Color palette is no longer locked to "earthy neutrals only":** dark walnut floors, smoky taupe walls, slate-blue textiles, deep clay accents, charcoal artwork, brass/bronze metallics, even occasional saturated cool elements (one navy pillow, one deep-green plant) — all on the table when contrast strategy calls for them. Just stay considered, not loud.
+# ROOM-TYPE ROUTER (canonical DNA per room — locked 2026-05-05)
 
-# CONTRAST STRATEGY (mandatory layers — adapts to hero tonal value)
+The hero's `pairing_category` determines which DNA recipe to apply:
 
-**The dull-image problem:** when light hero + light walls + light floor + light decor stack up, the scene looks like beige soup. Even with passable composition, no contrast = no visual interest. The fix is mandatory contrast layers based on the hero's tonal value.
-
-## Step 1 — Classify the hero
-
-Read the hero's `primary_color` + `colors[]` + `description`. Classify:
-
-- **LIGHT hero:** primary_color or dominant colors include `white, ivory, cream, oat, off-white, sand, bone, beige, light, natural, chantilly, almond, moonlight, silver mist, buttercream`
-- **MID-TONE hero:** primary_color or dominant colors include `taupe, mocha, sage, smoke, grey, slate, mid, fawn, mushroom, putty`
-- **DARK hero:** primary_color or dominant colors include `black, espresso, walnut, navy, charcoal, deep, dark, ebony, moss, midnight`
-
-If ambiguous (e.g., a multi-color piece), prefer the dominant material/finish over secondary accents.
-
-## Step 2 — Apply contrast stack (5 layers — all mandatory)
-
-### LIGHT hero contrast stack
-| Layer | Required element | Why |
+| Hero pairing_category | Room type | DNA recipe |
 |---|---|---|
-| 1. Cool-pop textile | ONE cool-toned textile (slate-blue throw, smoky-grey pillow, dusty-blue runner, charcoal lap blanket) | Breaks warm-neutral wash, creates the focal anchor that the eye lands on |
-| 2. Metallic / dark anchor | Brass arc lamp, blackened-steel pendant, dark-bronze sconce, OR a single deep-walnut accent piece (pedestal, side table base) | Vertical or grounding contrast point |
-| 3. Warm-clay accent | One terracotta / hand-thrown clay / amber-glazed stoneware piece in muted earth tone | Warm-saturation pop within the scene's neutral cast |
-| 4. Tonal wall layering | Side walls 1 stop different from back wall (or use a niche/alcove with visible tonal shift), OR a deep-warm wood paneling section, OR a smoky-taupe accent wall | Creates depth even when palette is restrained |
-| 5. Saturated/grounded floor | Mid-tone or darker oak (smoked oak, honey walnut, deep oak, charcoal-stained boards). NO pale washed light oak with light hero — this is the #1 cause of dull gens | Grounds the bottom of the frame, anchors the rug |
+| `sofa`, `sectional`, `accent-chair`, `coffee-table`, `side-table`, `console-table`, `media-unit`, `ottoman`, `bench`, `bookshelf` | **LIVING ROOM** | Living Room DNA (below) |
+| `bed`, `nightstand`, `dresser` | **BEDROOM** | Bedroom DNA (TBD — placeholder) |
+| `dining-table`, `dining-chair`, `bar-stool`, `credenza` | **DINING ROOM** | Existing dining rules |
 
-### DARK hero contrast stack (inverted)
-| Layer | Required element |
-|---|---|
-| 1. Bright textile pop | One ivory / cream / soft-white pillow, throw, or runner |
-| 2. Metallic / light anchor | Brass / bronze warm metal (NOT cold steel), or a pale wood element |
-| 3. Warm-clay or terracotta accent | Same as light register |
-| 4. Light wall — single accent texture | Chalk-cream limewash with subtle plaster variation, OR one deep-warm picture frame to break pure white |
-| 5. Light oak floor | Pale-honey or natural oak, fine-grain visible — lifts the dark hero |
+# LIVING ROOM DNA (mandatory for any living-room hero — locked 2026-05-05)
 
-### MID-TONE hero contrast stack
-- Identify the undertone (warm or cool)
-- Pick the OPPOSITE undertone for backdrop (warm hero → cool-leaning room, cool hero → warm-leaning room)
-- Apply 4 of 5 layers from the opposite-tone stack
+This DNA is extracted from 6 approved reference images in `references/lookbook-living-room/`. **Apply all elements organically — design the room like an interior designer would, not like a menu picker.** Every element below must be present in some form.
 
-## Step 3 — Quiet-contrast flag override
+## 1. Walls — limewashed, warm-natural cream + ONE architectural feature
 
-If parent passes `quiet_contrast: true`, soften all 5 layers:
-- Cool-pop textile → tonal-only (oat or putty pillow, no cool color pop)
-- Metallic anchor → warm matte brass only, no dark metals
-- Wall layering → barely-visible tonal step (limewash variation only)
-- Floor → light oak still allowed
-- Result: Sundays Furniture register, the v0.13.x default
+- **Wall finish: lime-washed plaster** (NOT painted flat, NOT drywall-smooth) — limewash gives subtle tonal variation that catches light, the texture you see in every reference image
+- **Wall color: warm-natural cream** — never pink, never stark-white, never yellow-cream, never warm-amber. Bright AND warm-natural simultaneously.
+- **ONE architectural feature** that complements the scene (designer picks which one fits — NOT all stacked):
+  - White wainscot lower 1/3 with slim picture rail (image 03), OR
+  - Tile-paneled feature wall (image 01), OR
+  - Coffered ceiling (image 04), OR
+  - Single statement wall paneling/moulding (gallery wall background), OR
+  - Plain limewash + ONE substantial framed art piece (image 02, 05, 06)
+- One feature, picked by the designer's judgment for the scene. Never stack all of them.
 
-This mode is for soft, all-tonal scenes. The default (no flag) is moderate contrast.
+## 2. The dark anchor — ONE source per scene (provides contrast without flashy color)
 
-## Step 4 — Self-check before returning
+Every living-room scene must have ONE dark anchor. Designer picks ONE source, never multiple:
 
-Before returning the scene plan, verify all 5 layers are present in either the staging block or the room layout block. If a layer is missing, add it. **A scene plan with fewer than 5 contrast layers fails the contrast self-check.**
+- ONE matte-black-framed substantial art piece (gestural ink, moody landscape, abstract with black) — most common, default choice
+- OR ONE dark-walnut/black coffee table or credenza (substantial silhouette — fluted drum, live-edge slab, oval pedestal)
+- OR ONE dark wood furniture piece behind the sofa (credenza, sideboard) — image 02
 
-When listing materials/staging, name the contrast layer each element serves. Example:
+The dark anchor delivers the "proper contrast ratio" — never via cool-pop textiles, always via wood or art.
 
-> Staging:
-> - Aires Dining Chair (hero, light boucle)
-> - Cydra Dining Table (combo, dark walnut — serves contrast layer 2: dark anchor)
-> - Slate-blue cashmere throw on Aires backrest (serves contrast layer 1: cool-pop textile)
-> - Warm-clay stoneware bowl on Cydra (serves contrast layer 3: warm-clay accent)
-> - Smoked-oak floor (serves contrast layer 5: grounded floor)
-> - Back-wall niche in soft-warm putty, side walls in chalk-cream (serves contrast layer 4: tonal wall layering)
+## 3. Pillows — 3–5 on a sofa, TONAL HARMONY only
+
+- **Count:** 3 to 5 pillows on a sofa (NOT a 4-pillow stack — that's bedroom logic). Sectionals can take up to 5–6 across the L-shape.
+- **Palette:** All in 3-step warm-neutral spectrum: ivory → oatmeal → deep-greige → brown. Earth-accents OK (rust, forest-green, deep-brown — image 03/04/05). **NEVER:** cool-blue, slate, dusty-blue, grey-blue, navy, saturated bright colors.
+- **Texture mix > color mix:** boucle + linen + waffle-knit + nubby slub. Pillows differ by texture, not by saturated color.
+- **Imperfection cue:** one pillow slightly off-center, one leaning casual.
+
+## 4. Throw — optional, in tonal harmony
+
+If a throw is included: warm cream cable-knit OR oatmeal linen-wool OR sage/forest accent OR rust accent. **Never blue, never slate, never dusty-grey.** Draped naturally, one corner pulled loose.
+
+## 5. Coffee table — substantial and characterful
+
+- Always a real piece with character — drum, fluted, live-edge slab, oval pedestal, dark walnut
+- NEVER a plain flat surface
+- Often the dark anchor itself if dark-toned
+- For combo=1 with a sofa hero, pick a coffee table from the catalog that has visual presence
+
+## 6. Wood tone — ONE dominates the scene
+
+Pick ONE dominant wood tone per scene (designer's call):
+- **Light blonde / oak dominance** (images 04, 06, 01) — light coffee table, light floor, light beam
+- **Dark walnut dominance** (images 02, 03) — dark coffee table, dark credenza, dark fluted base
+
+Never stack both light AND dark wood as primary tones — picks one, accents with the other if needed.
+
+## 7. Rug — cozy, scene-appropriate (designer picks based on register)
+
+- **Vintage-faded warm-tones** (images 02, 03, 05) — best for cozy/intimate register
+- **Cream loop-pile / berber chunky knit** — best for bright-airy register
+- **Jute / textured natural fibre** — OK if the rest of the scene is bright + airy enough (images 04, 06)
+- **NEVER:** sisal alone, flatweave low-pile alone, plain solid pile, bright pattern, bold geometric
+
+Rug type follows the scene's register — designer chooses.
+
+## 8. Greenery — substantial, ONE element
+
+- Olive tree (~1.5m) in cream stoneware, OR
+- Tall branches in cream stoneware floor vase (cherry, eucalyptus, dried), OR
+- Trailing plant climbing window edge (image 01)
+- **Never:** small placed-in fiddle leaf in tiny pot (decorator-fake)
+- One greenery element per scene — the only living-green note
+
+## 9. Decor — considered, lived-in
+
+Always present, never bare:
+- 1–2 stoneware vessels (vase with branches, low bowl, hand-thrown clay)
+- 1 paperback splayed open OR design book stack
+- 1 small honed-travertine catch dish OR similar
+- Texture mix on the coffee table — book + vessel + dish triangulation
+
+## 10. Lighting fixture — ONE visible
+
+Always include ONE visible light fixture in frame:
+- Black-detailed wall sconce (images 03, 06), OR
+- Brass-and-black chandelier above (image 02), OR
+- Brass arc floor lamp (existing brand favorite), OR
+- Pendant chandelier hanging into upper third
+- Provides depth + contrast point without being a "feature"
+
+## 11. Light + temperature
+
+- **5400K natural daylight** — hard locked. NEVER 4400K (amber), NEVER 6500K (sterile cool). Range: 5200–5600K only.
+- **Bright soft-diffused** from a south-facing window, sheer linen filtered
+- **Single window source** at camera-LEFT — not stacked windows on multiple walls
+- Pours in. Bright + warm-natural simultaneously.
+
+## 12. Drapes — full-length sheer cream linen
+
+Pooling at floor. Filters daylight without blocking it.
+
+## 13. Furnishing density — MEDIUM
+
+- NEVER bare/sparse (designer-fake feel)
+- NEVER cluttered (Wayfair feel)
+- Real-home: every visible object is real and purposeful, but the room breathes
+
+## Self-check before returning
+
+Verify ALL of these are present in the scene plan (no menu — all 13 elements appear in the plan in some form):
+
+1. ✅ Lime-washed walls in warm-natural cream
+2. ✅ ONE architectural feature (designer's pick)
+3. ✅ ONE dark anchor source (frame OR coffee table OR credenza)
+4. ✅ 3–5 pillows in tonal harmony (no cool-pop)
+5. ✅ Throw (optional) in tonal harmony only
+6. ✅ Substantial characterful coffee table
+7. ✅ ONE wood tone dominates
+8. ✅ Cozy rug (designer picked appropriate type)
+9. ✅ Substantial single greenery
+10. ✅ Considered decor (stoneware + book + dish)
+11. ✅ ONE visible lighting fixture
+12. ✅ 5400K daylight, single window source camera-LEFT
+13. ✅ Sheer cream linen drapes pooling
+
+Any element missing = scene plan fails self-check. Add it before returning.
+
+# BEDROOM DNA — placeholder (TBD)
+
+Bedroom DNA is queued for separate definition. Heroes routed to bedroom (`bed`, `nightstand`, `dresser`) currently fall back to the existing brand-warm register. Will update when we test bed-hero gens.
+
+# DINING ROOM DNA — see existing dining-table-hero rules below
+
+The "Special: Dining table hero" section below is the DINING ROOM DNA. Retain as-is.
 
 # What you receive from the parent
 
