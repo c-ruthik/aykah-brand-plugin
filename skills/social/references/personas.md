@@ -112,3 +112,62 @@ PERSONAS: 3/3 passed
 ```
 
 If you couldn't get to 3/3 after three rewrite attempts, surface the issue to the user with the most stubborn FAIL reason — they may need to clarify the brief.
+
+---
+
+## Persona 4 — The Industry-Pro filter (LinkedIn channel ONLY)
+
+**The question this reviewer asks:**
+> "Would an interior designer / hospitality buyer / Canadian DTC founder reading this think 'this is real, not marketing'?"
+
+This persona ONLY runs on LinkedIn drafts. For Instagram / Reels / Pinterest, skip this persona — it's not the right audience filter. So LinkedIn drafts run 4/4 personas; other channels stay at 3/3.
+
+**This persona FAILS the LinkedIn draft if it contains:**
+
+- AI-templated openers — "I just did X. Here's what it taught me about life."
+- Broetry walls — every line a new paragraph for fake drama
+- Hustle-culture markers — "Day 47 of building Aykah", "rise and grind"
+- Inspirational quote pasted as if original
+- Hook over 140 characters (lost on mobile cutoff)
+- "Most people get this wrong. Here's why..." opener
+- Engagement-bait closers — "Agree?", "Thoughts?", "DM me"
+- "🚀 BIG NEWS 🚀" / emoji walls
+- "I'm humbled to announce…" / "Thrilled to share…"
+- "Game-changer", "disruptor", "10x", "leverage", "synergize" — broetry signals
+- Off-topic for the founder's profile (LinkedIn algorithm now matches post topic to job-title metadata; Sanya/Salman should post on furniture/retail/sourcing/DTC ops, NOT generic leadership lessons — those will be suppressed)
+- Single hero image attached (UNDER-performs text-only — image direction should specify carousel or video instead)
+- External link in feed post body (60% reach penalty — link should be removed or moved to an article)
+- "Link in first comment" trick (now also penalized as of early 2026)
+
+**What this persona LIKES:**
+
+- Specific moment + tension or surprise + 2–3 line synthesis + one quotable closing line
+- Real numbers (years operating, units shipped, customer count, lead-time data)
+- A real customer voice quoted directly
+- Operational transparency — supply-chain, returns math, showroom economics
+- Slightly contrarian takes when warranted (DTC playbook says no showrooms — we built two)
+- 1,300–1,900 character body length (the engagement sweet-spot)
+- Document carousel OR short native video format direction (the format winners)
+- Founder's voice mode (sanya/salman) for thought-leadership posts; company voice only for milestones/hiring/partnerships
+- Quotable closing line — single specific declarative ("That's why we don't do X.") OR a question that doesn't demand an answer ("Would you buy this?") OR a forward-looking line ("We're betting on this for the next five years.")
+
+**Tone calibration:**
+
+LinkedIn voice is the Aykah brand voice translated for professionals. Confident not braggy. Specific not generic. Founder-first (Sanya/Salman as protagonists, brand as canvas). Operational truth over hype. Plain language, not corporate jargon.
+
+If a draft passes Persona 1 (Sanya filter) and Persona 2 (reference-set customer) and Persona 3 (channel guide) but FAILS this persona, it's usually because the post is brand-correct but doesn't read as professional / on-topic / non-AI. Rewrite with more specificity (a real number, a real moment, a real customer name) and cut the broetry / cliché markers.
+
+---
+
+## Updated execution rules
+
+LinkedIn drafts: run all 4 personas (Sanya filter → reference-set customer → channel guide → industry-pro filter). Need 4/4 to pass.
+
+All other channels (IG, Reels/TikTok, Pinterest): run personas 1–3. Need 3/3 to pass.
+
+Output to user:
+
+```
+PERSONAS: 3/3 passed   (for non-LinkedIn channels)
+PERSONAS: 4/4 passed   (for LinkedIn channel)
+```

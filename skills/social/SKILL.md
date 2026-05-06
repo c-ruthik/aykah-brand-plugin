@@ -51,8 +51,9 @@ These two files are non-negotiable. Skipping them invites banned-word leakage.
 | Instagram, IG, Insta, feed post, carousel | `references/channels/instagram.md` |
 | Reels, TikTok, TT, short-form video, vertical video | `references/channels/reels-tiktok.md` |
 | Pinterest, pin, board | `references/channels/pinterest.md` |
+| LinkedIn, IN, professional post, founder post, thought leadership, long-form article, B2B post | `references/channels/linkedin.md` |
 
-If the user names a channel not in the list (Threads, X, LinkedIn, FB, paid social), say so plainly and ask if they want a generic adaptation or to wait for that channel's reference file in a future version. Do not invent platform rules.
+If the user names a channel not in the list (Threads, X, FB, paid social), say so plainly and ask if they want a generic adaptation or to wait for that channel's reference file in a future version. Do not invent platform rules.
 
 ## The three personas (HARD-GATE before delivery)
 
