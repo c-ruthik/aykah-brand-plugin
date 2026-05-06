@@ -25,6 +25,153 @@ Apply brand colors only when the user explicitly names them ("include a navy thr
 - bright candy pastels (Aykah pastels are MUTED — dusty, dusky, washed-out)
 - hex codes inline in any prompt
 
+---
+
+## v10 Collected Lived-In Register (LOCKED 2026-05-06)
+
+The v9 monotone-cream pattern is upgraded to **v10 — Collected Lived-In**: same cream/oatmeal base, but with deep muted earth-tone accents, broader textures, and one subtle-pattern pillow per scene. This is the new master register for living-room lifestyle gens.
+
+### Approved deep-muted accent colors (use 1–2 per scene)
+
+These accents go on pillows / throws / accent chairs / vases / books — NOT walls, NOT floors, NOT primary upholstery:
+
+- **Olive green / sage green / forest green** — muted, dusty, never bright kelly green
+- **Chocolate brown / cocoa brown** — deep warm brown, velvet preferred
+- **Deep burgundy / wine / oxblood** — restrained merlot, never primary red
+- **Mustard / caramel / honey-amber** — golden warm, never lemon
+- **Deep rust / terracotta-brown** — fired-clay tone
+- **Slate-grey-brown (deep greige)** — taupe with depth
+
+**Maximum 2 different accent colors per scene.** The patterned pillow's dominant tone(s) count toward this 2-accent cap.
+
+### Banned accent colors (clean / bright / saturated — never use)
+
+- Navy (reserved for brand wordmark only — never as room accent)
+- Powder blue / sky blue / cornflower
+- Millennial pink / dusty rose / blush
+- Lemon yellow / butter yellow
+- Mint / aqua / teal
+- Saturated jewel tones — emerald, sapphire, ruby, amethyst
+- Tie-dye / shibori / batik patterns
+- Animal print of any kind
+
+### Pillow texture matrix (4–6 pillows per scene, mix 4 textures minimum)
+
+The v10 stack mixes textures rather than relying on knit-only stacks. Use this matrix:
+
+| Slot | Default texture | Acceptable substitutes |
+|---|---|---|
+| 1 — neutral textured | Ivory tight-loop boucle | Cream waffle-knit, soft sherpa |
+| 2 — neutral textured | Oatmeal nubby slub linen | Cream raw linen, oat textured cotton |
+| 3 — accent color | Deep-muted velvet (smooth sheen) — olive / chocolate / burgundy / mustard | Velvet is the default sheen contrast — only sub if scene already has a velvet anchor |
+| 4 — accent color (optional, for sectionals) | Second deep-muted velvet OR brushed wool | Brushed wool herringbone, linen-velvet blend |
+| 5 — patterned (always include exactly ONE) | Faded kilim / earthy tribal / vintage tapestry / thin black-on-cream pinstripe | Earthy block-print, faded southwestern stripe |
+| 6 — optional shaggy/fur accent (rare, ~10% of scenes) | Mongolian fur / sheepskin in mustard or cream | Single use only, never paired with another shaggy |
+
+**Hard rule:** at least one velvet (smooth sheen) + at least one knit/boucle (textural matte) + at least one linen-weave (woven matte) per scene. Never all-knit, never all-velvet, never all-linen.
+
+### One subtle-pattern pillow per scene (NEW — always include exactly one)
+
+Every Aykah lifestyle scene includes EXACTLY ONE subtle-pattern pillow. Never zero, never two.
+
+**Approved pattern types:**
+- Faded kilim / tribal motif in earth tones (oat + chocolate + rust)
+- Subtle vintage tapestry / faded oriental motif (the pillow version of the rug)
+- Thin black-on-cream pinstripe (modern, minimal)
+- Earthy block-print with widely-spaced muted motif
+- Faded southwestern stripe (oat + chocolate + brick)
+
+**Banned pattern types:**
+- Modern bold geometric (chevrons, hexagons, big florals)
+- Floral prints (tropical, English chintz, watercolor florals)
+- Plaid, gingham, buffalo check
+- Bold graphic / typography / logo
+- Animal print
+- Tie-dye / shibori / batik
+- High-contrast bright-on-dark anything
+
+**Default size:** lumbar (14×24" or 12×20") — the pattern reads as accent punctuation, not headline. Square (20×20) only when the lumbar slot is already taken by a deep-color velvet.
+
+**Placement on a sofa:** front-and-center (between two corner pillows) OR slightly off-center on dominant arm side.
+**Placement on a sectional:** central seat zone OR front of L-bend — NEVER at the extreme far-corner arms or hidden behind the bend.
+
+### Dark anchor — 4 options (was: only matte black art frame)
+
+Every Aykah lifestyle scene has EXACTLY ONE dominant dark visual anchor. Pick one option per scene — never stack two.
+
+**Option A — Wall-art anchor (~50% of scenes — default)**
+- Matte black framed abstract (cream + black ink wash / minimal line drawing)
+- Moody dark-toned figurative painting (charcoal landscape, brown-toned animal, sepia)
+
+**Option B — Furniture anchor (~30% of scenes)**
+- Dark walnut credenza / sideboard behind sofa
+- Dark walnut fluted nesting tables / coffee table
+- Matte black round or oval coffee table
+- Dark fluted reeded base
+- **When using furniture anchor → wall art must be LIGHT/cream/subtle, OR no wall art at all**
+
+**Option C — Architectural anchor (~15% of scenes)**
+- Matte black sconces flanking subtle cream art (sconces become the anchor)
+- Matte black chandelier visible in frame
+
+**Option D — Matched 3-piece gallery set (~5% of scenes — rare)**
+- 3 matching small thin-frame landscapes in a row = ONE unit, counts as one anchor
+- Use only when the scene calls for symmetry (formal living room, paneled wall)
+
+**Hard rules:**
+- NEVER 2+ pieces of wall art on the same wall (matched 3-frame gallery = one unit, exempt)
+- NEVER pair dark walnut credenza + dark walnut coffee table — ONE dark wood note per scene
+- The anchor must read as the visual gravitational center — bigger, darker, or more dominant than anything else
+
+### Modern florals (drop the vintage register)
+
+**Approved (modern, sculptural, alive or dramatic-dried):**
+- Fresh white tulips in cream stoneware (modern, alive)
+- Tall fresh airy green branches in stoneware floor vase (eucalyptus, olive sprig, willow)
+- Deep rust-red dried berry branches in cream urn (dramatic, muted)
+- Tall dried fennel / feathery dried wildflower in cream vase
+- Cherry blossom branches (in season)
+
+**Banned (vintage / old-fashioned register):**
+- Pampas grass — over and out
+- Dried wheat / dried lavender bunches — old-fashioned
+- English country dried hydrangeas
+- Heavy florals in ornate vases
+- Silk / fake flowers of any kind
+
+### Books — solid plain covers, NO text (UPDATED)
+
+Books are now allowed as decor in living-room scenes (overrides the prior "books almost never" rule for living rooms specifically). When books appear:
+
+- Stack of 2–3 plain matte hardcovers, NEVER 4+
+- Spines and covers must be **solid muted neutral tones** (cream / oat / sage / chocolate / black)
+- **NO visible titles, NO author names, NO publisher logos, NO readable text of any kind**
+- Spines plain or with subtle blind-debossed lines only
+- Stacked flat on coffee table OR ottoman, NEVER fanned or open
+- One closed paperback splayed at a page is OK ONLY if the cover is plain (no Penguin Classics-style design)
+
+### Furniture contrast rule (NEW)
+
+At least ONE piece in the room must be a noticeably darker tone than the sofa. Options:
+- Dark walnut coffee table (most common)
+- Matte black coffee table
+- Dark walnut credenza / sideboard behind sofa
+- Dark fluted reeded base on side table
+- (Optional 2nd accent furniture) Olive-green velvet swivel chair as a second color note
+
+This prevents the "everything-cream-on-cream" monotone failure mode. If the dark anchor is wall art (Option A), the furniture-contrast piece can still be present (e.g., a dark-walnut coffee table) — the wall art remains the dominant anchor, the furniture is supporting contrast.
+
+### AI-realism cues (always include)
+
+To avoid AI-tells in lifestyle gens, every scene plan includes:
+- "Slight asymmetry in pillow arrangement — no mirrored placement"
+- "Throws cast naturally with one corner pulled loose, never folded perfectly"
+- "Books stacked at slight off-angle, not aligned to coffee table edge"
+- "Plant leaves with believable variation — some leaves angled differently, no perfect radial symmetry"
+- "Light source has a believable origin — single window from camera-LEFT"
+- "Surfaces show real-world texture — visible wood grain, fabric weave, ceramic glaze imperfections"
+- "Rug shows subtle wear / pile direction variation, never plastic-perfect"
+
 ## Wall finish anchor (Aykah signature)
 
 Every lifestyle prompt should specify the wall as a **subtle limewashed pastel** — not flat paint, not heavy plaster.

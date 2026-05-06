@@ -29,11 +29,11 @@ If the lookbook has entries, find the closest match (by mode + room + vibe) and 
 
 **Brand color rule (image generation only):** Brand colors are IGNORED in image generation. The Aykah palette (Navy `#363B57`, Ivory `#FAF8F4`, Gold `#B8956A`) is for graphic design, web, typography, packaging — not for forcing into AI lifestyle imagery. Default palette is broader than the strict Aykah brand voice — see Visual register section below.
 
-# Visual register (locked 2026-05-05 — v9 living-room DNA)
+# Visual register (locked 2026-05-06 — v10 Collected Lived-In)
 
 The Aykah BRAND VOICE (copy, captions, taglines) stays strictly in the Aesop/Sundays/Quince register — warm, considered, restrained. **The IMAGE register is room-aware and DNA-driven from approved references.**
 
-**Default image register:** **Bright, airy, spacious, well-interior-designed — yet not dull.** Magazine-natural midpoint with proper contrast ratio (NOT flashy, NOT bright/saturated colors, NOT cool-pop accents). Real-home register, not bare/empty rooms. Furnished, considered, woodwork-detailed spaces.
+**Default image register:** **Bright, airy, spacious, well-interior-designed — collected, not monotone.** v10 evolves the v9 monotone-cream pattern into a **collected lived-in register**: same cream/oatmeal base, but with deep muted earth-tone accents (olive / chocolate / burgundy / mustard / rust), broader texture variety (velvet + boucle + linen + wool, not knit-only), one subtle-pattern pillow per scene, and a furniture-or-art dark anchor. The room reads layered and real, not flat-cream.
 
 **Anti-register (always avoid):**
 - Cozey-energetic, Article-trendy, RH-stuffy-formal, IKEA-utilitarian, Wayfair-transactional
@@ -54,89 +54,189 @@ The hero's `pairing_category` determines which DNA recipe to apply:
 | `bed`, `nightstand`, `dresser` | **BEDROOM** | Bedroom DNA (TBD — placeholder) |
 | `dining-table`, `dining-chair`, `bar-stool`, `credenza` | **DINING ROOM** | Existing dining rules |
 
-# LIVING ROOM DNA (mandatory for any living-room hero — locked 2026-05-05)
+# LIVING ROOM DNA (mandatory for any living-room hero — v10 LOCKED 2026-05-06)
 
-This DNA is extracted from 6 approved reference images in `references/lookbook-living-room/`. **Apply all elements organically — design the room like an interior designer would, not like a menu picker.** Every element below must be present in some form.
+This DNA is the v10 Collected Lived-In register. It evolves v9 (monotone cream) into a layered scene with deep-muted accents, mixed textures, one subtle-pattern pillow, and an expanded dark-anchor system. Extracted from 6 approved reference images in `references/lookbook-living-room/` plus a 2026-05-06 inspo set.
+
+**Apply all elements organically — design the room like an interior designer would, not like a menu picker.** Every element below must be present in some form.
 
 ## 1. Walls — limewashed, warm-natural cream + ONE architectural feature
 
 - **Wall finish: lime-washed plaster** (NOT painted flat, NOT drywall-smooth) — limewash gives subtle tonal variation that catches light, the texture you see in every reference image
 - **Wall color: warm-natural cream** — never pink, never stark-white, never yellow-cream, never warm-amber. Bright AND warm-natural simultaneously.
 - **ONE architectural feature** that complements the scene (designer picks which one fits — NOT all stacked):
-  - White wainscot lower 1/3 with slim picture rail (image 03), OR
-  - Tile-paneled feature wall (image 01), OR
-  - Coffered ceiling (image 04), OR
-  - Single statement wall paneling/moulding (gallery wall background), OR
-  - Plain limewash + ONE substantial framed art piece (image 02, 05, 06)
+  - White wainscot lower 1/3 with slim picture rail
+  - Tile-paneled feature wall
+  - Coffered ceiling
+  - Full-wall board-and-batten white paneling
+  - Single statement wall paneling/moulding
+  - Plain limewash + ONE substantial framed art piece
 - One feature, picked by the designer's judgment for the scene. Never stack all of them.
 
-## 2. The dark anchor — ONE source per scene (provides contrast without flashy color)
+## 2. Dark anchor — EXACTLY ONE source per scene (4 OPTIONS — pick ONE, never stack two)
 
-Every living-room scene must have ONE dark anchor. Designer picks ONE source, never multiple:
+Every living-room scene has EXACTLY ONE dominant dark visual anchor. Pick one option per scene. Never combine two.
 
-- ONE matte-black-framed substantial art piece (gestural ink, moody landscape, abstract with black) — most common, default choice
-- OR ONE dark-walnut/black coffee table or credenza (substantial silhouette — fluted drum, live-edge slab, oval pedestal)
-- OR ONE dark wood furniture piece behind the sofa (credenza, sideboard) — image 02
+**Option A — Wall-art anchor (~50% of scenes — default)**
+- ONE matte-black-framed substantial art piece (gestural ink, abstract ink-wash, minimal line drawing)
+- OR ONE moody dark-toned figurative painting (charcoal landscape, brown-toned animal portrait, sepia photo)
+- Frame size ~140cm wide × 100cm tall above the sofa
+- Cream museum-mat surrounds the artwork
 
-The dark anchor delivers the "proper contrast ratio" — never via cool-pop textiles, always via wood or art.
+**Option B — Furniture anchor (~30% of scenes)**
+- Dark walnut credenza / sideboard behind sofa
+- Dark walnut fluted nesting tables / coffee table
+- Matte black round or oval coffee table
+- Dark fluted reeded base on side table
+- **When using furniture anchor → wall art must be LIGHT/cream/subtle, OR no wall art at all**
+- Never pair dark walnut credenza + dark walnut coffee table — ONE dark wood note per scene
 
-## 3. Pillows — 3–5 on a sofa, TONAL HARMONY only
+**Option C — Architectural anchor (~15% of scenes)**
+- Matte black sconces flanking subtle cream art (sconces become the anchor)
+- Matte black chandelier visible in frame
+- Use when the room reads moodier or the wall is plain
 
-- **Count:** 3 to 5 pillows on a sofa (NOT a 4-pillow stack — that's bedroom logic). Sectionals can take up to 5–6 across the L-shape.
-- **Palette:** All in 3-step warm-neutral spectrum: ivory → oatmeal → deep-greige → brown. Earth-accents OK (rust, forest-green, deep-brown — image 03/04/05). **NEVER:** cool-blue, slate, dusty-blue, grey-blue, navy, saturated bright colors.
-- **Texture mix > color mix:** boucle + linen + waffle-knit + nubby slub. Pillows differ by texture, not by saturated color.
-- **Imperfection cue:** one pillow slightly off-center, one leaning casual.
+**Option D — Matched 3-piece gallery set (~5% of scenes — rare)**
+- 3 matching small thin-frame landscapes in a row = ONE unit, counts as one anchor
+- Use only when the scene calls for symmetry (formal living room, paneled wall)
 
-## 4. Throw — optional, in tonal harmony
+**Hard rules:**
+- NEVER 2+ separate pieces of wall art on the same wall (matched 3-frame gallery exempt)
+- NEVER pair multiple dark-wood furniture pieces — one dark-wood note per scene
+- The anchor must read as the visual gravitational center — bigger, darker, or more dominant than anything else
 
-If a throw is included: warm cream cable-knit OR oatmeal linen-wool OR sage/forest accent OR rust accent. **Never blue, never slate, never dusty-grey.** Draped naturally, one corner pulled loose.
+## 3. Pillows — 4–6 on a sofa, MIXED TEXTURE + DEEP-MUTED ACCENTS
+
+The v10 stack mixes textures + adds 1–2 deep-muted accent colors + always includes ONE patterned pillow.
+
+**Count:** 4–6 pillows on a sofa or sectional (4 minimum to read layered, 6 max).
+
+**The slot system — every scene fills these slots in some combination:**
+
+| Slot | Texture | Color | Notes |
+|---|---|---|---|
+| Slot 1 | Boucle / sherpa / waffle-knit (knit family) | Ivory or oatmeal cream | Neutral textured base |
+| Slot 2 | Slub linen / raw linen / textured cotton (linen family) | Oatmeal or cream | Neutral woven base |
+| Slot 3 | **Velvet (smooth sheen)** | Deep-muted accent: olive / chocolate / burgundy / mustard / rust | First accent — mandatory |
+| Slot 4 (sectionals only) | Velvet / brushed wool herringbone | Second deep-muted accent OR same accent as slot 3 | Second accent — optional, max 2 colors total |
+| Slot 5 | **Patterned (lumbar size 14×24" preferred)** | Earth-tone motif | Faded kilim / vintage tapestry / thin black-on-cream pinstripe / earthy block-print / faded southwestern stripe |
+| Slot 6 (rare, ~10%) | Mongolian fur / sheepskin shaggy | Cream or mustard | Single use only, never paired with another shaggy |
+
+**Approved deep-muted accent palette (use 1–2 per scene):**
+- Olive green / sage green / forest green
+- Chocolate brown / cocoa brown
+- Deep burgundy / wine / oxblood
+- Mustard / caramel / honey-amber
+- Deep rust / terracotta-brown
+- Slate-grey-brown (deep greige)
+
+**Cap:** maximum 2 different accent colors per scene. The patterned pillow's dominant tone(s) count toward this 2-accent cap.
+
+**Banned colors (clean / bright / saturated — NEVER):**
+- Navy (wordmark-only) — never as room accent
+- Powder blue / sky blue / cornflower
+- Millennial pink / dusty rose / blush
+- Lemon yellow / butter yellow
+- Mint / aqua / teal
+- Saturated jewel tones (emerald, sapphire, ruby)
+
+**Texture rule:** at least 1 velvet (smooth sheen) + at least 1 knit/boucle + at least 1 linen-weave per scene. Never all-knit, never all-velvet, never all-linen. Three knits (cable + waffle + sherpa) STILL fails — they're all knit family.
+
+**Patterned pillow placement:**
+- Sofa: front-and-center between two corner pillows OR slightly off-center on dominant arm side
+- Sectional: central seat zone OR front of L-bend — NEVER at extreme far-corner arms or hidden behind the bend
+
+**Imperfection cue:** one pillow slightly off-center, one leaning casual. NO mirrored/symmetric placement.
+
+## 4. Throw — optional, rotate types per scene (never default to chunky knit)
+
+If a throw is included, designer rotates between these types — never defaults to chunky cable-knit every time:
+
+- Warm cream chunky cable-knit (the v9 default — use ~30% of scenes)
+- Sage-green chunky knit (color accent throw)
+- Brown / oat fringe knit
+- Cream waffle-knit
+- Linen-mohair blend
+- Brushed wool herringbone
+
+**Never:** cool-blue, slate, dusty-grey, navy, primary-color throws.
+
+Draped naturally, ONE corner pulled loose. Never folded perfectly.
 
 ## 5. Coffee table — substantial and characterful
 
-- Always a real piece with character — drum, fluted, live-edge slab, oval pedestal, dark walnut
+- Always a real piece with character — drum, fluted, live-edge slab, oval pedestal, dark walnut, raw reclaimed wood plank
 - NEVER a plain flat surface
-- Often the dark anchor itself if dark-toned
+- Often the dark anchor itself (Option B) if dark-toned
 - For combo=1 with a sofa hero, pick a coffee table from the catalog that has visual presence
 
 ## 6. Wood tone — ONE dominates the scene
 
 Pick ONE dominant wood tone per scene (designer's call):
-- **Light blonde / oak dominance** (images 04, 06, 01) — light coffee table, light floor, light beam
-- **Dark walnut dominance** (images 02, 03) — dark coffee table, dark credenza, dark fluted base
+- **Light blonde / oak dominance** — light coffee table, light floor, light beam
+- **Dark walnut dominance** — dark coffee table, dark credenza, dark fluted base
+- **Raw / reclaimed light wood** — chunky raw plank coffee table, natural live-edge
 
-Never stack both light AND dark wood as primary tones — picks one, accents with the other if needed.
+Never stack both light AND dark wood as primary tones — pick one, accent with the other if needed.
 
 ## 7. Rug — cozy, scene-appropriate (designer picks based on register)
 
-- **Vintage-faded warm-tones** (images 02, 03, 05) — best for cozy/intimate register
-- **Cream loop-pile / berber chunky knit** — best for bright-airy register
-- **Jute / textured natural fibre** — OK if the rest of the scene is bright + airy enough (images 04, 06)
-- **NEVER:** sisal alone, flatweave low-pile alone, plain solid pile, bright pattern, bold geometric
+- **Vintage-faded warm-tones** (sage + burgundy + oat / faded medallion / muted southwestern) — cozy / intimate register
+- **Cream loop-pile / berber chunky knit / cable-knit-style** — bright-airy register
+- **Jute / textured natural fibre** — OK if the rest of the scene is bright + airy enough
+- **NEVER:** sisal alone, flatweave low-pile alone, plain solid pile, bright pattern, bold geometric, round rugs
 
 Rug type follows the scene's register — designer chooses.
 
 ## 8. Greenery — substantial, ONE element
 
 - Olive tree (~1.5m) in cream stoneware, OR
-- Tall branches in cream stoneware floor vase (cherry, eucalyptus, dried), OR
-- Trailing plant climbing window edge (image 01)
+- Tall airy fresh branches in cream stoneware floor vase (eucalyptus, willow, olive sprigs), OR
+- Trailing plant climbing window edge
 - **Never:** small placed-in fiddle leaf in tiny pot (decorator-fake)
 - One greenery element per scene — the only living-green note
 
-## 9. Decor — considered, lived-in
+## 9. Florals + decor — MODERN register (overrides vintage register)
 
-Always present, never bare:
+**Approved florals (modern, sculptural, alive or dramatic-dried):**
+- Fresh white tulips in cream stoneware (modern, alive)
+- Tall fresh airy green branches (eucalyptus, willow, olive sprig)
+- Deep rust-red dried berry branches in cream urn (dramatic, muted)
+- Tall dried fennel / feathery dried wildflower in cream vase
+- Cherry blossom branches (in season)
+
+**Banned florals (vintage / old-fashioned register):**
+- Pampas grass — over and out
+- Dried wheat / dried lavender bunches
+- English country dried hydrangeas
+- Heavy florals in ornate Victorian / chinoiserie / brass-handle vases
+- Silk / fake flowers of any kind
+
+**Other decor:**
 - 1–2 stoneware vessels (vase with branches, low bowl, hand-thrown clay)
-- 1 paperback splayed open OR design book stack
-- 1 small honed-travertine catch dish OR similar
+- 1 small honed-travertine catch dish OR earthenware tray
+- 2–3 plain solid-cover hardcover books on coffee table or ottoman (see rule 9b)
 - Texture mix on the coffee table — book + vessel + dish triangulation
+
+## 9b. Books — solid plain covers, NO TEXT (NEW)
+
+Books are now allowed as decor in living-room scenes (overrides the prior "books almost never" rule for living-room mode specifically). When books appear:
+
+- Stack of 2–3 plain matte hardcovers, NEVER 4+
+- Spines and covers must be **solid muted neutral tones** (cream / oat / sage / chocolate / black)
+- **NO visible titles, NO author names, NO publisher logos, NO readable text of any kind**
+- Spines plain or with subtle blind-debossed lines only
+- Stacked flat at slight off-angle, NEVER fanned or aligned to coffee table edge
+- One closed paperback splayed at a page is OK ONLY if the cover is plain (no Penguin Classics-style design)
+- NEVER books arranged by color (magazine cliché)
 
 ## 10. Lighting fixture — ONE visible
 
 Always include ONE visible light fixture in frame:
-- Black-detailed wall sconce (images 03, 06), OR
-- Brass-and-black chandelier above (image 02), OR
-- Brass arc floor lamp (existing brand favorite), OR
+- Matte black wall sconce
+- Matte black 5-arm linen-shade chandelier (modern fixture)
+- Brass-and-black chandelier
+- Brass arc floor lamp
 - Pendant chandelier hanging into upper third
 - Provides depth + contrast point without being a "feature"
 
@@ -149,33 +249,72 @@ Always include ONE visible light fixture in frame:
 
 ## 12. Drapes — full-length sheer cream linen
 
-Pooling at floor. Filters daylight without blocking it.
+Pooling at floor. Filters daylight without blocking it. Sometimes warm-greige linen drapes (slightly heavier weight) when scene calls for cozier register.
 
-## 13. Furnishing density — MEDIUM
+## 13. Furniture contrast rule (NEW — v10)
+
+At least ONE piece in the room MUST be a noticeably darker tone than the sofa. This prevents the "everything-cream-on-cream" monotone failure mode:
+
+- Dark walnut coffee table (most common)
+- Matte black coffee table
+- Dark walnut credenza / sideboard behind sofa
+- Dark fluted reeded base on side table
+
+If the dark anchor is wall art (Option A), the furniture-contrast piece can still be present — the wall art remains the dominant anchor, the furniture is supporting contrast.
+
+**Optional 2nd-color accent furniture:** olive-green velvet swivel chair, sage-green ottoman, or chocolate-leather lounge chair — adds a second deep-muted color note. Use sparingly (~30% of scenes), never two accent furnitures together.
+
+## 14. Furnishing density — MEDIUM
 
 - NEVER bare/sparse (designer-fake feel)
 - NEVER cluttered (Wayfair feel)
 - Real-home: every visible object is real and purposeful, but the room breathes
 
-## Self-check before returning
+## 15. AI-realism cues (NEW — v10, always include in scene plan)
 
-Verify ALL of these are present in the scene plan (no menu — all 13 elements appear in the plan in some form):
+Bake these realism cues into every scene plan to dodge AI-tells:
+- Slight asymmetry in pillow arrangement — never mirrored placement
+- Throw cast naturally with one corner pulled loose, never folded perfectly
+- Books stacked at slight off-angle, never aligned to coffee table edge
+- Plant leaves with believable variation — some leaves angled differently, no perfect radial symmetry
+- Light source has a single believable origin — single window from camera-LEFT
+- Surfaces show real-world texture — visible wood grain, fabric weave, ceramic glaze imperfections
+- Rug shows subtle wear / pile direction variation, never plastic-perfect
+- No floating objects — every object makes solid contact with its surface
+
+## Self-check before returning (v10)
+
+Verify ALL of these are present in the scene plan (no menu — all 17 elements appear in some form):
 
 1. ✅ Lime-washed walls in warm-natural cream
 2. ✅ ONE architectural feature (designer's pick)
-3. ✅ ONE dark anchor source (frame OR coffee table OR credenza)
-4. ✅ 3–5 pillows in tonal harmony (no cool-pop)
-5. ✅ Throw (optional) in tonal harmony only
-6. ✅ Substantial characterful coffee table
-7. ✅ ONE wood tone dominates
-8. ✅ Cozy rug (designer picked appropriate type)
-9. ✅ Substantial single greenery
-10. ✅ Considered decor (stoneware + book + dish)
-11. ✅ ONE visible lighting fixture
-12. ✅ 5400K daylight, single window source camera-LEFT
-13. ✅ Sheer cream linen drapes pooling
+3. ✅ ONE dark anchor — Option A / B / C / D (never stack two)
+4. ✅ 4–6 pillows in mixed texture (velvet + knit + linen minimum) with 1–2 deep-muted accent colors
+5. ✅ EXACTLY ONE patterned pillow (lumbar default, earth-tone motif)
+6. ✅ Throw type rotated (not always chunky knit)
+7. ✅ Substantial characterful coffee table
+8. ✅ ONE wood tone dominates
+9. ✅ Cozy rug (designer picked appropriate type — vintage faded / berber / jute)
+10. ✅ Substantial single greenery (olive tree or tall fresh branches)
+11. ✅ Modern florals (no pampas, no wheat, no lavender, no fake)
+12. ✅ Books with solid plain covers, NO text (if included)
+13. ✅ ONE visible lighting fixture
+14. ✅ 5400K daylight, single window source camera-LEFT
+15. ✅ Sheer cream linen drapes pooling
+16. ✅ Furniture contrast — at least one piece darker than sofa
+17. ✅ AI-realism cues baked in (no symmetry, no perfect folds, no plastic-shine)
 
-Any element missing = scene plan fails self-check. Add it before returning.
+**Hard fail conditions (any one of these = scene plan rejected, redo):**
+- 2+ separate wall art pieces on the same wall (3-frame matched gallery exempt)
+- All-knit pillow stack (no velvet, no linen)
+- Zero patterned pillow OR 2+ patterned pillows
+- 3+ accent colors competing
+- Pampas / dried wheat / dried lavender / fake flowers anywhere
+- Books with visible titles or readable text
+- Mirrored pillow placement / perfectly folded throw / books aligned to edge
+- Cool-blue / pastel / saturated bright color anywhere
+
+Any element missing or any hard-fail triggered = scene plan fails self-check. Fix before returning.
 
 # BEDROOM DNA — placeholder (TBD)
 
@@ -631,7 +770,7 @@ SELF-CHECK (do this BEFORE returning)
 11. **Style diversity rule** — if previous 3 approved scenes share a pattern (always evening, always 3/4 angle, always moody), deliberately move AWAY from that pattern unless user requested "same style."
 12. **Banned content (zero tolerance):** alcohol, tobacco, 18+, children's items, plastic plants, silk flowers, fireplaces, fruit bowls, vases (any material), candles in bright daylight scenes, round rugs.
 13. **Brand-name ban.** Never write "Le Labo Santal 33 candle" / "IKEA SKURAR pot" / "Diptyque candle" / "Aesop bottle" — brand labels render as fake / distorted text in AI images. Always describe generically: "warm amber glass candle" / "white ceramic pot" / "hand-thrown stoneware bowl."
-14. **Books almost never.** Don't include books unless a human in the scene is using one. Never stack books on furniture as decoration — they steal focus. Books are NOT a styling tool.
+14. **Books — v10 rules (overrides prior "almost never").** For LIVING ROOM scenes, 2–3 plain solid-cover hardcover books on the coffee table or ottoman ARE allowed and recommended. Strict rules: solid muted-neutral covers (cream / oat / sage / chocolate / black), NO visible titles / author names / logos / readable text, stacked at slight off-angle (never aligned to edge). For DINING ROOM and BEDROOM scenes, the prior rule still holds — books almost never, only when a human is using one.
 15. **Catalog discipline is non-negotiable.** Every furniture item must come from the catalog by exact `handle` and `title`. Never invent. See "Catalog discipline" section above.
 
 # Layout plan structure (include in every scene plan)

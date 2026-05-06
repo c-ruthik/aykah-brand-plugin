@@ -1,12 +1,106 @@
 {
-  "version": "v1",
-  "name": "Aykah Image Prompt Pattern (Benetha-derived)",
-  "last_updated": "2026-05-01",
+  "version": "v10",
+  "name": "Aykah Image Prompt Pattern (v10 Collected Lived-In)",
+  "last_updated": "2026-05-06",
   "source_doc": "02_Strategy/Aykah-Prompt-Pattern-v1.md",
   "principles": {
     "core_rule": "It must feel like a real home photograph, not a render.",
-    "defining_diff": "controlled imperfection + lighting specificity + anti-AI constraints",
-    "brand_color_policy": "IGNORED in image generation. Brand palette (Navy #363B57, Ivory #FAF8F4, Gold #B8956A) is graphic-design-only. Use earthy neutrals by default. Apply brand colors only when user explicitly requests them in the prompt."
+    "defining_diff": "controlled imperfection + lighting specificity + anti-AI constraints + layered tonal contrast",
+    "brand_color_policy": "IGNORED in image generation. Brand palette (Navy #363B57, Ivory #FAF8F4, Gold #B8956A) is graphic-design-only. Use earthy neutrals by default. Apply brand colors only when user explicitly requests them in the prompt.",
+    "v10_register": "Collected Lived-In: cream/oatmeal base + deep muted earth-tone accents (olive/chocolate/burgundy/mustard/rust/sage) + mixed-texture pillows (velvet+knit+linen) + EXACTLY ONE patterned lumbar pillow + ONE dark anchor (art OR furniture OR architecture) + EXACTLY ONE wall art piece. Never monotone, never bright/saturated, never knit-only."
+  },
+  "v10_living_room_dna": {
+    "accent_colors_approved": [
+      "olive green", "sage green", "forest green",
+      "chocolate brown", "cocoa brown",
+      "deep burgundy", "wine", "oxblood",
+      "mustard", "caramel", "honey-amber",
+      "deep rust", "terracotta-brown",
+      "slate-grey-brown", "deep greige"
+    ],
+    "accent_colors_banned": [
+      "navy (wordmark-only)", "powder blue", "sky blue", "cornflower",
+      "millennial pink", "dusty rose", "blush",
+      "lemon yellow", "butter yellow",
+      "mint", "aqua", "teal",
+      "emerald", "sapphire", "ruby", "amethyst"
+    ],
+    "max_accent_colors_per_scene": 2,
+    "pillow_count_per_sofa": "4-6",
+    "pillow_texture_minimum": "1 velvet + 1 knit/boucle + 1 linen-weave",
+    "patterned_pillow_count": 1,
+    "patterned_pillow_size_default": "lumbar 14x24",
+    "patterned_pillow_approved_motifs": [
+      "faded kilim earth-tone",
+      "vintage tapestry faded oriental motif",
+      "thin black-on-cream pinstripe",
+      "earthy block-print with widely-spaced muted motif",
+      "faded southwestern stripe oat+chocolate+brick"
+    ],
+    "patterned_pillow_banned_motifs": [
+      "modern bold geometric (chevrons, hexagons)",
+      "floral prints (tropical, chintz, watercolor)",
+      "plaid, gingham, buffalo check",
+      "bold graphic, typography, logo",
+      "animal print",
+      "tie-dye, shibori, batik",
+      "high-contrast bright-on-dark"
+    ],
+    "wall_art_count": 1,
+    "wall_art_exception": "matched 3-piece gallery set (3 identical thin-frame landscapes in a row) counts as 1 unit",
+    "dark_anchor_options": {
+      "A_wall_art_50pct": "matte black framed abstract OR moody dark-toned figurative painting (~140cm x 100cm above sofa)",
+      "B_furniture_30pct": "dark walnut credenza OR dark walnut fluted nesting tables OR matte black coffee table OR dark fluted reeded base — when used, wall art goes light/cream/subtle or omitted",
+      "C_architectural_15pct": "matte black sconces flanking subtle cream art OR matte black chandelier",
+      "D_matched_gallery_5pct": "3-piece matched thin-frame landscape set in a row (counts as one unit)"
+    },
+    "dark_anchor_hard_rules": [
+      "NEVER 2+ separate wall art pieces on the same wall",
+      "NEVER pair multiple dark-wood furniture pieces — one dark-wood note per scene",
+      "anchor must read as the visual gravitational center"
+    ],
+    "throws_rotate": [
+      "cream chunky cable-knit (~30%)",
+      "sage-green chunky knit",
+      "brown/oat fringe knit",
+      "cream waffle-knit",
+      "linen-mohair blend",
+      "brushed wool herringbone"
+    ],
+    "florals_approved_modern": [
+      "fresh white tulips in cream stoneware",
+      "tall fresh airy green branches (eucalyptus, willow, olive sprig)",
+      "deep rust-red dried berry branches in cream urn",
+      "tall dried fennel / feathery dried wildflower",
+      "cherry blossom branches in season"
+    ],
+    "florals_banned_vintage": [
+      "pampas grass",
+      "dried wheat",
+      "dried lavender bunches",
+      "English country dried hydrangeas",
+      "heavy florals in ornate Victorian / chinoiserie / brass-handle vases",
+      "silk or fake flowers"
+    ],
+    "books_rule_living_room": {
+      "allowed": true,
+      "stack_count": "2-3",
+      "cover_style": "plain matte hardcover, solid muted-neutral tone (cream/oat/sage/chocolate/black)",
+      "text_visible": false,
+      "titles_visible": false,
+      "logos_visible": false,
+      "stacking": "slight off-angle, NEVER aligned to edge, NEVER fanned open with visible text"
+    },
+    "books_rule_dining_bedroom": "almost never — only when a human is using one in the scene",
+    "furniture_contrast_rule": "at least ONE piece in the room must be a darker tone than the sofa (dark walnut coffee table / matte black coffee table / dark walnut credenza / dark fluted reeded base)",
+    "accent_furniture_optional": [
+      "olive-green velvet swivel chair",
+      "sage-green ottoman",
+      "chocolate-leather lounge chair"
+    ],
+    "color_temperature_K": 5400,
+    "color_temperature_range_K": "5200-5600",
+    "color_temperature_banned_K": "below 5200 (amber) or above 5600 (sterile cool)"
   },
   "skeleton": [
     "PRODUCT",
@@ -105,19 +199,33 @@
       "avoid artificial rendering",
       "avoid overly polished",
       "avoid perfect symmetry",
-      "avoid overly clean"
+      "avoid overly clean",
+      "no mirrored or perfectly symmetrical pillow placement",
+      "no perfectly folded throw blanket — one corner must be pulled loose",
+      "no books aligned perfectly parallel to coffee table edge — slight off-angle",
+      "no plant leaves in perfect radial symmetry — natural variation",
+      "no plastic-shine on any surface — matte natural finishes only",
+      "no rug edges aligned perfectly to floor planks",
+      "single believable light origin — no rim-lighting from impossible angles",
+      "no floating objects — every object makes solid contact with its surface"
     ],
     "lighting": [
       "no harsh shadows",
       "no bright whites",
       "no flat lighting",
-      "no overexposure"
+      "no overexposure",
+      "no 4400K amber cast",
+      "no 6500K sterile cool cast"
     ],
     "styling": [
       "no clutter",
       "no over-styling",
       "no staged feel",
-      "no showroom"
+      "no showroom",
+      "no monotone same-tone scene — at least one element must contrast",
+      "no all-knit pillow stack — must mix velvet + knit + linen",
+      "no zero patterned pillow and no two patterned pillows — exactly one",
+      "no 3+ accent colors competing"
     ],
     "composition": [
       "avoid centered perfection",
@@ -130,7 +238,25 @@
       "no live or dried plants beyond foliage in a single described vase",
       "no fruit bowls",
       "no fireplaces",
-      "no round rugs"
+      "no round rugs",
+      "no 2+ separate wall art pieces on the same wall (matched 3-piece gallery exempt)",
+      "no books with visible titles, author names, publisher logos, or readable text",
+      "no books arranged by color",
+      "no pampas grass",
+      "no dried wheat or dried lavender bunches",
+      "no English country dried hydrangeas",
+      "no silk or fake flowers",
+      "no ornate Victorian / chinoiserie / brass-handle vases"
+    ],
+    "colors_banned": [
+      "no navy as room accent (wordmark-only)",
+      "no powder blue, sky blue, cornflower",
+      "no millennial pink, dusty rose, blush",
+      "no mint, aqua, teal",
+      "no lemon yellow, butter yellow",
+      "no saturated jewel tones — emerald, sapphire, ruby, amethyst",
+      "no animal print",
+      "no tie-dye, shibori, batik"
     ]
   },
   "templates_by_product_type": {
@@ -182,8 +308,13 @@
   },
   "style_bible_short": "Built on controlled imperfection and lighting realism. Strict product accuracy first, then warm modern organic environment using earthy neutrals only. Soft side daylight + warm secondary light, late afternoon or early evening mood. Composition off-center and editorial. Styling minimal and repeatable — vase, books, one small object. Aggressively excludes anything artificial, bright, overly polished, or staged. The defining rule: it must feel like a real home photograph, not a render.",
   "iteration": {
-    "current_version": "v1",
+    "current_version": "v10",
     "history_kept": true,
-    "rule": "When boss's taste evolves, copy v1 to v2, edit v2, update prompt-pattern.json. Never overwrite v1."
+    "rule": "When boss's taste evolves, copy current to next, edit, update prompt-pattern.json. Never overwrite prior locked versions.",
+    "version_log": {
+      "v1": "Benetha-derived initial pattern (2026-05-01)",
+      "v9": "monotone cream master pattern, 4-pillow knit stack, single black art frame (locked 2026-05-05)",
+      "v10": "Collected Lived-In — adds deep-muted accents, mixed-texture pillows, exactly one patterned lumbar, expanded dark anchor (4 options), modern florals, plain-cover books, furniture contrast rule, AI-realism cues (locked 2026-05-06)"
+    }
   }
 }

@@ -6,9 +6,28 @@ When the interior designer agent runs, it reads this file to anchor every new sc
 
 ---
 
-## Status: 6 living-room canonical references (v0.14.5)
+## Status: v10 Collected Lived-In register (LOCKED 2026-05-06)
 
-The plugin now ships with 6 approved canonical reference images in `references/lookbook-living-room/`. These define the Aykah living-room DNA. The interior designer agent MUST match this visual register for any living-room scene.
+**v10 supersedes v9 monotone-cream as the master register.** The interior designer agent MUST follow the v10 rules in `aykah-interior-designer.md` Living Room DNA (sections 1–17). The 6 canonical reference images below remain valid as DNA anchors — v10 evolves the register without invalidating them.
+
+### What v10 changes vs v9
+
+| Element | v9 (monotone) | v10 (collected lived-in) |
+|---|---|---|
+| Pillows | 4 knit-heavy in ivory→oatmeal→greige | 4–6 pillows with mixed textures (velvet + knit + linen minimum) + 1–2 deep-muted accent colors + exactly 1 patterned lumbar |
+| Accent colors | Only ivory→greige neutrals | Deep muted earth tones IN: olive / chocolate / burgundy / mustard / rust / sage. Clean pastels OUT: navy / powder blue / blush / lemon / mint / jewel tones |
+| Patterned pillow | Banned | EXACTLY ONE per scene (faded kilim / vintage tapestry / thin pinstripe) |
+| Dark anchor | Only matte black art frame | 4 options: A) wall art (50%) / B) furniture — walnut credenza or black coffee table (30%) / C) architectural — black sconces or chandelier (15%) / D) matched 3-piece gallery (5%) |
+| Wall art count | 1 piece always | EXACTLY 1 piece (3-piece matched gallery counts as 1 unit) — never 2+ separate pieces |
+| Throws | Default cream chunky knit | Rotate: cream chunky / sage chunky / brown fringe / waffle / linen-mohair / brushed wool |
+| Florals | Olive sprigs only | Modern: white tulips / fresh airy branches / rust-red dried berries / dried fennel. Banned: pampas, wheat, lavender, fake. |
+| Books | Almost never | 2–3 plain solid-cover hardcovers, NO TEXT, stacked at slight off-angle |
+| Furniture contrast | All cream-on-cream | At least ONE piece darker than sofa (walnut / black / dark fluted) |
+| AI-realism cues | Implicit | Explicit — no symmetry, no perfect folds, single believable light origin, surfaces show real wear |
+
+### Status: 6 living-room canonical references (v0.14.5 — still valid as DNA anchors)
+
+The plugin ships with 6 approved canonical reference images in `references/lookbook-living-room/`. These define the visual register. The interior designer agent MUST match this register for any living-room scene, applying v10 layering rules on top.
 
 ### Canonical living-room references
 
