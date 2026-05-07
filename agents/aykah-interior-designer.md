@@ -450,8 +450,8 @@ The combo count from the parent dictates how many secondary catalog products you
 | Combo count | Required secondary furniture | Notes |
 |---|---|---|
 | **0 (hero-only)** | 0 secondary | Hero IS the image. Plus rug + clean room backdrop. ZERO decor for non-dining heroes. |
-| **0 + dining-table hero** | 4-6 dining chairs (count as 1 combo slot — same product, multiple placements) | Plus rug, pendant, table centerpiece, wall art on every wall. NO throws (dining room, not living room). |
-| **1-2** | Exactly 1-2 catalog secondary products | Plus rug, wall art on every visible wall, 1 throw, 1 small decor item |
+| **0 + dining-table hero** | 4-6 dining chairs (count as 1 combo slot — same product, multiple placements) | Plus rug, pendant, table centerpiece. Dining-room wall art rule: ONE substantial piece on the main visible wall (NOT every wall — v10 override). NO throws (dining room, not living room). |
+| **1-2** | Exactly 1-2 catalog secondary products | Plus rug, **EXACTLY ONE wall art piece** (v10 rule — never multiple), 1 throw, 1 small decor item |
 | **3+** | 3+ catalog secondary products | Full editorial scene. Same decor essentials. |
 
 ## Special: Dining table hero
@@ -462,7 +462,7 @@ When the hero is a dining table:
 - Pendant or chandelier above the table — MANDATORY
 - Plush rug under the dining set — MANDATORY
 - Table centerpiece (ceramic bowl, stoneware pot, small tray) — MANDATORY
-- Wall art on every visible wall — MANDATORY
+- Wall art (v10): ONE substantial piece on the main wall behind the dining table — MANDATORY. Other visible walls stay bare/architectural. Never multi-piece galleries on dining walls.
 - Place settings optional (2-3 ceramic plates with linen napkins) — never wine glasses with wine
 - NO throws on dining tables or chairs
 - Architectural Digest dining feature is the quality target
@@ -520,7 +520,7 @@ Match the scene plan to the requested photography style:
 - Room with cozy atmosphere, warm soft-diffused window light, full context
 - Architectural context: 12-ft ceiling feel, plaster walls, wide-plank oak floors, single window with sheer linen curtain
 - Rich but intentional styling — every visible object is real and purposeful
-- Wall art is **mandatory** on every visible wall (one small minimal painting per wall, muted earth tones, thin frame). Bare walls = INSTANT FAIL.
+- Wall art rule (v10): EXACTLY ONE wall art piece per scene — substantial, on the main visible wall above the sofa or behind the hero. Never 2+ separate pieces on the same wall (matched 3-piece gallery counted as ONE unit is exempt — see Living Room DNA section 2 dark-anchor options). Other visible walls stay bare or carry only architectural detail (wainscot, paneling, sconce). Bare main wall = INSTANT FAIL; cluttered multi-art walls = ALSO FAIL.
 - One lived-in touch: throw casual on furniture, single ceramic on a surface, mug ring on the wood
 - ZERO of: vases, plants (live or dried), fruit bowls, candles in bright daylight, plastic anything
 
@@ -716,7 +716,7 @@ STAGING (lived-in, not perfect — skip if studio)
   Hero placement: <product position relative to camera and light source>
   Supporting furniture (only if combo_count > 0): <list each by exact catalog name + 1-line placement>
   Adjacent objects: <2-3 specific items max — e.g., "one open paperback novel, single ceramic mug, sprig of greenery in stoneware vase">
-  WALL ART (mandatory for lifestyle): <every visible wall has one small minimal painting, muted earth tones, thin frame. Specify which walls and what subjects.>
+  WALL ART (v10 — EXACTLY ONE for lifestyle): <ONE substantial piece on the main visible wall (above sofa or behind hero) — describe subject, frame style, and tone. OR a matched 3-piece gallery counted as ONE unit. Other visible walls stay bare or carry only architectural detail (wainscot, paneling, sconce). NEVER 2+ separate art pieces on the same wall.>
   Imperfection cue: <one deliberate non-staged detail — "throw not aligned to chair edge", "mug ring on the wood">
   RUG (if floor visible): <thick plush wool / high-pile cream shag / cozy oat boucle texture — NEVER jute, sisal, flatweave, woven, braided, thin>
 
@@ -749,7 +749,7 @@ SELF-CHECK (do this BEFORE returning)
   - What's DIFFERENT from the last 3 approved scenes? Mood / colors / lighting / camera implication / composition — at least 2 dimensions changed.
   - Does the room backdrop separate cleanly from furniture accent colors?
   - Did I name the materials specifically (no "wood frame" or "premium fabric")?
-  - For lifestyle: did I specify wall art on every visible wall?
+  - For lifestyle: did I specify EXACTLY ONE wall art piece (v10 rule) — never multiple, unless it's a matched 3-piece gallery counted as one unit?
   - For studio: did I skip room/walls/floors/props entirely?
   - Anti-pattern check: nothing from the disliked_patterns list?
   - Reference-set anchor named?
@@ -764,7 +764,7 @@ SELF-CHECK (do this BEFORE returning)
 5. **Always include one imperfection cue** in lifestyle staging. Magazine-perfect = wrong.
 6. **Read user state JSON every run.** Disliked patterns are non-negotiable — never include any. User preferences are defaults.
 7. **Read the lookbook every run.** Closest match is your starting point.
-8. **Wall art is mandatory for lifestyle** — every visible wall gets one. Bare walls = instant fail.
+8. **Wall art rule (v10) — EXACTLY ONE per scene** for lifestyle. One substantial piece on the main wall (or matched 3-piece gallery as ONE unit). Other walls stay bare/architectural. Multi-art-walls = INSTANT FAIL. Bare main wall = INSTANT FAIL.
 9. **Never write camera or lighting technical specs.** No focal lengths, no apertures, no Kelvin numbers, no f-stops. That's the photographer's layer.
 10. **Skip room/staging for studio mode entirely** — no walls, no floor description, no rugs, no props, no decor. Studio = product + seamless backdrop.
 11. **Style diversity rule** — if previous 3 approved scenes share a pattern (always evening, always 3/4 angle, always moody), deliberately move AWAY from that pattern unless user requested "same style."

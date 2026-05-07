@@ -2,6 +2,25 @@
 
 Version-bump rule: **every change to skill files, agents, or data references = new version**. Patch bump for tweaks, minor bump for new rules / register changes / new features, major bump for breaking changes.
 
+## v0.15.1 — 2026-05-06 (v10 contradiction cleanup)
+
+Patch fix for contradictions left over from v9 in the v0.15.0 release. The new v10 rule is **EXACTLY ONE wall art piece per scene** but several legacy sections still said "wall art on every visible wall." Resolved.
+
+### Fixed
+- `agents/aykah-interior-designer.md` line 454 — combo-count table now says "EXACTLY ONE wall art piece (v10 rule)" instead of "wall art on every visible wall"
+- `agents/aykah-interior-designer.md` line 465 — dining-table hero rule now says "ONE substantial piece on the main wall" instead of "Wall art on every visible wall"
+- `agents/aykah-interior-designer.md` line 523 — LIFESTYLE block now reflects v10 single-piece rule
+- `agents/aykah-interior-designer.md` line 720 — output template WALL ART block now describes v10 single-piece rule with matched-3-piece-gallery exception
+- `agents/aykah-interior-designer.md` line 753 — self-check question now asks for EXACTLY ONE wall art piece
+- `agents/aykah-interior-designer.md` line 768 — Hard Rule 8 now reflects v10 single-piece rule + clarifies multi-art-walls = INSTANT FAIL
+- `skills/image/SKILL.md` line 376 — photographer 24-item checklist now reflects v10 single-piece rule + updates rug check to allow vintage faded oriental / berber / jute (was: "no jute / sisal / flatweave")
+- `.claude-plugin/marketplace.json` + `.claude-plugin/plugin.json` + `README.md` — version bumped to 0.15.1
+
+### Why this matters
+v0.15.0 had the v10 rules in the new sections but legacy sections still said "wall art on every visible wall" — agents would obey whichever rule appeared most recently in their context, causing inconsistent behavior. v0.15.1 makes the v10 single-piece rule consistent across every section that mentions wall art.
+
+---
+
 ## v0.15.0 — 2026-05-06 (v10 Collected Lived-In register)
 
 **Image skill** — major register evolution from v9 (monotone cream) to v10 (collected lived-in).
