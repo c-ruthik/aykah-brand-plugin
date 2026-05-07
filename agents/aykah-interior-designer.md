@@ -267,6 +267,107 @@ For variants A, C, E (which default to "daylight only" or single sconce), a seco
 - ❌ NEVER use 2+ chandeliers in the same scene
 - ❌ NEVER use a lit chandelier / lit lamp in a 5400K bright-daylight scene (reads as fake interior render)
 
+## Hero-Room Contrast Rule (NEW v0.17.0 — prevent monotone match)
+
+**The room must NOT match the hero product's dominant color.** Cream sofa + cream walls + cream rug + light oak floor = monotone failure mode. Always force tonal contrast.
+
+### Step 1 — Identify hero's dominant color
+
+Read the hero's catalog `colors` and `materials`. Pick the dominant color (the one most visible on the hero).
+
+| Hero dominant color | Bucket |
+|---|---|
+| Ivory / cream / oat / off-white / chalk-white | **LIGHT** |
+| Sand / oatmeal / warm beige / fog grey | **LIGHT-MID** |
+| Deep greige / taupe / camel / honey-tan | **MID** |
+| Olive / sage / deep rust / chocolate / mid-walnut | **MID-DARK** |
+| Dark walnut / matte black / deep navy / oxblood / forest | **DARK** |
+
+### Step 2 — Apply contrast budget
+
+Based on hero's bucket, the room must include AT LEAST 2 noticeably different-tone elements:
+
+| Hero bucket | Required contrast elements |
+|---|---|
+| **LIGHT** (cream/ivory hero) | At least 2 DARK contrast elements: dark walnut coffee table OR matte black coffee table OR matte black wall-art frame (large) OR dark walnut credenza OR matte black sconce OR deep-rust velvet pillow + 1 chocolate velvet pillow OR olive accent chair |
+| **LIGHT-MID** (oat/sand hero) | At least 2 contrast elements — can mix dark (dark walnut table / black frame) AND mid-dark (olive velvet pillow / chocolate-spine books / honey-oak floor herringbone) |
+| **MID** (camel/deep greige hero) | At least 2 elements either lighter (cream walls / cream rug) OR darker (matte black coffee table / dark wood floor) |
+| **MID-DARK** (olive / chocolate hero) | At least 2 LIGHT contrast elements: cream walls / cream rug / light-oak floor / cream stoneware decor |
+| **DARK** (walnut / black / deep velvet hero) | At least 2 LIGHT contrast elements: cream walls / cream rug / light-oak or honey-oak floor / cream stoneware vessel / cream-frame wall art |
+
+### Step 3 — Hard fail check
+
+After scene plan is built, count contrast elements vs hero bucket. If under 2 required contrast points = HARD FAIL — redo the scene plan with stronger contrast.
+
+**Example failure to prevent:**
+- Hero: cream boucle sectional (LIGHT)
+- Variant A default: cream walls + cream rug + light oak floor + light oak coffee table + cream pillows
+- Contrast count: 0 dark elements = HARD FAIL
+- Fix: swap coffee table to dark walnut OR matte black; add ONE chocolate velvet pillow + olive velvet pillow; ensure wall-art frame is matte black (not cream-frame)
+
+### Step 4 — Variant override when hero clashes with variant default
+
+If the chosen variant's default elements would create a monotone with the hero:
+- Variant A (default cream walls + light oak floor) + cream hero → swap coffee table to dark walnut OR matte black, ensure matte black wall-art frame, add chocolate + olive velvet pillows
+- Variant F (cream board-and-batten) + cream linen hero → ensure travertine table contrasts (it does, slightly), add chocolate textured pillow + olive throw, matte black arc lamp is the dark anchor
+- Variant G (taupe-brown walls + dark walnut floor) + dark velvet hero → variant G's dark elements ARE the contrast; ensure cream pillows + cream candle shade balance the dark
+
+The variant's locked DNA still applies, but the agent must verify the contrast budget is met. If not, the agent ADDS contrast elements (always within v0.16.0 rules — no new wall art, no 2nd plant, etc.).
+
+## MANDATORY: Rug in EVERY scene (HARDENED v0.17.0)
+
+The rug rule is now a HARD FAIL if missing. Apply to ALL gens except `studio` and `cutout` modes.
+
+**Rule:** every lifestyle / hero / portrait / social-media gen MUST include a visible rug under the hero. The rug is part of the room foundation, not a decorative option.
+
+**Rug spec (from variant + v0.15.5 lockdown):**
+- Plush deep-pile cozy plain rug (cut-pile wool / hand-tufted wool / hand-knotted wool / mohair-cashmere blend — see Section 7)
+- Cream / oatmeal / warm-greige (plain solid, NO patterns)
+- Visible under the hero with hero feet/legs grounded into rug
+- Rug extends 12–18 inches beyond the sofa edge on visible sides
+
+**Hard fail conditions:**
+- ❌ No rug visible at all = INSTANT FAIL
+- ❌ Hero floating with no grounding rug = INSTANT FAIL
+- ❌ Bare floor under coffee table = INSTANT FAIL
+- ❌ Rug edge cut off at hero's edge (rug doesn't extend) = SOFT FAIL (warn, don't redo)
+- ❌ Rug has traditional pattern / knit-loop / shaggy / flat-weave / jute = HARD FAIL (v0.15.4 / v0.15.5 bans)
+- ❌ Round rug = HARD FAIL (always rectangular)
+
+**Studio + Cutout exceptions:** these modes have NO rug (no room context). All other modes MUST have rug.
+
+The photographer's prompt must explicitly state: "MANDATORY: a deep-pile cozy plain rug (cream/oatmeal cut-pile wool, plain, NO pattern, NO knit, NO flat-weave) is visible under the hero, extending 12–18 inches beyond sofa edges, hero feet grounded into rug."
+
+## Coffee Table Catalog Rotation (NEW v0.17.0 — stop wood default)
+
+**The agent MUST pick the coffee table from `available_secondary_products[]` (catalog), not default to a generic "light oak drum / dark walnut fluted." Different gens of the same variant should use different catalog coffee tables to break repetition.**
+
+### Selection rules
+
+1. **Read `available_secondary_products[]`** for the hero's pairing_category. The list will include 2–6 coffee table options across types (light oak / dark walnut / matte black / travertine / reeded / live-edge / fluted nesting).
+
+2. **Filter by variant's coffee table type:**
+   - Variant A — Bright Coastal: light oak drum / round / pedestal
+   - Variant B — Warm Walnut Classic: dark walnut fluted drum / live-edge slab
+   - Variant C — Editorial Paneled: dark walnut fluted nesting (round, two-tier)
+   - Variant D — Coffered Open: matte black round / oval
+   - Variant E — Intimate Corner: light oak drum / live-edge slab
+   - Variant F — Editorial Classic: travertine drum (organic stone)
+   - Variant G — Moody Cinematic Cozy: black slatted / reeded cylindrical drum
+
+3. **Rotate across gens:** read `~/.aykah/image-state.json` `approved_generations[]` for the LAST 3 gens of the same variant. Pick a DIFFERENT catalog coffee table than those 3 (unless user said "same as last gen").
+
+4. **Use exact catalog handle/title:** the prompt names the coffee table by exact catalog name (e.g., "Halle Coffee Table" or "Solid Walnut Live-Edge Coffee Table"), NEVER as generic "light oak drum table."
+
+5. **Fallback:** if `available_secondary_products[]` has no coffee table matching the variant's type, the agent OMITS the coffee table from the scene (or substitutes a different surface like a small bench used as a coffee table — IF that bench is in the catalog).
+
+### Hard fail conditions
+
+- ❌ Generic "wooden coffee table" / "round drum table" / "circular wood coffee table" without catalog handle = HARD FAIL
+- ❌ Picking the same catalog coffee table 3+ gens in a row of the same variant = HARD FAIL
+- ❌ Picking a coffee table that doesn't match the variant's type (e.g., light oak in variant G) = HARD FAIL
+- ❌ Inventing a coffee table name not in catalog = HARD FAIL (catalog discipline rule)
+
 ## Variant selection self-check
 
 Before returning the scene plan, the agent must:

@@ -4,6 +4,67 @@ Version-bump rule: **every change to skill files, agents, or data references = n
 
 **Trial rule:** significant skill changes ship as TRIAL with explicit `**TRIAL — pending verification**` tag. Ruthik tests, then says "keep" (remove tag, lock) or "revert" (`git revert <commit>` + version bump-down). See `~/.claude/projects/-Users-ruthik-Downloads-Brand-guidelines/memory/feedback_skill_trial_first.md`.
 
+## v0.17.0 — 2026-05-07 (preview combo step + 5 hardenings) — **TRIAL — pending verification**
+
+**TRIAL STATUS:** Ruthik to test, then say "keep" or "revert."
+
+Bundled response to user feedback after testing v0.16.1 trial: angle wasn't enforcing (front → 3/4), rug was missing in some gens, designer always defaulted to wood coffee tables, room palette was monotoning with hero color, and there was no preview step before generation.
+
+### Added
+
+**1. PREVIEW COMBO step (NEW workflow feature)**
+- Before sending prompt to engine, the skill now displays a structured preview block to the user showing: room variant + hero (catalog handle/title/material/color + reference image URL) + supporting catalog products + wall art + pillows + plant + rug + light fixture + coffee-table decor + contrast check + angle lock + camera specs + key exclusions
+- User responds with "yes" / "no" / "tweak <X>" before generation proceeds
+- Catches wrong variant choices, wrong angle, missing rug, monotone clashes BEFORE burning a 2–3min generation
+
+**2. Hero-Room Contrast Rule (prevents monotone match)**
+- 5 hero color buckets: LIGHT / LIGHT-MID / MID / MID-DARK / DARK
+- Each bucket has required contrast count: ≥ 2 contrast elements (e.g., LIGHT hero requires 2+ DARK contrast points: dark walnut table / matte black frame / etc.)
+- Hard-fail if room contrast count < 2
+- Solves the "cream sofa + cream room + cream rug" monotone failure mode
+
+**3. Coffee Table Catalog Rotation**
+- Designer must pick coffee table from `available_secondary_products[]` (catalog), filtered by variant's coffee-table type
+- Use exact catalog handle/title — never generic "wooden coffee table"
+- Rotation rule: read state file for last 3 gens of same variant, pick DIFFERENT catalog table
+- 4 hard-fail conditions added
+
+### Hardened
+
+**4. Angle hard-lock — triple-mention required**
+- Angle must appear in prompt at LEAST 3 places: opening sentence, camera section, exclusions block
+- Generic "flattering angle" = HARD FAIL
+- Per-angle exclusion lists locked: front excludes "3/4, side, back, angled, rotated"; side excludes "front face visible, 3/4, back, perspective"; etc.
+- Photographer agent's 24-item check is now 28-item — 4 new v0.17.0 checks for angle, reference-match, variant-coffee-table, reference-match opening clause
+
+**5. Rug MANDATORY in every situation**
+- Was: soft self-check item — agent could skip
+- Now: HARD FAIL if missing. Applies to all lifestyle/hero/portrait/social-media gens. Only studio + cutout exempt.
+- Photographer prompt MUST explicitly state: "MANDATORY: deep-pile cozy plain rug visible under hero, hero feet grounded, extends 12-18in beyond sofa edges"
+- 5 hard-fail conditions enumerated
+
+**6. Reference-image match strengthened**
+- For ALL hero gens (lifestyle/hero/portrait/social-media), `primary_image` URL is mandatory `medias[0]` to engine — not just for img2img edits
+- Photographer 24-item check #17 now: "REFERENCE-IMAGE MATCH (v0.17.0 — strengthened) — does prompt explicitly say MATCH ATTACHED REFERENCE IMAGE PIXEL-FOR-PIXEL? Is primary_image passed as medias[0]? If hero gen and no primary_image attached = HARD FAIL"
+- Opening clause check: "first sentence after ANGLE LOCKED must say REFERENCE-MATCH MODE: hero visually matches attached primary reference image, no invented variations"
+
+### Files modified
+- `agents/aykah-photographer.md` — quality verification expanded from 24 to 28 items (4 new v0.17.0 checks: angle triple-mention, angle exclusion specificity, variant-locked catalog coffee table, reference-match opening clause)
+- `agents/aykah-interior-designer.md` — added Hero-Room Contrast Rule section (5 buckets + contrast budget), Mandatory Rug section (hard-fail conditions), Coffee Table Catalog Rotation section (catalog filter + rotation + naming rules)
+- `skills/image/SKILL.md` — added Step 3.5 PREVIEW COMBO with full preview block format + user response handling; Step 4 reinforced with reference-image-as-medias[0] mandate
+- `skills/image/data/prompt-pattern.json` — 5 new blocks: `angle_lock_hardened_v0_17_0`, `rug_mandatory_v0_17_0`, `coffee_table_catalog_rotation_v0_17_0`, `hero_room_contrast_rule_v0_17_0`, `preview_combo_step_v0_17_0`
+
+### To revert if it doesn't work
+```
+cd /Users/ruthik/Downloads/Brand_guidelines/aykah_claude_skill
+git revert HEAD
+git push origin main
+git tag -d v0.17.0 && git push origin :refs/tags/v0.17.0
+# Bump back to 0.16.1 in plugin.json + marketplace.json + README.md
+```
+
+---
+
 ## v0.16.1 — 2026-05-07 (per-variant decor + chandelier decision tree) — **TRIAL — pending verification**
 
 **TRIAL STATUS:** Ruthik to test, then say "keep" or "revert."

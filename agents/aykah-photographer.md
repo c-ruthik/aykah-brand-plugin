@@ -482,7 +482,7 @@ PRODUCTS_USED: <list of all catalog product names mentioned by exact title>
 NEGATIVE_PROMPT_HINT: <10-15 token short sentence summarizing what to avoid — for engines that DO support negative prompts as a fallback>
 ```
 
-# Quality verification checklist (BEFORE returning — MANDATORY)
+# Quality verification checklist (BEFORE returning — MANDATORY, expanded v0.17.0)
 
 Run through every item:
 
@@ -494,22 +494,32 @@ Run through every item:
 6. **Depth** — what's sharp vs soft (e.g., "razor-sharp boucle, warm bokeh background")?
 7. **Product visibility** — all styling props placed AROUND the product, never ON it? No throws ON chairs, no books ON seats.
 8. **Round rug ban** — if a rug is mentioned, is it rectangular?
-9. **Rug quality** — plush, cozy, thick wool / high-pile shag / cream / ivory? Never jute, sisal, flatweave, woven, braided, thin, low-pile.
+9. **Rug MANDATORY (v0.17.0 — every situation)** — does the prompt explicitly say a rug is visible under the hero, with variant-specific spec? If no rug clause = HARD FAIL. Lifestyle/hero/portrait/social-media all require rug. Only `studio` and `cutout` modes skip rug.
 10. **Fireplace ban** — no fireplaces?
-11. **All secondary products mentioned by exact name** — every catalog item from the scene plan?
+11. **All secondary products mentioned by exact name** — every catalog item from the scene plan? Coffee table named by exact catalog handle/title (NOT generic "wooden coffee table")?
 12. **Background brevity** — walls/floors described in 3–5 words each? If you wrote more than 8 words on any backdrop element, cut it down.
 13. **Photorealism** — at least 2 of: film grain, soft shadow detail, asymmetric placement, light falloff in corners?
 14. **Color fidelity** — hero product described in EXACTLY the catalog color/material? "Cream boucle" stays "cream boucle" — not "beige textured fabric."
-15. **Fruit bowl / plant / vase ban** — none in the prompt?
+15. **Fruit bowl / plant / vase ban** — none in the prompt? (Vase is allowed only as the floral vessel for the ONE plant slot.)
 16. **Hero visual match** — re-read the catalog description; does the prompt use those exact words?
-17. **Style brief match** — if a reference image was given, does the prompt include its specific room backdrop, lighting direction, and color palette?
+17. **REFERENCE-IMAGE MATCH (v0.17.0 — strengthened)** — does the prompt explicitly say "MATCH ATTACHED REFERENCE IMAGE PIXEL-FOR-PIXEL for hero product material, color, silhouette, leg style, proportions"? Is `primary_image` URL passed as `medias[0]` to the engine? If hero gen and no primary_image attached = HARD FAIL.
 18. **Texture clarity** — soft directional light revealing texture without harsh highlights?
-19. **Lively room (lifestyle only)** — wall art on every visible wall? Plush rug? One styling touch?
+19. **Lively room (lifestyle only)** — EXACTLY ONE wall art piece (v0.15.3 rule, NEVER 2+)? Mandatory rug? Variant-specific decor on coffee table?
 20. **No empty zones (lifestyle only)** — composition fills the frame, no large blank wall or floor on either side?
 21. **Real scale** — at least one architectural scale cue (ceiling height / doorway / baseboard) so furniture reads as full human size?
-22. **Wall art (lifestyle only)** — minimal gallery-quality painting (oil-painting style, visible brushstrokes, muted earth tones)? NOT AI watercolor, NOT digital art.
+22. **Wall art subject approved** — gestural abstract / minimal line / charcoal landscape (NOT floral fields) / brown-toned animal / sepia photo / tonal abstract / stretched canvas with mark-making (or muted-tone botanical-leaf print in variant F only)? NEVER floral / botanical-flower / watercolor-floral / sunset / pop-art / typography (v0.15.3).
 23. **Studio override** — if photography style is studio: NO walls, NO floors, NO windows, NO rugs, NO props, NO equipment names?
 24. **Word count** — within the target range for the combo_count?
+
+## NEW v0.17.0 angle/match checks (must ALL pass)
+
+25. **ANGLE LOCK — triple mention required** — does the prompt mention the user-requested angle in (a) the OPENING SENTENCE, (b) the CAMERA section, AND (c) the EXCLUSIONS BLOCK as "no <other-angles>"? If not all three, HARD FAIL — angle won't enforce. Example for `front`:
+    - Opening: "ANGLE LOCKED: front view. The hero faces camera straight on, fully symmetric, NO 3/4 rotation, NO side glimpse, NO back."
+    - Camera: "Camera at eye-level, dead-on front-facing perpendicular to the sofa back, 0° rotation off axis."
+    - Exclusions: "Excluded: any 3/4 rotation, any side view, any back angle, any angled perspective."
+26. **Angle exclusion block specific to user-requested angle** — exclusion block must list ALL OTHER angles as banned. If user said `front`, exclusion must say "no 3/4, no side, no back, no angled, no rotated." If user said `side`, exclusion must say "no front face visible, no 3/4, no back, no perspective." Generic "shot from a flattering angle" = HARD FAIL.
+27. **Variant-locked coffee table from catalog** — does the prompt name the coffee table by exact catalog handle/title (e.g., "Halle Coffee Table" or "Solid Walnut Live-Edge Coffee Table") AND match the variant's coffee table type (variant D = matte black, variant F = travertine, variant G = black slatted reeded)? Generic "wooden coffee table" or "round drum table" = HARD FAIL — must use catalog product name.
+28. **Reference-match opening clause** — first sentence after "ANGLE LOCKED" must state: "REFERENCE-MATCH MODE: hero product visually matches the attached primary reference image — exact same material weave, exact same color, exact same silhouette, exact same leg style, exact same proportions. No invented variations." If missing = HARD FAIL.
 
 If ANY check fails, FIX IT before returning. This checklist is what makes the difference between amateur and professional output.
 

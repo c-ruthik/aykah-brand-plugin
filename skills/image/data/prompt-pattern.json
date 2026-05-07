@@ -161,6 +161,85 @@
   "match_product_reference_image_v0_16_0": {
     "rule": "Hero must match catalog primary_image EXACTLY — material, color, silhouette, leg style, proportions. Pass primary_image URL as reference image to engine. Never imagine variations."
   },
+  "angle_lock_hardened_v0_17_0": {
+    "rule": "Angle must be stated in the prompt at LEAST 3 times: opening sentence, camera section, exclusions block. Generic 'flattering angle' = HARD FAIL.",
+    "triple_mention_required": {
+      "opening": "ANGLE LOCKED: <angle> view. The hero faces camera <position>, NO <other-angles>.",
+      "camera": "Camera at <eye-level/etc>, dead-on <angle> facing the sofa, 0° rotation off axis.",
+      "exclusions": "Excluded: any <other-angle-1>, any <other-angle-2>, any <other-angle-3>."
+    },
+    "exclusion_by_requested_angle": {
+      "front": "no 3/4, no side, no back, no angled, no rotated",
+      "three_quarter": "no pure front, no pure side, no back",
+      "side": "no front face visible, no 3/4, no back, no perspective angle",
+      "back": "no front, no side, no 3/4 visible",
+      "closeup": "no wide-room shot, no full hero in frame",
+      "hero": "no tight crop, no closeup"
+    }
+  },
+  "rug_mandatory_v0_17_0": {
+    "rule": "Rug is MANDATORY in every lifestyle/hero/portrait/social-media gen. HARD FAIL if missing. Only studio + cutout modes skip rug.",
+    "spec": "Plush deep-pile cozy plain rug (cut-pile wool / hand-tufted wool / hand-knotted wool / mohair-cashmere blend). Cream / oatmeal / warm-greige plain solid. Visible under hero, hero feet/legs grounded into rug, extends 12-18 inches beyond sofa edge.",
+    "hard_fails": [
+      "no rug visible at all",
+      "hero floating with no grounding rug",
+      "bare floor under coffee table",
+      "rug has traditional pattern / knit-loop / shaggy / flat-weave / jute (banned by v0.15.4 / v0.15.5)",
+      "round rug (always rectangular)"
+    ],
+    "exception_modes": ["studio", "cutout"]
+  },
+  "coffee_table_catalog_rotation_v0_17_0": {
+    "rule": "Coffee table MUST be picked from available_secondary_products[] (catalog), filtered by variant's coffee table type. Rotate across gens.",
+    "variant_filters": {
+      "A_bright_coastal": "light oak drum / round / pedestal",
+      "B_warm_walnut_classic": "dark walnut fluted drum / live-edge slab",
+      "C_editorial_paneled": "dark walnut fluted nesting (round, two-tier)",
+      "D_coffered_open": "matte black round / oval",
+      "E_intimate_corner": "light oak drum / live-edge slab",
+      "F_editorial_classic": "travertine drum (organic stone)",
+      "G_moody_cinematic_cozy": "black slatted / reeded cylindrical drum"
+    },
+    "rotation_rule": "Read ~/.aykah/image-state.json approved_generations for last 3 gens of same variant. Pick DIFFERENT catalog coffee table than those 3 (unless user said 'same as last gen').",
+    "naming_rule": "Use exact catalog handle/title (e.g., 'Halle Coffee Table'). NEVER generic 'wooden coffee table' / 'round drum table'.",
+    "hard_fails": [
+      "generic 'wooden coffee table' / 'round drum table' without catalog handle",
+      "same catalog coffee table 3+ gens in a row of same variant",
+      "coffee table that doesn't match variant's type",
+      "invented coffee table name not in catalog"
+    ]
+  },
+  "hero_room_contrast_rule_v0_17_0": {
+    "rule": "Room palette must NOT match hero's dominant color. Cream sofa + cream room = monotone failure. Always force tonal contrast.",
+    "hero_color_buckets": {
+      "LIGHT": "ivory, cream, oat, off-white, chalk-white",
+      "LIGHT-MID": "sand, oatmeal, warm beige, fog grey",
+      "MID": "deep greige, taupe, camel, honey-tan",
+      "MID-DARK": "olive, sage, deep rust, chocolate, mid-walnut",
+      "DARK": "dark walnut, matte black, deep navy, oxblood, forest"
+    },
+    "contrast_required_per_bucket": {
+      "LIGHT": "≥ 2 DARK contrast elements (dark walnut OR matte black coffee table / matte black wall-art frame / dark walnut credenza / matte black sconce / deep velvet pillows / olive accent chair)",
+      "LIGHT-MID": "≥ 2 mixed contrast — can be dark (dark walnut table / black frame) or mid-dark (olive velvet pillow / chocolate-spine books / honey-oak floor herringbone)",
+      "MID": "≥ 2 contrast — either lighter OR darker than hero",
+      "MID-DARK": "≥ 2 LIGHT contrast (cream walls / cream rug / light-oak floor / cream stoneware decor)",
+      "DARK": "≥ 2 LIGHT contrast (cream walls / cream rug / light-oak or honey-oak floor / cream stoneware vessel / cream-frame wall art)"
+    },
+    "hard_fail": "If contrast count < 2 required = HARD FAIL, redo scene plan with stronger contrast"
+  },
+  "preview_combo_step_v0_17_0": {
+    "rule": "BEFORE sending prompt to engine, show user a structured preview of the combo (variant + hero + supporting products + decor + angle + camera + contrast check). Wait for 'yes' / 'no' / 'tweak X' before generating.",
+    "mandatory_by_default": true,
+    "skip_only_when": [
+      "user explicitly said 'skip preview' / 'just generate' / 'no preview'",
+      "running scene_set after first variation already approved (subsequent angles skip preview)"
+    ],
+    "user_response_handling": {
+      "yes_approve": "proceed to Step 4 (send to engine)",
+      "no_redo": "re-dispatch interior designer with reason from user",
+      "tweak_X": "photographer adjusts ONLY named element, re-renders preview, asks again"
+    }
+  },
   "decor_per_variant_v0_16_1_TRIAL": {
     "status": "TRIAL — pending verification",
     "rule": "Each variant now defines its own coffee table decor (3-4 objects) so every scene's coffee table reads visually different. Decor extends the variant's wood tone + pillow palette + wall finish. Replaces global stoneware+travertine+books default.",

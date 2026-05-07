@@ -377,9 +377,107 @@ The photographer runs a 24-item quality verification checklist before returning 
 
 Returns: technical layer breakdown + the FINAL PROMPT ready to send + word count + products_used list + a short negative_prompt_hint (for engines that support negative prompts as a fallback).
 
+## Step 3.5 — PREVIEW COMBO (NEW v0.17.0 — user approval before generating)
+
+**Before sending the prompt to the engine, ALWAYS show the user a structured preview of the combo and ask for approval.** This catches wrong variant choices, wrong angle, missing rug, monotone color clashes, or any drift before burning a generation.
+
+### Preview format
+
+Display this exact block to the user and wait for response:
+
+```
+============================================
+PREVIEW — Aykah Image Combo
+============================================
+
+ROOM VARIANT: <letter — name>
+   (e.g., F — Editorial Classic)
+
+HERO PRODUCT (catalog-locked):
+   - Handle: <product handle>
+   - Title: <exact catalog title>
+   - Material: <exact catalog material>
+   - Color: <exact catalog color>
+   - Reference image: <primary_image URL — will be passed as medias[0]>
+
+SUPPORTING FURNITURE (from catalog):
+   - Coffee table: <exact catalog handle + title — variant-matched type>
+   - <other supporting catalog products if combo > 0>
+
+WALL ART:
+   - Subject: <approved subject>
+   - Frame: <frame style>
+   - Count: 1 (or 1 matched 3-piece gallery)
+
+PILLOWS (texture mix + accents):
+   - <pillow 1>: <texture, color>
+   - <pillow 2>: <texture, color>
+   - <pillow 3>: <texture, color, accent color slot>
+   - <pillow 4>: <patterned lumbar — motif, color>
+
+PLANT (ONE total):
+   - <floor option OR table option>
+
+RUG (mandatory):
+   - <variant-specific plush plain rug — color, pile, material>
+
+LIGHT FIXTURE:
+   - <variant-specific fixture — type, lit/unlit>
+
+COFFEE TABLE DECOR:
+   - <variant-specific decor list, 3–4 objects>
+
+CONTRAST CHECK:
+   - Hero color bucket: <LIGHT / LIGHT-MID / MID / MID-DARK / DARK>
+   - Required contrast: <2+ DARK / 2+ LIGHT / mixed>
+   - Contrast elements present: <list — count must be >= 2>
+   - Status: PASS / FAIL
+
+ANGLE LOCK:
+   - Requested: <front / 3/4 / side / back / closeup / cutout / hero>
+   - Camera staging: <exact camera position description>
+
+CAMERA SPECS:
+   - Lens: <35mm / 50mm / 85mm prime>
+   - Aperture: <f/2.8 - f/5.6>
+   - Film stock: <Kodak Portra 160/400>
+   - Color temp: <K — variant-specific>
+
+BANNED in this gen (key exclusions):
+   - <list 4–6 most relevant exclusions from prompt>
+
+============================================
+Approve this combo? [yes / no / tweak <what>]
+============================================
+```
+
+### User response handling
+
+- **"yes" / "approve" / "looks good"** → proceed to Step 4 (send to engine)
+- **"no" / "redo"** → re-dispatch interior designer with reason (the user typically says why)
+- **"tweak <X>"** → surgical edit: photographer agent adjusts only the named element, re-renders preview, asks again
+  - Example: "tweak coffee table to dark walnut" → photographer changes coffee table line, leaves everything else, asks again
+  - Example: "swap variant to G" → re-dispatch interior designer with variant=G, full redo
+  - Example: "use the Halle coffee table" → photographer locks that specific catalog entry, re-shows preview
+
+### When preview can be skipped
+
+The preview is MANDATORY by default. It can be skipped only when:
+- User explicitly said "skip preview" / "just generate" / "no preview" in their request
+- User is running a `scene_set` (multi-angle, single-room) AFTER the first variation has been previewed and approved — subsequent angles skip preview since the room is locked
+
+### Hard rules
+
+- ❌ NEVER skip preview by default — always show, always wait
+- ❌ NEVER send prompt to engine before user says "yes" / "approve"
+- ❌ NEVER auto-tweak based on photographer's own opinion — only act on user's explicit feedback
+- ✅ Preview takes <30 seconds to show; saves a failed generation that takes 2–3 minutes + tokens
+
 ## Step 4 — Send the final prompt to the chosen engine
 
 The photographer agent has already assembled the final 700–1000 word flowing-paragraph prompt with the reference-image lock line, exclusions block, and HEX VALUES array. The skill does not re-assemble.
+
+**v0.17.0 reference-image rule:** for ALL hero gens (lifestyle / hero / portrait / social-media — NOT studio/cutout), pass the hero's catalog `primary_image` URL as `medias[0]` to the engine. This is mandatory, not optional. The hero must visually match the reference image.
 
 Take the photographer's `FINAL PROMPT` field and send it directly.
 
