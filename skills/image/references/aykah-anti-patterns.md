@@ -86,25 +86,27 @@ The AI defaults to "framed floral painting" because it's the most common framed-
 - "no rug edges aligned perfectly to floor planks"
 - "light source must have a single believable origin — single window camera-LEFT, no rim-lighting from impossible angles"
 
-### Rug rules (v0.15.4 — COZY + PLAIN ONLY, traditional patterns BANNED)
+### Rug rules (v0.15.5 — DEEP-PILE COZY + PLAIN ONLY, flat rugs BANNED)
 
-The room contrast comes from FURNITURE + WALL ART. Rugs stay plain so they don't compete.
+Rugs must be **plush, deep-pile, soft, inviting** — never flat, never thin, never coarse. Plain solid cream / oatmeal / warm-greige tones. Room contrast lives in FURNITURE + WALL ART, never the rug.
 
-**Approved rugs (cozy + plain only — 4 options):**
-- Hand-woven wool flatweave (cream / oatmeal — solid or very subtle tonal variation, NO pattern)
-- Tufted wool cut-pile (cream / oatmeal, plush cut-pile, NOT loop-pile, solid color)
-- Plain cream wool rug (medium pile, solid cream with subtle slubby texture)
-- Jute or sisal-cotton blend (woven natural fiber, neutral oat/sand, plain)
+**Approved rugs (deep-pile cozy + plain only — 4 options):**
+- Plush cut-pile wool rug (medium-to-high pile ~1.5–2.5cm, dense, soft underfoot, plain solid cream / oatmeal / warm-greige) — DEFAULT
+- Hand-tufted wool rug with subtle slub variation (plush, dense, ~2cm pile, plain)
+- Hand-knotted wool rug with high cut pile (cream / oatmeal, plush ~2.5cm pile, plain)
+- Mohair / cashmere wool blend rug (luxurious plush ~2cm pile, plain solid cream — premium)
 
-**Banned rugs (v0.15.4 — traditional patterns + knit family + others):**
-- ❌ Vintage faded oriental (medallion / southwestern motif) — RETIRED v0.15.4
-- ❌ Persian medallion / faded persian — RETIRED v0.15.4
-- ❌ Low-pile vintage moroccan (with motif) — RETIRED v0.15.4
-- ❌ Tribal motif rugs / kilim-style rugs / ethnic-pattern rugs
-- ❌ Cream loop-pile, berber chunky knit, cable-knit-style rugs (knit family — banned in v0.15.2)
-- ❌ Cozy chunky knit, shaggy, shag-pile, sherpa rugs
-- ❌ Sisal alone (too stiff), bare flatweave low-pile alone (too thin)
+**Banned rugs (v0.15.5 — flat + thin + traditional patterns + knit family):**
+- ❌ Hand-woven wool flatweave — RETIRED v0.15.5 (too flat / too thin)
+- ❌ Jute / sisal-cotton blend — RETIRED v0.15.5 (too flat / too coarse)
+- ❌ Plain low-pile rugs (too thin)
+- ❌ Sisal alone (too stiff)
+- ❌ Vintage faded oriental / persian medallion / moroccan motif / southwestern stripe / tribal motif / kilim (traditional patterns — banned v0.15.4)
+- ❌ Cream loop-pile, berber chunky knit, cable-knit-style rugs (knit family — banned v0.15.2)
+- ❌ Cozy chunky knit, shaggy, shag-pile, sherpa rugs (knit family)
 - ❌ Bright pattern, bold geometric, round rugs
+
+**Texture target:** when described, the rug must read as "you'd want to walk on this barefoot." Deep cut-pile, dense, plush, soft. Cream-on-cream subtle tonal variation OK (slight slub, slight pile-direction texture) — never patterned, never knit-loops, never flat.
 
 ### Plant count cap (NEW v0.15.4 — no too many plants)
 - ❌ NEVER 2+ plants / floral arrangements in the same scene.

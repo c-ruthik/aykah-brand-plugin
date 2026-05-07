@@ -225,27 +225,28 @@ Pick ONE dominant wood tone per scene (designer's call):
 
 Never stack both light AND dark wood as primary tones — pick one, accent with the other if needed.
 
-## 7. Rug — COZY + PLAIN only (v0.15.4 — traditional patterns BANNED)
+## 7. Rug — DEEP-PILE COZY + PLAIN only (v0.15.5 — flat rugs BANNED)
 
-Rugs must be PLAIN, woven or tufted, in cream/oatmeal/natural tones. Traditional patterns (oriental, persian medallion, moroccan motif, southwestern stripe, tribal motif) are now BANNED. The room contrast comes from FURNITURE + WALL ART, not from the rug pattern.
+Rugs must be **plush, deep-pile, soft, inviting** — never flat, never thin, never coarse. Plain solid cream / oatmeal / warm-greige tones. The room contrast comes from FURNITURE + WALL ART, never from the rug.
 
-**Approved rugs (cozy + plain only):**
-- **Hand-woven wool flatweave** (cream / oatmeal — solid or very subtle tonal variation, NO pattern, low-pile woven texture) — bright-airy default
-- **Tufted wool cut-pile** (cream / oatmeal, plush cut-pile, NOT loop-pile, solid color) — cozy / soft underfoot default
-- **Plain cream wool rug** (medium pile, solid cream with subtle slubby texture, no pattern)
-- **Jute or sisal-cotton blend** (woven natural fiber, neutral oat / sand tone, plain — never loose-knot, never stiff sisal alone) — natural register
+**Approved rugs (deep-pile cozy + plain only — 4 options):**
+- **Plush cut-pile wool rug** (medium-to-high pile ~1.5–2.5cm, dense, soft underfoot, plain solid cream / oatmeal / warm-greige) — DEFAULT cozy choice
+- **Hand-tufted wool rug with subtle slub variation** (plush, dense, ~2cm pile, plain or very subtle tonal variation, NO pattern)
+- **Hand-knotted wool rug with high cut pile** (cream / oatmeal, plush ~2.5cm pile, plain)
+- **Mohair / cashmere wool blend rug** (luxurious plush ~2cm pile, plain solid cream — premium register)
 
-**Banned rugs (traditional / patterned + knit family):**
-- ❌ Vintage faded oriental (medallion / southwestern motif) — RETIRED v0.15.4
-- ❌ Persian medallion / faded persian — RETIRED v0.15.4
-- ❌ Low-pile vintage moroccan (with motif) — RETIRED v0.15.4
-- ❌ Tribal motif rugs / kilim-style rugs / ethnic-pattern rugs
-- ❌ Cream loop-pile / berber chunky knit (knit family — banned in v0.15.2)
-- ❌ Cable-knit-style rugs / cozy chunky knit / shaggy / shag-pile / sherpa rugs
-- ❌ Sisal alone (too stiff)
+**Banned rugs (v0.15.5 — flat + knit family + traditional patterns):**
+- ❌ Hand-woven wool flatweave — RETIRED v0.15.5 (too flat, too thin)
+- ❌ Jute / sisal-cotton blend — RETIRED v0.15.5 (too flat, too coarse)
+- ❌ Plain low-pile rugs (too thin)
+- ❌ Loop-pile / berber chunky knit / cable-knit-style (knit family)
+- ❌ Cozy chunky knit / shaggy / shag-pile / sherpa rugs (knit family)
+- ❌ Vintage faded oriental / persian medallion / moroccan motif / southwestern stripe / tribal motif / kilim (traditional patterns banned v0.15.4)
 - ❌ Bright pattern, bold geometric, round rugs
 
-Rug type follows the scene's register — designer chooses from the 4 approved plain options. Default for v10 bright-airy scenes: hand-woven wool flatweave (cream + oatmeal). Default for cozy / intimate scenes: tufted wool cut-pile (plush, plain cream).
+**Texture target:** when described, the rug should read as "you'd want to walk on this barefoot." Deep cut-pile, dense, plush, soft. Cream-on-cream subtle tonal variation is fine (slight slub, slight texture in the pile direction) — but never patterned, never knit-loops, never flat.
+
+Default for v10: plush cut-pile wool in cream / oatmeal solid. The single best cozy rug for any Aykah scene.
 
 ## 8. Greenery — ONE PLANT TOTAL per scene (v0.15.4 — overrides prior "+ fresh florals on table")
 
@@ -390,7 +391,7 @@ Verify ALL of these are present in the scene plan (no menu — all 17 elements a
 6. ✅ Throw is woven / flat-weave / smooth (linen-mohair / brushed wool / cashmere flat / woven cotton / raw linen) — NOT chunky knit / waffle / cable / fringe / sherpa
 7. ✅ Substantial characterful coffee table
 8. ✅ ONE wood tone dominates
-9. ✅ Rug is COZY + PLAIN (hand-woven wool flatweave / tufted wool cut-pile / plain cream wool / jute) — NOT traditional pattern (no oriental / persian / moroccan motif), NOT knit family
+9. ✅ Rug is DEEP-PILE COZY + PLAIN (plush cut-pile wool / hand-tufted wool / hand-knotted wool high cut pile / mohair-cashmere blend) — NOT flat / NOT flatweave / NOT jute / NOT traditional pattern / NOT knit family
 10. ✅ EXACTLY ONE plant TOTAL per scene (floor olive tree OR table florals — never both)
 11. ✅ Modern florals (no pampas, no wheat, no lavender, no fake, no mixed bouquets)
 12. ✅ Books with solid plain covers, NO text (if included)
@@ -406,6 +407,7 @@ Verify ALL of these are present in the scene plan (no menu — all 17 elements a
 - ANY knit-family decor (waffle / cable / sherpa / shaggy / chunky knit / loop-pile knit) on pillows / throws / rugs
 - Boucle-on-boucle (boucle pillow when sofa/chair is also boucle)
 - Traditional-pattern rug (oriental / persian / moroccan motif / kilim / tribal) — v0.15.4 ban
+- Flat / thin / coarse rug (flatweave / jute / sisal / low-pile) — v0.15.5 ban — must be plush deep-pile
 - 2+ plants in the scene (must be EXACTLY ONE plant total — floor OR table, never both) — v0.15.4 ban
 - Cramped / cluttered space (coffee table jammed against sofa / packed pillows / multi-art walls / decor stacked everywhere) — v0.15.4 ban
 - Zero patterned pillow OR 2+ patterned pillows

@@ -2,6 +2,28 @@
 
 Version-bump rule: **every change to skill files, agents, or data references = new version**. Patch bump for tweaks, minor bump for new rules / register changes / new features, major bump for breaking changes.
 
+## v0.15.5 — 2026-05-06 (deep-pile cozy rugs only — flat rugs banned)
+
+User clarified "best cozy rugs possible — no flat rugs." v0.15.4 had hand-woven wool flatweave + jute as approved options; both retired in v0.15.5. The bar is now plush deep-pile only.
+
+### Changed
+- Approved rug list narrowed from 4 to 4 cozy-only options:
+  - Plush cut-pile wool rug (1.5–2.5cm pile, dense, plain solid cream/oatmeal/warm-greige) — DEFAULT
+  - Hand-tufted wool rug with subtle slub variation (~2cm pile, plain)
+  - Hand-knotted wool rug with high cut pile (~2.5cm pile, plain cream/oatmeal)
+  - Mohair / cashmere wool blend rug (~2cm pile, plain solid cream — premium)
+- Banned added: hand-woven wool flatweave, jute, sisal-cotton blend, plain low-pile rugs.
+
+### Texture target
+"You'd want to walk on this barefoot." Deep cut-pile, dense, plush, soft. Cream-on-cream subtle tonal variation OK; never patterned, never knit-loops, never flat.
+
+### Files modified
+- `agents/aykah-interior-designer.md` — Section 7 rewritten v0.15.5 + self-check + hard-fail updated
+- `skills/image/references/aykah-anti-patterns.md` — rug rules rewritten
+- `skills/image/data/prompt-pattern.json` — `rugs_approved_deep_pile_cozy_plain_only` field renamed and narrowed; new `rug_texture_target` field; v10_register description updated; new exclusion line for flat/jute/low-pile
+
+---
+
 ## v0.15.4 — 2026-05-06 (cozy plain rugs only + one plant total + no cramped spaces)
 
 Three feedback-driven rule tightenings.

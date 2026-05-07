@@ -7,7 +7,7 @@
     "core_rule": "It must feel like a real home photograph, not a render.",
     "defining_diff": "controlled imperfection + lighting specificity + anti-AI constraints + layered tonal contrast",
     "brand_color_policy": "IGNORED in image generation. Brand palette (Navy #363B57, Ivory #FAF8F4, Gold #B8956A) is graphic-design-only. Use earthy neutrals by default. Apply brand colors only when user explicitly requests them in the prompt.",
-    "v10_register": "Collected Lived-In (v0.15.4): cream/oatmeal base + deep muted earth-tone accents (olive/chocolate/burgundy/mustard/rust/sage) + mixed WOVEN textures (velvet + linen + wool flat-weave + matte cotton — KNIT FAMILY BANNED in decor) + EXACTLY ONE patterned lumbar pillow + ONE dark anchor (art OR furniture OR architecture) + EXACTLY ONE wall art piece (no florals/botanicals) + furniture contrast (one piece darker than sofa) + COZY PLAIN RUG only (no traditional patterns) + EXACTLY ONE plant total + SPACIOUS breathing-room composition (no cramped). Never monotone, never bright/saturated, never knit-decor, never patterned rugs."
+    "v10_register": "Collected Lived-In (v0.15.5): cream/oatmeal base + deep muted earth-tone accents (olive/chocolate/burgundy/mustard/rust/sage) + mixed WOVEN textures (velvet + linen + wool flat-weave + matte cotton — KNIT FAMILY BANNED in decor) + EXACTLY ONE patterned lumbar pillow + ONE dark anchor (art OR furniture OR architecture) + EXACTLY ONE wall art piece (no florals/botanicals) + furniture contrast (one piece darker than sofa) + DEEP-PILE COZY PLAIN RUG only (plush cut-pile wool — NO flat / NO jute / NO traditional patterns / NO knit) + EXACTLY ONE plant total + SPACIOUS breathing-room composition (no cramped). Never monotone, never bright/saturated, never knit-decor, never flat rugs, never patterned rugs."
   },
   "v10_living_room_dna": {
     "accent_colors_approved": [
@@ -64,23 +64,23 @@
       "loop-pile / shaggy throws",
       "cream chunky knit (v9 default — RETIRED)"
     ],
-    "rugs_approved_cozy_plain_only": [
-      "hand-woven wool flatweave (cream / oatmeal — solid or very subtle tonal variation, NO pattern)",
-      "tufted wool cut-pile (cream / oatmeal, plush cut-pile, NOT loop-pile, solid color)",
-      "plain cream wool rug (medium pile, solid cream with subtle slubby texture)",
-      "jute or sisal-cotton blend (woven natural fiber, neutral oat / sand, plain)"
+    "rugs_approved_deep_pile_cozy_plain_only": [
+      "plush cut-pile wool rug (medium-to-high pile 1.5-2.5cm, dense, soft underfoot, plain solid cream / oatmeal / warm-greige) — DEFAULT",
+      "hand-tufted wool rug with subtle slub variation (plush, dense, ~2cm pile, plain)",
+      "hand-knotted wool rug with high cut pile (cream / oatmeal, plush ~2.5cm pile, plain)",
+      "mohair / cashmere wool blend rug (luxurious plush ~2cm pile, plain solid cream — premium)"
     ],
-    "rugs_banned_v0_15_4": [
-      "vintage faded oriental (medallion / southwestern motif) — RETIRED",
-      "persian medallion / faded persian — RETIRED",
-      "low-pile vintage moroccan (with motif) — RETIRED",
-      "tribal motif rugs / kilim-style rugs / ethnic-pattern rugs",
-      "cream loop-pile / berber chunky knit / cable-knit-style rugs",
-      "cozy chunky knit / shaggy / shag-pile / sherpa rugs",
+    "rugs_banned_v0_15_5": [
+      "hand-woven wool flatweave — RETIRED v0.15.5 (too flat, too thin)",
+      "jute / sisal-cotton blend — RETIRED v0.15.5 (too flat, too coarse)",
+      "plain low-pile rugs (too thin)",
       "sisal alone (too stiff)",
-      "bare flatweave low-pile alone (too thin)",
+      "vintage faded oriental / persian medallion / moroccan motif / southwestern stripe / tribal motif / kilim — RETIRED v0.15.4",
+      "cream loop-pile / berber chunky knit / cable-knit-style rugs (knit family)",
+      "cozy chunky knit / shaggy / shag-pile / sherpa rugs (knit family)",
       "bright pattern, bold geometric, round rugs"
     ],
+    "rug_texture_target": "deep-pile cozy — when described, the rug must read as 'you'd want to walk on this barefoot.' Plush, dense, soft. Cream-on-cream subtle tonal variation OK; never patterned, never knit-loops, never flat.",
     "plant_count_per_scene": 1,
     "plant_count_rule": "EXACTLY ONE plant TOTAL per scene — floor option (substantial olive tree / tall floor branches / dried floor urn) OR table option (small single-stem arrangement). Never both. Never multiple potted plants / herb pots / succulents / terrariums. Never mixed-flower bouquets.",
     "spaciousness_rule": "Spacious + breathing + considered. Hero owns its zone with 2-3 feet of breathing room. Coffee table 18-24 inches from sofa. Floor 50-70% visible. Walls 70%+ empty above dado line. Ceiling reads tall (12-foot feel). Negative space dominates composition.",
@@ -292,6 +292,7 @@
       "no knit-family throws — chunky cable-knit / waffle / fringe / sherpa BANNED",
       "no knit-family rugs — loop-pile / chunky knit / cable-knit-style / shag-pile / sherpa BANNED",
       "no traditional-pattern rugs — oriental / persian medallion / moroccan motif / kilim / tribal / southwestern BANNED (v0.15.4)",
+      "no flat / flatweave / jute / sisal / low-pile rugs — must be plush deep-pile cozy (v0.15.5)",
       "no boucle-on-boucle (boucle pillow on boucle sofa)",
       "no 2+ plants in the scene — EXACTLY ONE plant total (v0.15.4)",
       "no floor olive tree AND coffee-table flower vase together — pick one",
