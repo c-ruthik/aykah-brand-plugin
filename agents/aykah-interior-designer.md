@@ -78,31 +78,56 @@ This DNA is the v10 Collected Lived-In register. It evolves v9 (monotone cream) 
 Every living-room scene has EXACTLY ONE dominant dark visual anchor. Pick one option per scene. Never combine two.
 
 **Option A — Wall-art anchor (~50% of scenes — default)**
-- ONE matte-black-framed substantial art piece (gestural ink, abstract ink-wash, minimal line drawing)
-- OR ONE moody dark-toned figurative painting (charcoal landscape, brown-toned animal portrait, sepia photo)
-- Frame size ~140cm wide × 100cm tall above the sofa
-- Cream museum-mat surrounds the artwork
+
+Approved subject matter (pick ONE per scene):
+- Gestural abstract ink-wash (cream + black brushstrokes, minimal composition)
+- Minimal line drawing (single continuous line, abstract figurative)
+- Moody charcoal-toned landscape (cliff / mountain / dunes / horizon — never floral fields)
+- Brown-toned animal portrait (bison, horse, dog — moody, painterly)
+- Sepia / vintage black-and-white photograph (architecture, portrait, landscape)
+- Tonal abstract color-field (cream + dark muted earth, NO florals, NO botanicals)
+- Stretched canvas with raw texture + minimal black mark-making
+
+Frame: matte black metal OR thin-line dark walnut, ~140cm wide × 100cm tall above the sofa, cream museum-mat surrounds the artwork.
+
+**BANNED wall art subjects (v0.15.3):**
+- ❌ Floral paintings of any kind (single bloom, bouquet, vase-of-flowers, still-life with flowers)
+- ❌ Botanical prints / pressed-flower frames / herbarium illustrations
+- ❌ Watercolor florals (the AI default — explicitly out)
+- ❌ Vintage / Victorian floral oil paintings
+- ❌ Tropical / monstera / palm-frond prints
+- ❌ Sunset / sunrise paintings
+- ❌ Pop-art / bright-color modern abstract
+- ❌ Inspirational typography / quote prints
+- ❌ Family-photo-style portraits / wedding photos
+- ❌ Religious iconography
+- ❌ Sports / vintage-poster prints
+- ❌ Animal-print / leopard / zebra patterned art
+
+If the model wants to default to "framed floral painting" — override and pick from the approved subject list above.
 
 **Option B — Furniture anchor (~30% of scenes)**
 - Dark walnut credenza / sideboard behind sofa
 - Dark walnut fluted nesting tables / coffee table
 - Matte black round or oval coffee table
 - Dark fluted reeded base on side table
-- **When using furniture anchor → wall art must be LIGHT/cream/subtle, OR no wall art at all**
+- **When using furniture anchor → wall art must be LIGHT/cream/subtle (still from the approved subject list — never floral) OR no wall art at all**
 - Never pair dark walnut credenza + dark walnut coffee table — ONE dark wood note per scene
 
 **Option C — Architectural anchor (~15% of scenes)**
-- Matte black sconces flanking subtle cream art (sconces become the anchor)
+- Matte black sconces flanking subtle cream art (sconces become the anchor; subtle art still from approved subject list — never floral)
 - Matte black chandelier visible in frame
 - Use when the room reads moodier or the wall is plain
 
 **Option D — Matched 3-piece gallery set (~5% of scenes — rare)**
-- 3 matching small thin-frame landscapes in a row = ONE unit, counts as one anchor
+- 3 matching small thin-frame **landscapes / minimal sketches / sepia photographs** in a row = ONE unit, counts as one anchor
+- ❌ NEVER 3-piece floral / botanical galleries — even matched, florals stay banned
 - Use only when the scene calls for symmetry (formal living room, paneled wall)
 
 **Hard rules:**
 - NEVER 2+ separate pieces of wall art on the same wall (matched 3-frame gallery exempt)
 - NEVER pair multiple dark-wood furniture pieces — one dark-wood note per scene
+- NEVER floral / botanical / watercolor-flower wall art under ANY scene mode (v0.15.3)
 - The anchor must read as the visual gravitational center — bigger, darker, or more dominant than anything else
 
 ## 3. Pillows — 4–6 on a sofa, MIXED TEXTURE + DEEP-MUTED ACCENTS

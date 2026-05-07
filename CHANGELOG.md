@@ -2,6 +2,42 @@
 
 Version-bump rule: **every change to skill files, agents, or data references = new version**. Patch bump for tweaks, minor bump for new rules / register changes / new features, major bump for breaking changes.
 
+## v0.15.3 — 2026-05-06 (wall art subject ban — no florals/botanicals)
+
+The AI defaults to "framed floral painting" for any wall art slot because that's the most common framed-art pattern in its training data. v0.15.3 explicitly bans floral and botanical subject matter for wall art across all 4 dark-anchor options and adds explicit approved-subject enumeration so the model converges on the right register.
+
+### Added
+- **Approved wall art subject list** (must be explicitly named in every prompt):
+  - Gestural abstract ink-wash (cream + black brushstrokes)
+  - Minimal line drawing (single continuous line)
+  - Moody charcoal landscape (cliff / mountain / dunes / horizon — NOT floral fields)
+  - Brown-toned animal portrait (bison, horse, dog)
+  - Sepia / vintage B&W photograph (architecture, portrait, landscape)
+  - Tonal abstract color-field (cream + dark muted earth)
+  - Stretched canvas with raw texture + minimal black mark-making
+
+- **Banned wall art subject list** (12 categories, must be explicitly excluded):
+  - Floral paintings (single bloom, bouquet, vase-of-flowers, still-life)
+  - Botanical prints, pressed-flower frames, herbarium illustrations
+  - Watercolor florals (the AI's default — explicitly out)
+  - Vintage / Victorian floral oil paintings
+  - Tropical / monstera / palm-frond prints
+  - Sunset / sunrise paintings
+  - Pop-art / bright-color modern abstract
+  - Inspirational typography / quote prints
+  - Family-photo / wedding-photo portraits
+  - Religious iconography
+  - Sports / vintage-poster prints
+  - Animal-print / leopard / zebra patterned art
+
+### Files modified
+- `agents/aykah-interior-designer.md` — Section 2 (dark anchor) Option A rewritten with explicit approved + banned subjects; Option D 3-piece gallery clarified to never be floral
+- `skills/image/references/aykah-style-anchors.md` — Dark anchor Option A enriched with subject list + ban list
+- `skills/image/references/aykah-anti-patterns.md` — new "Wall art subject ban" section with rationale and full list
+- `skills/image/data/prompt-pattern.json` — `A_wall_art_50pct` field expanded with subject specs; `exclusions.objects` array adds 12 new ban lines
+
+---
+
 ## v0.15.2 — 2026-05-06 (knit family banned in decor)
 
 Knit-family textures (waffle / cable / sherpa / chunky knit / shaggy / mongolian / loop-pile) are now BANNED across all decor — pillows, throws, AND rugs. Boucle is banned in pillow decor when the catalog product (sofa/chair) is boucle, allowed only as ONE pillow when the hero is non-boucle.

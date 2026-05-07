@@ -17,6 +17,23 @@ These bans were learned from a 6-image inspo set + Ollie sectional iteration fee
 - NEVER stack a small art piece next to a large art piece — pick one anchor.
 - If furniture is the dark anchor (walnut credenza / black coffee table), wall art must be LIGHT/cream/subtle OR omitted entirely.
 
+### Wall art subject ban (v0.15.3 — overrides AI default of "art = floral painting")
+- ❌ NEVER floral paintings (single bloom, bouquet, vase-of-flowers, still-life with flowers)
+- ❌ NEVER botanical prints, pressed-flower frames, herbarium illustrations
+- ❌ NEVER watercolor florals (the AI's default association — explicitly out)
+- ❌ NEVER vintage / Victorian floral oil paintings
+- ❌ NEVER tropical / monstera / palm-frond prints
+- ❌ NEVER sunset / sunrise paintings
+- ❌ NEVER pop-art / bright-color modern abstract
+- ❌ NEVER inspirational typography or quote prints
+- ❌ NEVER family-photo-style portraits / wedding photos
+- ❌ NEVER religious iconography
+- ❌ NEVER sports / vintage-poster prints
+- ❌ NEVER animal-print / leopard / zebra patterned art
+- ✅ Approved wall art subjects: gestural abstract ink-wash / minimal line drawing / moody charcoal landscape (cliff, mountain, dunes, horizon — NOT floral fields) / brown-toned animal portrait (bison, horse, dog) / sepia or vintage B&W photograph (architecture, portrait, landscape) / tonal abstract color-field (cream + dark muted earth, NO florals, NO botanicals) / stretched canvas with raw texture + minimal black mark-making
+
+The AI defaults to "framed floral painting" because it's the most common framed-art training data. Every prompt must EXPLICITLY name the approved subject and EXPLICITLY exclude florals/botanicals/watercolor-florals to override the default.
+
 ### Monotone same-tone scene ban (NEW)
 - NEVER cream-on-cream-on-cream-on-cream with no contrast — produces flat AI look.
 - At least ONE element per scene must be a deeper-tone accent: dark walnut wood / matte black / deep velvet pillow / muted accent color.

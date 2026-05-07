@@ -100,8 +100,29 @@ Every Aykah lifestyle scene includes EXACTLY ONE subtle-pattern pillow. Never ze
 Every Aykah lifestyle scene has EXACTLY ONE dominant dark visual anchor. Pick one option per scene — never stack two.
 
 **Option A — Wall-art anchor (~50% of scenes — default)**
-- Matte black framed abstract (cream + black ink wash / minimal line drawing)
-- Moody dark-toned figurative painting (charcoal landscape, brown-toned animal, sepia)
+
+Approved subject matter (pick ONE per scene):
+- Gestural abstract ink-wash (cream + black brushstrokes)
+- Minimal line drawing (single continuous line, abstract figurative)
+- Moody charcoal-toned landscape (cliff / mountain / dunes / horizon — NEVER floral fields)
+- Brown-toned animal portrait (bison, horse, dog — moody, painterly)
+- Sepia / vintage B&W photograph (architecture, portrait, landscape)
+- Tonal abstract color-field (cream + dark muted earth — NO florals, NO botanicals)
+- Stretched canvas with raw texture + minimal black mark-making
+
+Frame: matte black metal OR thin-line dark walnut, ~140cm × 100cm above sofa, cream museum-mat surrounds the artwork.
+
+**BANNED wall art subjects (v0.15.3) — must be explicitly excluded in every prompt to override AI defaults:**
+- Floral paintings (single bloom, bouquet, vase-of-flowers, still-life with flowers)
+- Botanical prints, pressed-flower frames, herbarium illustrations
+- Watercolor florals (the AI's default — explicitly out)
+- Vintage / Victorian floral oil paintings
+- Tropical / monstera / palm-frond prints
+- Sunset / sunrise paintings
+- Pop-art / bright-color modern abstract
+- Inspirational typography / quote prints
+- Family-photo / wedding-photo portraits
+- Religious iconography, sports posters, animal-print art
 
 **Option B — Furniture anchor (~30% of scenes)**
 - Dark walnut credenza / sideboard behind sofa
