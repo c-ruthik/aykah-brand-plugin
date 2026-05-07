@@ -2,6 +2,38 @@
 
 Version-bump rule: **every change to skill files, agents, or data references = new version**. Patch bump for tweaks, minor bump for new rules / register changes / new features, major bump for breaking changes.
 
+## v0.16.0 — 2026-05-07 (room variants + product-driven selection + new Variant G)
+
+Solves the "every gen looks like the same room" problem. The agent now picks ONE of 7 living-room variants based on the hero product's catalog `style_tags` + `materials`. Variant G is a NEW boss-approved moody-cinematic register that deliberately reverses several global v0.15.x rules.
+
+### Added
+- **7 Living Room Variants** with locked DNA per variant (walls, floor, coffee-table style, light fixture, wall-art subject, pillow accents, throw, greenery, color-temp K, time of day, composition bias, reference brands):
+  - **A — Bright Coastal** (default for modern curved boucle pieces)
+  - **B — Warm Walnut Classic** (walnut wood-frame pieces)
+  - **C — Editorial Paneled** (vintage-classic upholstered + bookshelves)
+  - **D — Coffered Open** (spacious open-concept lifestyle)
+  - **E — Intimate Corner** (moody / smaller / MCM)
+  - **F — Editorial Classic** (slim classic linen + travertine — board-and-batten + herringbone + arc lamp + olive throw)
+  - **G — Moody Cinematic Cozy** *(NEW boss-approved)* — taupe-brown moody walls + dark walnut floor + black slatted drum coffee table + 3000–3500K warm tungsten + multi-source lit floor lamp + warm-amber hero cast + olive/burgundy/chocolate velvet pillow stack + dark chocolate mohair throw. Soho House / RH Modern register.
+
+- **Product → Variant mapping table** (12 product types pre-mapped) so each hero product picks its correct room variant automatically.
+- **Selection rule + self-check** — agent must print `Room variant: <letter — name>` as the first line of CREATIVE DIRECTION; apply variant DNA; verify overrides ARE applied; never blend two variants.
+- **Variant G global-rule overrides explicitly declared** — 8 global rules that variant G deliberately reverses (5400K → 3000–3500K, single window → multi-source, warm-amber banned → warm-amber hero cast, navy banned → navy allowed as deep velvet, etc.).
+- **`match_product_reference_image_v0_16_0`** rule — hero must match catalog primary_image EXACTLY (material, color, silhouette, leg style, proportions). Pass primary_image as engine reference image. Never imagine variations.
+
+### Changed (hardened)
+- **Angle hard-lock** — strengthened with literal interpretation (front = front only, no 3/4 substitution, no "angled-front"). Each angle now has explicit "hard fail if generated" criteria. Self-check question added.
+- **Catalog discipline** — split into Rule A (use catalog products only) + Rule B (match primary_image exactly). Two non-negotiable rules at HIGHEST PRIORITY.
+
+### Files modified
+- `agents/aykah-interior-designer.md` — new ROOM VARIANT SELECTOR section (7 variants + mapping + self-check), Angle hard-lock section hardened with hard-fail criteria, Catalog discipline expanded with Rule A + Rule B
+- `skills/image/data/prompt-pattern.json` — new `room_variants_v0_16_0` block (7 variants + mapping + selection rule), new `angle_lock_v0_16_0` block, new `match_product_reference_image_v0_16_0` block
+
+### Why
+v0.15.x rules were so prescriptive that every product converged on the same default room (cream walls + light oak + matte black art + olive tree). Different products need different rooms. Variant G specifically adds a moody/cinematic register the brand wanted but couldn't access under the "bright airy" global rules.
+
+---
+
 ## v0.15.5 — 2026-05-06 (deep-pile cozy rugs only — flat rugs banned)
 
 User clarified "best cozy rugs possible — no flat rugs." v0.15.4 had hand-woven wool flatweave + jute as approved options; both retired in v0.15.5. The bar is now plush deep-pile only.

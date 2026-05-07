@@ -50,9 +50,176 @@ The hero's `pairing_category` determines which DNA recipe to apply:
 
 | Hero pairing_category | Room type | DNA recipe |
 |---|---|---|
-| `sofa`, `sectional`, `accent-chair`, `coffee-table`, `side-table`, `console-table`, `media-unit`, `ottoman`, `bench`, `bookshelf` | **LIVING ROOM** | Living Room DNA (below) |
+| `sofa`, `sectional`, `accent-chair`, `coffee-table`, `side-table`, `console-table`, `media-unit`, `ottoman`, `bench`, `bookshelf` | **LIVING ROOM** | Living Room DNA (below) — pick ONE of 7 variants |
 | `bed`, `nightstand`, `dresser` | **BEDROOM** | Bedroom DNA (TBD — placeholder) |
 | `dining-table`, `dining-chair`, `bar-stool`, `credenza` | **DINING ROOM** | Existing dining rules |
+
+# ROOM VARIANT SELECTOR (LOCKED v0.16.0 — product-driven room selection)
+
+**The same product family always renders in the same room variant. Different product families render in different rooms. NEVER force every product into the default variant.**
+
+After identifying the room type, the agent picks ONE of 7 LIVING ROOM VARIANTS based on the hero product's catalog `style_tags` + `materials`. Each variant has its own locked DNA — walls, floor, coffee-table style, light fixture, wall-art subject, pillow accents, throw, time-of-day. Variant overrides any global rule it declares; global rules apply for everything the variant doesn't override.
+
+## The 7 Living Room Variants
+
+### Variant A — Bright Coastal (default for modern curved boucle pieces)
+
+| Element | Locked spec |
+|---|---|
+| Walls | Warm-natural cream limewash, plain (no paneling) |
+| Floor | Light oak wide-plank |
+| Coffee table | Light oak drum / round / pedestal |
+| Wall-art subject | Gestural abstract ink-wash (cream + black) — matte black thin frame |
+| Light fixture | Daylight only — no fixture in frame, OR matte black sconce |
+| Pillow accents | Cream + oatmeal + 1 olive or chocolate velvet |
+| Throw | Cream linen-mohair flat blend OR none |
+| Greenery | Substantial olive tree (~1.5m) in cream stoneware floor pot |
+| Color temp | 5400K daylight (global default) |
+| Time of day | Bright morning, soft-diffused |
+| Composition bias | Asymmetric, off-center |
+| Reference | Sundays Furniture, Quince, Parachute |
+
+### Variant B — Warm Walnut Classic (for walnut wood-frame pieces)
+
+| Element | Locked spec |
+|---|---|
+| Walls | Warm cream limewash, plain |
+| Floor | Honey-oak herringbone |
+| Coffee table | Dark walnut fluted drum OR live-edge slab |
+| Wall-art subject | Moody charcoal-toned landscape (cliff / horizon) — thin warm-wood frame |
+| Light fixture | Brass-and-black 5-arm chandelier with linen shades |
+| Pillow accents | Cream + oatmeal + olive velvet + chocolate velvet (2 deep accents) |
+| Throw | Olive woven flat-weave OR brushed wool herringbone |
+| Greenery | ONE — substantial olive tree OR tall fresh branches in cream stoneware |
+| Color temp | 5400K daylight (global default) |
+| Time of day | Bright midday classic |
+| Composition bias | Asymmetric, slight 3/4 |
+| Reference | Maiden Home, Cuyana, Sundays Furniture |
+
+### Variant C — Editorial Paneled (for vintage-classic + bookshelves)
+
+| Element | Locked spec |
+|---|---|
+| Walls | White wainscot lower 1/3 + slim picture rail + warm cream above |
+| Floor | Light oak wide-plank |
+| Coffee table | Dark walnut fluted nesting tables (round, two-tier) |
+| Wall-art subject | Matched 3-piece thin-frame landscape gallery (counts as ONE unit) — thin black metal frames |
+| Light fixture | Picture lights above the gallery OR matte black sconce |
+| Pillow accents | Cream + oatmeal + chocolate velvet + earth-tone patterned lumbar (faded kilim) |
+| Throw | Brushed wool flat-weave (cream or oatmeal) |
+| Greenery | Tall fresh branches (eucalyptus / willow) in cream stoneware floor vase |
+| Color temp | 5400K daylight (global default) |
+| Time of day | Bright morning, editorial |
+| Composition bias | Symmetric on the gallery wall, sectional centered |
+| Reference | Brooklinen, Sundays Furniture |
+
+### Variant D — Coffered Open (for spacious open-concept lifestyle)
+
+| Element | Locked spec |
+|---|---|
+| Walls | Bright-white limewash, plain |
+| Floor | Light oak wide-plank |
+| Coffee table | Matte black round / oval (the dark anchor itself) |
+| Wall-art subject | Cream + black tonal abstract color-field — thin warm-wood frame |
+| Light fixture | Coffered ceiling visible (architectural — no pendant needed), OR matte black chandelier |
+| Pillow accents | Cream + oatmeal + 1 sage-green velvet + chocolate velvet |
+| Throw | Sage-green woven flat-weave |
+| Greenery | Tall fresh branches in cream stoneware floor vase |
+| Color temp | 5400K daylight (global default) |
+| Time of day | Bright midday, open-airy |
+| Composition bias | Wide, open-concept, kitchen visible in distance |
+| Reference | Quince, Maiden Home |
+
+### Variant E — Intimate Corner (for moody / smaller pieces / accent chairs)
+
+| Element | Locked spec |
+|---|---|
+| Walls | Warm cream limewash, slightly moodier tonal variation |
+| Floor | Reclaimed light wood OR honey-oak |
+| Coffee table | Light oak drum / live-edge slab |
+| Wall-art subject | ONE moody dark figurative painting (brown-toned animal, sepia) — thin warm-wood frame |
+| Light fixture | Matte black wall sconce (the architectural anchor) |
+| Pillow accents | Oatmeal + 1 chocolate velvet + 1 rust velvet + earth-tone patterned lumbar |
+| Throw | Cream waffle-weave flat OR linen-mohair (NOT chunky knit) |
+| Greenery | Deep rust-red dried berry branches in cream urn |
+| Color temp | 5400K daylight (global default) |
+| Time of day | Late-afternoon intimate |
+| Composition bias | Tighter, asymmetric |
+| Reference | Sundays Furniture, Maiden Home |
+
+### Variant F — Editorial Classic (for slim classic upholstered + travertine table products)
+
+| Element | Locked spec |
+|---|---|
+| Walls | Cream **board-and-batten** vertical paneling |
+| Floor | **Honey-oak herringbone** |
+| Coffee table | **Travertine drum** (organic stone, sculptural) |
+| Wall-art subject | Sepia / muted-tone botanical-leaf print (single leaf branch in matte brown / cream) — matte black thin frame. NOTE: this is the ONLY variant that allows botanical subject — strictly muted brown leaves, NEVER colorful flowers / bouquets. |
+| Light fixture | **Matte black arc floor lamp** (the architectural anchor) |
+| Pillow accents | Cream + oatmeal + olive velvet + chocolate textured woven cotton + olive-stripe patterned lumbar |
+| Throw | **Olive woven flat-weave** with subtle fringe |
+| Greenery | ONE eucalyptus branch in small cream stoneware floor vase |
+| Color temp | 5400K daylight (global default) |
+| Time of day | Bright midday, considered |
+| Composition bias | Symmetric, sectional centered to wall art above |
+| Reference | RH Modern, Soho House (lighter register), Crate & Barrel |
+
+### Variant G — Moody Cinematic Cozy (NEW v0.16.0 — boss-approved)
+
+This variant **deliberately reverses several global v0.15.x rules**. It applies ONLY when the room variant is G — never blends into other variants.
+
+| Element | Locked spec | Override status |
+|---|---|---|
+| Walls | **Warm taupe-brown limewash plaster** (deep, saturated, moody) | OVERRIDES global "warm-natural cream walls" |
+| Floor | **Dark warm walnut OR rich amber-oak wide-plank** | OVERRIDES global "light oak wide-plank" |
+| Coffee table | **Black slatted / reeded cylindrical drum** (large, sculptural, in front of sofa) | New — variant-specific |
+| Wall-art subject | ONE warm-wood-frame, large abstract textural painting in cream + ochre / mustard / rust tones | New approved subject — variant-specific |
+| Light fixture | **Cream cylindrical fabric shade on warm copper / wood base, LIT (visible warm glow source)** | New — variant-specific |
+| Lighting setup | **Multi-source — floor lamp glow + small window** | OVERRIDES global "single window source camera-LEFT" |
+| Pillow accents | Olive velvet + dark chocolate boucle + burgundy / wine velvet + warm taupe velvet — richer, deeper, slightly jewel-adjacent | OVERRIDES "no jewel-adjacent" — muted jewel-adjacent ALLOWED in this variant |
+| Throw | **Rich dark chocolate mohair / wool** — fuzzier, draped heavier | OVERRIDES "no chunky knit" — mohair / wool with body ALLOWED in this variant only |
+| Greenery | ONE — substantial olive tree OR tall dried branches | Same as global |
+| Color temp | **3000–3500K warm tungsten-leaning** | OVERRIDES global 5400K — warm-amber is the hero cast in this variant |
+| Time of day | **Late afternoon / early evening, low-key moody** | OVERRIDES global "bright morning / midday" |
+| Composition bias | **More centered / front-on**, sectional symmetric to wall art above | New — variant-specific |
+| Navy accent | **ALLOWED as deep velvet pillow accent** | OVERRIDES global "navy banned as room accent" — variant G only |
+| Reference | **Soho House / RH Modern / Crate & Barrel "warm minimalism" — cinematic cozy** | New — variant-specific |
+| Anti-register | NOT bright airy. NOT 5400K. NOT cool. NOT cream-walled. Must read MOODY. | — |
+
+**Critical:** when variant G is selected, the agent does NOT apply the global "5400K daylight" / "single window camera-LEFT" / "no warm-amber" / "navy banned" rules. Those are intentionally inverted for this variant.
+
+## Product → Variant mapping table
+
+The agent reads the hero product's catalog `style_tags` + `materials` and picks the matching variant:
+
+| Product type / style | Default variant | Why |
+|---|---|---|
+| Modern curved boucle sofa / sectional (Ollie, modern-curved upholstered cream/ivory) | **A — Bright Coastal** | Curved modern + boucle = bright airy register |
+| Slim classic linen / oat upholstered loveseat or sofa (Calia, Aria, vintage-classic silhouette in linen) | **F — Editorial Classic** | Slim classic + linen = paneled walls + travertine + olive throw |
+| Tufted / skirted classic upholstered (traditional-leaning) | **C — Editorial Paneled** OR **F — Editorial Classic** | Classic silhouette + paneling |
+| Walnut wood-frame piece (any visible-wood furniture, dining/accent chairs) | **B — Warm Walnut Classic** | Wood frame + warm wood register |
+| Mid-century modern accent chair | **E — Intimate Corner** | MCM + moody figurative |
+| Light boucle accent chair | **A — Bright Coastal** | Boucle + bright |
+| Bookshelves / credenzas | **C — Editorial Paneled** | Paneled walls pair with built-ins |
+| Light-oak coffee / side tables | **A — Bright Coastal** OR **D — Coffered Open** | Light wood + bright |
+| Dark walnut coffee / side tables | **B — Warm Walnut Classic** | Dark wood + warm classic |
+| Travertine / stone tables | **F — Editorial Classic** | Stone + paneled + olive |
+| Deep velvet sofas / large dark-fabric sectionals / moody-tone upholstery | **G — Moody Cinematic Cozy** | Deep velvet + moody warm tungsten cinematic |
+| Premium / "RH Modern"-style heavy upholstered sectionals | **G — Moody Cinematic Cozy** | RH Modern register |
+
+**If multiple variants match,** prefer the variant that best matches the product's visual weight (slim → F, heavy → G, mid → A or B).
+
+**If no variant matches cleanly,** fall back to A — Bright Coastal.
+
+## Variant selection self-check
+
+Before returning the scene plan, the agent must:
+1. ✅ Identify hero product's `style_tags` + `materials`
+2. ✅ Match to ONE of 7 variants A–G (use mapping table above)
+3. ✅ Print the chosen variant in the scene plan: `Room variant: <letter — name>` as the first line of CREATIVE DIRECTION
+4. ✅ Apply that variant's locked DNA + global rules where variant doesn't override
+5. ✅ Verify the variant's overrides ARE applied (e.g., for G, scene must say "warm tungsten 3000–3500K" not "5400K daylight")
+6. ✅ NEVER blend two variants — pick ONE per scene
 
 # LIVING ROOM DNA (mandatory for any living-room hero — v10 LOCKED 2026-05-06)
 
@@ -444,6 +611,18 @@ The "Special: Dining table hero" section below is the DINING ROOM DNA. Retain as
 
 # Catalog discipline (HIGHEST PRIORITY — zero tolerance for hallucination)
 
+**v0.16.0 — TWO non-negotiable rules:**
+
+**Rule A — Use catalog products only, never invent.** When selecting any furniture (hero or secondary), use ONLY products from the catalog by exact `handle` + `title`. NEVER make up product names.
+
+**Rule B — Match the hero product's reference image exactly.** The catalog provides a `primary_image` URL for every product. The agent's scene plan MUST describe the hero with the EXACT material, color, silhouette, leg style, and proportions visible in `primary_image`. The photographer agent then passes `primary_image` to the engine as a reference image so the gen renders the actual product, not an imagined version.
+
+- If the hero's `primary_image` shows a cream boucle sectional with curved arms and 4 chunky pillows, the scene plan must say "cream boucle sectional, curved arms, 4 chunky cushions" — never "tan linen sectional with squared arms."
+- If the hero's catalog material says "boucle in oat colorway, dark-stained legs," the scene plan must say "boucle in oat with dark-stained legs" — never "ivory linen with light oak legs."
+- NEVER imagine product variations. If the user wants a different colorway, that's a different catalog entry (or a special instruction). Don't substitute.
+
+**Validation:** the parent skill checks that every product handle/title in the scene plan matches the catalog. Two validation failures surface the workflow to the user.
+
 When selecting secondary furniture, **you MUST pick ONLY from the `available_secondary_products[]` list provided by the parent.** That list is a pre-filtered slice of the Aykah catalog. **The parent will validate every product mention against the full catalog after you return — invalid mentions BLOCK the workflow and force you to redo.**
 
 ## How to use the available_secondary_products list
@@ -478,21 +657,29 @@ The path to never failing this gate: **never write a product name that wasn't in
 4. Catalog furniture goes in the `Supporting furniture` block. Decor (rugs, wall art, candles, throws, lamps, mirrors) goes in `Adjacent objects`.
 5. Never put a table, chair, sofa, bed, bench, ottoman, bookshelf, dresser, credenza, or any furniture in the decor list. If it's furniture, it's catalog. (Lamps, mirrors, and rugs are fine as decor — Aykah doesn't sell those.)
 
-# Angle hard-lock (the user picked one — plan staging around it)
+# Angle hard-lock (HARDENED v0.16.0 — exact angle, no substitutions)
 
-The user picked an exact angle. Plan the scene to look correct AT that angle:
+The user picked an EXACT angle. The agent must respect it literally. NEVER substitute a different angle "because it would look better." NEVER blend two angles. NEVER imagine the product from an angle the user did not request.
 
-| Angle | Staging implication |
-|---|---|
-| `front` | Hero faces camera straight on. Symmetric staging. Both arms / both legs visible. No 3/4 rotation. Background visible behind the product. |
-| `three-quarter` (3/4) | Standard catalog 3/4 angle — hero rotated 30–45° from camera. Asymmetric staging OK. Both the front face AND one side visible. |
-| `side` | Profile view of hero. Show silhouette. One side fully visible, no front face. Background and depth important. |
-| `back` | Back of hero visible without obstruction. Place secondary furniture so they don't block the back. Show construction quality (back stitching, frame structure). |
-| `closeup` | Tight on materials, joinery, texture detail. Hero fills 70%+ of frame. Background blurred or minimal. Show wood grain / fabric weave / hardware. |
-| `cutout` | Studio mode. Pure white seamless backdrop. No room context. No supporting furniture except hero. Soft contact shadow only. |
-| `hero` | Wide editorial. Full room visible. Hero placed for maximum visual weight. Lifestyle anchor — not just product. |
+If the user said `front`, the gen MUST be a front view — never a 3/4, never a side, never an "angled-front."
+If the user said `side`, the gen MUST be a side profile — never a 3/4 from the side.
 
-The photographer will lock the camera to match this angle. Your job is to plan the staging so the angle reveals the product well.
+| Angle | Staging implication | Hard fail if generated |
+|---|---|---|
+| `front` | Hero faces camera straight on. Symmetric staging. Both arms / both legs visible. NO rotation off-axis. Background visible behind the product. | ❌ Any 3/4 rotation, any "slight angled" interpretation, any side glimpse |
+| `three-quarter` (3/4) | Hero rotated 30–45° from camera. Asymmetric staging. Both front face AND one side visible. | ❌ Pure front (no side visible), pure side (no front visible), back angle |
+| `side` | Profile view of hero. One side fully visible, NO front face visible. Show silhouette. | ❌ Any front face visible, any 3/4, any back |
+| `back` | Back of hero visible without obstruction. Show construction quality (back stitching, frame structure). | ❌ Front, side, or 3/4 visible |
+| `closeup` | Tight on materials, joinery, texture detail. Hero fills 70%+ of frame. | ❌ Wide-room shot with hero small in frame |
+| `cutout` | Studio mode. Pure white seamless backdrop. No room context. | ❌ Any room context, any wall, any floor with grain visible |
+| `hero` | Wide editorial. Full room visible. Hero placed for maximum visual weight. | ❌ Tight crop on hero, no room visible |
+
+**Self-check before returning scene plan:**
+- ✅ Does my staging plan describe the hero AT the user-requested angle?
+- ✅ Have I avoided substituting a "more flattering" angle?
+- ✅ Does the LAYOUT PLAN section explicitly say which angle?
+
+The photographer agent then locks the camera to this angle. If the prompt that goes to the engine softens the angle ("from a slight 3/4" when user said "front"), the gen WILL come back wrong. Be literal.
 
 # Scene Set mode (multi-angle, single-room)
 
