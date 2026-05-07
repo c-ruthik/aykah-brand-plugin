@@ -2,6 +2,52 @@
 
 Version-bump rule: **every change to skill files, agents, or data references = new version**. Patch bump for tweaks, minor bump for new rules / register changes / new features, major bump for breaking changes.
 
+**Trial rule:** significant skill changes ship as TRIAL with explicit `**TRIAL — pending verification**` tag. Ruthik tests, then says "keep" (remove tag, lock) or "revert" (`git revert <commit>` + version bump-down). See `~/.claude/projects/-Users-ruthik-Downloads-Brand-guidelines/memory/feedback_skill_trial_first.md`.
+
+## v0.16.1 — 2026-05-07 (per-variant decor + chandelier decision tree) — **TRIAL — pending verification**
+
+**TRIAL STATUS:** Ruthik to test, then say "keep" or "revert."
+
+Two upgrades to fix the "every scene's coffee table looks the same" + "chandelier shows up in wrong rooms" problems.
+
+### Added
+
+**1. Per-variant decor palettes (TRIAL)**
+- Each variant (A–G) now defines its OWN coffee-table decor specification (3–4 objects). Replaces the global stoneware-vessel + travertine-dish + books default that made every scene look identical.
+- Per-variant decor palettes:
+  - **A — Bright Coastal:** small cream stoneware vase + 2 plain cream/oat books + travertine catch dish
+  - **B — Warm Walnut Classic:** dark stoneware vessel with dried-stem + 2 chocolate-spine books + brass-tipped candlesticks (unlit) + brass tray
+  - **C — Editorial Paneled:** cream + black ceramic catch dish + antique brass tray with 1 cream-spine book + small handheld stoneware
+  - **D — Coffered Open:** cream stoneware low bowl + small matte black candle on travertine tray (unlit) + 1 cream book
+  - **E — Intimate Corner:** ceramic incense burner + 1 chocolate-spine book + cream earthenware bowl + small brass dish
+  - **F — Editorial Classic:** travertine catch dish + 2 cream/chocolate books stacked + handheld stoneware vessel + ceramic acorn / organic object
+  - **G — Moody Cinematic Cozy:** **LIT** warm copper / brass candle (visible glow) + deep-burgundy-spine book + dark stoneware bowl with dried stem + brass tray with amber-glass vessel
+- Global "Other decor" section now defers to per-variant decor with global caps (max 4 objects, texture triangulation, books plain spines, lit candles only in G).
+
+**2. Chandelier decision tree (TRIAL)**
+- 4-step decision tree for when/how to use chandeliers:
+  - **D1 — When chandelier:** B = always (mandatory), D = conditional on ceiling height, G = always (lit), A/C/E/F = never
+  - **D2 — Scale rule:** diameter (in) ≈ (room width + length in ft) ÷ 2 — industry rule
+  - **D3 — Ceiling height:** > 11ft = proportional taller chandelier OK; 9–11ft = standard; < 9ft = NEVER chandelier (use sconce / floor lamp)
+  - **D4 — Lit vs unlit:** 5400K daylight variants (A–F) UNLIT; variant G LIT mandatory; lit candles ONLY in G coffee-table decor
+- 5 hard-fail conditions added (replace variant's locked fixture / chandelier in A/C/E/F / chandelier < 9ft ceiling / 2+ chandeliers / lit chandelier in daylight scene).
+- Secondary fixture rule for variants A/C/E that default to "daylight only" — ONE small modern pendant OR low-profile flush-mount allowed if ceiling reads visually empty.
+
+### Files modified
+- `agents/aykah-interior-designer.md` — 7 variant tables now have a Decor row; new Chandelier decision tree section before self-check; global "Other decor" section now defers to per-variant
+- `skills/image/data/prompt-pattern.json` — new `decor_per_variant_v0_16_1_TRIAL` and `chandelier_decision_tree_v0_16_1_TRIAL` blocks (both tagged TRIAL)
+
+### To revert if it doesn't work
+```
+cd /Users/ruthik/Downloads/Brand_guidelines/aykah_claude_skill
+git revert HEAD
+git push origin main
+git tag -d v0.16.1 && git push origin :refs/tags/v0.16.1
+# Bump back to 0.16.0 in plugin.json + marketplace.json + README.md
+```
+
+---
+
 ## v0.16.0 — 2026-05-07 (room variants + product-driven selection + new Variant G)
 
 Solves the "every gen looks like the same room" problem. The agent now picks ONE of 7 living-room variants based on the hero product's catalog `style_tags` + `materials`. Variant G is a NEW boss-approved moody-cinematic register that deliberately reverses several global v0.15.x rules.

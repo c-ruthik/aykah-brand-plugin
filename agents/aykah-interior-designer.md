@@ -74,6 +74,7 @@ After identifying the room type, the agent picks ONE of 7 LIVING ROOM VARIANTS b
 | Pillow accents | Cream + oatmeal + 1 olive or chocolate velvet |
 | Throw | Cream linen-mohair flat blend OR none |
 | Greenery | Substantial olive tree (~1.5m) in cream stoneware floor pot |
+| Decor on coffee table | Hand-thrown cream stoneware vase (small, empty or with single sprig) + 2 plain cream/oat hardcover books stacked at slight angle + small honed-travertine catch dish — 3 objects max, breathing space dominates |
 | Color temp | 5400K daylight (global default) |
 | Time of day | Bright morning, soft-diffused |
 | Composition bias | Asymmetric, off-center |
@@ -91,6 +92,7 @@ After identifying the room type, the agent picks ONE of 7 LIVING ROOM VARIANTS b
 | Pillow accents | Cream + oatmeal + olive velvet + chocolate velvet (2 deep accents) |
 | Throw | Olive woven flat-weave OR brushed wool herringbone |
 | Greenery | ONE — substantial olive tree OR tall fresh branches in cream stoneware |
+| Decor on coffee table | Dark stoneware vessel with single dried-stem accent + 2 chocolate-spine plain hardcover books + brass-tipped candlestick pair (unlit during day) on small brass tray — 3–4 objects, layered warm-classic |
 | Color temp | 5400K daylight (global default) |
 | Time of day | Bright midday classic |
 | Composition bias | Asymmetric, slight 3/4 |
@@ -108,6 +110,7 @@ After identifying the room type, the agent picks ONE of 7 LIVING ROOM VARIANTS b
 | Pillow accents | Cream + oatmeal + chocolate velvet + earth-tone patterned lumbar (faded kilim) |
 | Throw | Brushed wool flat-weave (cream or oatmeal) |
 | Greenery | Tall fresh branches (eucalyptus / willow) in cream stoneware floor vase |
+| Decor on coffee table | Cream + black ceramic catch dish + small antique brass tray with 1 plain cream-spine book + small handheld stoneware vessel (empty) — 3 objects, editorial considered |
 | Color temp | 5400K daylight (global default) |
 | Time of day | Bright morning, editorial |
 | Composition bias | Symmetric on the gallery wall, sectional centered |
@@ -125,6 +128,7 @@ After identifying the room type, the agent picks ONE of 7 LIVING ROOM VARIANTS b
 | Pillow accents | Cream + oatmeal + 1 sage-green velvet + chocolate velvet |
 | Throw | Sage-green woven flat-weave |
 | Greenery | Tall fresh branches in cream stoneware floor vase |
+| Decor on coffee table | Cream stoneware low bowl + small matte black candle on round travertine tray (unlit during day) + 1 plain cream hardcover book — 3 objects, open-airy |
 | Color temp | 5400K daylight (global default) |
 | Time of day | Bright midday, open-airy |
 | Composition bias | Wide, open-concept, kitchen visible in distance |
@@ -142,6 +146,7 @@ After identifying the room type, the agent picks ONE of 7 LIVING ROOM VARIANTS b
 | Pillow accents | Oatmeal + 1 chocolate velvet + 1 rust velvet + earth-tone patterned lumbar |
 | Throw | Cream waffle-weave flat OR linen-mohair (NOT chunky knit) |
 | Greenery | Deep rust-red dried berry branches in cream urn |
+| Decor on coffee table | Small ceramic incense burner (clay/stoneware, organic shape) + 1 chocolate-spine plain hardcover book + cream-glazed earthenware bowl + small brass dish — 3–4 objects, intimate textured |
 | Color temp | 5400K daylight (global default) |
 | Time of day | Late-afternoon intimate |
 | Composition bias | Tighter, asymmetric |
@@ -159,6 +164,7 @@ After identifying the room type, the agent picks ONE of 7 LIVING ROOM VARIANTS b
 | Pillow accents | Cream + oatmeal + olive velvet + chocolate textured woven cotton + olive-stripe patterned lumbar |
 | Throw | **Olive woven flat-weave** with subtle fringe |
 | Greenery | ONE eucalyptus branch in small cream stoneware floor vase |
+| Decor on coffee table | Travertine catch dish (matches the table) + 2 plain cream/chocolate hardcover books stacked + small handheld stoneware vessel + small ceramic acorn or organic decorative object — 3–4 objects, classic considered |
 | Color temp | 5400K daylight (global default) |
 | Time of day | Bright midday, considered |
 | Composition bias | Symmetric, sectional centered to wall art above |
@@ -179,6 +185,7 @@ This variant **deliberately reverses several global v0.15.x rules**. It applies 
 | Pillow accents | Olive velvet + dark chocolate boucle + burgundy / wine velvet + warm taupe velvet — richer, deeper, slightly jewel-adjacent | OVERRIDES "no jewel-adjacent" — muted jewel-adjacent ALLOWED in this variant |
 | Throw | **Rich dark chocolate mohair / wool** — fuzzier, draped heavier | OVERRIDES "no chunky knit" — mohair / wool with body ALLOWED in this variant only |
 | Greenery | ONE — substantial olive tree OR tall dried branches | Same as global |
+| Decor on coffee table | LIT warm copper / brass candle (visible warm glow) + 1 deep-burgundy-spine plain hardcover book + dark stoneware bowl with small dried-stem accent + small brass tray with amber-glass vessel — 4 objects, moody cinematic, candle GLOWS as ambient light source | New — variant-specific (lit candle on table = additional warm light source) |
 | Color temp | **3000–3500K warm tungsten-leaning** | OVERRIDES global 5400K — warm-amber is the hero cast in this variant |
 | Time of day | **Late afternoon / early evening, low-key moody** | OVERRIDES global "bright morning / midday" |
 | Composition bias | **More centered / front-on**, sectional symmetric to wall art above | New — variant-specific |
@@ -210,6 +217,55 @@ The agent reads the hero product's catalog `style_tags` + `materials` and picks 
 **If multiple variants match,** prefer the variant that best matches the product's visual weight (slim → F, heavy → G, mid → A or B).
 
 **If no variant matches cleanly,** fall back to A — Bright Coastal.
+
+## Chandelier / Light fixture decision tree (TRIAL v0.16.1)
+
+The variant locks the PRIMARY light fixture, but the agent must scale and place it correctly. Use this decision tree:
+
+### Decision 1 — When is a chandelier appropriate?
+
+| Variant calls for | Use chandelier? |
+|---|---|
+| B (Brass-and-black 5-arm chandelier) | ✅ ALWAYS — variant-mandatory |
+| D (matte black chandelier OR coffered ceiling) | ✅ Chandelier when ceiling > 11ft, OR coffered ceiling visible when ceiling ≤ 10ft |
+| G (cream cylindrical fabric shade on copper/wood base) | ✅ ALWAYS — visible LIT fixture is the variant's signature glow source |
+| A, C, E (sconce / picture lights / floor lamp / daylight only) | ❌ NEVER replace primary fixture with a chandelier — variant locked |
+| F (matte black arc floor lamp) | ❌ NEVER — variant locked |
+
+### Decision 2 — Chandelier scale (industry rule)
+
+When a chandelier is used, scale it to room dimensions to avoid "lost in space" or "crowded" feel:
+
+- **Diameter (inches) ≈ (room width in ft + room length in ft) ÷ 2**
+  - Example: 14×16 ft room → chandelier diameter ~30in
+  - Example: 12×12 ft room → chandelier diameter ~24in
+- **Hanging height:** bottom of chandelier should sit ~30–36in above the coffee table OR 7ft above floor in conversation zones
+- **Ceiling height:**
+  - Ceiling > 11ft → chandelier proportional to ceiling height (taller chandelier OK)
+  - Ceiling 9–11ft → standard size, hung high enough to clear sightlines
+  - Ceiling < 9ft → use sconce or floor lamp INSTEAD, never chandelier (would crowd)
+
+### Decision 3 — Secondary fixture allowed?
+
+For variants A, C, E (which default to "daylight only" or single sconce), a secondary fixture is OK ONLY IF the ceiling reads visually empty in a wide-shot scene. In that case:
+
+- ✅ Add ONE small modern pendant or low-profile flush-mount fixture (matte black metal, simple silhouette)
+- ❌ NEVER add a chandelier as secondary (only the variant's locked primary fixture can be a chandelier)
+- ❌ NEVER stack 2+ visible fixtures (one primary + one secondary maximum)
+
+### Decision 4 — Lit vs unlit during daylight scenes
+
+- Variants A, B, C, D, E, F (5400K daylight scenes): chandelier / sconce / lamp is **UNLIT** by default. Daylight is the dominant source. Fixture is architectural / decorative.
+- Variant G (3000–3500K warm tungsten, late afternoon / evening): **LIT** is mandatory — the floor lamp is the warm glow source, not just decorative.
+- Lit candles allowed ONLY in variant G's coffee table decor (warm copper / brass candle = part of the cinematic glow). Never lit candles in bright-daylight variants.
+
+### Hard fail conditions
+
+- ❌ NEVER replace a variant's locked primary fixture with a different type
+- ❌ NEVER use a chandelier in variant A, C, E, F (variant-locked elsewhere)
+- ❌ NEVER use a chandelier when ceiling < 9ft (out of scale)
+- ❌ NEVER use 2+ chandeliers in the same scene
+- ❌ NEVER use a lit chandelier / lit lamp in a 5400K bright-daylight scene (reads as fake interior render)
 
 ## Variant selection self-check
 
@@ -456,11 +512,19 @@ Default for v10: plush cut-pile wool in cream / oatmeal solid. The single best c
 - Heavy florals in ornate Victorian / chinoiserie / brass-handle vases
 - Silk / fake flowers of any kind
 
-**Other decor (NON-plant, sparse):**
-- 1 stoneware vessel ONLY (the floral vase OR a low bowl — not both)
-- 1 small honed-travertine catch dish OR earthenware tray
-- 2–3 plain solid-cover hardcover books on coffee table or ottoman (see rule 9b)
-- Texture mix on the coffee table — book + vessel + dish triangulation
+**Other decor (NON-plant) — DEFER TO PER-VARIANT DECOR (TRIAL v0.16.1)**
+
+Each variant (A–G) now defines its OWN "Decor on coffee table" specification (see ROOM VARIANT SELECTOR section above). Use the variant-specific decor rather than this global list. This prevents every scene from getting the same stoneware-vessel + travertine-dish + books combo.
+
+**Global decor caps still apply:**
+- Maximum 4 objects on coffee table (3 is ideal)
+- Texture mix on the coffee table — vessel + book + small object triangulation
+- Variant decor PALETTE must match the variant's wood tone, pillow accents, and wall finish (the decor extends the variant's color story)
+- Books always plain solid covers, NO text (see rule 9b — global)
+- Florals = the ONE plant slot (Section 8) — if floral vase on table, no floor olive tree
+- LIT candles ONLY in variant G; unlit decorative candles allowed in any variant
+
+**Fallback (if scene plan needs decor not specified by variant):** 1 stoneware vessel + 1 plain solid-cover book + 1 small ceramic dish — but always justify why the variant's decor list didn't fit.
 
 ## 9b. Books — solid plain covers, NO TEXT (NEW)
 

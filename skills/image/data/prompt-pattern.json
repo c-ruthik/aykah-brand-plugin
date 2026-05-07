@@ -161,6 +161,55 @@
   "match_product_reference_image_v0_16_0": {
     "rule": "Hero must match catalog primary_image EXACTLY — material, color, silhouette, leg style, proportions. Pass primary_image URL as reference image to engine. Never imagine variations."
   },
+  "decor_per_variant_v0_16_1_TRIAL": {
+    "status": "TRIAL — pending verification",
+    "rule": "Each variant now defines its own coffee table decor (3-4 objects) so every scene's coffee table reads visually different. Decor extends the variant's wood tone + pillow palette + wall finish. Replaces global stoneware+travertine+books default.",
+    "decor_by_variant": {
+      "A_bright_coastal": "Hand-thrown cream stoneware vase (small, empty or single sprig) + 2 plain cream/oat hardcover books stacked at slight angle + small honed-travertine catch dish — 3 objects max",
+      "B_warm_walnut_classic": "Dark stoneware vessel with single dried-stem accent + 2 chocolate-spine plain hardcover books + brass-tipped candlestick pair (unlit during day) on small brass tray — 3-4 objects, layered warm-classic",
+      "C_editorial_paneled": "Cream + black ceramic catch dish + small antique brass tray with 1 plain cream-spine book + small handheld stoneware vessel (empty) — 3 objects, editorial considered",
+      "D_coffered_open": "Cream stoneware low bowl + small matte black candle on round travertine tray (unlit during day) + 1 plain cream hardcover book — 3 objects, open-airy",
+      "E_intimate_corner": "Small ceramic incense burner (clay/stoneware, organic shape) + 1 chocolate-spine plain hardcover book + cream-glazed earthenware bowl + small brass dish — 3-4 objects, intimate textured",
+      "F_editorial_classic": "Travertine catch dish + 2 plain cream/chocolate hardcover books stacked + small handheld stoneware vessel + small ceramic acorn or organic decorative object — 3-4 objects, classic considered",
+      "G_moody_cinematic_cozy": "LIT warm copper / brass candle (visible warm glow) + 1 deep-burgundy-spine plain hardcover book + dark stoneware bowl with small dried-stem accent + small brass tray with amber-glass vessel — 4 objects, moody cinematic; lit candle = additional warm light source"
+    },
+    "global_caps": [
+      "Max 4 objects on coffee table (3 ideal)",
+      "Texture triangulation: vessel + book + small object",
+      "Decor palette must match variant's wood tone, pillow accents, wall finish",
+      "Books plain solid covers, NO text (rule 9b global)",
+      "LIT candles ONLY in variant G; unlit decorative candles allowed in any variant"
+    ]
+  },
+  "chandelier_decision_tree_v0_16_1_TRIAL": {
+    "status": "TRIAL — pending verification",
+    "rule": "Variant locks the primary fixture; this decision tree handles WHEN, SCALE, SECONDARY use, LIT vs UNLIT.",
+    "when_chandelier": {
+      "B_always": "Brass-and-black 5-arm chandelier — variant-mandatory",
+      "D_conditional": "Matte black chandelier when ceiling > 11ft, OR coffered ceiling visible when ceiling <= 10ft",
+      "G_always": "Cream cylindrical fabric shade on copper/wood base — variant-mandatory, always LIT",
+      "A_C_E_F_never": "Variant-locked elsewhere (sconce / picture lights / floor lamp / arc lamp / daylight only) — never replace with chandelier"
+    },
+    "scale_rule": "Chandelier diameter (inches) ≈ (room width ft + room length ft) / 2. Hanging height: bottom 30-36in above coffee table OR 7ft above floor in conversation zones.",
+    "ceiling_height_rule": {
+      "above_11ft": "Chandelier proportional to ceiling height (taller OK)",
+      "9_to_11ft": "Standard size, hung high enough to clear sightlines",
+      "below_9ft": "Use sconce or floor lamp INSTEAD — never chandelier (would crowd)"
+    },
+    "secondary_fixture_rule": "Variants A, C, E may add ONE small modern pendant or low-profile flush-mount (matte black, simple silhouette) ONLY if ceiling reads visually empty in wide-shot. Never chandelier as secondary. Never 2+ visible fixtures.",
+    "lit_vs_unlit": {
+      "5400K_variants_A_B_C_D_E_F": "UNLIT by default — daylight is dominant source, fixture is architectural/decorative",
+      "G_variant": "LIT mandatory — fixture is the warm glow source, not just decorative"
+    },
+    "lit_candles_rule": "ONLY in variant G coffee-table decor (warm copper / brass candle = part of cinematic glow). NEVER lit candles in bright-daylight variants.",
+    "hard_fails": [
+      "Replace variant's locked primary fixture with different type",
+      "Use chandelier in variant A, C, E, F (variant-locked elsewhere)",
+      "Use chandelier when ceiling < 9ft (out of scale)",
+      "Use 2+ chandeliers in same scene",
+      "Use lit chandelier / lit lamp in 5400K bright-daylight scene (reads as fake interior render)"
+    ]
+  },
   "v10_living_room_dna": {
     "accent_colors_approved": [
       "olive green", "sage green", "forest green",
