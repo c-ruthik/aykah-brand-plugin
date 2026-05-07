@@ -2,6 +2,29 @@
 
 Version-bump rule: **every change to skill files, agents, or data references = new version**. Patch bump for tweaks, minor bump for new rules / register changes / new features, major bump for breaking changes.
 
+## v0.15.2 — 2026-05-06 (knit family banned in decor)
+
+Knit-family textures (waffle / cable / sherpa / chunky knit / shaggy / mongolian / loop-pile) are now BANNED across all decor — pillows, throws, AND rugs. Boucle is banned in pillow decor when the catalog product (sofa/chair) is boucle, allowed only as ONE pillow when the hero is non-boucle.
+
+### Changed
+- **Pillow texture matrix** — Slot 1 now slub linen / raw linen / textured woven cotton (was: ivory tight-loop boucle). Slot 2 now brushed wool herringbone / wool flat-weave / matte cotton (was: oatmeal slub linen). Slot 6 now boucle exception (allowed only when sofa is non-boucle) — replaces shaggy/fur slot which is fully banned.
+- **Hard texture rule** — was "1 velvet + 1 knit/boucle + 1 linen-weave"; now "1 velvet + 1 linen-weave + 1 wool flat-weave or matte cotton."
+- **Throws rotation** — chunky cable-knit, waffle-knit, fringe-knit, sage chunky knit, brown fringe knit all RETIRED. Rotation now: linen-mohair flat blend / brushed wool flat-weave / wool herringbone / cashmere flat / woven cotton / raw linen / suede.
+- **Rugs** — cream loop-pile / berber chunky knit / cable-knit-style / cozy chunky knit / shaggy / sherpa all RETIRED. Approved: vintage faded oriental / hand-woven wool flatweave / tufted wool cut-pile / jute / low-pile vintage moroccan / faded persian medallion.
+
+### Added
+- Boucle-on-boucle ban (boucle pillow on boucle sofa = fail).
+- New approved rug list: hand-woven wool flatweave, tufted wool cut-pile, low-pile vintage moroccan, faded persian medallion.
+- New `pillow_textures_approved`, `pillow_textures_banned`, `boucle_pillow_rule`, `throws_approved_woven_only`, `throws_banned_knit_family`, `rugs_approved_woven_or_tufted`, `rugs_banned_knit_family` fields in prompt-pattern.json.
+
+### Files modified
+- `agents/aykah-interior-designer.md` — Living Room DNA sections 3 (pillows), 4 (throws), 7 (rugs) rewritten + self-check + hard-fail conditions updated
+- `skills/image/references/aykah-style-anchors.md` — pillow texture matrix rewritten, hard rule updated
+- `skills/image/references/aykah-anti-patterns.md` — knit-only ban replaced with knit-family ban (pillows + throws + rugs), rug rules expanded
+- `skills/image/data/prompt-pattern.json` — v10_register description updated, new texture/rug fields added, exclusions expanded
+
+---
+
 ## v0.15.1 — 2026-05-06 (v10 contradiction cleanup)
 
 Patch fix for contradictions left over from v9 in the v0.15.0 release. The new v10 rule is **EXACTLY ONE wall art piece per scene** but several legacy sections still said "wall art on every visible wall." Resolved.

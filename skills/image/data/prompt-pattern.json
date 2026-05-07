@@ -7,7 +7,7 @@
     "core_rule": "It must feel like a real home photograph, not a render.",
     "defining_diff": "controlled imperfection + lighting specificity + anti-AI constraints + layered tonal contrast",
     "brand_color_policy": "IGNORED in image generation. Brand palette (Navy #363B57, Ivory #FAF8F4, Gold #B8956A) is graphic-design-only. Use earthy neutrals by default. Apply brand colors only when user explicitly requests them in the prompt.",
-    "v10_register": "Collected Lived-In: cream/oatmeal base + deep muted earth-tone accents (olive/chocolate/burgundy/mustard/rust/sage) + mixed-texture pillows (velvet+knit+linen) + EXACTLY ONE patterned lumbar pillow + ONE dark anchor (art OR furniture OR architecture) + EXACTLY ONE wall art piece. Never monotone, never bright/saturated, never knit-only."
+    "v10_register": "Collected Lived-In (v0.15.2): cream/oatmeal base + deep muted earth-tone accents (olive/chocolate/burgundy/mustard/rust/sage) + mixed WOVEN textures (velvet + linen + wool flat-weave + matte cotton — KNIT FAMILY BANNED in decor) + EXACTLY ONE patterned lumbar pillow + ONE dark anchor (art OR furniture OR architecture) + EXACTLY ONE wall art piece + furniture contrast (one piece darker than sofa). Never monotone, never bright/saturated, never knit-decor."
   },
   "v10_living_room_dna": {
     "accent_colors_approved": [
@@ -27,7 +27,62 @@
     ],
     "max_accent_colors_per_scene": 2,
     "pillow_count_per_sofa": "4-6",
-    "pillow_texture_minimum": "1 velvet + 1 knit/boucle + 1 linen-weave",
+    "pillow_texture_minimum": "1 velvet + 1 linen-weave + 1 wool flat-weave or matte cotton (v0.15.2 — knit family BANNED in decor)",
+    "pillow_textures_approved": [
+      "velvet (smooth sheen)",
+      "slub linen / raw linen",
+      "brushed wool herringbone",
+      "wool flat-weave",
+      "matte cotton / textured woven cotton",
+      "leather / suede",
+      "patterned woven (kilim / tapestry / pinstripe / block-print)"
+    ],
+    "pillow_textures_banned": [
+      "waffle-knit",
+      "cable-knit",
+      "sherpa",
+      "chunky knit",
+      "mongolian fur / sheepskin / shaggy",
+      "boucle pillow when sofa is boucle (no boucle-on-boucle)"
+    ],
+    "boucle_pillow_rule": "ONE boucle pillow allowed ONLY when catalog product (sofa/chair) is NOT boucle. NEVER stack boucle-on-boucle.",
+    "throws_approved_woven_only": [
+      "linen-mohair flat blend",
+      "brushed wool flat-weave",
+      "wool herringbone flat-weave",
+      "cashmere flat throw",
+      "woven cotton flat throw",
+      "raw linen throw",
+      "suede / leather throw (rare)"
+    ],
+    "throws_banned_knit_family": [
+      "chunky cable-knit",
+      "waffle-knit",
+      "fringe-knit",
+      "sage-green chunky knit",
+      "brown fringe knit",
+      "loop-pile / shaggy throws",
+      "cream chunky knit (v9 default — RETIRED)"
+    ],
+    "rugs_approved_woven_or_tufted": [
+      "vintage faded oriental (sage + burgundy + oat / faded medallion / muted southwestern)",
+      "hand-woven wool flatweave (cream / oatmeal)",
+      "tufted wool cut-pile (cream / oatmeal, plush cut-pile, NOT loop-pile)",
+      "jute (woven natural fiber)",
+      "low-pile vintage moroccan (woven, fine pattern)",
+      "faded persian medallion (warm-greige + faded burgundy + sage, woven)"
+    ],
+    "rugs_banned_knit_family": [
+      "cream loop-pile",
+      "berber chunky knit",
+      "cable-knit-style rugs",
+      "cozy chunky knit / shaggy / shag-pile",
+      "sherpa rugs",
+      "plain solid-color knit rugs",
+      "sisal alone (too stiff)",
+      "bare flatweave low-pile alone (too thin)",
+      "bright pattern, bold geometric, round rugs"
+    ],
     "patterned_pillow_count": 1,
     "patterned_pillow_size_default": "lumbar 14x24",
     "patterned_pillow_approved_motifs": [
@@ -223,7 +278,10 @@
       "no staged feel",
       "no showroom",
       "no monotone same-tone scene — at least one element must contrast",
-      "no all-knit pillow stack — must mix velvet + knit + linen",
+      "no knit-family pillows — waffle / cable / sherpa / chunky / shaggy / mongolian BANNED in decor",
+      "no knit-family throws — chunky cable-knit / waffle / fringe / sherpa BANNED",
+      "no knit-family rugs — loop-pile / chunky knit / cable-knit-style / shag-pile / sherpa BANNED",
+      "no boucle-on-boucle (boucle pillow on boucle sofa)",
       "no zero patterned pillow and no two patterned pillows — exactly one",
       "no 3+ accent colors competing"
     ],

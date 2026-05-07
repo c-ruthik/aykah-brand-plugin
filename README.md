@@ -4,7 +4,7 @@ Internal Claude Code plugin for the Aykah team. Loads verified brand facts, voic
 
 The goal: **every team member, working with Claude, produces on-brand work without thinking about it.**
 
-Current version: **v0.15.1**
+Current version: **v0.15.2**
 
 ---
 

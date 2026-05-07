@@ -31,10 +31,14 @@ These bans were learned from a 6-image inspo set + Ollie sectional iteration fee
 - NEVER saturated jewel tones (emerald, sapphire, ruby)
 - The ONLY approved accents are deep muted earth tones: olive / sage / forest / chocolate / burgundy / mustard / caramel / rust / deep greige.
 
-### Knit-only pillow stack ban (NEW — overrides v9 4-knit-pillow recipe)
-- NEVER all-boucle, all-waffle, all-cable-knit pillows. Mix textures.
-- Required mix per scene: at least 1 velvet (smooth sheen) + at least 1 knit/boucle (textural matte) + at least 1 linen-weave (woven matte).
-- Cable-knit + waffle-knit + sherpa = three knits = STILL FAILS the rule. They are all "knit family."
+### Knit family BANNED in decor (v0.15.2 — overrides earlier "mix knits with other textures" rule)
+- NO knit-family pillows: waffle-knit, cable-knit, sherpa, chunky knit, mongolian fur, sheepskin, shaggy.
+- NO knit-family throws: chunky cable-knit, waffle-knit, fringe-knit, sage chunky knit, brown fringe knit, sherpa throws.
+- NO knit-family rugs: cream loop-pile, berber chunky knit, cable-knit-style rugs, cozy chunky knit, shaggy / shag-pile rugs, sherpa rugs.
+- Required pillow mix per scene: at least 1 velvet (smooth sheen) + at least 1 linen-weave (woven matte) + at least 1 wool flat-weave or matte cotton.
+- **Boucle exception:** ONE boucle pillow is allowed ONLY when the catalog product (sofa/chair) is NOT boucle. NEVER boucle-on-boucle (boucle pillow on a boucle sofa = fail).
+- Approved throws (woven / flat-weave only): linen-mohair flat blend, brushed wool flat-weave, cashmere flat throw, woven cotton flat throw, raw linen throw.
+- Approved rugs (woven / tufted only): vintage faded oriental, hand-woven wool flatweave, tufted wool cut-pile, jute, low-pile vintage moroccan, faded persian medallion.
 
 ### Patterned pillow rules (NEW — must include exactly one)
 - EVERY living-room scene includes EXACTLY ONE subtle-pattern pillow — never zero, never two.
@@ -65,10 +69,15 @@ These bans were learned from a 6-image inspo set + Ollie sectional iteration fee
 - "no rug edges aligned perfectly to floor planks"
 - "light source must have a single believable origin — single window camera-LEFT, no rim-lighting from impossible angles"
 
-### Vintage faded oriental rug — re-allowed (overrides 2026-05-05 ban)
-- Vintage faded oriental rugs (sage + burgundy + oat / faded medallion / muted southwestern) are ALLOWED in v10.
-- Cozy chunky knit / loop-pile / berber / jute also remain allowed.
-- Designer picks rug type per scene register (cozy = vintage faded; bright-airy = berber; modern = jute).
+### Rug rules (v0.15.2 — knit-family banned, woven-only)
+- Vintage faded oriental rugs (sage + burgundy + oat / faded medallion / muted southwestern) — ALLOWED.
+- Hand-woven wool flatweave (cream / oatmeal) — ALLOWED.
+- Tufted wool cut-pile (cream / oatmeal, plush cut-pile, NOT loop-pile) — ALLOWED.
+- Jute (woven natural fiber) — ALLOWED.
+- Low-pile vintage moroccan (woven, fine pattern, cream + black motif) — ALLOWED.
+- Faded persian medallion (warm-greige + faded burgundy + sage, woven) — ALLOWED.
+- BANNED: cream loop-pile, berber chunky knit, cable-knit-style rugs, cozy chunky knit, shaggy / shag-pile, sherpa rugs.
+- BANNED: sisal alone (too stiff), bare flatweave low-pile alone (too thin), bright pattern, bold geometric, round rugs.
 
 ---
 

@@ -55,20 +55,20 @@ These accents go on pillows / throws / accent chairs / vases / books — NOT wal
 - Tie-dye / shibori / batik patterns
 - Animal print of any kind
 
-### Pillow texture matrix (4–6 pillows per scene, mix 4 textures minimum)
+### Pillow texture matrix (4–6 pillows per scene, mix 4 WOVEN textures minimum)
 
-The v10 stack mixes textures rather than relying on knit-only stacks. Use this matrix:
+The v10 stack mixes WOVEN textures. Knit family (waffle / cable / sherpa / chunky knit / shaggy / fur / mongolian) is BANNED in pillow decor as of v0.15.2. Boucle is allowed only in Slot 6 and only when the catalog product (sofa/chair) is NOT boucle.
 
 | Slot | Default texture | Acceptable substitutes |
 |---|---|---|
-| 1 — neutral textured | Ivory tight-loop boucle | Cream waffle-knit, soft sherpa |
-| 2 — neutral textured | Oatmeal nubby slub linen | Cream raw linen, oat textured cotton |
+| 1 — neutral woven | Oatmeal nubby slub linen | Cream raw linen, oat textured woven cotton |
+| 2 — neutral matte | Brushed wool herringbone (cream) | Wool flat-weave, matte cotton, woven linen-cotton blend |
 | 3 — accent color | Deep-muted velvet (smooth sheen) — olive / chocolate / burgundy / mustard | Velvet is the default sheen contrast — only sub if scene already has a velvet anchor |
-| 4 — accent color (optional, for sectionals) | Second deep-muted velvet OR brushed wool | Brushed wool herringbone, linen-velvet blend |
-| 5 — patterned (always include exactly ONE) | Faded kilim / earthy tribal / vintage tapestry / thin black-on-cream pinstripe | Earthy block-print, faded southwestern stripe |
-| 6 — optional shaggy/fur accent (rare, ~10% of scenes) | Mongolian fur / sheepskin in mustard or cream | Single use only, never paired with another shaggy |
+| 4 — accent color (optional, for sectionals) | Second deep-muted velvet OR brushed wool / suede | Brushed wool herringbone, suede pillow, leather pillow |
+| 5 — patterned (always include exactly ONE) | Faded kilim / earthy tribal / vintage tapestry / thin black-on-cream pinstripe — WOVEN, never knit | Earthy block-print, faded southwestern stripe |
+| 6 — boucle exception (optional) | Tight-loop boucle pillow in ivory or oatmeal | ALLOWED ONLY when the catalog product is NOT boucle. NEVER stack boucle-on-boucle. |
 
-**Hard rule:** at least one velvet (smooth sheen) + at least one knit/boucle (textural matte) + at least one linen-weave (woven matte) per scene. Never all-knit, never all-velvet, never all-linen.
+**Hard rule (v0.15.2):** at least one velvet (smooth sheen) + at least one linen-weave (woven matte) + at least one wool flat-weave or matte cotton per scene. NO knit family in decor — NO waffle, NO cable-knit, NO sherpa, NO shaggy / mongolian / fur, NO chunky knit. Boucle is only allowed in Slot 6 and only when the hero is non-boucle.
 
 ### One subtle-pattern pillow per scene (NEW — always include exactly one)
 

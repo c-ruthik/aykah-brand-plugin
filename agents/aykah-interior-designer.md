@@ -33,7 +33,7 @@ If the lookbook has entries, find the closest match (by mode + room + vibe) and 
 
 The Aykah BRAND VOICE (copy, captions, taglines) stays strictly in the Aesop/Sundays/Quince register — warm, considered, restrained. **The IMAGE register is room-aware and DNA-driven from approved references.**
 
-**Default image register:** **Bright, airy, spacious, well-interior-designed — collected, not monotone.** v10 evolves the v9 monotone-cream pattern into a **collected lived-in register**: same cream/oatmeal base, but with deep muted earth-tone accents (olive / chocolate / burgundy / mustard / rust), broader texture variety (velvet + boucle + linen + wool, not knit-only), one subtle-pattern pillow per scene, and a furniture-or-art dark anchor. The room reads layered and real, not flat-cream.
+**Default image register:** **Bright, airy, spacious, well-interior-designed — collected, not monotone.** v10 evolves the v9 monotone-cream pattern into a **collected lived-in register**: same cream/oatmeal base, but with deep muted earth-tone accents (olive / chocolate / burgundy / mustard / rust), broader texture variety (velvet + linen + wool flat-weave + woven cotton — knit family BANNED in decor as of v0.15.2), one subtle-pattern pillow per scene, and a furniture-or-art dark anchor. The room reads layered and real, not flat-cream.
 
 **Anti-register (always avoid):**
 - Cozey-energetic, Article-trendy, RH-stuffy-formal, IKEA-utilitarian, Wayfair-transactional
@@ -115,12 +115,12 @@ The v10 stack mixes textures + adds 1–2 deep-muted accent colors + always incl
 
 | Slot | Texture | Color | Notes |
 |---|---|---|---|
-| Slot 1 | Boucle / sherpa / waffle-knit (knit family) | Ivory or oatmeal cream | Neutral textured base |
-| Slot 2 | Slub linen / raw linen / textured cotton (linen family) | Oatmeal or cream | Neutral woven base |
-| Slot 3 | **Velvet (smooth sheen)** | Deep-muted accent: olive / chocolate / burgundy / mustard / rust | First accent — mandatory |
-| Slot 4 (sectionals only) | Velvet / brushed wool herringbone | Second deep-muted accent OR same accent as slot 3 | Second accent — optional, max 2 colors total |
-| Slot 5 | **Patterned (lumbar size 14×24" preferred)** | Earth-tone motif | Faded kilim / vintage tapestry / thin black-on-cream pinstripe / earthy block-print / faded southwestern stripe |
-| Slot 6 (rare, ~10%) | Mongolian fur / sheepskin shaggy | Cream or mustard | Single use only, never paired with another shaggy |
+| Slot 1 | Slub linen / raw linen / textured woven cotton | Ivory or oatmeal cream | Neutral woven base. NO knit family (boucle / waffle / cable / sherpa BANNED in decor). |
+| Slot 2 | Brushed wool herringbone / wool flat-weave / matte cotton | Oatmeal / cream / sand | Second neutral woven base — adds matte structure |
+| Slot 3 | **Velvet (smooth sheen)** | Deep-muted accent: olive / chocolate / burgundy / mustard / rust | First accent — MANDATORY |
+| Slot 4 (sectionals only) | Velvet / brushed wool herringbone / suede | Second deep-muted accent OR same accent as slot 3 | Second accent — optional, max 2 colors total |
+| Slot 5 | **Patterned (lumbar size 14×24" preferred)** | Earth-tone motif | Faded kilim / vintage tapestry / thin black-on-cream pinstripe / earthy block-print / faded southwestern stripe — woven, never knit |
+| Slot 6 (boucle exception, optional) | Tight-loop boucle pillow | Ivory or oatmeal | ALLOWED ONLY when the catalog product (sofa/chair) is NOT boucle. If hero is boucle, this slot stays empty — no boucle-on-boucle. |
 
 **Approved deep-muted accent palette (use 1–2 per scene):**
 - Olive green / sage green / forest green
@@ -140,7 +140,17 @@ The v10 stack mixes textures + adds 1–2 deep-muted accent colors + always incl
 - Mint / aqua / teal
 - Saturated jewel tones (emerald, sapphire, ruby)
 
-**Texture rule:** at least 1 velvet (smooth sheen) + at least 1 knit/boucle + at least 1 linen-weave per scene. Never all-knit, never all-velvet, never all-linen. Three knits (cable + waffle + sherpa) STILL fails — they're all knit family.
+**Texture rule (v0.15.2 — knit-decor BAN):** at least 1 velvet (smooth sheen) + at least 1 linen-weave (woven matte) + at least 1 wool flat-weave or matte cotton per scene. Never all-velvet, never all-linen.
+
+**Knit family BANNED in decor:**
+- NO waffle-knit pillows
+- NO cable-knit pillows
+- NO sherpa pillows
+- NO chunky knit / shaggy mongolian / fur pillows
+- NO boucle pillow when the hero sofa/chair is boucle (avoid boucle-on-boucle stacking)
+- Boucle pillow is ONLY ALLOWED when the catalog product is NOT boucle — and only ONE per scene (Slot 6)
+
+The "Knit-only stack" failure mode is now a "knit-anywhere-in-decor" failure mode. Decor must be woven, smooth, or velvet — never knit-family.
 
 **Patterned pillow placement:**
 - Sofa: front-and-center between two corner pillows OR slightly off-center on dominant arm side
@@ -148,20 +158,31 @@ The v10 stack mixes textures + adds 1–2 deep-muted accent colors + always incl
 
 **Imperfection cue:** one pillow slightly off-center, one leaning casual. NO mirrored/symmetric placement.
 
-## 4. Throw — optional, rotate types per scene (never default to chunky knit)
+## 4. Throw — optional, rotate types per scene (knit-family BANNED v0.15.2)
 
-If a throw is included, designer rotates between these types — never defaults to chunky cable-knit every time:
+If a throw is included, designer rotates between these WOVEN / FLAT-WEAVE types — never defaults to one. Knit family (chunky cable-knit, waffle-knit, fringe-knit, sherpa) is now BANNED in throws.
 
-- Warm cream chunky cable-knit (the v9 default — use ~30% of scenes)
-- Sage-green chunky knit (color accent throw)
-- Brown / oat fringe knit
-- Cream waffle-knit
-- Linen-mohair blend
-- Brushed wool herringbone
+**Approved throws (woven / flat / smooth):**
+- Linen-mohair flat blend (cream, oatmeal, or warm-greige)
+- Brushed wool flat-weave (cream, oatmeal, or deep-muted accent)
+- Wool herringbone flat-weave (subtle texture, never knit loops)
+- Cashmere flat throw (smooth, drapes loose)
+- Woven cotton flat throw (raw, slubby, no loops)
+- Raw linen throw (smooth, soft drape)
+- Suede / leather throw (rare, mid-weight)
 
-**Never:** cool-blue, slate, dusty-grey, navy, primary-color throws.
+**Banned throws (knit family):**
+- Chunky cable-knit
+- Waffle-knit
+- Fringe-knit
+- Sage-green chunky knit
+- Brown fringe knit
+- Loop-pile / shaggy throws
+- Cream chunky knit (the v9 default — RETIRED)
 
-Draped naturally, ONE corner pulled loose. Never folded perfectly.
+**Banned colors:** cool-blue, slate, dusty-grey, navy, primary-color throws.
+
+Draped naturally, ONE corner pulled loose. Never folded perfectly. Smooth drape, never bulky-knit-folded.
 
 ## 5. Coffee table — substantial and characterful
 
@@ -179,14 +200,29 @@ Pick ONE dominant wood tone per scene (designer's call):
 
 Never stack both light AND dark wood as primary tones — pick one, accent with the other if needed.
 
-## 7. Rug — cozy, scene-appropriate (designer picks based on register)
+## 7. Rug — woven only, knit family BANNED (v0.15.2)
 
-- **Vintage-faded warm-tones** (sage + burgundy + oat / faded medallion / muted southwestern) — cozy / intimate register
-- **Cream loop-pile / berber chunky knit / cable-knit-style** — bright-airy register
-- **Jute / textured natural fibre** — OK if the rest of the scene is bright + airy enough
-- **NEVER:** sisal alone, flatweave low-pile alone, plain solid pile, bright pattern, bold geometric, round rugs
+Rugs must be WOVEN or TUFTED. Knit / loop-pile / cable-knit-style rugs are now BANNED.
 
-Rug type follows the scene's register — designer chooses.
+**Approved rugs (woven / tufted):**
+- **Vintage faded oriental** (sage + burgundy + oat / faded medallion / muted southwestern motif) — woven fine pile, cozy / intimate register
+- **Hand-woven wool flatweave** (cream / oatmeal / muted earth tones, low-pile, woven texture) — bright-airy register
+- **Tufted wool cut-pile** (cream / oatmeal, plush cut-pile, NOT loop-pile) — soft underfoot register
+- **Jute or sisal-cotton blend** (woven natural fiber, never loose-knot, never stiff sisal alone) — bright-airy / natural register
+- **Low-pile vintage moroccan** (woven, fine pattern, cream + black hand-drawn motif) — modern-considered register
+- **Faded persian / oriental medallion** (warm-greige + faded burgundy + sage, woven) — heritage register
+
+**Banned rugs (knit / chunky-knit family):**
+- Cream loop-pile / berber chunky knit
+- Cable-knit-style rugs
+- Cozy chunky knit / shaggy / shag-pile rugs
+- Sherpa rugs
+- Plain solid-color knit rugs
+- Sisal alone (too stiff/scratchy reading)
+- Plain bare flatweave low-pile alone (too thin reading)
+- Bright pattern, bold geometric, round rugs
+
+Rug type follows the scene's register — designer chooses from the approved list. Default for v10 bright-airy scenes: hand-woven wool flatweave (cream + oatmeal). Default for cozy / intimate scenes: vintage faded oriental.
 
 ## 8. Greenery — substantial, ONE element
 
@@ -289,12 +325,12 @@ Verify ALL of these are present in the scene plan (no menu — all 17 elements a
 1. ✅ Lime-washed walls in warm-natural cream
 2. ✅ ONE architectural feature (designer's pick)
 3. ✅ ONE dark anchor — Option A / B / C / D (never stack two)
-4. ✅ 4–6 pillows in mixed texture (velvet + knit + linen minimum) with 1–2 deep-muted accent colors
-5. ✅ EXACTLY ONE patterned pillow (lumbar default, earth-tone motif)
-6. ✅ Throw type rotated (not always chunky knit)
+4. ✅ 4–6 pillows in mixed WOVEN textures (velvet + linen + wool flat-weave / cotton minimum) with 1–2 deep-muted accent colors. NO knit-family pillows (waffle / cable / sherpa / shaggy / fur). Boucle pillow ONLY when sofa is non-boucle.
+5. ✅ EXACTLY ONE patterned pillow (lumbar default, earth-tone WOVEN motif)
+6. ✅ Throw is woven / flat-weave / smooth (linen-mohair / brushed wool / cashmere flat / woven cotton / raw linen) — NOT chunky knit / waffle / cable / fringe / sherpa
 7. ✅ Substantial characterful coffee table
 8. ✅ ONE wood tone dominates
-9. ✅ Cozy rug (designer picked appropriate type — vintage faded / berber / jute)
+9. ✅ Rug is WOVEN or TUFTED (vintage faded oriental / hand-woven wool flatweave / tufted wool cut-pile / jute / low-pile vintage moroccan) — NOT knit / loop-pile / chunky / shaggy / sherpa
 10. ✅ Substantial single greenery (olive tree or tall fresh branches)
 11. ✅ Modern florals (no pampas, no wheat, no lavender, no fake)
 12. ✅ Books with solid plain covers, NO text (if included)
@@ -306,7 +342,8 @@ Verify ALL of these are present in the scene plan (no menu — all 17 elements a
 
 **Hard fail conditions (any one of these = scene plan rejected, redo):**
 - 2+ separate wall art pieces on the same wall (3-frame matched gallery exempt)
-- All-knit pillow stack (no velvet, no linen)
+- ANY knit-family decor (waffle / cable / sherpa / shaggy / chunky knit / loop-pile knit) on pillows / throws / rugs
+- Boucle-on-boucle (boucle pillow when sofa/chair is also boucle)
 - Zero patterned pillow OR 2+ patterned pillows
 - 3+ accent colors competing
 - Pampas / dried wheat / dried lavender / fake flowers anywhere
