@@ -225,43 +225,57 @@ Pick ONE dominant wood tone per scene (designer's call):
 
 Never stack both light AND dark wood as primary tones — pick one, accent with the other if needed.
 
-## 7. Rug — woven only, knit family BANNED (v0.15.2)
+## 7. Rug — COZY + PLAIN only (v0.15.4 — traditional patterns BANNED)
 
-Rugs must be WOVEN or TUFTED. Knit / loop-pile / cable-knit-style rugs are now BANNED.
+Rugs must be PLAIN, woven or tufted, in cream/oatmeal/natural tones. Traditional patterns (oriental, persian medallion, moroccan motif, southwestern stripe, tribal motif) are now BANNED. The room contrast comes from FURNITURE + WALL ART, not from the rug pattern.
 
-**Approved rugs (woven / tufted):**
-- **Vintage faded oriental** (sage + burgundy + oat / faded medallion / muted southwestern motif) — woven fine pile, cozy / intimate register
-- **Hand-woven wool flatweave** (cream / oatmeal / muted earth tones, low-pile, woven texture) — bright-airy register
-- **Tufted wool cut-pile** (cream / oatmeal, plush cut-pile, NOT loop-pile) — soft underfoot register
-- **Jute or sisal-cotton blend** (woven natural fiber, never loose-knot, never stiff sisal alone) — bright-airy / natural register
-- **Low-pile vintage moroccan** (woven, fine pattern, cream + black hand-drawn motif) — modern-considered register
-- **Faded persian / oriental medallion** (warm-greige + faded burgundy + sage, woven) — heritage register
+**Approved rugs (cozy + plain only):**
+- **Hand-woven wool flatweave** (cream / oatmeal — solid or very subtle tonal variation, NO pattern, low-pile woven texture) — bright-airy default
+- **Tufted wool cut-pile** (cream / oatmeal, plush cut-pile, NOT loop-pile, solid color) — cozy / soft underfoot default
+- **Plain cream wool rug** (medium pile, solid cream with subtle slubby texture, no pattern)
+- **Jute or sisal-cotton blend** (woven natural fiber, neutral oat / sand tone, plain — never loose-knot, never stiff sisal alone) — natural register
 
-**Banned rugs (knit / chunky-knit family):**
-- Cream loop-pile / berber chunky knit
-- Cable-knit-style rugs
-- Cozy chunky knit / shaggy / shag-pile rugs
-- Sherpa rugs
-- Plain solid-color knit rugs
-- Sisal alone (too stiff/scratchy reading)
-- Plain bare flatweave low-pile alone (too thin reading)
-- Bright pattern, bold geometric, round rugs
+**Banned rugs (traditional / patterned + knit family):**
+- ❌ Vintage faded oriental (medallion / southwestern motif) — RETIRED v0.15.4
+- ❌ Persian medallion / faded persian — RETIRED v0.15.4
+- ❌ Low-pile vintage moroccan (with motif) — RETIRED v0.15.4
+- ❌ Tribal motif rugs / kilim-style rugs / ethnic-pattern rugs
+- ❌ Cream loop-pile / berber chunky knit (knit family — banned in v0.15.2)
+- ❌ Cable-knit-style rugs / cozy chunky knit / shaggy / shag-pile / sherpa rugs
+- ❌ Sisal alone (too stiff)
+- ❌ Bright pattern, bold geometric, round rugs
 
-Rug type follows the scene's register — designer chooses from the approved list. Default for v10 bright-airy scenes: hand-woven wool flatweave (cream + oatmeal). Default for cozy / intimate scenes: vintage faded oriental.
+Rug type follows the scene's register — designer chooses from the 4 approved plain options. Default for v10 bright-airy scenes: hand-woven wool flatweave (cream + oatmeal). Default for cozy / intimate scenes: tufted wool cut-pile (plush, plain cream).
 
-## 8. Greenery — substantial, ONE element
+## 8. Greenery — ONE PLANT TOTAL per scene (v0.15.4 — overrides prior "+ fresh florals on table")
 
-- Olive tree (~1.5m) in cream stoneware, OR
-- Tall airy fresh branches in cream stoneware floor vase (eucalyptus, willow, olive sprigs), OR
-- Trailing plant climbing window edge
-- **Never:** small placed-in fiddle leaf in tiny pot (decorator-fake)
-- One greenery element per scene — the only living-green note
+**Rule:** ONE living-green / floral element TOTAL per scene. Never two. Never a floor olive tree AND a coffee-table tulip vase together — pick ONE slot.
 
-## 9. Florals + decor — MODERN register (overrides vintage register)
+**Approved single-element options (designer picks ONE):**
 
-**Approved florals (modern, sculptural, alive or dramatic-dried):**
-- Fresh white tulips in cream stoneware (modern, alive)
-- Tall fresh airy green branches (eucalyptus, willow, olive sprig)
+**Floor option (the room's primary plant note):**
+- Substantial olive tree (~1.5m) in cream stoneware floor pot, OR
+- Tall airy fresh branches in cream stoneware floor vase (eucalyptus, willow, olive sprigs, cherry blossom), OR
+- Tall dried fennel / dried rust-red berry branches in cream stoneware floor urn
+
+**Table option (small modern accent):**
+- Single stem arrangement in small cream stoneware vase on coffee table (white tulips / olive sprig / cherry blossom — 3–5 stems max), OR
+- Small dried-fennel cluster in handheld vessel on side table
+
+**Hard rules:**
+- ❌ NEVER both floor + table plants in the same scene
+- ❌ NEVER a small placed-in fiddle leaf in a tiny pot (decorator-fake)
+- ❌ NEVER more than one greenery element TOTAL — even small herb pots, succulents, terrariums count
+- ❌ NEVER bouquets of mixed flowers (modern minimalism uses single-stem or single-species)
+- ✅ One greenery element only — the room's single living-green note
+
+## 9. Florals + decor — MODERN register (florals = the ONE plant slot — no 2nd plant)
+
+**IMPORTANT (v0.15.4):** Florals on the coffee table = the ONE plant slot from Section 8. If florals are on the table, NO floor olive tree / floor branches. If a floor olive tree is in the scene, NO florals on the coffee table.
+
+**Approved florals (modern, sculptural — single-stem or single-species only):**
+- Fresh white tulips in cream stoneware (3–5 stems max — modern, alive)
+- Tall fresh airy green branches (eucalyptus, willow, olive sprig — single species)
 - Deep rust-red dried berry branches in cream urn (dramatic, muted)
 - Tall dried fennel / feathery dried wildflower in cream vase
 - Cherry blossom branches (in season)
@@ -270,11 +284,12 @@ Rug type follows the scene's register — designer chooses from the approved lis
 - Pampas grass — over and out
 - Dried wheat / dried lavender bunches
 - English country dried hydrangeas
+- Mixed-flower bouquets (modern minimalism = single-stem / single-species)
 - Heavy florals in ornate Victorian / chinoiserie / brass-handle vases
 - Silk / fake flowers of any kind
 
-**Other decor:**
-- 1–2 stoneware vessels (vase with branches, low bowl, hand-thrown clay)
+**Other decor (NON-plant, sparse):**
+- 1 stoneware vessel ONLY (the floral vase OR a low bowl — not both)
 - 1 small honed-travertine catch dish OR earthenware tray
 - 2–3 plain solid-cover hardcover books on coffee table or ottoman (see rule 9b)
 - Texture mix on the coffee table — book + vessel + dish triangulation
@@ -325,11 +340,31 @@ If the dark anchor is wall art (Option A), the furniture-contrast piece can stil
 
 **Optional 2nd-color accent furniture:** olive-green velvet swivel chair, sage-green ottoman, or chocolate-leather lounge chair — adds a second deep-muted color note. Use sparingly (~30% of scenes), never two accent furnitures together.
 
-## 14. Furnishing density — MEDIUM
+## 14. Furnishing density — SPACIOUS (v0.15.4 — no cramped spaces)
 
-- NEVER bare/sparse (designer-fake feel)
-- NEVER cluttered (Wayfair feel)
-- Real-home: every visible object is real and purposeful, but the room breathes
+The room must feel **spacious + breathing + considered** — never cramped, never cluttered, never packed.
+
+**Spaciousness rules (mandatory):**
+- ✅ The hero product owns its zone with at least 2–3 feet of visual breathing room around it
+- ✅ The coffee table sits ~18–24 inches from the sofa, not pushed up against it
+- ✅ The floor is 50–70% visible (rug visible, wood floor visible around rug, never carpet-wall-to-wall)
+- ✅ Walls are 70%+ empty above the dado line — ONE wall art piece, the rest of the wall breathes
+- ✅ The ceiling reads tall — 12-foot feel, vertical breathing room above the hero
+- ✅ Negative space dominates the composition — empty floor, empty wall, empty horizon
+
+**Cramped-space failure modes (ALL banned):**
+- ❌ NEVER coffee table jammed against the sofa
+- ❌ NEVER side tables crowded with 3+ objects
+- ❌ NEVER pillows packed tight on the sofa with no gaps between them
+- ❌ NEVER 2+ accent chairs squeezed into the same corner
+- ❌ NEVER decor objects stacked on every horizontal surface
+- ❌ NEVER walls covered with art / mirrors / sconces / shelves all at once
+- ❌ NEVER plants competing for the same zone (Section 8 already mandates ONE plant total)
+- ❌ NEVER a small room shot at wide-angle that compresses the space
+
+**Density target:** spacious enough that you could imagine adding one more piece comfortably. If the room reads "fully decorated" or "no room to add anything," it's too dense — pull pieces out.
+
+**Real-home rule:** every visible object is real and purposeful, but the room breathes generously. The Aykah register is "considered + airy," not "magazine-perfectly-packed."
 
 ## 15. AI-realism cues (NEW — v10, always include in scene plan)
 
@@ -355,9 +390,9 @@ Verify ALL of these are present in the scene plan (no menu — all 17 elements a
 6. ✅ Throw is woven / flat-weave / smooth (linen-mohair / brushed wool / cashmere flat / woven cotton / raw linen) — NOT chunky knit / waffle / cable / fringe / sherpa
 7. ✅ Substantial characterful coffee table
 8. ✅ ONE wood tone dominates
-9. ✅ Rug is WOVEN or TUFTED (vintage faded oriental / hand-woven wool flatweave / tufted wool cut-pile / jute / low-pile vintage moroccan) — NOT knit / loop-pile / chunky / shaggy / sherpa
-10. ✅ Substantial single greenery (olive tree or tall fresh branches)
-11. ✅ Modern florals (no pampas, no wheat, no lavender, no fake)
+9. ✅ Rug is COZY + PLAIN (hand-woven wool flatweave / tufted wool cut-pile / plain cream wool / jute) — NOT traditional pattern (no oriental / persian / moroccan motif), NOT knit family
+10. ✅ EXACTLY ONE plant TOTAL per scene (floor olive tree OR table florals — never both)
+11. ✅ Modern florals (no pampas, no wheat, no lavender, no fake, no mixed bouquets)
 12. ✅ Books with solid plain covers, NO text (if included)
 13. ✅ ONE visible lighting fixture
 14. ✅ 5400K daylight, single window source camera-LEFT
@@ -367,11 +402,15 @@ Verify ALL of these are present in the scene plan (no menu — all 17 elements a
 
 **Hard fail conditions (any one of these = scene plan rejected, redo):**
 - 2+ separate wall art pieces on the same wall (3-frame matched gallery exempt)
+- Floral / botanical / watercolor-floral wall art (v0.15.3 ban)
 - ANY knit-family decor (waffle / cable / sherpa / shaggy / chunky knit / loop-pile knit) on pillows / throws / rugs
 - Boucle-on-boucle (boucle pillow when sofa/chair is also boucle)
+- Traditional-pattern rug (oriental / persian / moroccan motif / kilim / tribal) — v0.15.4 ban
+- 2+ plants in the scene (must be EXACTLY ONE plant total — floor OR table, never both) — v0.15.4 ban
+- Cramped / cluttered space (coffee table jammed against sofa / packed pillows / multi-art walls / decor stacked everywhere) — v0.15.4 ban
 - Zero patterned pillow OR 2+ patterned pillows
 - 3+ accent colors competing
-- Pampas / dried wheat / dried lavender / fake flowers anywhere
+- Pampas / dried wheat / dried lavender / fake flowers / mixed-bouquet anywhere
 - Books with visible titles or readable text
 - Mirrored pillow placement / perfectly folded throw / books aligned to edge
 - Cool-blue / pastel / saturated bright color anywhere

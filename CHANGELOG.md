@@ -2,6 +2,28 @@
 
 Version-bump rule: **every change to skill files, agents, or data references = new version**. Patch bump for tweaks, minor bump for new rules / register changes / new features, major bump for breaking changes.
 
+## v0.15.4 — 2026-05-06 (cozy plain rugs only + one plant total + no cramped spaces)
+
+Three feedback-driven rule tightenings.
+
+### Changed
+- **Rugs — cozy plain only.** v0.15.2 allowed vintage faded oriental / persian medallion / moroccan motif. All retired in v0.15.4 — traditional patterns BANNED. Approved list narrowed to 4 cozy plain options: hand-woven wool flatweave (cream / oatmeal solid), tufted wool cut-pile (plain), plain cream wool, jute / sisal-cotton blend (neutral plain). Room contrast comes from FURNITURE + WALL ART, not from rug pattern.
+- **Plant count — exactly ONE plant TOTAL per scene.** Was: 1 floor greenery + fresh florals on coffee table allowed (= 2 plants). Now: pick ONE slot — floor option (substantial olive tree / tall floor branches / dried floor urn) OR table option (small single-stem arrangement). Never both. Never multiple potted plants / herb pots / succulents / mixed-flower bouquets.
+- **Furnishing density renamed "Spaciousness" — explicit no-cramped-spaces rule.** Coffee table 18–24 inches from sofa, walls 70%+ empty above the dado line, floor 50–70% visible, ceiling reads tall, hero owns its zone with 2–3 feet of breathing room. 7 cramped-space failure modes explicitly banned.
+
+### Added
+- New `rugs_approved_cozy_plain_only` + `rugs_banned_v0_15_4` fields in prompt-pattern.json.
+- New `plant_count_per_scene: 1` + `plant_count_rule` + `spaciousness_rule` + `cramped_space_failures_banned` fields.
+- 7 new exclusion lines in prompt-pattern.json `exclusions.objects`: traditional-pattern rugs, 2+ plants, mixed bouquets, cramped spaces, wide-angle compression.
+- 3 new hard-fail conditions in interior-designer self-check: traditional-pattern rug, 2+ plants, cramped spaces.
+
+### Files modified
+- `agents/aykah-interior-designer.md` — Sections 7 (rugs rewritten cozy-plain only), 8 (greenery now ONE plant total), 9 (florals + decor reconciled with plant cap), 14 (renamed to Spaciousness with explicit cramped bans). Self-check + hard-fail updated.
+- `skills/image/references/aykah-anti-patterns.md` — rug rules rewritten v0.15.4 + new Plant count cap section + new Cramped-space ban section.
+- `skills/image/data/prompt-pattern.json` — v10_register description updated, new rug/plant/spaciousness fields, expanded exclusions.
+
+---
+
 ## v0.15.3 — 2026-05-06 (wall art subject ban — no florals/botanicals)
 
 The AI defaults to "framed floral painting" for any wall art slot because that's the most common framed-art pattern in its training data. v0.15.3 explicitly bans floral and botanical subject matter for wall art across all 4 dark-anchor options and adds explicit approved-subject enumeration so the model converges on the right register.

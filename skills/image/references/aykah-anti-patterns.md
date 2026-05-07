@@ -86,15 +86,42 @@ The AI defaults to "framed floral painting" because it's the most common framed-
 - "no rug edges aligned perfectly to floor planks"
 - "light source must have a single believable origin — single window camera-LEFT, no rim-lighting from impossible angles"
 
-### Rug rules (v0.15.2 — knit-family banned, woven-only)
-- Vintage faded oriental rugs (sage + burgundy + oat / faded medallion / muted southwestern) — ALLOWED.
-- Hand-woven wool flatweave (cream / oatmeal) — ALLOWED.
-- Tufted wool cut-pile (cream / oatmeal, plush cut-pile, NOT loop-pile) — ALLOWED.
-- Jute (woven natural fiber) — ALLOWED.
-- Low-pile vintage moroccan (woven, fine pattern, cream + black motif) — ALLOWED.
-- Faded persian medallion (warm-greige + faded burgundy + sage, woven) — ALLOWED.
-- BANNED: cream loop-pile, berber chunky knit, cable-knit-style rugs, cozy chunky knit, shaggy / shag-pile, sherpa rugs.
-- BANNED: sisal alone (too stiff), bare flatweave low-pile alone (too thin), bright pattern, bold geometric, round rugs.
+### Rug rules (v0.15.4 — COZY + PLAIN ONLY, traditional patterns BANNED)
+
+The room contrast comes from FURNITURE + WALL ART. Rugs stay plain so they don't compete.
+
+**Approved rugs (cozy + plain only — 4 options):**
+- Hand-woven wool flatweave (cream / oatmeal — solid or very subtle tonal variation, NO pattern)
+- Tufted wool cut-pile (cream / oatmeal, plush cut-pile, NOT loop-pile, solid color)
+- Plain cream wool rug (medium pile, solid cream with subtle slubby texture)
+- Jute or sisal-cotton blend (woven natural fiber, neutral oat/sand, plain)
+
+**Banned rugs (v0.15.4 — traditional patterns + knit family + others):**
+- ❌ Vintage faded oriental (medallion / southwestern motif) — RETIRED v0.15.4
+- ❌ Persian medallion / faded persian — RETIRED v0.15.4
+- ❌ Low-pile vintage moroccan (with motif) — RETIRED v0.15.4
+- ❌ Tribal motif rugs / kilim-style rugs / ethnic-pattern rugs
+- ❌ Cream loop-pile, berber chunky knit, cable-knit-style rugs (knit family — banned in v0.15.2)
+- ❌ Cozy chunky knit, shaggy, shag-pile, sherpa rugs
+- ❌ Sisal alone (too stiff), bare flatweave low-pile alone (too thin)
+- ❌ Bright pattern, bold geometric, round rugs
+
+### Plant count cap (NEW v0.15.4 — no too many plants)
+- ❌ NEVER 2+ plants / floral arrangements in the same scene.
+- ❌ NEVER both a floor olive tree AND a coffee-table flower vase.
+- ❌ NEVER multiple potted plants / herb pots / succulents / terrariums.
+- ❌ NEVER mixed-flower bouquets (modern minimalism = single-stem / single-species).
+- ✅ EXACTLY ONE plant TOTAL per scene — designer picks: floor option (substantial olive tree / tall floor branches / dried floor urn) OR table option (small single-stem arrangement). Never both.
+
+### Cramped-space ban (NEW v0.15.4)
+- ❌ NEVER coffee table jammed against the sofa — leave 18–24 inches.
+- ❌ NEVER side tables crowded with 3+ objects.
+- ❌ NEVER pillows packed tight with no gaps.
+- ❌ NEVER 2+ accent chairs squeezed into the same corner.
+- ❌ NEVER decor stacked on every horizontal surface.
+- ❌ NEVER multiple wall objects (art + mirror + sconce + shelf) on the same wall.
+- ❌ NEVER wide-angle shot of small room (compresses space).
+- ✅ Floor 50–70% visible. Walls 70%+ empty above the dado line. Ceiling reads tall (12-foot feel). Hero owns its zone with 2–3 feet of breathing room.
 
 ---
 
